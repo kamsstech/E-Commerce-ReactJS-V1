@@ -8613,8 +8613,8 @@ padding-bottom: 0px  !important;
     line-height: 16px;
     letter-spacing: normal;
     text-align: left;
-    color: var(--dark);
-    font-family:var(--font-quicksand); 
+    color: var(--marine-blue);
+    text-transform: uppercase;
 }
 .filter-list-item-padding{
 padding-left: 0px !important;
@@ -11333,4 +11333,11 @@ max-width: 100% !important;
 }
 .kmass_desc .MuiInputBase-input{
     border-left: initial;
+}
+
+.filter-side-tab .MuiListItem-gutters a{
+    color: var(--dark);
+}
+.filter-side-tab .MuiSvgIcon-root {
+    margin-right: 8px;
 }
