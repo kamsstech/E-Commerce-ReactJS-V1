@@ -20,8 +20,10 @@ import PeopleIcon from '@material-ui/icons/People';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockIcon from '@material-ui/icons/Lock';
-const Sidebar = () => {
-    const [openHandleMenu, setHandleMenu] = useState(1);
+const Sidebar = (props) => {
+	const { page} = props;
+	// console.log(page)
+    const [openHandleMenu, setHandleMenu] = useState(page ? page : 1);
     const handleMenu = (e) => {
 		setHandleMenu(e)
 	};
@@ -37,7 +39,7 @@ const Sidebar = () => {
                         <ListItemText primary="Banner" className="filter-side-tab-item" />
                         {openHandleMenu==1 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> :  <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==1?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==1 || (page==='banner'||page==='add-banner')?true:false} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-banner" >
@@ -59,7 +61,7 @@ const Sidebar = () => {
                         <ListItemText primary="Brands" className="filter-side-tab-item" />
                         {openHandleMenu==2 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" />: <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==2?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==2 || (page==='brand'||page==='add-brand')?true:false} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-brand" >
@@ -81,7 +83,7 @@ const Sidebar = () => {
                         <ListItemText primary="Category" className="filter-side-tab-item" />
                         	{openHandleMenu==3 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==3?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==3 || (page==='category'||page==='add-category') ?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-category" >
@@ -103,7 +105,7 @@ const Sidebar = () => {
                         <ListItemText primary="Variations" className="filter-side-tab-item" />
                         {openHandleMenu==4 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==4?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==4 || (page==='variation'||page==='add-variation')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-variation" >
@@ -125,7 +127,7 @@ const Sidebar = () => {
                         <ListItemText primary="Items" className="filter-side-tab-item" />
                         {openHandleMenu==5 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==5?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==5 || (page==='add-item'||page==='items')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-item" >
@@ -147,7 +149,7 @@ const Sidebar = () => {
                         <ListItemText primary="Customers" className="filter-side-tab-item" />
                         {openHandleMenu==6 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==6?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==6 || (page==='items')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/items" >
@@ -164,7 +166,7 @@ const Sidebar = () => {
                         <ListItemText primary="Manage Orders" className="filter-side-tab-item" />
                         {openHandleMenu==7 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==7?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==7 || (page==='new-orders'||page==='failure-orders'||page==='cancel-orders'||page==='delivered-orders')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/new-orders" >
@@ -197,7 +199,7 @@ const Sidebar = () => {
                         <ListItemText primary="Page Setting" className="filter-side-tab-item" />
                         {openHandleMenu==8 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==8?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==8 || (page==='add-page'||page==='page')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/add-page">
@@ -219,7 +221,7 @@ const Sidebar = () => {
                         <ListItemText primary="Manage Password" className="filter-side-tab-item" />
                         {openHandleMenu==9 ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
-                    <Collapse in={openHandleMenu==9?true:false} timeout="auto" unmountOnExit>
+                    <Collapse in={openHandleMenu==9 || (page==='change-password')?true:false} timeout="auto" unmountOnExit>
                          <List component="div" disablePadding>
                             <ListItem>
                     			<Link to="/site-control/change-password" >
