@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.579" height="14.2" viewBox="0 0 18.579 14.2">
+    <defs>
+        <style>
+            .cls-1{fill:#dbdbdb;stroke:#dbdbdb;stroke-width:.2px}
+        </style>
+    </defs>
+    <g id="email_1_" data-name="email (1)" transform="translate(.1 -60.9)">
+        <g id="Group_1739" data-name="Group 1739" transform="translate(0 61)">
+            <path id="Path_3859" d="M16.764 61H1.615A1.618 1.618 0 0 0 0 62.615v10.77A1.618 1.618 0 0 0 1.615 75h15.149a1.618 1.618 0 0 0 1.615-1.615v-10.77A1.618 1.618 0 0 0 16.764 61zm-.223 1.077l-7.317 7.317-7.38-7.317zM1.077 73.162V62.833l5.186 5.142zm.761.761l5.19-5.19 1.818 1.8a.538.538 0 0 0 .76 0l1.773-1.773 5.162 5.162zm15.462-.761L12.141 68l5.159-5.162z" class="cls-1" data-name="Path 3859" transform="translate(0 -61)"/>
+        </g>
+    </g>
+</svg>

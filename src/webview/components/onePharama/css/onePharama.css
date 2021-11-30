@@ -1,0 +1,162 @@
+.onePharama .serachSellerInput {
+    /*margin-top: 0 !important;*/
+}
+.onePharama .serachSellerInput .MuiInputBase-root {
+    height: 40px !important;
+    font-size: 13px !important;
+}
+.width72 {
+    width: 72px;
+    height: 40px;
+}
+.onePharama .filterBy {
+    border-radius: 14px;
+    background-color: var(--white);
+    font-family: var(--font-quicksand);
+}
+.dSNull .MuiOutlinedInput-root {
+    border-color: var(--light-blue-grey) !important;
+}
+.dSNull .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: var(--light-blue-grey) !important;
+}
+.dSNull .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-width: 1px !important;
+}
+.onePharama .filterBy .MuiOutlinedInput-notchedOutline {
+    border-color: var(--light-blue-grey) !important;
+}
+.onePharama .MuiSelect-outlined.MuiSelect-outlined {
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 600;
+}
+.onePharama .flexRow button {
+    height: 40px;
+    vertical-align: top;
+    min-width: initial !important;
+    padding: 0;
+}
+.onePharama .flexRow .MuiButton-label {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+.onePharama .serachSellerInput {
+    margin-top: 0;
+}
+.onePharama .headSection h1 {
+    margin: 40px 0 8px 0;
+    color: var(--marine-blue);
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.05;
+}
+.onePharama .headSection p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    color: rgba(13, 19, 33, 0.6);
+}
+.mr-t-0 {
+    margin-top: 0 !important;
+}
+.onePharama tbody tr td:nth-child(3), .onePharama tbody tr td:nth-child(6) {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+}
+.onePharama .setPriority {
+    background: rgba(255, 123, 32, 0.1) !important;
+}
+.opacity0_5 {
+    opacity: 0.5;
+}
+.onePharama .blue-divider {
+    margin: 0 !important;
+}
+.pagination {
+    list-style: none;
+    margin: 0;
+    /*display: flex;*/
+    padding: 6px 8px;
+    border-radius: 14px;
+    background-color: #f6f8fd;
+}
+.pagination button {
+    border: none;
+    margin-right: 8px;
+    color: #6846f0;
+    line-height: 1.5;
+    background-color: initial;
+    cursor: pointer;
+}
+.pagination li {
+    vertical-align: middle;
+    display: inline-block;
+    background: initial;
+}
+.pagination li:first-child button {
+    background-color: var(--white);
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(104, 70, 240, 0.5);
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-family: var(--font-quicksand);
+    color: #6846f0;
+}
+.pagination li:last-child button:disabled, .pagination li:first-child button:disabled {
+    color: rgba(104, 70, 240, 0.5);
+    cursor: not-allowed;
+}
+.pagination li:last-child button {
+    background-color: var(--white);
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #6846f0;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-family: var(--font-quicksand);
+}
+.pagination button.current {
+    font-family: var(--font-quicksand);
+    color: var(--white);
+    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #6846f0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.paginate p {
+    font-family: var(--font-quicksand);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 4;
+    margin: 0;
+    color: var(--dark);
+}
+.onePharama  .MuiOutlinedInput-adornedStart {
+    padding-left: 0;
+}
+.onePharama  .MuiInputAdornment-positionStart {
+    padding: 12px 4px 12px 12px;
+    background: initial;
+    width: initial;
+    min-width: initial;
+}
+.onePharama .datecolour {
+    color: rgba(91, 99, 106, 0.6) !important;
+ }
+ .pd-b-12 {
+    padding-bottom: 12px !important;
+ }

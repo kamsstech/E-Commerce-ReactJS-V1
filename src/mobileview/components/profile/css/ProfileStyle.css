@@ -1,0 +1,122 @@
+.mob-profile-sec .MuiListItem-root{
+    padding: 1.33em 0;
+    border-bottom: 1px solid #cccccc80;
+}
+.mob-profile-sec .MuiListItem-root{
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.mob-profile-sec.MuiList-padding{
+    padding: 0;
+}
+.mob-profile-sec .MuiListItemText-root{
+    margin: 0;
+}
+.mob-profile-sec .MuiListItemIcon-root{
+    margin-top: 5px;
+    min-width: 32px;
+}
+.mob-profile-sec .MuiTypography-displayBlock{
+    font-family: "Quicksand-Medium";
+    font-size: 1.16em;
+    color: rgb(46 62 106);
+}
+.mob-profile-sec .mob-profile-links{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.mob-profile-sec .mob-profile-links li{
+    font-family: "Quicksand-Medium";
+    font-size: 12px;
+    color: rgb(91 99 106);
+    margin-top: 20px;
+}
+.mob-profile-sec .mob-profile-links li a{
+    color: rgb(91 99 106); 
+}
+.mob-profile-info{
+    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    padding: 3.58em 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 32px 32px;
+    margin-top: -2.58em;
+}
+.profile-img-bg{
+    background-color: #ffffff1a;
+    border-radius: 12px;
+    width: 8em;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-img-bg img{
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+.mob-profile-info .mob-profile-name{
+    color: rgb(255 255 255);
+    font-family: "Quicksand-Medium";
+    font-size: 1.66em;
+    margin-top:12px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+.mob-profile-info .mob-profile-medicalname{
+    font-family: "OpenSans-Regular";
+    font-size: 1.08em;
+    margin: .66em 0;
+    color: rgb(252 239 239);
+}
+.mob-profile-info .mob-profile-medicallocation{
+    font-family: "OpenSans-Regular";
+    font-size: 1.08em;
+    margin: 0 0 1em 0;
+    color: rgb(252 239 239);
+    text-transform: capitalize;
+}
+.mob-profile-info .mob-profile-medicallocation img{ 
+    vertical-align: middle;
+}
+.mob-profile-sec .MuiListItemIcon-root.change-branch-arrow{
+    margin: 0;
+    width: auto;
+    min-width: unset;
+    transition: 0.2s all linear;
+    transform: rotate(0deg);
+}
+.mob-profile-sec .MuiListItemIcon-root.change-branch-arrow.down-anim{
+    transition: 0.2s all linear;
+    transform: rotate(90deg);
+}
+.change-branch-sec.mobile-changebranch-sec{
+    padding-left: 2.5em;
+    padding-top: 1em;
+}
+.change-branch-sec.mobile-changebranch-sec
+.view-more-link{
+    padding-left: 3px;
+}
+.change-branch-sec.mobile-changebranch-sec
+.view-space{
+    padding: 10px 0;
+}
+.change-branch-sec.mobile-changebranch-sec
+.make-default-space{
+    padding-left: 3px;
+}
+.change-branch-sec.mobile-changebranch-sec .make-default .MuiFormControlLabel-label{
+    font-size: 12px;
+}
+.mt--10{
+    margin-top: -10px !important;
+}
+.unset-color{
+    color: unset;
+}

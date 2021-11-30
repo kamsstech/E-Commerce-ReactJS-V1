@@ -1,0 +1,61 @@
+.box-view-tile-wishList-shortbook{
+  position: absolute;
+  left:127px;
+  padding: 5.5px 8px;
+  border-radius: 4px;
+  background-color: rgba(147, 164, 184, 0.06);
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.box-view-tile-wishList-shortbook .wishList-icon{
+    width: 19px;
+    height: 21px;
+  }
+.auth-input.search-product .MuiOutlinedInput-input{
+  line-height: unset;
+  width: 256px;
+  height: unset;
+}
+.box-view-tile-fav-cross-1{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: #f6f6f6;
+}
+
+.box-view-tile-wishlist-1 {
+  position: absolute;
+  top: 0;
+  right: 3em;
+  height: 2em;
+  width: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-view-sec-25-1.shortbook {
+  width: calc(50% - 18px) !important;
+  margin: 0em 1em 1em 0em;
+  border: 1px solid rgba(195, 205, 228, 0.5);
+  border-radius: 0.5em;
+}
+
+.letter-spacing{
+  /* font-weight: 600; */
+  letter-spacing: 0.63px;
+}
+.sb-rate{
+  color: #002f4f !important;
+}
+.m-r-0{
+  margin-right: 0;
+}

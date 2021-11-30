@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.623" height="16.2" viewBox="0 0 11.623 16.2">
+    <defs>
+        <style>
+            .cls-1{fill:#002f4f;stroke:#002f4f;stroke-width:.2px}
+        </style>
+    </defs>
+    <g id="microphone" transform="translate(-35.682 .1)">
+        <path id="Path_3529" d="M47.205 112.635a.48.48 0 0 0-.959 0 4.752 4.752 0 0 1-9.5 0 .48.48 0 0 0-.959 0 5.7 5.7 0 0 0 5.232 5.666v1.689h-2.141a.478.478 0 1 0 0 .955h5.232a.478.478 0 1 0 0-.955h-2.137v-1.69a5.7 5.7 0 0 0 5.232-5.665z" class="cls-1" data-name="Path 3529" transform="translate(0 -104.946)"/>
+        <path id="Path_3530" d="M79.8 10.7a3.1 3.1 0 0 0 3.1-3.082V3.082a3.107 3.107 0 0 0-6.215 0v4.536A3.1 3.1 0 0 0 79.8 10.7zm-2.149-7.618a2.145 2.145 0 0 1 4.289 0v4.536a2.145 2.145 0 0 1-4.289 0z" class="cls-1" data-name="Path 3530" transform="translate(-38.302)"/>
+    </g>
+</svg>

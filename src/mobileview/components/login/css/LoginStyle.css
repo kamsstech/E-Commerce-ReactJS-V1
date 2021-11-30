@@ -1,0 +1,141 @@
+.mob-auth-container {
+  padding: 4em 1.33em;
+}
+.mob-title {
+  font-size: 24px;
+  font-family: "Quicksand-Bold";
+  color: #002f4f;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+}
+.mob-auth-title {
+  font-size: 16px;
+  font-family: "Quicksand-Bold";
+  color: #002f4f;
+  margin-top: 0;
+  margin-bottom: 0.33em;
+}
+.mob-auth-subtitle {
+  font-size: 1.16em;
+  font-family: "OpenSans-Regular";
+  color: #00d3b4;
+  margin-top: 0;
+  margin-bottom: 3.6em;
+}
+.mob-checkbox .MuiSvgIcon-root {
+  font-size: 0.85em;
+}
+.mob-checkbox .MuiTypography-body1 {
+  font-family: "Quicksand-Medium";
+  font-size: 1em;
+  color: #5b636a;
+}
+.mob-remember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+}
+.mob-forgot-link {
+  font-family: "Quicksand-Medium";
+  font-size: 1em;
+  color: #5b636a;
+  cursor: pointer;
+}
+.mob-theme-btn.MuiButton-containedPrimary {
+  background-image: linear-gradient(to bottom, #674cf3, #8039db);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-family: "Quicksand-Medium";
+  font-size: 1.08em;
+  padding: 1.2em 2.65em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: 0.2s all linear;
+  position: relative;
+  width: 100%;
+}
+.mob-theme-btn.MuiButton-containedPrimary:hover,
+.mob-theme-btn.MuiButton-containedPrimary:active,
+.mob-theme-btn.MuiButton-containedPrimary:focus {
+  opacity: 0.8;
+}
+.mob-auth-navigation {
+  text-align: center;
+}
+.mob-auth-navigation p {
+  font-size: 1.08em;
+  font-family: "Quicksand-Medium";
+  color: #2e3e6a;
+  margin: 1.66em 0 1em 0;
+}
+.mob-default-btn.MuiButton-outlined {
+  font-size: 1em;
+  border: solid 1px #d5dcec;
+  background-color: transparent;
+  padding: 0.75em 2.5em;
+  border-radius: 20px;
+  line-height: 1.4;
+  color: #00d3b4;
+  font-family: "Quicksand-Medium";
+  transition: 0.2s all linear;
+}
+.mob-default-btn.MuiButton-outlined:hover,
+.mob-default-btn.MuiButton-outlined:active,
+.mob-default-btn.MuiButton-outlined:focus {
+  border-color: #674cf3;
+  color: #ffffff;
+  background-color: #674cf3;
+}
+.orange-link {
+  color: #ff7b20;
+}
+.mob-register-link {
+  margin-top: 1.33em !important;
+  margin-bottom: 0 !important;
+}
+.mob-forgot-title {
+  font-family: "Quicksand-Medium";
+  font-size: 1.16em;
+  color: #002f4f;
+  margin: 0;
+  opacity: 0.8;
+  margin-bottom: 4.6em;
+}
+.forgot-pass .MuiTypography-body1 {
+  font-size: 1em;
+}
+.mob-forgot-tabs .MuiTab-textColorPrimary {
+  font-size: 1em;
+}
+.mob-forgot-paper {
+  margin: 2em 0 2.5em 0;
+}
+#mob-forgot-pass .MuiBox-root,
+#mob-forgot-pass .MuiBox-root {
+  padding: 0;
+}
+.space-top-4 {
+  margin-top: 4em !important;
+}
+.auth-input.mob-input .MuiOutlinedInput-input {
+  padding: 1.15em 1.25em 1.15em 1em;
+}
+.auth-input .MuiInputAdornment-positionEnd {
+  /* margin-left: 0; */
+  margin-left: 8px;
+}
+.MuiPaper-root option {
+  padding: 0.5em 1em;
+  font-size: 1.16em;
+}
+.auth-input .MuiSelect-select:focus {
+  background-color: transparent;
+}
+.auth-input .MuiOutlinedInput-adornedEnd .mob-genOtp {
+  color: #5b636a99;
+  font-size: 11px;
+  font-family: "Quicksand-Medium";
+  white-space: nowrap;
+}

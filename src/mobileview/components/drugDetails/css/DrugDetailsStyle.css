@@ -1,0 +1,19 @@
+.drug-banner-dots.drug-banner-dots {
+  position: absolute;
+  bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.drug-banner-dots .MuiMobileStepper-dot {
+  margin: 0 4px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+.drug-banner-dots .MuiMobileStepper-dotActive {
+  background-color: #ffffff;
+}

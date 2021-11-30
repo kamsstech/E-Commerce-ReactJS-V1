@@ -1,0 +1,67 @@
+.pb-0{
+    padding-bottom: 0 !important; 
+}
+.alternate-filter-tab .MuiTabs-root{
+    background-color: #c3cde41a;
+}
+.alternate-filter-tab .MuiTab-root{
+    width: 170px;
+    min-height: unset;
+    padding: 1.33em .5em 1.33em 1.33em;
+    border-bottom: 1px solid #c3cde433;
+    opacity: 1;
+}
+.alternate-filter-tab .MuiTab-root .MuiTab-wrapper{
+    line-height: 1;
+    font-family: "Quicksand-Regular";
+    font-size: 1.16em;
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    color: #343a40;
+}
+.alternate-filter-tab .MuiTab-root.Mui-selected{
+    background-color: #ffffff;
+}
+.alternate-filter-tab .MuiTab-root.Mui-selected .MuiTab-wrapper{
+    font-family: "Quicksand-Medium"
+}
+.alternate-filter-tab .MuiTabs-indicator{
+    display: none
+}
+.alternate-filter-tab .MuiTypography-root{
+    width: calc(100% - 170px)
+}
+.alternate-filter-tab .MuiTypography-root .MuiBox-root {
+    padding: 0 .5em;
+}
+.alternate-filter-tab-list{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+.alternate-filter-tab-list li{
+    padding: .416em 0;
+    border-bottom: 1px solid #c3cde41a;
+}
+.alternate-filter-tab-list .MuiFormControlLabel-root{
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+.alternate-filter-tab .alternate-filter-tab-list .MuiTypography-root{
+    width: unset;
+    font-size: 1em;
+    font-family: "OpenSans-Regular";
+    color: #343a40;
+}
+.alternate-filter-tab-list .MuiCheckbox-colorPrimary.Mui-checked{
+    color: #674cf3 ; 
+}
+.width-100{
+    width: 100% !important;
+}

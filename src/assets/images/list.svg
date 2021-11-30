@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.338" height="16" viewBox="0 0 22.338 16">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#5b636a}
+        </style>
+    </defs>
+    <g id="prefix__Search_with_list" data-name="Search with list" opacity="0.7" transform="translate(-257 -526.3)">
+        <g id="prefix__Group_4470" data-name="Group 4470" transform="translate(263.099 527.018)">
+            <path id="prefix__Path_7913" d="M651.253 566.01h-14.466c-.489 0-.887-.54-.887-1.2s.4-1.2.887-1.2h14.466c.489 0 .887.54.887 1.2s-.398 1.2-.887 1.2z" class="prefix__cls-2" data-name="Path 7913" transform="translate(-635.9 -563.6)"/>
+        </g>
+        <g id="prefix__Group_4471" data-name="Group 4471" transform="translate(263.099 533.099)">
+            <path id="prefix__Path_7914" d="M651.253 938.141h-14.466a1.089 1.089 0 0 1 0-2.141h14.466a1.089 1.089 0 0 1 0 2.141z" class="prefix__cls-2" data-name="Path 7914" transform="translate(-635.9 -936)"/>
+        </g>
+        <g id="prefix__Group_4472" data-name="Group 4472" transform="translate(263.099 539.117)">
+            <path id="prefix__Path_7915" d="M651.252 1310.541h-14.465a1.09 1.09 0 0 1 0-2.141h14.466a1.09 1.09 0 0 1 0 2.141z" class="prefix__cls-2" data-name="Path 7915" transform="translate(-635.9 -1308.4)"/>
+        </g>
+        <g id="prefix__Group_4473" data-name="Group 4473" transform="translate(257 526.3)">
+            <circle id="prefix__Ellipse_1457" cx="1.95" cy="1.95" r="1.95" class="prefix__cls-2" data-name="Ellipse 1457"/>
+        </g>
+        <g id="prefix__Group_4474" data-name="Group 4474" transform="translate(257 532.379)">
+            <circle id="prefix__Ellipse_1458" cx="1.95" cy="1.95" r="1.95" class="prefix__cls-2" data-name="Ellipse 1458"/>
+        </g>
+        <g id="prefix__Group_4475" data-name="Group 4475" transform="translate(257 538.399)">
+            <circle id="prefix__Ellipse_1459" cx="1.95" cy="1.95" r="1.95" class="prefix__cls-2" data-name="Ellipse 1459"/>
+        </g>
+    </g>
+</svg>

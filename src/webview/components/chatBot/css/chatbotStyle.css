@@ -1,0 +1,12 @@
+.chatbot-style{
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 3;
+
+}
+.chatbot-telegram{
+    height: 50px;
+    width: 50px;
+}
+

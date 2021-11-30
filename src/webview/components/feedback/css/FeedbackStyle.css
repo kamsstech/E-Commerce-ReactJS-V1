@@ -1,0 +1,136 @@
+.web-fb-title {
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: initial;
+    color: var(--dark);
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.auth-input.MuiFormControl-marginNormal.mr-10,
+.auth-input.MuiFormControl-marginNormal.ml-10 {
+    width: calc(100% - 10px);
+}
+
+.feedback-query {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.auth-input textarea.MuiOutlinedInput-input {
+    padding: 0 !important;
+    height: 8.3em !important;
+    overflow-y: auto !important;
+}
+
+.feedback-select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fb-upload-btn.MuiButton-outlined {
+    font-size: 13px;
+    font-weight: 600;
+    border: solid 1px var(--light-blue-grey);
+    background-color: transparent;
+    padding: 0.92em 1.46em;
+    border-radius: 5px;
+    line-height: 1.2;
+    color: #0d1321;
+    transition: 0.2s all linear;
+    text-transform: capitalize;
+}
+
+.upload-btn.MuiButton-outlined:hover,
+.upload-btn.MuiButton-outlined:active,
+.upload-btn.MuiButton-outlined:focus {
+    border-color: #d5dcec;
+    color: #0d1321;
+    background-color: #d5dcec;
+}
+
+.feedback-send-btn.MuiButton-containedPrimary {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+    font-weight: 600;
+    background-image: linear-gradient(to right, var(--purpleish-blue), var(--burple-two));
+    border-radius: 3px;
+    line-height: 1.;
+    color: var(--white);
+    transition: 0.2s all linear;
+    text-transform: capitalize;
+    margin: 0 0 0.76em 0;
+    opacity: 0.95;
+    width: 96px;
+    height: 40px;
+}
+
+.feedback-send-btn.MuiButton-containedPrimary:hover,
+.feedback-send-btn.MuiButton-containedPrimary:active,
+.feedback-send-btn.MuiButton-containedPrimary:focus {
+    border: solid 1px #674cf3;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.feedback-clear-btn.MuiButton-contained {
+    font-weight: 500;
+    font-size: 13px;
+    border: initial;
+    padding: 0.92em 1.46em;
+    line-height: 1;
+    color: rgba(13, 19, 33, 0.5);
+    transition: 0.2s all linear;
+    text-transform: capitalize;
+    width: 9.2em;
+    margin-bottom: 0.76em;
+    box-shadow: none;
+    background: #fff;
+}
+
+.feedback-clear-btn.MuiButton-contained:hover,
+.feedback-clear-btn.MuiButton-contained:active,
+.feedback-clear-btn.MuiButton-contained:focus {
+    box-shadow: none;
+    background-color: #fff;
+}
+
+.fb-upload-guideline {
+    font-family: var(--font-opensans);
+    color: rgba(13, 19, 33, 0.6);
+    font-size: 11px;
+    letter-spacing: 0.55px;
+    margin: 8px 0 8px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.MuiSelect-icon {
+    top: calc(50% - 14.4px) !important;
+    color: #5b636a !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+}
+
+.c_query textarea {
+    border-left: initial !important;
+    /* border-left: 0px solid #ddd !important; */
+}
+
+.custom-fb-mr {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.custom-fb-mr .auth-input.MuiFormControl-marginNormal {
+    margin-bottom: 16px !important;
+}
+
+.fb-upload-btn.MuiButton-outlined img {
+    height: 1em;
+    width: 1em;
+    object-fit: contain;
+    margin-right: 12px;
+}

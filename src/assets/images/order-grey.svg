@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+    <defs>
+        <style>
+            .cls-1{fill:#2e3e6a;stroke:#2e3e6a;stroke-linecap:round;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="order" transform="translate(.266 -.832)">
+        <g id="Box" transform="translate(-.124 .498)">
+            <path id="Shape-path" d="M0 0h5.905" class="cls-1" transform="translate(1.452 4.913)"/>
+            <path id="Shape-path-2" d="M0 0h.738" class="cls-1" transform="translate(11.072 4.913)"/>
+            <path id="Shape-path-3" d="M0 0h.738" class="cls-1" transform="translate(15.501 4.913)"/>
+            <g id="Rectangle_2278" fill="none" stroke="#2e3e6a" stroke-width="1.2px" transform="translate(-.142 .334)">
+                <rect width="18" height="20" stroke="none" rx="2"/>
+                <rect width="16.8" height="18.8" x=".6" y=".6" rx="1.4"/>
+            </g>
+            <path id="Path_3802" fill="#2e3e6a" stroke="#2e3e6a" stroke-width="0.5px" d="M178.971 99.794h-.754a.779.779 0 1 1 0-1.558h1.508a.352.352 0 0 0 0-.7h-.779v-.779a.352.352 0 1 0-.7 0v.779h-.025a1.483 1.483 0 1 0 0 2.966h.754a.779.779 0 1 1 0 1.558h-1.508a.352.352 0 0 0 0 .7h.779v.779a.352.352 0 1 0 .7 0v-.779h.025a1.483 1.483 0 1 0 0-2.966z" transform="translate(-169.744 -87.627)"/>
+        </g>
+    </g>
+</svg>

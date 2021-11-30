@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.516" height="24" viewBox="0 0 22.516 24">
+    <defs>
+        <style>
+            .cls-2{fill:#002f4f}
+        </style>
+    </defs>
+    <g id="wishlist_1_" data-name="wishlist (1)" opacity="0.2" transform="translate(-26.5)">
+        <g id="Group_2181" data-name="Group 2181" transform="translate(26.5)">
+            <g id="Group_2180" data-name="Group 2180">
+                <path id="Path_4399" d="M37.532 22.125H30.44a1.926 1.926 0 0 1-1.97-1.875V3.75a1.926 1.926 0 0 1 1.97-1.875h12.11a1.926 1.926 0 0 1 1.97 1.875v8.859a.986.986 0 0 0 1.97 0V3.75A3.853 3.853 0 0 0 42.55 0H30.44a3.853 3.853 0 0 0-3.94 3.75v16.5A3.853 3.853 0 0 0 30.44 24h7.092a.939.939 0 1 0 0-1.875z" class="cls-2" data-name="Path 4399" transform="translate(-26.5)"/>
+                <path id="Path_4400" d="M193.443 169h-5.992a.951.951 0 1 0 0 1.9h5.992a.951.951 0 1 0 0-1.9z" class="cls-2" data-name="Path 4400" transform="translate(-178.515 -161.088)"/>
+                <path id="Path_4401" d="M187.451 329a.951.951 0 1 0 0 1.9h1.428a.951.951 0 1 0 0-1.9z" class="cls-2" data-name="Path 4401" transform="translate(-178.608 -313.597)"/>
+                <path id="Path_4402" d="M193.443 89h-5.992a.951.951 0 1 0 0 1.9h5.992a.951.951 0 1 0 0-1.9z" class="cls-2" data-name="Path 4402" transform="translate(-178.515 -84.833)"/>
+                <path id="Path_4403" d="M194.394 249.951a.951.951 0 0 0-.951-.951h-5.992a.951.951 0 1 0 0 1.9h5.992a.951.951 0 0 0 .951-.949z" class="cls-2" data-name="Path 4403" transform="translate(-178.515 -237.342)"/>
+                <ellipse id="Ellipse_1378" cx="1.152" cy=".576" class="cls-2" data-name="Ellipse 1378" rx="1.152" ry=".576" transform="translate(3.549 11.991)"/>
+                <path id="Path_4404" d="M282.744 329.864a3.109 3.109 0 0 0-4.167-.122 3.109 3.109 0 0 0-4.166.122 3.173 3.173 0 0 0-.873 2.257c0 1.865 1.585 3.047 2.858 4a8.463 8.463 0 0 1 1.441 1.231.951.951 0 0 0 1.482 0 8.467 8.467 0 0 1 1.441-1.231c1.273-.949 2.858-2.131 2.858-4a3.173 3.173 0 0 0-.874-2.257zm-3.122 4.728c-.354.264-.714.533-1.045.817-.33-.284-.691-.553-1.045-.817-1.029-.767-2.093-1.56-2.093-2.471a1.077 1.077 0 0 1 1.093-1.218.954.954 0 0 1 .9.406 1.358 1.358 0 0 1 .2.53.949.949 0 0 0 1.9 0 1.358 1.358 0 0 1 .2-.53.954.954 0 0 1 .9-.406 1.077 1.077 0 0 1 1.093 1.218c-.01.911-1.074 1.704-2.103 2.471z" class="cls-2" data-name="Path 4404" transform="translate(-261.102 -313.702)"/>
+                <circle id="Ellipse_1379" cx="1.152" cy="1.152" r="1.152" class="cls-2" data-name="Ellipse 1379" transform="translate(3.549 4.048)"/>
+                <circle id="Ellipse_1380" cx="1.152" cy="1.152" r="1.152" class="cls-2" data-name="Ellipse 1380" transform="translate(3.549 7.448)"/>
+                <circle id="Ellipse_1381" cx="1.152" cy="1.152" r="1.152" class="cls-2" data-name="Ellipse 1381" transform="translate(3.549 15.381)"/>
+            </g>
+        </g>
+    </g>
+</svg>

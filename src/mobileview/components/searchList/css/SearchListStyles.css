@@ -1,0 +1,35 @@
+.mob-searchlist-header {
+  flex-grow: 1;
+  padding-left: 1.66em;
+}
+.mob-searchlist-header h4 {
+  margin: 0 0 0.25em 0;
+  color: #002f4f;
+  font-family: "Quicksand-Medium";
+  font-size: 1.33em;
+  text-transform: capitalize;
+}
+.mob-searchlist-header p {
+  margin: 0;
+  color: #002f4f;
+  font-family: "Quicksand-Regular";
+  font-size: 1em;
+  text-transform: capitalize;
+}
+.search-btn img {
+  width: 18px;
+  height: 18px;
+}
+.mob-home-slider .search-item {
+  width: 50%;
+}
+.mob-home-slider.search-item-sec {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4.66em;
+  margin-bottom: 1.33em;
+}
+.mob-home-slider.search-item-sec .mob-home-slide {
+  margin-bottom: 0;
+  margin-top: 0em;
+}

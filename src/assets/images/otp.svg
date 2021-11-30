@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.104" height="17.145" viewBox="0 0 14.104 17.145">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#dfdfdf;stroke-miterlimit:10;stroke-width:1.2px}.cls-2{fill:#dfdfdf}
+        </style>
+    </defs>
+    <g id="otp" transform="translate(-616.804 -388.276)">
+        <path id="Path" d="M11.73 13.468l-4.893 2.378a.885.885 0 0 1-.778 0l-4.9-2.378A2.068 2.068 0 0 1 0 11.614V2.068A2.068 2.068 0 0 1 2.068 0h8.769A2.068 2.068 0 0 1 12.9 2.068v9.546a2.068 2.068 0 0 1-1.17 1.854z" class="cls-1" transform="translate(617.403 388.876)"/>
+        <ellipse id="Oval" cx=".686" cy=".686" class="cls-2" rx=".686" ry=".686" transform="translate(620.097 394.976)"/>
+        <ellipse id="Oval-2" cx=".686" cy=".686" class="cls-2" data-name="Oval" rx=".686" ry=".686" transform="translate(621.96 394.976)"/>
+        <ellipse id="Oval-3" cx=".686" cy=".686" class="cls-2" data-name="Oval" rx=".686" ry=".686" transform="translate(623.823 394.976)"/>
+        <ellipse id="Oval-4" cx=".686" cy=".686" class="cls-2" data-name="Oval" rx=".686" ry=".686" transform="translate(625.69 394.976)"/>
+    </g>
+</svg>

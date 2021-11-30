@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.202" height="17.302" viewBox="0 0 16.202 17.302">
+    <defs>
+        <style>
+            .cls-1{fill:#dbdbdb;stroke:#dbdbdb;stroke-width:.4px}
+        </style>
+    </defs>
+    <g id="bank" transform="translate(-1.129 .215)">
+        <path id="Path_3786" d="M7.428 6.617h.36a.442.442 0 0 0 0 .057v7.014h-.249a.446.446 0 0 0 0 .893h13.238a.446.446 0 0 0 0-.893h-.245V6.675a.442.442 0 0 0 0-.057h.36a.778.778 0 0 0 .462-1.4l-6.93-5.13a.446.446 0 0 0-.531 0L6.965 5.215a.778.778 0 0 0 .462 1.4zm1.248 7.071zm6.775 0zm3.388 0zM14.158 1l6.381 4.723H7.777L14.158 1z" class="cls-1" data-name="Path 3786" transform="translate(-4.928)"/>
+        <path id="Path_3787" d="M16.685 203.2H1.775a.443.443 0 1 0 0 .887h14.91a.443.443 0 1 0 0-.887z" class="cls-1" data-name="Path 3787" transform="translate(0 -187.203)"/>
+    </g>
+</svg>

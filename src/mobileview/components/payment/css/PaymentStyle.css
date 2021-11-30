@@ -1,0 +1,49 @@
+.payment-sec-wrapper{
+    background-color: rgb(246 248 253);
+    padding-bottom: 1.33em;
+}
+.payment-sec-wrapper:last-child{
+    padding-bottom: 0;
+}
+.payment-sec{
+    padding: 1.66em 1.33em 1.33em 1.33em;
+    background-color: #ffffff;
+}
+.payment-sec-seller-name{
+    color: rgb(0 47 79);
+    font-family: "Quicksand-Medium";
+    font-size: 1.16em;
+    letter-spacing: .28px;
+    margin:0
+}
+.payment-sec-pricedetails{
+    border-top: 1px solid #cccccc80;
+    padding-top: 1em;
+    padding-bottom: 1.33em;
+    border-bottom: 1px dashed #cccccc80;
+    margin-top: 1em;
+    margin-bottom: 1.33em;
+}
+.sortby-filter.payment {
+    margin-left: -9px;
+}
+.sortby-filter.payment .MuiFormControlLabel-label{
+    color: rgb(147 164 184);
+}
+.sortby-filter.payment .MuiFormControlLabel-root{
+    margin-right: 0;
+    width: calc(100% + 9px);
+}
+.sortby-filter.payment .MuiFormControlLabel-label span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.payment-total-sec{
+    border-top: 1px dashed #cccccc80;
+    padding-top: 1.33em;
+    margin-top: .8em;
+}
+.sortby-filter.payment .MuiFormControlLabel-label{
+    padding-left: 1em;
+}

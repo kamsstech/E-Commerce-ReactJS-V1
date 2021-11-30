@@ -1,0 +1,58 @@
+.PaymentProgressInner {
+	margin-top: 20%;
+	background-color: rgba(235, 247, 249, 0.3);
+	border-radius: 10px;
+}
+.PaymentProgressContent p {
+	font-size: 16px;
+	color: var(--dark);
+	line-height: 16px;
+	font-weight: normal;
+	margin: 0;
+}
+.PaymentProgressContent p span {
+	font-weight: 500;
+}
+
+.cssProgress {
+    padding: 18px 20px;
+    background-color: rgba(235, 247, 249, 0.3);
+	border-radius: 10px;
+}
+.progressBar {
+    position: relative;
+    background-color: #EEE;
+    height: 4px;
+}
+.cssProgress-bar {
+	width: 10%;
+	transition: none 0s ease 0s;
+	top: -2px;
+	position: absolute;
+	height: 8px;
+	display: block;
+	float: none;
+	border-radius: 20px;
+	box-shadow: 0 6px 9px 0 rgba(0, 211, 180, 0.21);
+  	background-color: var(--aquamarine);
+}
+.Progress-glow-active {
+	-webkit-animation: cssProgressGlowActive1 3s linear infinite;
+	animation: cssProgressGlowActive1 3s linear infinite;
+}
+@-webkit-keyframes cssProgressGlowActive1 {
+  0%, 100% {
+    box-shadow: 5px 0px 15px 0px #3798D9;
+  }
+  45% {
+    box-shadow: 1px 0px 4px 0px #3798D9;
+  }
+}
+@keyframes cssProgressGlowActive1 {
+  0%, 100% {
+    box-shadow: 5px 0px 10px 0px #3798D9;
+  }
+  45% {
+    box-shadow: 1px 0px 4px 0px #3798D9;
+  }
+}

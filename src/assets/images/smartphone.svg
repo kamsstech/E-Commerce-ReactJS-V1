@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9.735" height="15.9" viewBox="0 0 9.735 15.9">
+    <defs>
+        <style>
+            .cls-1{fill:#dbdbdb;stroke:#dbdbdb;stroke-width:.4px}
+        </style>
+    </defs>
+    <g id="smartphone_1_" transform="translate(-97.15 0.2)">
+        <g id="Group_1372" transform="translate(97.35)">
+            <path id="Path_3146" d="M106.685 14.293V1.2a1.2 1.2 0 0 0-1.2-1.2h-6.932a1.2 1.2 0 0 0-1.2 1.2v13.1a1.2 1.2 0 0 0 1.2 1.2h6.928a1.21 1.21 0 0 0 1.204-1.207zM98.126 2.79h7.78v8.81h-7.78zm.427-2.014h6.928a.428.428 0 0 1 .427.427v.811h-7.782V1.2a.428.428 0 0 1 .427-.424zm-.427 13.518v-1.923h7.78v1.922a.428.428 0 0 1-.427.427h-6.926a.428.428 0 0 1-.427-.427z" class="cls-1" transform="translate(-97.35)"/>
+            <path id="Path_3147" d="M209.513 416.6h-1.574a.389.389 0 1 0 0 .779h1.574a.389.389 0 0 0 0-.779z" class="cls-1" transform="translate(-204.061 -403.409)"/>
+        </g>
+    </g>
+</svg>

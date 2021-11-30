@@ -1,0 +1,54 @@
+#forgot-pass .MuiBox-root,
+#forgot-pass .MuiBox-root {
+  padding: 1.25em 0 0 0;
+}
+.forgot-paper.MuiPaper-root {
+  display: inline-block;
+}
+.forgot-tabs.MuiTabs-root {
+  background-color: #f2f2f2;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 3px;
+  min-height: 40px;
+  display: inline-flex;
+}
+.forgot-tabs .MuiTab-textColorPrimary.Mui-selected {
+  background-color: #ffffff;
+  color: #272727;
+}
+.forgot-tabs .MuiTab-textColorPrimary {
+  font-size: 0.8125em;
+  padding: 0.85em;
+  font-family: "Quicksand-Medium";
+  min-height: 40px;
+}
+.forgot-tabs .PrivateTabIndicator-colorPrimary-81 {
+  background-color: #8039db;
+}
+.forgot-tabs .MuiTab-wrapper {
+  line-height: 1;
+  text-transform: capitalize;
+}
+.forgot-spining-icon.MuiCircularProgress-colorPrimary {
+  color: #8039db;
+  position: unset !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+.auth-input .MuiInputBase-root.Mui-disabled {
+  background: rgba(0, 0, 0, 0.02);
+}
+.auth-input .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline{
+  border-color:#c3cde4;
+  cursor: not-allowed;
+}
+.success-color{
+  color: #00d3b4 !important; 
+}
+.cha-pass-succ{
+  margin-top: -10px;
+  margin-bottom: 12px;
+}
+.grey{
+  color: rgba(0, 0, 0, 0.54) !important;
+}

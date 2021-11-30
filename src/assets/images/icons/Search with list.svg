@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.338" height="16" viewBox="0 0 22.338 16">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.7;
+      }
+
+      .cls-2 {
+        fill: #5b636a;
+      }
+    </style>
+  </defs>
+  <g id="Search_with_list" data-name="Search with list" class="cls-1" transform="translate(-257 -526.3)">
+    <g id="Group_4470" data-name="Group 4470" transform="translate(263.099 527.018)">
+      <path id="Path_7913" data-name="Path 7913" class="cls-2" d="M651.253,565.74H636.787a1.089,1.089,0,0,1,0-2.14h14.466a1.089,1.089,0,0,1,0,2.14Z" transform="translate(-635.9 -563.6)"/>
+    </g>
+    <g id="Group_4471" data-name="Group 4471" transform="translate(263.099 533.099)">
+      <path id="Path_7914" data-name="Path 7914" class="cls-2" d="M651.253,938.141H636.787a1.089,1.089,0,0,1,0-2.141h14.466a1.089,1.089,0,0,1,0,2.141Z" transform="translate(-635.9 -936)"/>
+    </g>
+    <g id="Group_4472" data-name="Group 4472" transform="translate(263.099 539.117)">
+      <path id="Path_7915" data-name="Path 7915" class="cls-2" d="M651.252,1310.541H636.787a1.09,1.09,0,0,1,0-2.141h14.466a1.09,1.09,0,0,1,0,2.141Z" transform="translate(-635.9 -1308.4)"/>
+    </g>
+    <g id="Group_4473" data-name="Group 4473" transform="translate(257 526.3)">
+      <circle id="Ellipse_1457" data-name="Ellipse 1457" class="cls-2" cx="1.95" cy="1.95" r="1.95" transform="translate(0 0)"/>
+    </g>
+    <g id="Group_4474" data-name="Group 4474" transform="translate(257 532.379)">
+      <circle id="Ellipse_1458" data-name="Ellipse 1458" class="cls-2" cx="1.95" cy="1.95" r="1.95" transform="translate(0 0)"/>
+    </g>
+    <g id="Group_4475" data-name="Group 4475" transform="translate(257 538.399)">
+      <circle id="Ellipse_1459" data-name="Ellipse 1459" class="cls-2" cx="1.95" cy="1.95" r="1.95" transform="translate(0 0)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+.pagePadding{
+    padding-left: 368px;
+    padding-top: 56px;
+    width: 494px;
+}
+.opsText{
+    margin: 0 16px 0 0;
+    font-family: Quicksand-Bold;
+    font-size: 47px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: normal;
+    text-align: left;
+    color: #dbcdf3;
+    padding-left: 80px;
+}
+.pageFlex{
+    display: flex;
+
+}
+.pageNotExist{
+    font-size: 16px;
+    color: #002f4f;
+    font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: normal;
+  font-family: Quicksand-Medium;
+}

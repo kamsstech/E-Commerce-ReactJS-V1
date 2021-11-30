@@ -1,0 +1,41 @@
+.registrationStepsBtn {
+    background-image: linear-gradient(to bottom, #674cf3, #8039db);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    font-family: "Quicksand-Medium";
+    font-size: 0.8125em;
+    padding: 1em 2.65em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: 0.2s all linear;
+    position: relative;
+    height: 48px;
+
+}
+
+.registrationStepsBtn.MuiButton-label{
+    font-size: 13px;
+}
+
+.uploaded-image-name{
+    margin-top: -16px;
+    margin-bottom: 16px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #674cf3;
+    font-size: 0.875em;
+    font-family: "OpenSans-Semibold";
+    letter-spacing: 0.55px;
+}
+.auth-input .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    /* border-color: #f44336 !important; */
+     border-color: #ffffff03 !important;
+     box-shadow: 0 0 3px 1px rgb(244, 67, 54)!important; 
+}
+.MuiFormHelperText-root.Mui-error {
+    
+    color: #f89892 !important;
+}

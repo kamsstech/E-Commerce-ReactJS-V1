@@ -1,0 +1,42 @@
+.loaded {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1500;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* animation: fade-out 5s;
+    animation-iteration-count: 1;*/
+    /* transition: 500ms all cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: 500ms all cubic-bezier(0.6, 0.02, 1, 0.27);
+  }
+  
+  .loaded.finish {
+    top: -100%;
+    visibility: hidden;
+  }
+  
+  .mouse {
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+  }
+  
+  .loaded div[aria-label="animation"] {
+    width: 100vw !important;
+    /* width: 192px I !important; */
+    height: 50vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loaded div[aria-label="animation"] svg {
+    width: 55% !important;
+  }
+  

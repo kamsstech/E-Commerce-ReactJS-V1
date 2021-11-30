@@ -1,0 +1,823 @@
+.mb-16 {
+    margin-bottom: 1em;
+}
+
+.myprofile-box {
+    margin-top: 18px;
+    padding: 16px 20px 20px 0;
+    overflow: hidden;
+    border-bottom: 2.5px dashed #f6f8fd;
+    border-radius: 8px;
+  	background-color: var(--white);
+}
+
+.non-strip:after {
+    content: none !important;
+}
+
+.profile-title-sec {
+    position: relative;
+    display: inherit;
+}
+
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.profile-imgsec {
+    width: 5.5em;
+}
+
+.profile-imgsec img {
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #c3cde433;
+}
+
+.profile-detailsec {
+    width: calc(100% - 5.5em);
+}
+
+.profile-detailsec .profile-img-links a:first-child {
+    margin-right: 2em;
+}
+
+.my-profile-tabs {
+    padding: 1em 8px;
+    border-bottom: 1px solid #c3cde4;
+
+}
+
+.my-profile-tabs h4 {
+    font-size: 0.8125em;
+    text-transform: uppercase;
+    color: #5b636a;
+    margin: 0 0 0 1.23em;
+}
+
+.my-profile-tabs.b-0 {
+    text-transform: capitalize;
+}
+
+.profile-tab-options {
+    margin-top: 1em;
+}
+
+.profile-tab-options .MuiTab-textColorInherit {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    min-height: unset;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    opacity: 1;
+    text-transform: capitalize;
+    padding: 9.5px 16px;
+    transition: 0.2s all linear;
+}
+
+.profile-tab-options .MuiTab-textColorInherit .MuiTab-wrapper {
+    align-items: flex-start;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.75;
+}
+
+.profile-tab-options .MuiTab-textColorInherit.Mui-selected {
+    background-color: #c3cde41a;
+    border-radius: 4px;
+    color: #674cf3;
+}
+
+.profile-tab-options .MuiTab-textColorInherit:hover {
+    background-color: #c3cde41a;
+    border-radius: 4px;
+    color: #674cf3;
+}
+
+.profile-tab-options .MuiTabs-indicator {
+    width: 0 !important;
+}
+
+.profile-wallet-bal {
+    font-size: 0.75em;
+    width: calc(100% - 2.66em);
+    padding: 0 1.33em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    color: #272727;
+}
+
+.profile-sidebar-headings span {
+    margin-left: 10px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.profile-logout span {
+    margin-left: 8px;
+}
+
+.wal-balance {
+    color: #00d3b4;
+}
+
+.myprofile-box .MuiBox-root {
+    padding: 0;
+}
+
+.profile-subtitle {
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-size: 12px;
+    color: rgba(13, 19, 33, 0.5);
+    font-family: var(--font-quicksand);
+    font-weight: 600;
+}
+
+.adduser-checkbox-icon .MuiSvgIcon-fontSizeLarge {
+    font-size: 2rem;
+}
+
+.notify-checkbox .MuiSvgIcon-fontSizeLarge {
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+}
+
+.adduser-checkbox-icon.MuiCheckbox-root {
+    color: #c3cde4;
+}
+
+.adduser-checkbox-icon.MuiCheckbox-colorPrimary.Mui-checked {
+    color: #674cf3;
+}
+
+.adduser-checkbox .MuiFormControlLabel-label {
+    font-size: 0.8125em;
+    color: #5b636a;
+}
+
+.adduser-userrights {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addbranch-btn.MuiButton-containedPrimary {
+    background-color: #c3cde466;
+    color: #674cf3;
+    font-size: 0.8125em;
+    text-transform: capitalize;
+    box-shadow: none;
+    transition: 0.2s all linear;
+    padding: 5px 15px;
+}
+
+.addbranch-btn.MuiButton-containedPrimary:hover,
+.addbranch-btn.MuiButton-containedPrimary:focus,
+.addbranch-btn.MuiButton-containedPrimary:active {
+    background-color: #c3cde499;
+    box-shadow: none;
+}
+
+.value-slider.MuiSlider-root {
+    width: 20em;
+    height: 22px;
+    /* background-color: #dbdbdb; */
+    margin: 0 0 10px 3px;
+    padding: 0px;
+    border-radius: 12px;
+    color: #674cf3;
+    position: relative;
+}
+
+.value-slider-sec .MuiSlider-track {
+    left: 0px !important;
+    height: 16px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.value-slider-sec .MuiSlider-rail {
+    left: 0px !important;
+    width: 20em;
+    height: 16px;
+    border-radius: 8px;
+    /* width: calc(100% - 6px); */
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.value-slider-sec .MuiSlider-thumb {
+    width: 22px;
+    height: 22px;
+    margin-top: -3px;
+    margin-left: -10.5px;
+    z-index: 1;
+}
+
+.value-slider.MuiSlider-root::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    width: calc(20em + 6px);
+    background-color: #dbdbdb;
+    height: 100%;
+    z-index: -1;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.MuiTypography-body1.value-slider-label {
+    font-size: 0.75em;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    letter-spacing: 0.6px;
+}
+
+.value-range.MuiFormControl-marginNormal {
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    margin-right: 0.66em;
+}
+
+.value-range .MuiOutlinedInput-notchedOutline {
+    border-color: #c3cde4;
+    border-width: 1px;
+}
+
+.value-range .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #674cf3;
+    border-width: 1px;
+}
+
+.value-range .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #674cf3;
+    border-width: 1px;
+}
+
+.value-range .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: #f44336;
+}
+
+.value-range .MuiOutlinedInput-input {
+    font-size: 0.75em;
+    color: #5b636a;
+    padding: 0.66em 2.66em 0.66em 1.32em;
+    line-height: 1.3;
+    height: 1.35em;
+}
+
+.value-range.mob-input .MuiOutlinedInput-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #5b636a !important;
+}
+
+.value-range.mob-input .MuiOutlinedInput-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #5b636a !important;
+}
+
+.value-range.mob-input .MuiOutlinedInput-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #5b636a !important;
+}
+
+.value-range.mob-input .MuiOutlinedInput-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #5b636a !important;
+}
+
+.value-text {
+    font-size: 0.75em !important;
+    margin-right: 0.66em;
+    vertical-align: -15%;
+}
+
+.adduser-details {
+    display: flex;
+    align-items: center;
+    width: 65%;
+}
+
+.width-35 {
+    width: 35%;
+}
+
+.width-35 .display-flex {
+    justify-content: flex-end;
+}
+
+.adduser-profileimg {
+    height: 3.5em;
+    width: 3.5em;
+    border: solid 1px #674cf3;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.adduser-prodetails span {
+    margin: 0 1em;
+}
+
+.profile-addnewuser.MuiButton-containedPrimary {
+    background-color: #ff7b20;
+    color: #fff;
+    font-size: 0.8125em;
+    text-transform: capitalize;
+    box-shadow: none;
+    transition: 0.2s all linear;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+}
+
+.profile-addnewuser.MuiButton-containedPrimary:hover,
+.profile-addnewuser.MuiButton-containedPrimary:focus,
+.profile-addnewuser.MuiButton-containedPrimary:active {
+    background-color: #ff7b20;
+    opacity: 0.8;
+    box-shadow: none;
+}
+
+.pharmacy-img {
+    height: 4.5em;
+    width: 4.5em;
+}
+
+.addbranch-users {
+    text-align: left;
+    border-bottom: 1px dashed #dbdbdb80;
+}
+
+.create-new-users {
+    font-size: 0.8125em;
+    color: #ff7300;
+    margin: 1.23em 0;
+    text-align: left;
+}
+
+.value-range .MuiSelect-iconOutlined {
+    right: 0;
+}
+
+.value-slider-sec .MuiSlider-valueLabel {
+    left: calc(-50% + 2px);
+}
+
+.min-height-none {
+    min-height: unset;
+}
+
+.MuiSlider-valueLabel {
+    left: calc(-50% + 2px) !important;
+}
+
+.MuiSlider-mark {
+    top: 20px;
+}
+
+.toCatp {
+    text-transform: capitalize;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.viewImage {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: calc(32em - 5em);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.search-branch-sec {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.search-branch-sec p {
+    color: #2e3e6a;
+    font-size: .875em;
+    margin: 0;
+}
+
+.search-branch-input {
+    width: 20.9em;
+    border: 1px solid #c3cde4;
+    font-size: 1em;
+    height: 2.5em;
+    padding: 0 1em;
+    border-radius: 8px;
+    /* color: #7a818608; */
+}
+
+.display-none {
+    display: none !important;
+}
+
+.branch-msg {
+    font-size: 1.4em;
+}
+
+.height-20em {
+    max-height: 18em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.user-select-list.MuiMenuItem-root {
+    width: 400px;
+}
+
+.payment-section.MuiGrid-grid-xs-12 {
+    min-height: 126px;
+    border-radius: 6px;
+    border: solid 1px #c3cde4;
+    margin-top: 16px;
+    padding-top: 18px;
+    padding-bottom: 24px;
+    padding-left: 19.5px;
+    padding-right: 16.5px;
+
+}
+
+.add-new-card.payment-section.MuiGrid-grid-xs-12 {
+    min-height: 72px;
+}
+
+.payment-method-name {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.payment-method-name .name,
+.payment-method-name .subtitle,
+.payment-method-name .payment-sec-btn,
+.payment-method-name .payment-sec-card {
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: #2e3e6a;
+    margin-top: 5px;
+}
+
+.payment-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-desc .subtitle {
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #93a4b8;
+    margin-top: 8px !important;
+}
+
+.payment-sec-btn {
+    font-size: 14px !important;
+    font-weight: 500;
+    letter-spacing: 0.28px;
+    color: #ff7b20 !important;
+    text-transform: uppercase;
+    margin-top: 16px !important;
+}
+
+.payment-sec-card {
+    font-size: 14px !important;
+    font-weight: 500;
+    letter-spacing: 2.8px !important;
+    color: #2e3e6a !important;
+    margin-top: 16px !important;
+
+}
+
+.payment-method-name img {
+    object-fit: contain;
+    width: 32px;
+    height: 32px;
+}
+
+.checkbox-payment.MuiIconButton-colorPrimary {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.checkbox-payment.MuiIconButton-colorPrimary .MuiIconButton-label {
+    color: unset !important;
+}
+
+.checkbox-payment.MuiCheckbox-colorPrimary.Mui-checked:hover {
+    background-color: unset !important;
+}
+
+.checkbox-payment.MuiCheckbox-root {
+    color: #c3cde4;
+}
+
+.cards-action {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    align-items: center;
+}
+
+.cards-action .cart-delete-icon {
+    background-color: #f9e7cf !important;
+
+    border-radius: 4px;
+}
+
+.cards-action .cart-delete-icon img {
+    object-fit: contain;
+    width: unset;
+    height: unset;
+}
+
+.cards-action .card-edit-btn {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 2.8px;
+    text-align: left;
+    color: #674cf3;
+    text-transform: uppercase;
+    margin-right: 16px;
+}
+
+.add-new-card .name {
+    font-size: 14px;
+}
+
+.add-new-card .subtitle {
+    font-size: 11px;
+}
+
+.cards-action .MuiButton-label {
+    text-transform: capitalize;
+    letter-spacing: 0.28px;
+    font-size: 14px;
+    color: #674cf3;
+}
+
+.cards-action .MuiButton-root {
+    min-width: 96px;
+    height: 32px;
+}
+
+.payment-sec-btn.lc-wallet {
+    text-transform: capitalize;
+}
+
+.profile_Pic input[type=file]::-webkit-file-upload-button {
+    /* chromes and blink button */
+    cursor: pointer;
+}
+
+.passucimg {
+    height: 10em !important;
+}
+
+.passucimgmsg {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em;
+    color: #002f4f;
+    font-weight: 500;
+}
+
+/* .sucDialogimg{
+width: 30em;
+} */
+
+.sucimgclose {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0 !important;
+    padding-right: 0.3em !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important
+}
+
+.notification-switch.MuiSwitch-sizeSmall .MuiSwitch-thumb {
+    width: 10px !important;
+    height: 11px !important;
+}
+
+.notification-switch.MuiSwitch-sizeSmall {
+    width: 35px !important;
+    height: 20px !important;
+    padding: 7px;
+}
+
+.notification-switch .MuiSwitch-colorSecondary.Mui-checked {
+    color: #674cf3 !important;
+}
+
+.notification-switch .MuiSwitch-colorSecondary.Mui-checked+.MuiSwitch-track {
+    background-color: #674cf3 !important;
+    opacity: 0.2;
+}
+
+.notify-div-switch .MuiFormControlLabel-root {
+    margin-right: 4px !important;
+    margin-left: 0.3px;
+}
+
+.sm-u-btn {
+    width: 80px !important;
+    height: 32px;
+    font-size: 13px;
+}
+
+.change-password .feedback-send-btn {
+    border-radius: 4px !important;
+}
+
+.change-password .MuiButton-contained.Mui-disabled {
+    background: #fff;
+    border: initial;
+}
+
+.profile-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.absolute-profile {
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.step .f1-step {
+    top: 12px;
+}
+
+.makeStyles-root-14 {
+    height: initial;
+}
+
+.MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+    font-family: var(--font-quicksand);
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 47, 79, 0.5);
+}
+
+.profile-details-sec .MuiStepLabel-completed {
+    color: var(--marine-blue);
+}
+
+.profile-details-sec .MuiStepper-root {
+    padding: 0 0 24px 0;
+}
+
+.fast-moving-addtocart.MuiButton-containedPrimary {
+    text-transform: uppercase;
+}
+
+.cancel-btn {
+    margin-right: 0;
+    font-weight: 600;
+    color: rgba(91, 99, 106, 0.3);
+    font-size: 13px;
+}
+
+.previous-btn {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(91, 99, 106, 0.6);
+    border: solid 1px rgba(91, 99, 106, 0.1);
+    border-radius: 5px;
+    padding: 0;
+    height: 32px;
+}
+
+.sideProfileBar {
+    border-radius: 8px;
+    background-color: var(--white);
+    margin-top: 20px;
+    /*padding: 20px 0 16px;*/
+}
+.dSprofile .fast-moving-addtocart.Mui-disabled {
+	background: rgba(0, 211, 180, 0.5);
+	color: var(--white);
+}
+.timer-web .profile-title {
+	font-weight: 600 !important;
+	color: var(--dark);
+	opacity: 0.7;
+	font-size: 13px;
+}
+.branchMgmt .profile-title {
+    margin-bottom: 8px !important;
+}
+.branchMgmt .absolute-profile {
+    top: 0;
+}
+.change-password .feedback-clear-btn {
+    background-color: initial;
+    box-shadow: initial;
+    color: var(--white-two);
+}
+.dSprofile [class*='makeStyles-root-']{
+    height: initial;
+}
+.ProfileInfo .MuiStepLabel-horizontal {
+    padding-top: 12px;
+}
+.ProfileInfo .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+    margin-top: 8px;
+}
+.profile-details-sec .MuiSelect-selectMenu {
+    margin-bottom: 0;
+}
+.live-profile-thumbnail, .profile-thumbnail {
+    border-radius: 50%;
+    text-align: center;
+    width: 72px;
+    height: 72px;
+} 
+.profile-thumbnail {
+    background-color: #fafbfd;
+}
+.profile-thumbnail h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 2.1;
+    color: var(--purpleish-blue);
+    font-family: var(--font-quicksand);
+}
+.profile-head-thumb {
+    height: 32px;
+    width: 32px;
+    border: solid 1.5px var(--white);
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fafbfd;
+}
+.profile-head-thumb h6 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 2.6;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--purpleish-blue);
+}
+.CusAutoComplete .MuiAutocomplete-inputRoot{
+	padding: 0 !important;
+}
+.CusAutoComplete .MuiAutocomplete-input {
+	padding: 14px 12px !important;
+}

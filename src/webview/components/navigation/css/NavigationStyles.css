@@ -1,0 +1,27 @@
+.navigation-container {
+  background: white;
+  position: sticky !important;
+  top: 92px;
+  z-index: 100;
+}
+.navigation-list {
+  padding: 1em 0 1em 0;
+ 
+}
+.navigation-list .MuiBreadcrumbs-ol {
+  line-height: 1;
+}
+.navigation-list .MuiBreadcrumbs-li a {
+  color: #272727;
+  font-size: 0.875em;
+  letter-spacing: 0.84px;
+}
+
+.navigation-list .MuiBreadcrumbs-li a:hover,
+.navigation-list .MuiBreadcrumbs-li a:active,
+.navigation-list .MuiBreadcrumbs-li a:focus {
+    color: #674cf3;
+} 
+.red-color {
+  color: #ef2b4a !important;
+}

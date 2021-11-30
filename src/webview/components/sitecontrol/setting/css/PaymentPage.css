@@ -1,0 +1,454 @@
+.paymentflow-wrapper {
+    padding: 24px 0 0 0;
+	background-color: var(--white);
+	margin-bottom: 16px;
+}
+.paymentflow-wrapper .MuiExpansionPanelSummary-content {
+    padding-top: 12px !important;
+}
+.paymentflowflow .head {
+	border-bottom: 1px solid rgba(219, 219, 219, 0.35);
+    background-color: var(--white);
+}
+.paymentflowflow .head h4 {
+	padding: 20px 0 16px 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--dark);
+	font-family: var(--font-quicksand);
+	margin: 0;
+}
+.expansionPanel svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+}
+.expansionPanel svg, .expansionPanel h4 {
+	display: inline-block ;
+}
+.expansionPanel .desc {
+	color: rgba(13, 19, 33, 0.6);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.43;
+	margin: 0;
+	padding: 8px 0 0 24px;
+}
+.expansionPanel .flow-seller-total {
+	font-size: 33px;
+	font-weight: 600;
+	line-height: 1.42;
+	color: var(--dark);
+	margin: 0;
+	padding: 0;
+}
+.flow-seller-desc {
+	margin: 0 0px 8px 0;
+	padding: 0;
+	color: rgba(13, 19, 33, 0.5) !important;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.43;
+}
+/**/
+
+
+
+
+
+
+
+
+
+.pricing.MuiGrid-container{
+	background-color: #f6f8fd;
+	padding: 16px 0;
+}
+
+.order-details{
+	position: relative;
+	height: 396px;
+	width: calc(100% - 100px);
+	background-color: #ffffff;
+	/* padding: 20px 20px 32px 63px; */
+	padding: 8px 20px 32px 63px;
+}
+.seller-name{
+	font-size: 19px;
+	font-weight: 600;
+	letter-spacing: 0.38px;
+	color: #002f4f;
+}
+.price-rows.MuiTableCell-root, .price-value.MuiTableCell-root{
+	display: table-cell;
+	padding: 0;
+	font-size: 16px;
+	text-align: left;
+	/* line-height: 2.75; */
+	border-bottom: none;
+	letter-spacing: normal;
+}
+.payment-breakup-table.MuiTable-root{
+	border-spacing: 0 12px;
+	border-collapse: separate;
+}
+
+.price-value.MuiTableCell-root{
+	text-align: right;
+}
+
+.final-amt.MuiTableCell-root ,.final-amt-value.MuiTableCell-root{
+	display: table-cell;
+	padding: 0;
+	font-size: 19px;
+	text-align: left;
+	/* line-height: 1.75; */
+	line-height: 1.75;
+	border-bottom: none;
+	letter-spacing: normal;
+	color: #002f4f;
+	padding-top: 17px;
+	padding-bottom: 20px;
+}
+
+.final-amt-value.MuiTableCell-root{
+	text-align: right;
+}
+.order-subtitle{
+	opacity: 0.8;
+	font-size: 16px;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	/* line-height: 1.38; */
+	letter-spacing: 0.32px;
+	text-align: left;
+	color: #5b636a;
+	margin-top: 20px;
+	margin-bottom: 12px;
+}
+.order-details span{
+	color: #674cf3;
+}
+
+.page-title{
+	font-size: 16px;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.25;
+	letter-spacing: 0.96px;
+	color: #272727;
+}
+
+.divider.MuiDivider-root {
+	border: none;
+	height: 2px;
+	margin-bottom: 4px;
+	margin-top: 12px;
+	flex-shrink: 0;
+	background-color: #f6f8fd;
+}
+
+.pay-now-btn.MuiButton-root{
+	width: 144px;
+	height: 48px;
+	border-radius: 6px;
+	background-color: #674cf3;
+	color: #ffffff;
+	position: absolute;
+	right: 20px;
+	bottom: 32px;
+}
+.pay-btn-div{
+	text-align: right;
+	width: 78%;
+}
+.pay-now-btn.MuiButton-containedPrimary .MuiButton-label {
+	font-size: 16px;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 0.81;
+	letter-spacing: normal;
+	text-align: left;
+	color: #ffffff;
+	text-transform: capitalize;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.order-details {
+		padding: 8px 20px 32px 40px;
+	}
+}
+.order-subtitle span{
+	cursor: pointer;
+}
+.delivery-charge{
+	color: #674cf3 !important;
+}
+.dashed-divider-table{
+	border-bottom: 2px dashed #f6f8fd;
+	margin-top: 12px;
+	/* margin-bottom: 5px; */
+}
+.paymentFlow .allorders-top-sec {
+    padding-top: 0 !important;
+    padding-bottom: 24px !important;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.paymentFlow .paySelectedBills {
+    height: 40px;
+    background-color: var(--purpleish-blue);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0.81;
+    box-shadow: initial;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.paymentFlow .allorders-top-sec .MuiButton-label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0.81;
+    letter-spacing: normal;
+    color: var(--white);
+    text-transform:  capitalize;
+}
+.paymentFlow .allorders-top-sec .MuiButton-contained:hover {
+    box-shadow: initial;
+}
+.paymentFlow .MuiButton-contained.Mui-disabled {
+    font-weight: 600;
+    font-size: 16px;
+    background-color: rgba(103, 76, 243, 0.3) !important;
+    color: rgba(255, 255, 255, 0.3);
+}
+.paymentFlow tbody tr td:nth-child(4), .paymentFlow tbody tr td:nth-child(6) {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+}
+.paymentflowflow .paymentFlow .paymentflow-wrapper:last-child {
+    margin-bottom: 0 !important;
+}
+/*.paymentFlow tbody tr td:nth-child(1){
+    padding-left: 32px !important;
+}*/
+.paymentFlow.onePharama tbody tr td:nth-child(3) {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+.totalPaymentAmount td {
+    padding: 0 !important;
+}   
+.totalPaymentFooter {
+    background-color: rgba(195, 205, 228, 0.07);
+    margin-top: 12px;
+}
+.pd-l-32 {
+    padding-left: 32px !important;
+}
+.paymentFooterCon {
+    padding: 16px 0;
+}
+.totalPaymentAmount .MuiTableCell-root.MuiTableCell-body.tBody {
+    border-bottom: initial;
+    color: var(--dark);
+    font-size: 19px;
+    font-weight: bold;
+}
+.paymentFlow.onePharama tbody tr.totalPaymentAmount td:nth-child(3) {
+    font-size: 19px !important;
+    font-weight: bold !important;
+}
+.br-ra-l-tb-8 {
+    border-radius: 8px 0 0 8px;
+}
+.br-ra-r-tb-8 {
+    border-radius: 0 8px 8px 0;
+}
+.allorders-selected {
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+    margin: 0;
+    color: #6e717a;
+    font-size: 14px;
+    font-weight: 600;
+}
+.allorders-selected span {
+    font-weight: bold;
+    color: var(--dark);
+}
+.paymentflowPopup .MuiDialog-paperWidthXl {
+    max-width: 1200px;
+    position: absolute;
+    bottom: 10%;
+    margin: 0;
+    background-color: #4233c4;
+    border-radius: 14px;
+}
+.paymentflowPopup .MuiBackdrop-root {
+    background-color:initial ;
+}
+.paymentflowPopup .MuiPaper-root {
+    box-shadow: 0 3px 6px 0 var(--black-16);
+}
+.paymentflowPopup .MuiDialogTitle-root {
+    padding: 24px 0 12px 48px;
+}
+.paymentflowPopup .MuiTypography-h6 {
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--white);
+    font-family: var(--font-quicksand);
+}
+.paymentflowPopup .MuiDialogContent-root {
+    padding: 0;
+}
+.paymentflowPopup p{
+    margin: 0 0 24px 48px;
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.paymentflowPopup .btn-section {
+    text-align: right;
+    padding-right: 48px;
+}
+.paymentflowPopup .btn-section button {
+    width: 88px;
+    height: 48px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: initial;
+}
+.paymentflowPopup .btn-section .yes .MuiButton-label {
+    color: var(--purpleish-blue);
+}
+.paymentflowPopup .btn-section .no .MuiButton-label {
+    color: #c33c54;
+}
+.onePharama .flexRow button {
+    height: 40px;
+    vertical-align: top;
+    min-width: initial !important;
+    padding: 0;
+}
+.onePharama .flexRow .MuiButton-label {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: capitalize;
+    line-height: 0.81;
+	letter-spacing: normal;
+}
+.width72 {
+    width: 72px;
+    height: 40px;
+}
+.onePharama .filterBy {
+    border-radius: 14px;
+    background-color: var(--white);
+    font-family: var(--font-quicksand);
+}
+.paymentflow-wrapper .MuiFormControl-marginNormal {
+	margin-top: 0 !important;
+}
+.paymentflow-wrapper .MuiInputAdornment-positionStart {
+    padding: 12px 4px 12px 12px;
+    background: initial;
+    width: initial;
+    min-width: initial;
+}
+.paymentflow-wrapper .MuiOutlinedInput-adornedStart {
+	padding-left: 0 !important;
+}
+.paymentflow-wrapper .searchbox .MuiInputBase-input {
+    font-size: 13px !important;
+}
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 6px 8px;
+    border-radius: 14px;
+    background-color: #f6f8fd;
+}
+.pagination button {
+    border: none;
+    margin-right: 8px;
+    color: #6846f0;
+    line-height: 1.5;
+    background-color: initial;
+    cursor: pointer;
+}
+.pagination li {
+    vertical-align: middle;
+    display: inline-block;
+    background: initial;
+}
+.pagination li:first-child button {
+    background-color: var(--white);
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(104, 70, 240, 0.5);
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-family: var(--font-quicksand);
+    color: #6846f0;
+}
+.pagination li:last-child button:disabled, .pagination li:first-child button:disabled {
+    color: rgba(104, 70, 240, 0.5);
+    cursor: not-allowed;
+}
+.pagination li:last-child button {
+    background-color: var(--white);
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #6846f0;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-family: var(--font-quicksand);
+}
+.pagination button.current {
+    font-family: var(--font-quicksand);
+    color: var(--white);
+    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #6846f0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.paginate p {
+    font-family: var(--font-quicksand);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 4;
+    margin: 0;
+    color: var(--dark);
+}
+.paymentflowflow {
+    background-color: #f6f8fd;
+    padding-bottom: 16px;
+}
+.paymentflowflow .paymentFlow {
+    background-color: var(--white);
+}

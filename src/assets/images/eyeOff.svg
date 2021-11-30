@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.638" height="14.991" viewBox="0 0 18.638 14.991">
+    <defs>
+        <style>
+            .cls-1{fill:#dfdfdf}.cls-2{fill:none;stroke:#dfdfdf;stroke-width:1.2px}
+        </style>
+    </defs>
+    <g id="eye" transform="translate(-313 -381.419)">
+        <g id="eye-2" data-name="eye" transform="translate(-9.5 134)">
+            <path id="Path_2578" d="M18.52 98.469c-.167-.23-4.134-5.634-9.2-5.634s-9.034 5.4-9.2 5.634a.626.626 0 0 0 0 .733c.166.23 4.134 5.634 9.2 5.634s9.034-5.4 9.2-5.634a.626.626 0 0 0 0-.733zm-9.2 5.125c-3.732 0-6.965-3.587-7.922-4.759.956-1.174 4.181-4.758 7.922-4.758s6.965 3.586 7.922 4.759c-.957 1.173-4.183 4.758-7.923 4.758z" class="cls-1" data-name="Path 2578" transform="translate(322.5 156.165)"/>
+            <path id="Path_2579" d="M157.933 154.725a3.272 3.272 0 1 0 3.212 3.275 3.246 3.246 0 0 0-3.212-3.275zm0 5.453a2.182 2.182 0 1 1 2.141-2.178 2.164 2.164 0 0 1-2.141 2.178z" class="cls-1" data-name="Path 2579" transform="translate(173.886 96.68)"/>
+        </g>
+        <path id="Line_49" d="M0 0h20" class="cls-2" data-name="Line 49" transform="rotate(-45 635.504 -182.264)"/>
+    </g>
+</svg>

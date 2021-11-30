@@ -1,0 +1,75 @@
+.verify-otp {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.verify-otp-space {
+  padding: 1.33em;
+  width: 100%;
+}
+.verify-otp-back .MuiIconButton-root {
+  padding: 16px;
+}
+.resend-sec {
+  padding: 0 1.33em 2.58em 1.33em;
+  text-align: center;
+}
+.resend-otp-text {
+  color: #343a40;
+  font-family: "Quicksand-Medium";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.resend-link {
+  font-family: "OpenSans-SemiBold" !important;
+  color: #8039db !important;
+  font-size: 1em !important;
+  text-transform: capitalize !important;
+  line-height: 17px !important;
+  letter-spacing: 0em !important;
+}
+.center-space {
+  padding: 0 1.33em;
+  /* padding: 0 0.33em; */
+}
+.verify-title {
+  color: #002f4f;
+  font-family: "Quicksand-Medium";
+  font-size: 2em;
+  margin: 1.5em 0 0.33em 0;
+}
+.verify-subtitle {
+  font-size: 1.33em;
+  font-family: "OpenSans-Regular";
+  color: #5b636a;
+  font-weight: normal;
+  margin-top: 0;
+}
+.otp-form{
+  margin-left: 76px;
+
+}
+.otp-input{
+  
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: 24px;
+  border: 1px solid #9b9b9b;
+  border-radius: 3px;
+}
+
+.otp-input-err{
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: 24px;
+  border: 1px solid red;
+  border-radius: 3px;
+
+}
+.timer{
+  margin-top: 8px;
+}

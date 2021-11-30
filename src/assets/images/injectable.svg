@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48.098" height="72.954" viewBox="0 0 48.098 72.954">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#674cf3;stroke-miterlimit:10}.cls-2{fill:#674cf3;opacity:.1}.cls-3{fill:#ffbe0b;opacity:.78}
+        </style>
+    </defs>
+    <g id="injectable" transform="translate(-8.5 -2.038)">
+        <path id="Shape" d="M9.463 0h6.925a9.433 9.433 0 0 1 9.433 9.433v32.991a8.546 8.546 0 0 1-8.546 8.546H8.592A8.546 8.546 0 0 1 0 42.424V9.433A9.433 9.433 0 0 1 9.433 0z" class="cls-1" transform="translate(9 23.523)"/>
+        <path id="Shape-2" d="M8.439 0h6.115a8.378 8.378 0 0 1 8.378 8.378v34.994a7.644 7.644 0 0 1-7.644 7.644H7.644A7.644 7.644 0 0 1 0 43.372V8.378A8.378 8.378 0 0 1 8.378 0z" class="cls-2" transform="translate(11.737 23.523)"/>
+        <path id="Rectangle-path" d="M2.4 0h6.391a2.4 2.4 0 0 1 2.4 2.4v5.229a2.4 2.4 0 0 1-2.4 2.4H2.4a2.4 2.4 0 0 1-2.4-2.4V2.4A2.4 2.4 0 0 1 2.4 0z" class="cls-1" transform="translate(16.215 13.514)"/>
+        <path id="Rectangle-path-2" d="M2.22 0h4.824a2.22 2.22 0 0 1 2.22 2.22v5.589a2.22 2.22 0 0 1-2.22 2.22H2.22A2.22 2.22 0 0 1 0 7.809V2.22A2.22 2.22 0 0 1 2.22 0z" class="cls-2" transform="translate(18.264 13.514)"/>
+        <path id="Shape-3" d="M.795 0h.627a.856.856 0 0 1 .856.856v10.121H0V.841A.856.856 0 0 1 .795 0z" class="cls-1" transform="translate(20.434 2.538)"/>
+        <path id="Rectangle-path-3" d="M2.62 0h10.8a2.62 2.62 0 0 1 2.62 2.62v17.34a2.62 2.62 0 0 1-2.62 2.62H2.62A2.62 2.62 0 0 1 0 19.96V2.62A2.62 2.62 0 0 1 2.62 0z" class="cls-3" transform="translate(14.106 37.36)"/>
+        <path id="Rectangle-path-4" d="M3.8 0h8.468a3.8 3.8 0 0 1 3.8 3.8v25.743a3.8 3.8 0 0 1-3.8 3.8H3.8a3.8 3.8 0 0 1-3.8-3.8V3.8A3.8 3.8 0 0 1 3.8 0z" class="cls-1" transform="translate(40.031 41.15)"/>
+        <path id="Rectangle-path-5" d="M3.31 0h7.216a3.31 3.31 0 0 1 3.31 3.31v24.842a3.31 3.31 0 0 1-3.31 3.31H3.31A3.31 3.31 0 0 1 0 28.152V3.31A3.31 3.31 0 0 1 3.31 0z" class="cls-2" transform="translate(42.247 42.189)"/>
+        <path id="Rectangle-path-6" d="M0 0h5.167v3.165H0z" class="cls-1" transform="translate(45.473 37.988)"/>
+        <path id="Rectangle-path-7" fill="#6c3c96" d="M0 0h3.822v3.165H0z" opacity="0.1" transform="translate(46.818 37.606)"/>
+        <path id="Rectangle-path-8" d="M1.47 0h11.171a1.47 1.47 0 0 1 1.47 1.47v3.282a1.47 1.47 0 0 1-1.47 1.47H1.47A1.47 1.47 0 0 1 0 4.752V1.47A1.47 1.47 0 0 1 1.47 0z" class="cls-1" transform="translate(40.81 31.766)"/>
+        <path id="Rectangle-path-9" d="M1.1 0h9.984a1.1 1.1 0 0 1 1.1 1.1v3.64a1.1 1.1 0 0 1-1.1 1.1H1.1A1.1 1.1 0 0 1 0 4.74V1.1A1.1 1.1 0 0 1 1.1 0z" class="cls-2" transform="translate(42.66 31.766)"/>
+        <path id="Shape-4" d="M4.449 0h5.03v14.768h-5.03A4.449 4.449 0 0 1 0 10.319v-5.87A4.449 4.449 0 0 1 4.449 0z" class="cls-3" transform="translate(45.825 50.276)"/>
+    </g>
+</svg>

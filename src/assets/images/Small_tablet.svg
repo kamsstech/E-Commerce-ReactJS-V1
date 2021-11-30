@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.713" height="41.207" viewBox="0 0 36.713 41.207">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#674cf3;stroke-miterlimit:10}
+        </style>
+    </defs>
+    <g id="tablet" transform="translate(-6.994 -5.435)">
+        <path id="Rectangle-path" d="M4.565 0h28.258a4.565 4.565 0 0 1 4.565 4.565v6.155a4.565 4.565 0 0 1-4.565 4.565H4.565A4.565 4.565 0 0 1 0 10.72V4.565A4.565 4.565 0 0 1 4.565 0z" class="cls-1" transform="rotate(-75.83 30.938 16.26)"/>
+        <path id="Shape" fill="#674cf3" d="M9.771 7.234L4.234 29.77A7.552 7.552 0 0 1 0 34.9a7.4 7.4 0 0 0 4.022 2.714 7.429 7.429 0 0 0 9.021-5.546L18.6 9.53a7.832 7.832 0 0 0-.818-5.8 7.448 7.448 0 0 0-4.576-3.5 7.185 7.185 0 0 0-4.787.419 7.848 7.848 0 0 1 1.352 6.585z" opacity="0.1" transform="translate(11.007 7.119)"/>
+        <path id="Shape-2" fill="none" stroke="#674cf3" stroke-miterlimit="10" d="M0 0l14.412 3.745" transform="translate(12.408 24.167)"/>
+        <path id="Oval" d="M10.275 0a10.44 10.44 0 0 1 10.276 10.6 10.44 10.44 0 0 1-10.275 10.6A10.44 10.44 0 0 1 0 10.6 10.44 10.44 0 0 1 10.275 0z" class="cls-1" transform="translate(22.656 23.772)"/>
+        <path id="Shape-3" fill="#ffbe0b" d="M8.37 0v.537A7.908 7.908 0 0 1 .586 8.564H0a7.864 7.864 0 0 0 7.915 7.428 7.89 7.89 0 0 0 7.6-7.773A7.924 7.924 0 0 0 8.37 0z" opacity="0.78" transform="translate(25.132 26.409)"/>
+        <path id="Shape-4" fill="none" stroke="#674cf3" stroke-linecap="round" stroke-miterlimit="10" d="M7.328 0L0 14.157" transform="translate(29.285 27.282)"/>
+    </g>
+</svg>

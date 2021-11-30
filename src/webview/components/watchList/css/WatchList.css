@@ -1,0 +1,114 @@
+.notification-title {
+    margin: 1.3em 0 0.4em 0;
+    font-size: 19px;
+    font-family: "Quicksand-Medium";
+    color: #002f4f;
+    text-transform: capitalize;
+}
+.mark-all-read{
+    color: #674cf3;
+    font-family: "Quicksand-Medium";
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 17px;
+    cursor: pointer;
+}
+.today-title{
+    color: #c3cde4;
+    font-size: 14px;
+    font-family: "Quicksand-Medium";
+    margin-top: 0px;
+    margin-bottom: 22px;
+}
+.display-notification{
+display: flex;
+padding-bottom: 15px;
+}
+.p-sec-reading{
+    margin-bottom: 12px;
+    margin-top: 0;
+    font-size: 14px;
+    color: #5b636a;    
+}
+.table-notification {
+    /* border-top: 1px dashed #dbdbdb80; */
+    padding-bottom: 12px;
+}
+.p-sec{
+    padding-left: 16.5px;
+}
+.notification-time{
+    font-size: 12px;
+    color: rgba(91, 99, 106, 0.5);
+    font-family: "Quicksand-Medium";
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.c-yellow{
+    color: #fcc841;
+}
+.c-red{
+    color: #ef2b4a;
+}
+.c-orange{
+    color:#ff7300;
+}
+.f-w{
+    font-weight: bold;
+}
+.c-green{
+    color: #00d3b4;
+}
+.w-paragraph{
+width: 93%;
+}
+.top-space{
+    display: flex;
+    justify-content: space-between;
+}
+.fav-cross-1{
+    position: relative;
+    top: 30px;
+    /* right: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #f6f6f6;
+  }
+  .p-right{
+      position: relative;
+      right: 55px;
+  }
+  .auth-input.search-product.watchlist-search .MuiInputBase-root {
+      height: 40px;
+      width: 256px;
+  }
+  .grey-eye-icon{
+    padding: 8px 6px;
+    border-radius: 4px;
+    background-color: rgba(147, 164, 184, 0.06);
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .position-r{
+    position: absolute !important;
+    left: 176px;
+    width: 20px;
+  }
+  .position-cross{
+      position: relative;
+      top: 30px;
+      right: 15px;
+  }
+
+.box-view-sec-25-1.shortbook:hover,
+.box-view-sec-25-1.shortbook:focus,
+.box-view-sec-25-1.shortbook:active {
+  border-color: #674cf3;
+}

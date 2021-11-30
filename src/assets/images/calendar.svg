@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:#dbdbdb}.cls-1{stroke:#dbdbdb}.cls-2{clip-path:url(#clip-path)}
+        </style>
+        <clipPath id="clip-path">
+            <path id="Rectangle_2252" d="M0 0h15v15H0z" class="cls-1" data-name="Rectangle 2252"/>
+        </clipPath>
+    </defs>
+    <g id="calendar" class="cls-2">
+        <g id="calendar-2" data-name="calendar">
+            <g id="Group_1542" data-name="Group 1542">
+                <g id="Group_1541" data-name="Group 1541">
+                    <circle id="Ellipse_1254" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1254" transform="translate(10.723 5.566)"/>
+                    <path id="Path_3749" d="M12.656 1.172h-.762V.586a.586.586 0 0 0-1.172 0v.586H8.057V.586a.586.586 0 0 0-1.172 0v.586H4.248V.586a.586.586 0 0 0-1.172 0v.586h-.732A2.346 2.346 0 0 0 0 3.516v9.141A2.346 2.346 0 0 0 2.344 15h4.482a.586.586 0 0 0 0-1.172H2.344a1.173 1.173 0 0 1-1.172-1.172v-9.14a1.173 1.173 0 0 1 1.172-1.172h.732v.586a.586.586 0 1 0 1.172 0v-.586h2.637v.586a.586.586 0 1 0 1.172 0v-.586h2.666v.586a.586.586 0 1 0 1.172 0v-.586h.762a1.173 1.173 0 0 1 1.172 1.172v3.34a.586.586 0 0 0 1.172 0v-3.34a2.346 2.346 0 0 0-2.345-2.344z" class="cls-3" data-name="Path 3749"/>
+                    <path id="Path_3750" d="M14.092 10.547a3.545 3.545 0 1 0 3.545 3.545 3.549 3.549 0 0 0-3.545-3.545zm0 5.918a2.373 2.373 0 1 1 2.373-2.373 2.376 2.376 0 0 1-2.373 2.373z" class="cls-3" data-name="Path 3750" transform="translate(-2.637 -2.637)"/>
+                    <path id="Path_3751" d="M15.928 14.092h-.264v-.615a.586.586 0 0 0-1.172 0v1.2a.586.586 0 0 0 .586.586h.85a.586.586 0 1 0 0-1.172z" class="cls-3" data-name="Path 3751" transform="translate(-3.623 -3.223)"/>
+                    <circle id="Ellipse_1255" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1255" transform="translate(8.174 5.566)"/>
+                    <circle id="Ellipse_1256" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1256" transform="translate(5.625 8.115)"/>
+                    <circle id="Ellipse_1257" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1257" transform="translate(3.076 5.566)"/>
+                    <circle id="Ellipse_1258" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1258" transform="translate(3.076 8.115)"/>
+                    <circle id="Ellipse_1259" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1259" transform="translate(3.076 10.664)"/>
+                    <circle id="Ellipse_1260" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1260" transform="translate(5.625 10.664)"/>
+                    <circle id="Ellipse_1261" cx=".586" cy=".586" r=".586" class="cls-3" data-name="Ellipse 1261" transform="translate(5.625 5.566)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

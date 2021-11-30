@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.199" height="10.746" viewBox="0 0 15.199 10.746">
+    <defs>
+        <style>
+            .cls-1{fill:#dbdbdb;stroke:#dbdbdb;stroke-width:.2px}
+        </style>
+    </defs>
+    <g id="zip-code" transform="translate(.1 -75.9)">
+        <g id="Group_1596" data-name="Group 1596" transform="translate(0 76)">
+            <g id="Group_1595" data-name="Group 1595">
+                <circle id="Ellipse_1270" cx=".732" cy=".732" r=".732" class="cls-1" data-name="Ellipse 1270" transform="translate(7.793 5.64)"/>
+                <circle id="Ellipse_1271" cx=".732" cy=".732" r=".732" class="cls-1" data-name="Ellipse 1271" transform="translate(9.844 5.64)"/>
+                <circle id="Ellipse_1272" cx=".732" cy=".732" r=".732" class="cls-1" data-name="Ellipse 1272" transform="translate(5.742 5.64)"/>
+                <circle id="Ellipse_1273" cx=".732" cy=".732" r=".732" class="cls-1" data-name="Ellipse 1273" transform="translate(3.691 5.64)"/>
+                <path id="Path_3779" d="M14.414 76H.586a.586.586 0 0 0-.586.586v9.375a.586.586 0 0 0 .586.586h13.828a.586.586 0 0 0 .586-.586v-9.375a.586.586 0 0 0-.586-.586zm-.586 9.375H1.172v-8.2h12.656z" class="cls-1" data-name="Path 3779" transform="translate(0 -76)"/>
+                <path id="Path_3780" d="M131.586 174.672h6.152a.586.586 0 0 0 0-1.172h-6.152a.586.586 0 0 0 0 1.172z" class="cls-1" data-name="Path 3780" transform="translate(-127.162 -170.644)"/>
+            </g>
+        </g>
+    </g>
+</svg>

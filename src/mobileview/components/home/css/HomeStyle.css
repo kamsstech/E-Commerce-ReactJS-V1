@@ -1,0 +1,238 @@
+.roadblock-slider {
+  padding: 1.33em 0;
+  background-color: rgb(246 248 253);
+}
+.roadblock-slider .roadblock-slider-sec {
+  background-color: #ffffff;
+  border-radius: 14px;
+  height: 16.33em;
+  background-position: center;
+  background-size: cover;
+}
+.roadblock-slider-space {
+  padding: 1.66em 1.33em;
+}
+.mob-roadblock-img {
+  height: 1.4em;
+  width: auto;
+}
+.roadblock-slider-subtitle {
+  font-size: 0.75em;
+  font-family: "Quicksand-Medium";
+  color: #5b636a;
+  margin-top: 2.11em;
+  margin-bottom: 0.55em;
+}
+.roadblock-slider-title {
+  font-size: 1em;
+  font-family: "Quicksand-Medium";
+  color: #272727;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+.roadblock-slider-title span{
+  font-size: 1.25em;
+  color: rgb(172 0 32);
+}
+.mfc-popup-text {
+  font-size: 0.75em;
+  font-family: "Quicksand-Medium";
+  color: #272727;
+  opacity: 0.5;
+  margin-top: 0.66em;
+  margin-bottom: 1.77em;
+}
+.ordernow-slider-btn.MuiButton-containedPrimary {
+  background-image: linear-gradient(to bottom, #233f8c, #233f8c);
+  font-size: 0.833em;
+  font-family: "Quicksand-Medium";
+  text-transform: uppercase;
+  box-shadow: none;
+  transition: 0.2s all linear;
+  padding: 4px 13px;
+  /* width: 12em; */
+}
+.ordernow-slider-btn.MuiButton-containedPrimary:hover,
+.ordernow-slider-btn.MuiButton-containedPrimary:focus,
+.ordernow-slider-btn.MuiButton-containedPrimary:active {
+  background-image: linear-gradient(to bottom, #233f8c, #233f8c);
+  opacity: 0.8;
+  box-shadow: none;
+}
+.mob-home-seller-slider-sec {
+  padding-top: 1.33em;
+  padding-bottom: 1.33em;
+  background-color: #ffffff;
+}
+.mob-home-seller-slider {
+  height: 7em;
+  width: 100%;
+  border: 1px solid rgb(195 205 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.mob-home-seller-slider img {
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  max-height: 6.16em;
+}
+.mob-home-seller-slider-sec .swiper-container {
+  padding-top: 1.33em;
+  padding-left: 1.33em;
+  padding-right: 1.33em;
+}
+.home-grey-bg {
+  background-color: rgb(246 248 253);
+  padding: 1.33em 0;
+}
+.mob-home-mfc-slider {
+  height: 5.66em;
+  border: 1px solid rgb(195 205 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.mob-home-mfc-slider img {
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  max-height: 4.66em;
+}
+.mob-home-slider .mob-home-slide.top-ordered-slider {
+  background-color: #233f8c05;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0;
+  box-shadow: none;
+  text-transform: capitalize;
+}
+.mob-home-addtocart {
+  margin-top: 0.6em !important;
+  font-size: 1em !important;
+}
+.mob-home-offer-slider img {
+  height: 11.08em;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+.pt-0 {
+  padding-top: 0 !important;
+}
+.mob-home-solutions-slider {
+  height: 9em;
+  border: 1px solid #c3cde433;
+  border-radius: 5px;
+  padding: 1em;
+  background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.mob-home-solutions-slider img {
+  width: 5em;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+.mob-home-solutions-slider p {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+.solution-get-btn.MuiButton-containedPrimary {
+  background-color: #ff7b20;
+  background-image: linear-gradient(to bottom, #f49f3b, #ff7b20);
+  border: 0px;
+  font-size: 0.8125em;
+  padding: 0.79em 1.38em;
+  line-height: 1;
+  font-family: "Quicksand-Medium";
+  text-transform: capitalize;
+  box-shadow: none;
+  transition: 0.2s all linear;
+}
+.solution-get-btn.MuiButton-containedPrimary:hover,
+.solution-get-btn.MuiButton-containedPrimary:focus,
+.solution-get-btn.MuiButton-containedPrimary:active {
+  background-color: #ff7b20;
+  background-image: linear-gradient(to bottom, #f49f3b, #ff7b20);
+  opacity: 0.8;
+  box-shadow: none;
+}
+.shortbook-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shortbook-sec {
+  position: relative;
+  width: 100%;
+}
+.floating-btn.MuiFab-root {
+  background-color: #ffffff;
+  height: 4em;
+  width: 4em;
+  position: fixed;
+  bottom: 8em;
+  z-index: 1;
+  right: 2em;
+  cursor: pointer;
+}
+.sencond-bgimg{
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: 40%;
+}
+.cancel-demo-btn-mob.MuiButton-containedPrimary {
+  background-image: linear-gradient(to bottom, #ef2b4a, #e33954);
+  font-size: 0.875em;
+  font-family: "Quicksand-Medium";
+  text-transform: uppercase;
+  box-shadow: none;
+  transition: 0.2s all linear;
+  padding: 10px 25px;
+  min-width: 10.85em;
+  border-radius: 5px;
+  /* letter-spacing: 2.24px; */
+  letter-spacing: 1px;
+  margin-right: 0.85em;
+  /* margin-bottom: 1.42em; */
+  margin-bottom: 0;
+  margin-left: 2em;
+}
+.cancel-demo-btn-mob.MuiButton-containedPrimary:hover,
+.cancel-demo-btn-mob.MuiButton-containedPrimary:focus,
+.cancel-demo-btn-mob.MuiButton-containedPrimary:active {
+  background-image: linear-gradient(to bottom, #ef2b4a, #e33954);
+  opacity: 0.8;
+  box-shadow: none;
+}
+.schedule-demo-btn-mob.MuiButton-containedPrimary {
+  background-image: linear-gradient(to bottom, #f49f3b, #ff7b20);
+  font-size: 0.875em;
+  font-family: "Quicksand-Medium";
+  text-transform: uppercase;
+  box-shadow: none;
+  transition: 0.2s all linear;
+  padding: 10px 25px;
+  min-width: 14em;
+  border-radius: 5px;
+  /* letter-spacing: 2.24px; */
+  letter-spacing: 1px;
+  /* margin-bottom: 1.42em; */
+  margin-bottom: 0;
+}
+.schedule-demo-btn-mob.MuiButton-containedPrimary:hover,
+.schedule-demo-btn-mob.MuiButton-containedPrimary:focus,
+.schedule-demo-btn-mob.MuiButton-containedPrimary:active {
+  background-image: linear-gradient(to bottom, #f49f3b, #ff7b20);
+  opacity: 0.8;
+  box-shadow: none;
+}
+.success-msg.mob-oneem{
+  font-size: 1em !important;
+  margin-bottom:4px;
+}

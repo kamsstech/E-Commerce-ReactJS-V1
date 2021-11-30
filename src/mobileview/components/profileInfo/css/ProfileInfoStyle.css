@@ -1,0 +1,98 @@
+.mob-profile-info-title{
+    font-family: "Quicksand-Medium";
+    font-size: 1.14em;
+    color: rgb(46 62 106);
+    margin-top: 0;
+    margin-bottom: 1em;
+    line-height: 1;
+}
+.mob-profile-sec-space{
+    padding: 1.66em 1.33em;
+}
+.mob-profile-sub-title{
+    color: rgb(195 205 228);
+    font-size: 1em;
+    font-family: "Quicksand-Medium";
+    margin-top:0;
+}
+
+.mob-profile-stepper-sec{
+    display: flex;
+    align-items: center;
+    width: calc(100% - 5.33em);
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 17px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    padding: 1.833em 2.66em;
+}
+.mob-profile-stepper{
+    padding: 0 2em !important;
+    flex-grow: 1;
+}
+.mob-profile-stepper-sec .MuiStepLabel-labelContainer{
+    display: none
+}
+.mob-stepper-next-btn.MuiButton-containedPrimary {
+    background-color: transparent;
+    font-size: 1.16em;
+    font-family: "Quicksand-Medium";
+    text-transform: capitalize;
+    box-shadow: none;
+    transition: 0.2s all linear;
+    padding: 2px;
+    color: rgb(103 76 243);
+    min-width: unset;
+}
+.mob-stepper-next-btn.MuiButton-containedPrimary:hover,
+.mob-stepper-next-btn.MuiButton-containedPrimary:focus,
+.mob-stepper-next-btn.MuiButton-containedPrimary:active {
+    background-color: transparent;
+    color: rgb(103 76 243);
+    box-shadow: none;
+}
+.mob-stepper-activeIndi{
+    height: 1.66em;
+    width: 1.66em;
+    background-color: rgb(103 76 243);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border:0;
+    border-radius: 50%;
+    font-family: "Quicksand-Bold";
+}
+.mob-stepper-height{
+    height: 6.33em;
+}
+.mob-profile-userrights{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    flex-wrap: wrap;
+}
+.adduser-checkbox.mob-oneem .MuiFormControlLabel-label{
+    font-size: 1em !important;
+}
+.value-slider-label.mob-label{
+    font-size: 1em;
+    margin-top: 1em;
+}
+.uploaded-image-name{
+    margin-top: -16px;
+    margin-bottom: 16px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #674cf3;
+    font-size: 0.875em;
+    font-family: "OpenSans-Semibold";
+    letter-spacing: 0.55px;
+}

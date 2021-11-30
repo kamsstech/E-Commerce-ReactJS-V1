@@ -1,0 +1,53 @@
+.VideoSectionDiv {
+	margin: 0 auto 120px;
+}
+
+video {
+	height: auto;
+	width: auto;
+	margin-top: 104px;
+	border-radius: 10px;
+	box-shadow: 0 0 79px 0 rgba(16, 66, 97, 0.1);
+	background-image: linear-gradient(to right, #e8eef2 0%, #194bf2 100%);
+}
+
+.PurpleBlob {
+	width: 200px;
+	height: 200px;
+	background: url('../../Images/blob.png') no-repeat center/contain;
+	position: absolute;
+	top: 160px;
+	z-index: -1;
+	left: 0px;
+}
+
+.PinkCircle {
+	width: 120px;
+	height: 120px;
+	opacity: 0.5;
+	background-color: #fea7cf;  
+	position: absolute;
+	top: 60px;
+	z-index: -1;
+	right: 0px;
+	border-radius: 50%;
+}
+
+@media only screen and (min-width: 576px) {
+	video {
+		height: 340px;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.PinkCircle {
+		right: 120px;
+	}
+	
+	.PurpleBlob {
+		width: 420px;
+		height: 420px;
+		left: 60px;
+		top: 120px;
+	}
+}

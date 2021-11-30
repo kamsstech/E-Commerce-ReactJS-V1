@@ -1,0 +1,81 @@
+.mob-header-privatesearch-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.mob-header-privatesearch{
+    width: calc(100% - 54px)
+}
+.mob-header-cancel-text{
+    font-family: "Quicksand-Medium";
+    font-size: 1.16em;
+    color: #ffffff;
+}
+.mob-header-privatesearch .auth-input.MuiFormControl-marginNormal {
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    width: 100%;
+}
+.mob-header-privatesearch .auth-input.MuiFormControl-marginNormal.mr-6 {
+    width: calc(100% - 6px);
+    margin-right: 6px;
+}
+.mob-header-privatesearch .auth-input.MuiFormControl-marginNormal.ml-6 {
+    width: calc(100% - 6px);
+    margin-left: 6px;
+}
+.mob-header-privatesearch .auth-input .MuiOutlinedInput-adornedStart {
+    padding-left: 0;
+    background-color: #ffffff;
+}
+.mob-header-privatesearch .auth-input .MuiInputAdornment-positionStart {
+    margin-right: 0;
+    width: 3.75em;
+    text-align: center;
+    display: unset;
+    height: auto;
+    line-height: 0;
+}
+.mob-header-privatesearch .auth-input .MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff;
+    border-width: 1px;
+}
+.mob-header-privatesearch .auth-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff;
+    border-width: 1px;
+}
+.mob-header-privatesearch .auth-input
+.MuiOutlinedInput-root.Mui-focused
+.MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff;
+    border-width: 1px;
+}
+.mob-header-privatesearch .auth-input .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: #f44336 !important;
+}
+.mob-header-privatesearch .auth-input .MuiOutlinedInput-input {
+    font-size: 1em;
+    color: rgb(46 62 106);
+    font-family: "Quicksand-Medium";
+    padding: .8em 1.25em .8em 0;
+    line-height: 1;
+    height: 1.1875em;
+}
+.mob-header-privatesearch .auth-input.mob-input .MuiOutlinedInput-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgb(122 129 134) !important;
+}
+.mob-header-privatesearch .auth-input.mob-input .MuiOutlinedInput-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgb(122 129 134) !important;
+}
+.mob-header-privatesearch .auth-input.mob-input .MuiOutlinedInput-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgb(122 129 134) !important;
+}
+.mob-header-privatesearch .auth-input.mob-input .MuiOutlinedInput-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgb(122 129 134) !important;
+}

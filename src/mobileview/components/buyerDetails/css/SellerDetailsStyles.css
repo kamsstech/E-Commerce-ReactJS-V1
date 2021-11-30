@@ -1,0 +1,109 @@
+.MuiAppBar-positionFixed.registration-bottombar {
+  top: auto;
+  bottom: 0;
+  background-color: #fff;
+  padding: 0.66em 1.33em;
+  box-shadow: 0 2px 8px #29000016;
+}
+.MuiPaper-root.registrationSteps {
+  background-image: linear-gradient(to bottom, #674cf3, #8039db);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+.registrationSteps .MuiButton-root {
+  color: #fff;
+  transition: 0.3s all linear;
+  text-transform: capitalize;
+  font-family: "Quicksand-Medium";
+  cursor: pointer;
+  padding: 4px 8px;
+  min-width: unset;
+}
+.registrationSteps .MuiButton-root.Mui-disabled {
+  color: rgba(255, 255, 255, 0.35);
+}
+.registrationSteps .MuiMobileStepper-dot {
+  width: 6px;
+  height: 6px;
+  margin: 0 3px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: 0.3s all linear;
+}
+.registrationSteps .MuiMobileStepper-dotActive {
+  background-color: #fff;
+}
+.registration {
+  padding: 1.33em;
+}
+.backArrow {
+  width: auto;
+  height: 1.33em;
+  margin-bottom: 1em;
+}
+.registration .registration-title {
+  font-size: 2em;
+  font-family: "Quicksand-Bold";
+  margin: 0;
+  color: #002f4f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.registration .registration-title a {
+  color: #cecccc;
+  font-family: "OpenSans-SemiBold";
+  font-size: 0.58em;
+}
+.registration .registration-subtitle {
+  font-size: 1.16em;
+  font-family: "Quicksand-Medium";
+  margin: 0.42em 0 1.74em 0;
+  opacity: 0.8;
+}
+.step-title {
+  font-size: 1.16em;
+  font-family: "Quicksand-Medium";
+  margin: 0 0 1em 0;
+  color: #674cf3;
+}
+.registration-bothgt {
+  height: 4em;
+}
+.active-indi.MuiFab-sizeSmall {
+  width: 20px;
+  height: 20px;
+  min-height: unset;
+  font-size: 10px;
+  background-color: #fff !important;
+  color: #002f4f;
+  font-family: Quicksand-Bold;
+  margin-right: 8px;
+}
+.auth-input .MuiInputAdornment-positionEnd {
+  position: relative;
+}
+.auth-input .Mui-disabled .MuiInputAdornment-positionEnd input {
+  display: none;
+}
+.auth-input .MuiInputAdornment-positionEnd input {
+  position: absolute;
+  z-index: 0;
+  top: -10px;
+  left: 0;
+  width: 30px;
+  opacity: 0;
+}
+.registration-donebtn.MuiButton-contained {
+  background-image: linear-gradient(to bottom, #674cf3, #8039db);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 100%;
+  color: #fff;
+  font-size: 1.08em;
+  padding: 1.23em;
+  line-height: 1.15em;
+}
+.mt-36 {
+  margin-top: 3em;
+}

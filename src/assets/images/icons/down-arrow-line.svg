@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.108" height="6.474" viewBox="0 0 10.108 6.474">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px}
+        </style>
+    </defs>
+    <path id="down_arrow_line" d="M0 0l4.437 3.251a.579.579 0 0 1 .046.9L.214 8" class="cls-1" data-name="down arrow line" transform="rotate(90 4.005 5.054)"/>
+</svg>

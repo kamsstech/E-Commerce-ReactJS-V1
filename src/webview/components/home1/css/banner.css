@@ -1,0 +1,135 @@
+.body-spacing1{
+  padding: .5em 0;
+}
+.home-banner-sec .swiper-container{
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.home-banner-sec .swiper-pagination .swiper-pagination-fraction{
+  color: "white";
+  font-weight: 5
+}
+.home-banner-sec .swiper-pagination-bullet-active.swiper-pagination-bullet{
+  background:  #ffffff;
+  opacity: 1 !important;
+  /* #f5f5f5 */
+}
+ .swiper-pagination-bullet {
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 12px !important;
+  height: 12px !important;
+  top: 0;
+  right: 3.5em;
+  border: 0;
+  background: #ffffff !important;
+  opacity: 0.4 !important;
+}
+.home-banner-sec .swiper-wrapper{
+  height: 25em !important;
+  /* height: 384px !important; */
+}
+.swiper-container-vertical > .swiper-pagination-bullets{
+  right: 48px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    right: 35px !important;
+    /* width: 32px !important;
+    height: 32px !important; */
+    width: 48px !important;
+    height: 48px !important;
+    opacity: 0.5;
+    border: solid 1px #ffffff;
+    position: absolute;
+    top: 30% !important;
+    margin-top: 0 !important;
+    border-radius: 50%;
+    margin-top: 0;
+    background:transparent !important;
+}
+
+
+.icons.MuiFab-sizeSmall{
+    /* width:32px !important;
+    height: 32px !important; */
+    width: 48px !important;
+    height: 48px !important;
+}
+.sliderProgress.MuiCircularProgress-root.MuiCircularProgress-colorPrimary.MuiCircularProgress-indeterminate{
+    /* width:32px !important;
+    height: 32px !important; */
+    width: 48px !important;
+    height: 48px !important;
+    color: white !important;
+}
+.sliderProgress.MuiCircularProgress-colorPrimary{
+  /* width:32px !important;
+  height: 32px !important; */
+  width: 48px !important;
+  height: 48px !important;
+  color: white !important;
+}
+.icons.MuiFab-root{
+    min-width: 32px !important;
+    min-height: 32px !important;
+    border: solid 1px #ffffff !important;
+    box-shadow: none !important;
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet{
+    /* margin: 6px 6px !important  ; */
+    margin: 8px 6px !important  ;
+}
+.swiper-container-vertical > .swiper-pagination-bullets{
+    top: 60% !important;
+    transform: translate3d(0px, -55%, 0) !important;
+}
+.icons .MuiFab-label .pause{
+    width: 11px;
+    opacity: 1 !important;
+}
+.icons .MuiFab-label .play{
+    width: 11px;
+    opacity: 1 !important;
+}
+
+.sliderProgress.MuiCircularProgress-indeterminate {
+  animation: MuiCircularProgress-keyframes-circular-rotate 2s linear infinite !important;
+}
+/* .swiper-wrapper{
+  animation-name: slideInUpBig !important;
+  animation-timing-function: cubic-bezier(.165,.84,.44,1) !important;
+  animation-duration: 1s!important;
+  transition-duration: 1s !important;  
+}
+
+@keyframes slideInUpBig {
+  from {
+      transform: translate3d(0,0,100%)
+  }
+
+  100% {
+      transform: translate3d(0,0,0)
+  }
+}
+
+
+.slideInUpBig {
+  animation-name: slideInUpBig;
+  animation-timing-function: cubic-bezier(.165,.84,.44,1)
+} */
+.CircularProgressbar {
+  width: 48px;
+  /* vertical-align: middle; */
+  position: absolute;
+  right: 14px;
+}
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: white !important;
+}

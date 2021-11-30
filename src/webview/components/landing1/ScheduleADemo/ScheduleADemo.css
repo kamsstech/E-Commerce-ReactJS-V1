@@ -1,0 +1,322 @@
+.schedule-demo-modal {
+    width: 640px !important;
+  }
+  
+  .schedule-demo-modal > .modal-content {
+    border-radius: 14px;
+    width: 640px !important;
+    border: none !important;
+  }
+  
+  .schedule-modal-body {
+    padding: 0px !important;
+    color: white !important;
+  }
+  
+  .schedule-modal-body .header-image {
+    position: relative;
+  }
+  
+  .schedule-modal-body .header-image h6 {
+    position: absolute;
+    top: 20px;
+    left: 56px;
+    font-family: Quicksand;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+  .schedule-modal-body .header-image p {
+    position: absolute;
+    top: 44px;
+    left: 56px;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  .schedule-form {
+    font-family: Quicksand;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    line-height: 16px !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    /* color: #5b636a !important; */
+    color: rgba(91, 99, 106, 0.5) !important;
+  }
+  
+  .schedule-form:not(:placeholder-shown) {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: rgba(91, 99, 106, 1) !important;
+  }
+  
+  .schedule-form:focus {
+    outline: none !important;
+    box-shadow: 0 0 3px 1px rgba(30, 143, 255, 0.5) !important;
+  }
+  
+  .schedule-checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0d1321;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .schedule-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-radius: 30px !important;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1px solid rgba(91, 99, 106, 0.49);
+    border-radius: 6px;
+    -webkit-transition: 300ms all cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 300ms all cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .schedule-checkbox-container:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .schedule-checkbox-container input:checked ~ .checkmark {
+    background-color: #674cf3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .schedule-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .schedule-checkbox-container .checkmark:after {
+    left: 5.5px;
+    top: 6.5px;
+    width: 12.3px;
+    height: 9.6px;
+    /* border: solid white;
+    border-width: 0 3px 3px 0; */
+    /* -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); */
+    background: url("../../../../assets/images/Right_Sign.svg") no-repeat;
+  }
+  
+  .schedule-input-group {
+    border-radius: 6px;
+    border: 1px solid rgb(195, 205, 228);
+    width: 255.5px;
+    height: 44px;
+    border-radius: 6px;
+  }
+  
+  .schedule-input-group > input {
+    margin: 0 !important;
+    height: 42px;
+  }
+  
+  .schedule-input-group > input {
+    outline-width: none !important;
+  }
+  
+  .schedule-input-group .input-group-text,
+  .schedule-input-group input {
+    border: none !important;
+  }
+  
+  .schedule-input-group input:focus {
+    border: none !important;
+  }
+  
+  .schedule-form-checkbox label {
+    margin-left: 1rem;
+    font-size: 10px;
+  }
+  
+  .close-btn {
+    border-radius: 6px;
+    background-color: rgba(195, 205, 228, 0.2);
+    font-family: Quicksand;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    color: #2e3e6a !important;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .close-btn:hover {
+    background-color: rgba(195, 205, 228, 0.3);
+  }
+  
+  .schedule-demo-form-btn {
+    transition: 0.5s ease-in-out !important;
+  }
+  
+  .schedule-demo-form-btn:hover {
+    background-color: #4e2df0 !important;
+    border-color: #4e2df0 I !important;
+  }
+  
+  .description-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: Quicksand;
+    /* font-size: 12px; */
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.92;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  
+  .description-row-header label {
+    color: #0d1321;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .span-required-red {
+    color: #ef2b4a !important;
+  }
+  
+  .span-blue-green {
+    color: #2ec4b6 !important;
+  }
+  
+  .span-yellow {
+    color: #ffbe0b !important;
+  }
+  
+  .span-red {
+    color: #ef2b4a !important;
+  }
+  
+  .demo-2 {
+    position: relative;
+  }
+  
+  .sample-input-img {
+    position: absolute;
+    top: 1px;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 96%;
+    color: white;
+    border-right: 1px solid #c3cde4;
+    border-radius: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(246, 248, 253);
+    padding: 9px 14px;
+  }
+  
+  .sample-input-img.shop,
+  .sample-input-img.smartphone {
+    left: 16px;
+  }
+  
+  .sample-input-img.user,
+  .sample-input-img.pincode {
+    left: 9px;
+  }
+  
+  .sample-input-text:focus {
+    outline: none !important;
+    /* box-shadow: 0 0 3px 1px #c3cde4; */
+    box-shadow: 0 0 3px 1px rgba(30, 143, 255, 0.5) !important;
+  }
+  
+  .sample-input-text {
+    height: 44px;
+    width: 100%;
+    padding: 14px 15px 14px 57px;
+    border-radius: 6px;
+    border: solid 1px #c3cde4;
+    background-color: white !important;
+    /* color: rgba(91, 99, 106, 0.5) !important; */
+    font-family: Quicksand;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    line-height: 1.17 !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+  }
+  
+  .sample-input-text::placeholder {
+    color: rgba(91, 99, 106, 0.5);
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+  
+  .sample-input-text:not(:placeholder-shown) {
+    color: rgba(91, 99, 106, 1) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+  
+  .error-red .sample-input-img,
+  .error-red .sample-input-text,
+  .error-red.schedule-form {
+    border-color: #ef2b4a !important;
+  }
+  

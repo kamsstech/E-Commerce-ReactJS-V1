@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21">
+    <g id="prefix__shortbook" transform="translate(-861.454 -37.333)">
+        <g id="prefix__Rectangle_688" fill="#674cf3" stroke="#674cf3" stroke-width="1.7px" data-name="Rectangle 688" transform="translate(861.454 37.333)">
+            <rect width="16" height="21" stroke="none" rx="3"/>
+            <rect width="14.3" height="19.3" x=".85" y=".85" fill="none" rx="2.15"/>
+        </g>
+        <path id="prefix__Path_3810" fill="#fff" stroke="#fff" stroke-width="0.9px" d="M75.906 6.492a.2.2 0 0 0 .186 0C76.252 6.406 80 4.374 80 2.239A2.223 2.223 0 0 0 77.8 0a2.169 2.169 0 0 0-1.8.954A2.169 2.169 0 0 0 74.2 0 2.223 2.223 0 0 0 72 2.239c0 2.134 3.747 4.167 3.907 4.253zM74.2.407a1.785 1.785 0 0 1 1.62 1.038.206.206 0 0 0 .36 0A1.789 1.789 0 0 1 78.2.453a1.825 1.825 0 0 1 1.4 1.786c0 1.719-3.026 3.515-3.6 3.84-.575-.325-3.6-2.12-3.6-3.84A1.819 1.819 0 0 1 74.2.407zm0 0" data-name="Path 3810" transform="translate(793.455 44.544)"/>
+    </g>
+</svg>

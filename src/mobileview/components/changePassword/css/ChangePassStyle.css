@@ -1,0 +1,22 @@
+.mob-changePass-btn.MuiButton-outlined {
+    font-size: 1.16em;
+    border: 0;
+    background-color: #674cf3;
+    padding: 1em 2.5em;
+    border-radius: 8px;
+    line-height: 1.4;
+    color: #ffffff;
+    font-family: "Quicksand-Medium";
+    transition: 0.2s all linear;
+    width: 100%;
+    margin-top: 2em;
+}
+.mob-changePass-btn.MuiButton-outlined:hover,
+.mob-changePass-btn.MuiButton-outlined:active,
+.mob-changePass-btn.MuiButton-outlined:focus {
+    color: #ffffff;
+    background-color: #674cf3;
+}
+.mb-12{
+    margin-bottom: 12px;
+}

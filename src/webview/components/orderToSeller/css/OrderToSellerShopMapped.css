@@ -1,0 +1,207 @@
+.startAdornmentEmpty .MuiInputAdornment-positionStart{
+    min-width: initial;
+    background: initial;
+    width: initial;
+    padding-left: 12px;
+    padding-right: 8px;
+}
+.search-branch-sec .MuiOutlinedInput-adornedStart{
+    padding-left: 0 !important;
+    min-width: initial !important;
+    background: initial !important;
+}
+.paddingleft70{
+    padding-left:70px;
+}
+.flexDisplay{
+    flex-direction: row;
+    display: flex;
+    justify-content:space-between;
+}
+.serachSellerInput{
+    height: 2.3em;
+    border-radius: 8px;
+    margin-top:1em;
+}
+.shopImg{
+    padding-right:0.5em;
+}
+.handCursur{
+    cursor: pointer;
+}
+.activeLink{
+    color: #8039db !important;
+}
+.flex-row{
+    flex-direction: row;
+    display: flex;
+}
+.sellerHeading{
+    color: var(--marine-blue);
+    font-weight: 600;
+    font-size: 19px;
+    padding: 0px 0px 13.5px 20px;
+}
+.sellerprofile{
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.ml16{
+    margin-left: 1em;
+}
+.addSeller-popup{
+    background-color: #ffffff;
+    border-radius: 14px;
+    width: 45em;
+    padding: 1.5em;
+    box-shadow: 2px 1px 20px 0 var(--black-16);
+    background-position: bottom;
+}
+.mandateSign{
+    color: #ef2b4a;
+}
+.loop-pad{
+    padding:20px 0px 20px 0px;
+}
+.uhText{
+    color: #002f4f;
+    line-height: 0.89;  
+    font-size: 27px;
+    margin: 16.7px 0px 12px 0px;
+    font-weight: bold;
+}
+.validation-text{
+    color: #5b636a;
+    padding-bottom: 0.25em;;
+    font-size: 15px;;
+}
+.pad-top{
+    padding-top:30px;
+}
+.validation-popup{
+    background-color: #ffffff;
+    border-radius: 14px;
+    width: 27em;
+    padding: 1.5em;
+    max-height: 32em;
+    background-position: bottom;
+}
+.orange-Text{
+    color: #ff7300;
+}
+
+.serachSellerInput .MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 8px;
+    height: 2.5em;
+}
+
+.serachSellerInput .MuiOutlinedInput-root:active {
+     border:1px solid #2e3e6a80
+}
+.serachSellerInput .MuiOutlinedInput-root:focus {
+    border:1px solid #2e3e6a80
+}
+
+.serachSellerInput .MuiOutlinedInput-root:focus-visible {
+    border:1px solid #2e3e6a80
+}
+.serachSellerInput .MuiOutlinedInput-root:visited {
+    border:1px solid #2e3e6a80
+}
+.serachSellerInput.MuiFormControl-marginNormal {
+    margin-top: 16px;
+    margin-bottom: 0px;
+}
+
+.serachSellerInput .MuiOutlinedInput-notchedOutline {
+     border:1px solid #2e3e6a80;
+     opacity: 0.5;
+  }
+  .serachSellerInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+     border:1px solid #2e3e6a80;
+     opacity: 0.5;
+  }
+  .serachSellerInput
+    .MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+     border:1px solid #2e3e6a80;
+     opacity: 0.5;
+}
+.retrivalFilter{
+    overflow-x: auto;
+    height: 140px;
+    width: 100%;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--purpleish-blue) #eee;
+    margin-top: 4px;
+}
+.customScroll::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.customScroll::-webkit-scrollbar-thumb{
+    background-color: #674cf3;
+    border: 2px solid #674cf3;
+    cursor: pointer;
+}
+.customScroll::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+.retrivalFilter .MuiCheckbox-colorPrimary.Mui-checked:hover, .retrivalFilter .MuiIconButton-colorPrimary:hover {
+    background-color: initial !important;
+}
+.retrivalFilter .MuiButtonBase-root {
+    padding: 0 !important;
+}
+.retrivalFilter .MuiFormControlLabel-root {
+    margin: 8px 0 !important;
+}
+.retrivalFilter .MuiIconButton-label {
+    margin-right: 8px !important;
+}
+:root{
+    scrollbar-color: var(--purpleish-blue) #eee;
+    scrollbar-width: thin !important;
+}
+::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #674cf3;
+    border: 2px solid #674cf3;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: white;
+    cursor: pointer;
+}
+.search-branch-sec {
+
+}
+.addSeller-popup .auth-input.MuiFormControl-marginNormal {
+    margin-bottom: 0;
+}
+.mr-b-20 {
+    margin-bottom: 20px !important;
+}
+.newsellerprofile .description-title {
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+.newsellerprofile .auth-input.MuiFormControl-marginNormal {
+    margin-bottom: 0;
+}
+.bolder{
+    font-weight: 900;
+    /* color: #000; */
+}

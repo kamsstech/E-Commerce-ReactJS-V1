@@ -1,0 +1,51 @@
+.mob-search-bar .MuiAppBar-colorPrimary {
+  background-color: #ffffff;
+}
+.mob-search-bar .MuiToolbar-gutters {
+  padding: 0 0.33em 0 0.33em;
+  box-shadow: 0px 4px 4px #00000011;
+}
+.mob-search-bar img {
+  width: 18px;
+  height: 18px;
+}
+.mob-search-inp {
+  width: 100%;
+}
+.mob-search-inp .MuiInputBase-input {
+  font-family: "Quicksand-Regular";
+  color: #002f4f;
+  font-size: 14px;
+}
+.cross-btn img {
+  width: 14px;
+  height: 14px;
+}
+.mob-spacing {
+  padding: 1.33em;
+}
+.mob-result-product {
+  font-size: 1.16em;
+  font-family: "Quicksand-Bold";
+  color: #5b636a;
+  margin: 0 0 0.5em 0;
+  text-transform: capitalize;
+}
+.mob-result-mfr {
+  font-family: "Quicksand-Regular";
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  color: #5b636a;
+  text-transform: capitalize;
+}
+.mob-result-pack {
+  font-family: "Quicksand-Regular";
+  font-size: 1em;
+  margin: 0;
+  color: #5b636a;
+}
+.mob-result-seperator {
+  border-top: 1px dashed #dbdbdb;
+  margin: 0.66em 0;
+}

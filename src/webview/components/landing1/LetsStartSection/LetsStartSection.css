@@ -1,0 +1,165 @@
+.LetsStartSectionCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: calc(100vw - 32px);
+	height: 320px;
+	margin: 136px auto 148px;
+	border-radius: 14px;
+	box-shadow: -35.5px 20.5px 79px 0 rgba(103, 76, 243, 0.3);
+}
+
+.LetsStartSectionCard h3 {
+	margin-bottom: 20px;
+}
+
+.LetsStartSectionCard .body-copy {
+	font-weight: 500;
+}
+
+.btn.demo-card-btn {
+	font-size: 16px;
+	font-weight: bold;
+	font-style: normal;
+	color: #674cf3 !important;
+	margin: 0 auto;
+	width: 168px;
+	height: 48px;
+	border-radius: 8px;
+	background-color: #ffffff;
+	transition: all 0.5s;
+	box-shadow: -1.1px 8.9px 21px 0 rgba(103, 76, 243, 0.1);
+}
+
+.btn.demo-card-btn:hover {
+	/* background-color: #674cf3 !important; */
+	color: rgba(78, 45, 240, 1) !important;
+	/* box-shadow: -1.1px 8.9px 21px 0 rgba(103, 76, 243, 0.2); */
+	/* box-shadow: -1.1px 8.9px 21px 0 rgba(78, 45, 240, 1) !important; */
+	box-shadow: -1.1px 8.9px 21px 0 #64589e !important;
+}
+
+.purple-blob2 {
+	width: 200px;
+	height: 220px;
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: 0px;
+	background: url("../../../../assets/images/blob_lets_start.svg") no-repeat center/cover;
+}
+
+.orange-circle {
+	width: 48px;
+	height: 48px;
+	background-color: #f9e7cf;
+	position: absolute;
+	top: -90px;
+	right: 148px;
+	border-radius: 50%;
+	z-index: -1;
+}
+
+.green-circle {
+	width: 256px;
+	height: 256px;
+	background-color: rgb(0 211 180 / 20%);
+	position: absolute;
+	bottom: -90px;
+	right: 0px;
+	border-radius: 50%;
+	z-index: -1;
+}
+
+@media only screen and (min-width: 769px) {
+	.LetsStartSectionCard {
+		width: 896px;
+		height: 320px;
+		margin: 136px auto 148px;
+	}
+	.green-circle {
+		right: -72px;
+	}
+	.purple-blob2 {
+		left: -120px;
+		width: 384px;
+		height: 415px;
+	}
+}
+
+.LetsStartSection.on_scroll {
+	height: 65vh;
+	/* height: 100vh; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.LetsStartSection.on_scroll .LetsStartSectionCard {
+	flex-grow: 1;
+	margin: 0 !important;
+	z-index: 1000;
+	height: inherit;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.LetsStartSection.on_scroll .LetsStartSectionCard img {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background-color: #6c19d8;
+}
+
+.LetsStartSectionCard img {
+	/* background-color: #6c19d8; */
+	background-image: linear-gradient(to right, #674cf3, #6c19d8);
+	border-radius: 14px !important;
+	position: absolute;
+}
+
+.LetsStartSectionCard img,
+.LetsStartSectionCard {
+	transition: 1.5s ease-in-out;
+}
+
+.LetsStartSection .LetsStartSectionCard img,
+.LetsStartSection .LetsStartSectionCard h3,
+.LetsStartSection .LetsStartSectionCard p,
+.LetsStartSection .LetsStartSectionCard button {
+	z-index: 1000;
+}
+
+/* .LetsStartSection.on_scroll .LetsStartSectionCard h3 {
+	font-size: 40px !important;
+}
+.LetsStartSection.on_scroll .LetsStartSectionCard p {
+	font-size: 20px !important;
+}
+
+.LetsStartSection.on_scroll .LetsStartSectionCard button {
+	font-size: 24px !important;
+	width: 240px !important;
+	height: 68px !important;
+} */
+
+.LetsStartSection.on_scroll .LetsStartSectionCard .purple-blob2,
+.LetsStartSection.on_scroll .LetsStartSectionCard .green-circle,
+.LetsStartSection.on_scroll .LetsStartSectionCard .orange-circle {
+	visibility: hidden;
+}
+.LetsStartSection h3 {
+	font-size: 33px;
+	line-height: .94;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: normal;
+}
+.text-white {
+    color: #fff !important;
+}
+.LetsStartSection p {
+	
+}

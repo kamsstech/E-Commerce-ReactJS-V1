@@ -1,0 +1,42 @@
+.mob-menu-sec.MuiList-padding{
+    padding: 1.33em 0;
+}
+.mob-menu-sec .MuiListItem-button{
+    padding: 1.33em;
+}
+.mob-menu-sec .menu-divider-line{
+    border-bottom: 1px solid #dbdbdb80;
+    margin: 0 1.33em;
+}
+.mob-menu-sec .MuiListItemIcon-root{
+    min-width: 30px;
+}
+.mob-menu-sec .MuiListItemText-root{
+    margin: 0;
+}
+.mob-menu-sec .MuiListItem-root, .mob-menu-sec .MuiTypography-body1{
+    font-size: 1.16em;
+    color: rgb(46 62 106);
+    font-family: "Quicksand-Medium";
+    border-radius: 0;
+}
+.mob-menu-sec .sub-menu-sec{
+    padding:0 2.66em;
+}
+.mob-menu-sec .sub-menu-sec .MuiListItem-button{
+    padding: .833em 1.16em;
+}
+.mob-menu-sec  .sub-menu-sec .MuiListItem-root, .mob-menu-sec  .sub-menu-sec .MuiTypography-body1{
+    color: rgb(91 99 106);
+    font-family: "Quicksand-Medium";
+    font-size: 14px;
+    line-height: 1;
+}
+.mob-menu-sec .MuiCollapse-entered{
+    background-color: #e8eef233;
+}
+.mob-menu-sec .MuiListItem-root.Mui-selected, 
+.mob-menu-sec .MuiListItem-root.Mui-selected:hover, 
+.mob-menu-sec .MuiListItem-button:hover{
+    background-color: #e8eef233 !important;
+}

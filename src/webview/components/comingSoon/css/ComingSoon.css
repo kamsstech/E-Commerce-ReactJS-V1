@@ -1,0 +1,30 @@
+.preLoginDSg .UnderConstruction {
+	margin-top: 96px;
+	padding-top: 28px;
+}
+.preLoginDSg .navigation-container  {
+	display: none;
+}
+.UnderConstruction img {
+	margin-bottom: 48px;
+}
+.UnderConstruction h1  {
+	margin: 0 0 16px;
+	font-size: 27px;
+	font-weight: 600;
+	color: var(--marine-blue);
+	line-height: 0.74;
+	padding: 0;
+}
+.UnderConstruction p {
+	font-weight: 500;
+	line-height: 1.05;
+	color: var(--dark);
+	opacity: 0.6;
+	font-size: 19px;
+	padding: 0;
+	margin: 0 0 32px 0;
+}
+.preLoginDSu .UnderConstruction {
+	padding-top: 28px;
+}

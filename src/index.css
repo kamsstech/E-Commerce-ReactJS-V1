@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url(./assets/fonts/Quicksand/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url(./assets/fonts/Quicksand/Quicksand-Medium.ttf);
+}
+@font-face {
+  font-family: "Quicksand-SemiBold";
+  src: url(./assets/fonts/Quicksand/Quicksand-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: url(./assets/fonts/Quicksand/Quicksand-Bold.ttf);
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(./assets/fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  src: url(./assets/fonts/Open_Sans/OpenSans-SemiBold.ttf);
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(./assets/fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+html {
+  margin: 0;
+  padding: 0;
+  color: #5b636a;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff !important;
+  font-family: var(--font-quicksand);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: normal;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+*,
+/* *::before,
+*::after {
+  font-weight: normal;
+} */
+/* 
+* {
+  font-family: "Quicksand-Regular" !important;
+} */
+a {
+  text-decoration: none;
+}
+.default-btn.MuiButton-outlined {
+  font-size: 0.75em;
+  border: solid 1px #d5dcec;
+  background-color: transparent;
+  padding: 0.75em 0;
+  border-radius: 20px;
+  line-height: 1.7;
+  color: #0d1321;
+  font-family:var(--font-quicksand); 
+  transition: 0.2s all linear;
+}
+.default-btn.MuiButton-outlined:hover,
+.default-btn.MuiButton-outlined:active,
+.default-btn.MuiButton-outlined:focus {
+  border-color: #674cf3;
+  color: #ffffff;
+  background-color: #674cf3;
+}
+.theme-btn.MuiButton-containedPrimary {
+  background-image: linear-gradient(to bottom, #674cf3, #8039db);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-size: 0.8125em;
+  padding: 1em 2.65em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: 0.2s all linear;
+  position: relative;
+}
+.theme-btn.MuiButton-containedPrimary:hover,
+.theme-btn.MuiButton-containedPrimary:active,
+.theme-btn.MuiButton-containedPrimary:focus {
+  opacity: 0.8;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.space-3 {
+  padding: 3em;
+}
+.space-top-5 {
+  margin-top: 5em !important;
+}
+/* @media screen and (device-aspect-ratio: 2/3) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
+} */
+
+/* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+/* @media screen and (device-aspect-ratio: 40/71) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
+} */
+
+/* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+/* @media screen and (device-aspect-ratio: 375/667) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
+} */
+
+/* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+/* @media screen and (device-aspect-ratio: 9/16) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
+} */
+
+.website-body {
+  min-height: calc(100vh - 9.2em);
+  position: relative;
+}
+.positioninit {
+  position: initial !important;
+}
+.termsAndCondi {
+  position: absolute;
+  bottom: 0em;
+  left: 0;
+  width: 100%;
+  font-size: 0.8125em;
+  padding-top: 1.8em;
+  padding-bottom: 1.8em;
+}
+.web-bottom-height {
+  height: 4em;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* WebKit, Blink, Edge */
+.footer-above input::-webkit-input-placeholder { 
+    font-family: var(--font-quicksand);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+}
+/* Mozilla Firefox 4 to 18 */
+.footer-above input::-moz-placeholder {
+    font-family: var(--font-quicksand); 
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+.footer-above input:-moz-placeholder { 
+    font-family: var(--font-quicksand);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 1;
+}
+/* Internet Explorer 10-11 */
+.footer-above input::-ms-input-placeholder { 
+    font-family: var(--font-quicksand);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 12px;
+} 
+
+.MuiInputAdornment-positionStart {
+  min-width: 60px;
+  background-color: #f6f8fd;
+  padding: 13px 0px;
+  border-radius: 6px 0px 0px 6px;
+  height: 18px !important;
+  line-height: 18px;
+}
+.MuiInputAdornment-positionStart {
+    margin-right: 0 !important;
+    width: 60px;
+    text-align: center;
+    justify-content: center;
+    display: initial;
+    height: auto;
+    line-height: 0;
+}
+.MuiSelect-select.MuiSelect-select {
+    padding-right: 24px;
+    width: calc(100% - 6px);
+    margin-left: 0;
+}
+.auth-input .MuiOutlinedInput-input {
+    font-size: 13px;
+    color: #5b636a;
+    font-weight: 500;
+    line-height: 16px;
+    height: 16px;
+    padding: 14px 14px 14px 12px;
+    border-left: 1px solid var(--light-blue-grey);
+    border-radius: revert !important;
+}
+.MuiSelect-selectMenu {
+    height: auto;
+    overflow: hidden;
+    min-height: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.mr-10 {
+    margin-right: 10px !important;
+}
+.ml-10 {
+    margin-left: 10px !important;
+}
+.MuiTab-root {
+  font-family: var(--font-quicksand) !important; 
+}
+.pd-b-32 {
+  padding-bottom: 32px !important;
+}

@@ -1,0 +1,122 @@
+.notifi-dropDown-sec{
+    background-color: var(--white);
+    border-radius: 14px !important;
+    width: 25%;
+    height: 100%;
+    padding: 24px;
+    position: relative;
+    left: 36.2%;
+    overflow-y: auto;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--purpleish-blue) #eee;
+}
+.notifi-dropDown-sec::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: #eee;
+}
+
+.notifi-dropDown-sec::-webkit-scrollbar-thumb{
+    background-color: #674cf3;
+    border: 2px solid #674cf3;
+}
+.notifi-dropDown-sec::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: white;
+}
+
+.notifi-title{
+    margin: 24px 0 8px 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-family:var(--font-quicksand); 
+    font-weight: 600;
+    color: var(--dark);
+    text-transform: capitalize;
+}
+.notifi-title-sec button {
+    padding: 0;
+    letter-spacing: initial;
+    text-transform: capitalize;
+    color: var(--purpleish-blue);
+    font-weight: 600;
+    font-size: 13px;
+    min-width: initial !important;
+    border-radius: 0;
+}
+.notifi-title-sec .divider {
+    margin: 0 8px;
+    background-color: #c3cde4;
+    width: 2px;
+    height: 20px;
+}
+.notifi-container {
+    margin: 16px 0;
+}
+.notifi-container h5 {
+    color: var(--light-blue-grey);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+.mr-b-24 {
+    margin-bottom: 24px;
+}
+.pd-b-24 {
+    padding-bottom: 24px;
+}
+.notifi-view-sec {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 0 0 var(--black-16);
+    margin-bottom: 16px;
+}
+.notifi-view-sec .box-view-title {
+    display: flex;
+    text-align: center;
+}
+.notifi-view-title-imgsec {
+    position: relative;
+    width: 10%;
+}
+.notifi-view-title-imgsec img {
+    object-fit: contain;
+    object-position: center;
+    width: 32px;
+    height: 40px;
+}
+.notifi-view-sec .box-view-title-details {
+    text-align: left;
+    position: relative;
+    width: 100%;
+    margin-left: 16px;
+}
+.box-view-title-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    letter-spacing: 0.28px;
+    color: var(--dark);
+}
+.schemeDiscount {
+    font-weight: normal;
+    color: var(--aquamarine);
+}
+.onScheme {
+    color: #ffbe0b;
+}
+.onProductContent {
+    font-weight: normal;
+}
+.box-view-title-details p {
+    margin: 0;
+    color: rgba(13, 19, 33, 0.5);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+.onPriceDropAlert {
+    color: #ef2b4a;   
+}
+.onStock {
+    color: #ff7300;
+}

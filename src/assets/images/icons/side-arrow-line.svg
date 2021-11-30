@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6.474" height="10.108" viewBox="0 0 6.474 10.108">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <path id="down_arrow_line" data-name="down arrow line" class="cls-1" d="M0,0,4.437,3.251a.579.579,0,0,1,.046.9L.214,8" transform="translate(1.048 1.048)"/>
+</svg>

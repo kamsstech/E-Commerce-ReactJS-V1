@@ -1,0 +1,71 @@
+.mob-result-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mob-result-product-text{
+    font-size: 1em;
+    font-family: "OpenSans-Regular";
+    margin-top: .5em;
+    margin-bottom: 0;
+    color: rgb(0 211 180);
+}
+.mob-search-sponsered-text{
+    font-family: "OpenSans-SemiBold";
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: .5em;
+    color: rgb(103 76 243)
+}
+.sortby-divider{
+    border-bottom: 1px solid #cccccc80;
+    margin: .5em 0;
+}
+.sortby-filter, .sortby-filter .MuiFormControlLabel-root{
+    /* width: calc(100% + 5px); */
+    width: 100%;
+    margin-left: 0;
+}
+.sortby-filter .MuiFormControlLabel-label{
+    flex-grow: 1;
+    font-family: "Quicksand-Medium";
+    font-size: 1.08em;
+    color: rgb(91 99 106)
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mob-addbranch-drawer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.sortby-filter .MuiRadio-root{
+    color:rgb(0 47 79);
+    opacity: .5;
+}
+.sortby-filter .MuiRadio-colorSecondary{
+    margin-right: -9px;
+} 
+.sortby-filter .MuiRadio-colorSecondary .MuiSvgIcon-root{
+    opacity: .5;
+}
+.sortby-filter .MuiRadio-colorSecondary.Mui-checked .MuiSvgIcon-root{
+    opacity: 1;
+}
+.sortby-filter .MuiRadio-colorSecondary.Mui-checked{
+    color: rgb(103 76 243);
+    opacity: 1;  
+}
+.mob-result-seperator1 {
+    border-top: 1px solid #dbdbdb66;
+    margin: 0.66em 0;
+}
+.floating-btn.search-floating-btn.MuiFab-root{
+    bottom: 2em;
+}
+.mb-1em{
+    margin-bottom: 1em;
+}

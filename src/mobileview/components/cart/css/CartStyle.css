@@ -1,0 +1,386 @@
+.mob-delivery-address-wrapper{
+    padding: 1.33em;
+    background-color: #ffffff;
+}
+.mob-delivery-address-sec{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.mob-addressChange-btn.MuiButton-outlined {
+    font-size: 1em;
+    border: 1px solid #5b636a1a;
+    background-color: #ffffff;
+    padding: .58em 1.16em;
+    border-radius: 5px;
+    line-height: 1.4;
+    color: rgb(103 76 243);
+    font-family: "Quicksand-Medium";
+    transition: 0.2s all linear;
+    width: 100%;
+    text-transform: capitalize;
+}
+.mob-addressChange-btn.MuiButton-outlined:hover,
+.mob-addressChange-btn.MuiButton-outlined:active,
+.mob-addressChange-btn.MuiButton-outlined:focus {
+    color: rgb(103 76 243);
+    border: 1px solid #5b636a1a;
+    background-color: #ffffff;
+}
+.mob-delivery-address-text{
+    margin: 0 .83em ;
+    width: calc(100% - 120px);
+}
+.mob-delivery-address-text h4{
+    font-family: "OpenSans-Regular";
+    font-size: 1em;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin:0;
+    color: rgb(13 19 33);
+    letter-spacing: .3px;
+}
+.mob-delivery-address-text span{
+    color: rgb(147 164 184);
+}
+.mob-delivery-address-text p{
+    font-family: "OpenSans-Regular";
+    font-size: 1em;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: .33em  0 0 0;
+    color: rgb(147 164 184);
+    letter-spacing: .3px;
+}
+.mob-cart-items-wrapper{
+    padding: 1.66em 0 0 0;
+    background-color: rgb(246 248 253);
+}
+.dashed-divider{
+    border-bottom: 1px dashed #cccccc80;
+}
+.add-new-address-link-sec{
+    padding: 1.33em 0;
+    border-bottom: 2px solid #00000022
+}
+.add-new-address-link-sec a{
+    font-family: "Quicksand-Medium";
+    font-size: 1.16em;
+    letter-spacing: 0.35px;
+    color: rgb(103 76 243);
+}
+.select-address-label-sec{
+    padding-left: .2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 12px;
+
+}
+.select-address-label-sec h4{
+    color: rgb(13 19 33);
+    font-size: 1em;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 0em;
+    margin-top: 0;
+    letter-spacing: .3px;
+    line-height: 2.4;
+}
+.select-address-label-sec p{
+    color: rgb(147 164 184);
+    font-size: 1em;
+    font-family: "OpenSans-Regular";
+    margin: 0;
+    letter-spacing: .3px;
+}
+.select-address-sec .MuiFormControlLabel-root{
+    align-items: unset;
+    margin-right: 0;
+}
+.select-address-sec .MuiButtonBase-root{
+    align-items: unset;
+    padding-top: .6em;
+}
+.select-address-sec .MuiTouchRipple-root{
+    display: none;
+}
+.mob-cart-total-sec{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.mob-cart-total-sec div{
+    width: 50%;
+}
+.mob-cart-total-sec .price-text{
+    color: rgb(13 19 33);
+    font-family: "Quicksand-Medium";
+    font-size: 1.33em;
+    margin-bottom: .25em;
+    margin-top: 0;
+}
+.mob-cart-total-sec .view-text{
+    color: rgb(103 76 243);
+    font-family: "Quicksand-Medium";
+    font-size: 1.49em;
+    margin-bottom: 0em;
+    margin-top: 0;
+}
+.select-address-sec .MuiRadio-colorSecondary.Mui-checked{
+    color: rgb(103 76 243);
+}
+.mob-price-details-sec{
+    padding: 1.33em;
+    background-color: #ffffff;
+}
+.mob-price-detail-title{
+    font-family: "Quicksand-Bold";
+    font-size: 1em;
+    color: rgb(0 47 79);
+    margin-bottom: 1.33em;
+    margin-top: 0;
+}
+.mob-price-details-flexsec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mob-price-details-flexsec h4{
+    font-family: "Quicksand-Regular";
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: rgb(0 47 79);
+}
+.mob-price-details-flexsec h4.coupon-text{
+    color: rgb(0 211 180);
+}
+.mob-price-details-flexsec h4.delivery-charge-text{
+    color: rgb(103 76 243)
+}
+.delivery-price-line{
+    margin-top: 4px;
+    border-bottom: 1px solid #cccccc80;
+}
+.mob-price-details-flexsec h3{
+    color: rgb(0 47 79);
+    margin-top: 1.14em;
+    margin-bottom: 0;
+    font-size: 1em;
+    font-family: "Quicksand-Bold"
+}
+.coupon-show-text{
+    color: #674cf3;
+    font-family: "Quicksand-Medium";
+    font-size: 1em;
+}
+.couponcode-text{
+    padding: 12px;
+    border: 1px dashed #674cf3;
+    color: #674cf3;
+    margin-bottom: 0;
+    font-family: "Quicksand-Medium";
+    line-height: 1;
+}
+.mob-price-details-flexsec .couponcode-apply-text{
+    font-size: 1em;
+    font-family: "Quicksand-Medium";
+    color: rgb(0 211 180);
+    margin: 0;
+}
+.couponcode-notetext{
+    color: rgb(91 99 106);
+    font-size: 1em;
+    margin-top: .66em;
+    font-family: "Quicksand-Regular";
+    margin-bottom: 0;
+}
+.couponcode-notetext span{
+    font-family: "Quicksand-Medium";
+}
+.coupon-list-sec{
+    padding: 1.33em 0;
+    border-bottom: 1px dashed #cccccc80;
+}
+.mob-cartitems-flex-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.mob-cartitems-flex-sec h4{
+    font-family: "Quicksand-Medium";
+    font-size: 1.16em;
+    color: rgb(0 47 79);
+    margin: 0;
+}
+.cart-items-list{
+    padding: 1.33em 0;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px dashed #cccccc80;
+}
+.cart-items-list-productimg{
+    width: 6em;
+    height: 6em;
+    background-color: #c3cde40d;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-items-list-productimg img{
+    height:auto;
+    width: auto;
+    max-height: 5em;
+    max-width: 5em;
+}
+.cart-items-list-productdetails{
+    width: calc(100% - 7em);
+    padding-left: 1em;
+}
+.cart-items-list-productdetails-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-items-list-productdetails-title h4{
+    font-family: "Quicksand-Bold";
+    font-size: 1em;
+    margin:0;
+    color: rgb(13 19 33);
+}
+.cart-items-list-productdetails-packsize{
+    color: rgb(91 99 106);
+    font-family: "Quicksand-Regular";
+    font-size: 1em;
+    margin: .5em 0;
+}
+.cart-items-list-productdetails-packsize span{
+    color: rgb(0 47 79);
+    padding-left: 1.33em;
+}
+.cart-items-list-productdetails-mrp{
+    color: rgb(0 47 79);
+    font-family: "Quicksand-Regular";
+    font-size: 1em;
+    margin: 0;
+}
+.cart-items-list-productdetails-mrp span{
+    margin-right: 1.33em;
+}
+.cart-items-list-productdetails-title .scheme{
+    color: rgb(13 19 33);
+    font-family: "OpenSans-Regular";
+    font-size: 1em;
+    margin: 0;
+}
+.cart-items-list-productdetails-title .scheme span{
+    margin-left: 1.33em;
+}
+.pt-16{
+    padding-top: 1.33em;
+}
+.mob-cartstepper-height{
+    height:7.833em;
+}
+.mob-cartitems-sec{
+    background-color: #ffffff;
+    width: 100%;
+}
+.mob-cart-items-wrapper .MuiExpansionPanelDetails-root{
+    padding-top: 0;
+}
+.mob-cart-items-wrapper .MuiExpansionPanel-root.Mui-expanded{
+    border: 0;
+    border-radius: 0;
+}
+.mob-cart-items-wrapper .MuiExpansionPanelSummary-root{
+    background-color: #ffffff;
+    border: 0;
+    padding: 0 1.33em;
+}
+.mob-cart-items-wrapper .MuiExpansionPanel-root{
+    border-radius: 0;
+    border: 0;
+}
+.coupon-textfield .MuiInput-underline:before,
+.coupon-textfield .MuiInput-underline:hover:not(.Mui-disabled):before{
+    border-bottom: 1px solid rgb(195 205 228);
+}
+.coupon-textfield .MuiInput-underline:after{
+    border-bottom: 1px solid #674cf3;
+}
+.coupon-textfield .MuiInputBase-input{
+    font-size: .91em;
+    padding: 6px 0;
+    line-height: 1;
+}
+.coupon-textfield .coupon-text{
+    color: rgb(0 211 180);
+    font-size: .9em;
+    line-height: 1;
+}
+.coupon-textfield .delivery-charge-text{
+    color:rgb(103 76 243);
+    font-size: .9em;
+    line-height: 1;
+    font-family: "Quicksand-Medium";
+}
+.select-address-sec .MuiRadio-colorSecondary{
+    opacity: .5;
+}
+.select-address-sec .MuiRadio-colorSecondary.Mui-checked{
+    opacity: 1;
+}
+.mb-0{
+    margin-bottom: 0;
+}
+.select-address-label-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .25em;
+}
+.address-label{
+    font-family: "Quicksand-Medium";
+    font-size: 1em;
+    color: rgb(0 47 79);
+    padding: 4px 8px;
+    background-color: #c3cde44a;
+    border-radius: 3px;
+    margin-left: 1em;
+}
+.edit-address-btn.MuiButton-outlined {
+    font-size: 1em;
+    border: 0;
+    background-color: #c3cde41a;
+    padding: 4px 12px;
+    border-radius: 3px;
+    color: rgb(103 76 243);
+    font-family: "Quicksand-Medium";
+    transition: 0.2s all linear;
+    text-transform: capitalize;
+    min-width: unset;
+}
+.edit-address-btn.MuiButton-outlined:hover,
+.edit-address-btn.MuiButton-outlined:active,
+.edit-address-btn.MuiButton-outlined:focus {
+    color: rgb(103 76 243);
+    background-color: #c3cde41a;
+}
+.adderess-list-height{
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.mt-16{
+    margin-top: 16px;
+}

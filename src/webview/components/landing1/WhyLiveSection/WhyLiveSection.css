@@ -1,0 +1,372 @@
+#whyLive {
+    scroll-margin: 100px;
+}
+
+.btn.demo-btn {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: normal;
+    color: var(--white);
+    width: 168px;
+    border-radius: 8px;
+    padding: 14px auto;
+    opacity: 0.9;
+    border: none;
+    background-color: #674cf3 !important;
+    border-color: #674cf3 !important;
+    transition: 0.3s ease-in-out;
+    box-shadow: -1.1px 8.9px 21px 0 rgba(103, 76, 243, 0.1);
+    height: 48px;
+    font-family: var(--font-quicksand);
+}
+
+.btn.demo-btn:hover {
+    background-image: none;
+    background-color: #4e2df0 !important;
+    border-color: #4e2df0 !important;
+    box-shadow: -1.1px 8.9px 21px 0 rgba(103, 76, 243, 0.2);
+}
+
+.WhyLiveSection .card {
+    border: none;
+    padding: 24px 24px 28px 24px;
+    border-radius: 14px;
+    box-shadow: -20.8px 12px 79px 0 rgba(16, 66, 97, 0.1);
+    background-color: #ffffff;
+}
+
+.CardIconHolder {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+}
+
+.card.GradientCard {
+    margin-top: 90px;
+}
+
+/* 
+.CardIconHolder.SellerImg {
+	background-color: rgb(255 115 0 / 10%);
+} */
+
+.SellerTrackingCardSection.section-2 {
+    margin-top: 111px;
+}
+
+.SellerTrackingCardSection .card {
+    margin-bottom: 56px !important;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.SellerTrackingCardSection .card::after {
+    position: absolute;
+    content: "";
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    background-color: #fff;
+    transition: 0.2s ease-in-out;
+    border-radius: 14px;
+}
+
+.SellerTrackingCardSection .card .card-body {
+    z-index: 1;
+}
+
+.SellerTrackingCardSection .card:hover::after {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* top: 0%; */
+    /* left: 0%; */
+    /* background-color: orange; */
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.SellerTrackingCardSection .card.right-seller:hover::after {
+    background-color: rgba(255, 115, 0, 0.9);
+}
+
+.SellerTrackingCardSection .card.centralized-tracking:hover::after {
+    background: rgba(76, 123, 255, 0.9);
+}
+
+.SellerTrackingCardSection .card.card.GradientCard:hover::after {
+    background: rgba(103, 76, 243, 0.9);
+}
+
+.SellerTrackingCardSection .card.card.manage-team:hover::after {
+    /* background: rgba(255, 195, 31, 1); */
+    /* background: rgba(253, 220, 129, 1); */
+    background: #00d3b4;
+}
+
+/* Individual card section properties */
+
+.SellerTrackingCardSection .card.right-seller {
+    background: #fff;
+    /* background: linear-gradient(
+		to right,
+		rgba(255, 115, 0, 0.9) 50%,
+		#ffffff 50%
+	); */
+    /* background-size: 210% 100%;
+	background-position: bottom right; */
+    /* background-image: radial-gradient(
+		rgba(255, 115, 0, 0.9),
+		rgba(255, 115, 0, 0.9)
+	);
+	background-position: 50% 50%;
+	background-size: 0% 0%;
+	background-repeat: no-repeat;
+	transition: background-size 0.25s ease-in-out, color 0.25s ease-in-out; */
+}
+
+.SellerTrackingCardSection .card.right-seller svg,
+.SellerTrackingCardSection .card.right-seller svg g {
+    transition: 0.05s ease-in-out;
+    transition-property: fill;
+    fill: rgba(255, 115, 0, 1);
+}
+
+.SellerTrackingCardSection .card.right-seller:hover {
+    /* background: rgba(255, 115, 0, 0.9); */
+    /* background-color: rgba(255, 145, 71, 1); */
+    background-size: 100% 100%;
+}
+
+.SellerTrackingCardSection .card.right-seller:hover svg,
+.SellerTrackingCardSection .card.right-seller:hover svg g {
+    fill: #fff;
+}
+
+.SellerTrackingCardSection .card.right-seller .CardIconHolder.SellerImg {
+    transition: 0.3s ease-in-out;
+    background-color: rgb(255 115 0 / 10%);
+}
+
+.SellerTrackingCardSection .card.right-seller:hover .CardIconHolder.SellerImg {
+    /* background-color: rgba(255, 115, 0, 0.1) !important; */
+    background-color: rgb(255 178 114) !important;
+}
+
+/*  */
+
+.SellerTrackingCardSection .card.centralized-tracking {
+    /* background: linear-gradient(to right, rgba(76, 123, 255, 0.9) 50%, #fff 50%); */
+    /* background-size: 210% 100%;
+	background-position: bottom right; */
+    background: #fff;
+}
+
+/* .SellerTrackingCardSection .card.centralized-tracking:hover {
+	background: rgba(76, 123, 255, 0.9);
+} */
+
+.SellerTrackingCardSection .card.centralized-tracking svg,
+.SellerTrackingCardSection .card.centralized-tracking svg g {
+    transition: 0.3s ease-in-out;
+    fill: rgba(76, 123, 255, 1);
+}
+
+.SellerTrackingCardSection .card.centralized-tracking:hover svg g {
+    fill: #fff;
+}
+
+.SellerTrackingCardSection .card.centralized-tracking .CardIconHolder.TrackingImg {
+    transition: 0.3s ease-in-out;
+    background-color: rgba(235, 240, 254, 1);
+}
+
+.SellerTrackingCardSection .card.centralized-tracking:hover .CardIconHolder.TrackingImg {
+    /* background-color: rgb(131, 163, 255) !important; */
+    background-color: #85a5ff !important;
+}
+
+/*  */
+.SellerTrackingCardSection .card.GradientCard {
+    /* background: linear-gradient(to right, rgba(103, 76, 243, 0.9) 50%, #fff 50%);
+	background-size: 210% 100%;
+	background-position: bottom right; */
+    background: #fff;
+}
+
+/* .SellerTrackingCardSection .card.GradientCard:hover {
+	background: rgba(103, 76, 243, 0.9);
+} */
+
+.SellerTrackingCardSection .card.GradientCard svg {
+    transition: 0.3s ease-in-out;
+    fill: rgba(103, 76, 243, 1);
+}
+
+.CardIconHolder.ReconciliatonImg {
+    transition: 0.3s ease-in-out;
+    background-color: rgba(103, 76, 243, 0.2);
+}
+
+.SellerTrackingCardSection .card.GradientCard:hover .CardIconHolder.ReconciliatonImg {
+    background-color: rgb(163, 147, 252);
+}
+
+.SellerTrackingCardSection .card.GradientCard:hover svg g path {
+    fill: #fff;
+}
+
+.SellerTrackingCardSection .card.right-seller .CardIconHolder.ReconciliatonImg {
+    transition: 0.3s ease-in-out;
+    background-color: rgb(255 115 0 / 10%);
+}
+
+.SellerTrackingCardSection .card.right-seller:hover .CardIconHolder.ReconciliatonImg {
+    background-color: rgba(255, 115, 0, 0.1) !important;
+}
+
+/*  */
+
+.SellerTrackingCardSection .card.manage-team {
+    /* background: linear-gradient(to right, rgba(255, 190, 11, 0.9) 50%, #fff 50%);
+	background-size: 210% 100%;
+	background-position: bottom right; */
+    background: #fff;
+}
+
+/* .SellerTrackingCardSection .card.manage-team:hover { */
+/* background: rgba(255, 190, 11, 0.9); */
+/* background: rgba(255, 195, 31, 1); */
+/* } */
+
+.SellerTrackingCardSection .card.manage-team svg {
+    transition: 0.05s ease-in-out;
+    /* fill: rgba(255, 190, 11, 1); */
+}
+
+#Path_39086,
+#Path_39087,
+#Path_39088 {
+    transition: 0.1s ease-in-out;
+    /* fill: rgba(255, 190, 11, 0.3) !important; */
+    fill: rgba(0, 211, 180, 0.3) !important;
+}
+
+#Path_39089 {
+    /* fill: rgba(255, 190, 11, 1) !important; */
+    fill: rgba(0, 211, 180, 1) !important;
+}
+
+.SellerTrackingCardSection .card.manage-team:hover path#Path_39086,
+.SellerTrackingCardSection .card.manage-team:hover path#Path_39087,
+.SellerTrackingCardSection .card.manage-team:hover path#Path_39088 {
+    /* fill: rgba(255, 232, 171, 1) !important; */
+    /* fill: rgba(0, 211, 180, 1) !important; */
+    fill: rgba(17, 165, 143, 0.5) !important;
+}
+
+.SellerTrackingCardSection .card.manage-team:hover path#Path_39089 {
+    fill: white !important;
+}
+
+.SellerTrackingCardSection .card.card.manage-team:hover .body-copy {
+    color: #f7fffe !important;
+}
+
+/* .SellerTrackingCardSection .card.manage-team:hover svg g path {
+	fill: #fff !important;
+} */
+
+.SellerTrackingCardSection .card.manage-team .CardIconHolder.ManageTeamImg {
+    transition: 0.3s ease-in-out;
+    /* background-color: rgba(254, 247, 228, 1); */
+    background-color: rgba(0, 211, 180, 0.3);
+}
+
+.SellerTrackingCardSection .card.manage-team:hover .CardIconHolder.ManageTeamImg {
+    /* background-color: rgba(253, 220, 129, 1); */
+    /* background-color: rgba(0, 211, 180, 0.3); */
+    background-color: rgb(0 255 218 / 50%);
+}
+
+/* .SellerTrackingCardSection
+	.card.manage-team:hover
+	.CardIconHolder.ManageTeamImg {
+	background-color: rgba(255, 115, 0, 0.1) !important;
+} */
+
+/*  */
+
+.SellerTrackingCardSection .card:hover {
+    /* background-position: bottom left; */
+    color: #fff !important;
+    box-shadow: -20.8px 12px 79px 0 rgba(16, 66, 97, 0.3);
+}
+
+.SellerTrackingCardSection .CardSubtitle {
+    transition: 0.3s ease-in-out;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.29;
+    margin: 20px 0 16px 0;
+    color: var(--dark-grey-blue);
+}
+
+.WhyLiveSection .body-copy {
+    color: #93a4b8;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.SellerTrackingCardSection .card:hover .CardSubtitle {
+    color: #ffffff;
+}
+
+.SellerTrackingCardSection .card:hover .body-copy {
+    font-weight: 600 !important;
+    color: #faeee4;
+}
+
+.whyLiveSectionTitle {
+    margin-bottom: 48px;
+}
+
+.whyLiveSectionTitle h3 {
+    font-size: 33px;
+    line-height: 42px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: normal;
+    color: var(--dark-grey-blue);
+    margin-top: 32px;
+}
+
+p.body-copy {
+    font-size: 16px;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #93a4b8;
+}
+
+.mr-lg-4,
+.mx-lg-4 {
+    margin-right: 1.5rem !important;
+}
+
+.SellerTrackingCardSection {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.mr-t-40 {
+    margin-top: 40px;
+}
+
+.flex-fixed-height {
+    display: flex;
+    flex-direction: column;
+}

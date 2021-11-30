@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.834" height="11.2" viewBox="0 0 10.834 11.2">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1.2px}
+        </style>
+    </defs>
+    <g id="cart" transform="translate(0.261 0.6)">
+        <path id="Path-30" d="M9.138 1.49l.476 4.447a1.667 1.667 0 0 1-1.657 1.846h-6.29A1.668 1.668 0 0 1 .009 5.937L.486 1.49A1.667 1.667 0 0 1 2.143 0h5.338a1.667 1.667 0 0 1 1.657 1.49z" class="cls-1" transform="translate(0.339 2.217)"/>
+        <path id="Path-35" d="M.048 3.894C.048 2.735-.427 0 1.6 0s1.489 3.121 1.489 3.925" class="cls-1" transform="translate(3.487 0)"/>
+    </g>
+</svg>

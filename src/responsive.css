@@ -1,0 +1,45 @@
+@media screen and (max-width: 599px) {
+  body {
+    font-size: 12px !important;
+  }
+
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  body {
+    font-size: 12px !important;
+  }
+
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  body {
+    font-size: 14px !important;
+  }
+  .mr-bot10 .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    margin-bottom: 10px;;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  body {
+    font-size: 16px !important;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1919px) {
+  body {
+    font-size: 16px !important;
+  }
+  .MuiContainer-maxWidthLg {
+    max-width: 1440px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 16px !important;
+  }
+  .MuiContainer-maxWidthLg {
+    max-width: 1440px !important;
+  }
+}
+

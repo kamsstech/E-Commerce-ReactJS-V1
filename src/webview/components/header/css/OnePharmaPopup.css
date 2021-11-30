@@ -1,0 +1,138 @@
+.onePharmaPopup .MuiDialog-paperWidthMd {
+    max-width: 672px;
+}
+.onePharmaPopup.TermsAndConditions .MuiDialog-paperWidthMd{
+    max-width: 768px;
+}
+.onePharmaPopup .MuiDialogContent-root {
+    margin: 42px 16px 8px 32px;
+    padding: 0 !important;
+}
+.onePharmaPopup h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 23px;
+    color: #f15025;
+    padding-bottom: 8px;
+}
+.onePharmaPopup h1.title {
+    color: #343a40;
+}
+.onePharmaPopup h2 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--dark);
+    opacity: 0.6;
+    padding-bottom: 24px;
+    font-family: var(--font-opensans);
+    font-weight: initial;
+}
+.onePharmaPopup h2.subtitle {
+    opacity: initial;
+    line-height: 1.5;
+    color: var(--slate-grey);
+}
+.onePharmaPopup h4.last-revised {
+    color: var(--slate-grey);
+}
+.onePharmaPopup h4 {
+    font-size: 14px;
+    font-weight: initial;
+    margin: 0;
+    color: var(--dark);
+    line-height: 1.71;
+    font-family: var(--font-opensans);
+}
+.mr-b-32 {
+    margin-bottom: 32px !important;
+}
+.onePharamaContent {
+    margin-bottom: 24px;
+}
+.onePharamaContent h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #343a40;
+    margin: 0 0 12px 0;
+}
+.onePharamaContent p {
+    margin: 0;
+    color: var(--slate-grey);
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: var(--font-opensans);
+    font-weight: normal;
+}
+.onePharmaPopup .MuiDialogContent-root {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--purpleish-blue) #eee;
+}
+.onePharmaPopup .MuiDialogContent-root::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: #eee;
+}
+.onePharmaPopup .MuiDialogContent-root::-webkit-scrollbar-thumb{
+    background-color: #674cf3;
+    border: 2px solid #674cf3;
+}
+.onePharmaPopup .MuiDialogContent-root::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: white;
+}
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+.reqReg-btn {
+    letter-spacing: initial !important;
+    font-size: 14px !important;
+    color: var(--white) !important;
+    width: 172px;
+    height: 40px;
+}
+.reqReg-cbtn {
+    letter-spacing: initial !important;
+    font-size: 14px !important;
+    background-color: rgba(195, 205, 228, 0.2) !important;
+    color: var(--dark-grey-blue) !important;
+    width: 84px;
+    height: 40px;
+}
+.onePharmaPopup .MuiDialogActions-root {
+    padding: 24px 32px 24px 24px;
+}
+.onePharmaPopup .MuiPaper-rounded {
+    border-radius:  14px;
+}
+.onePharamaContent ul {
+    margin: 0;
+    padding: 0;
+    list-style: circle;
+}
+.TermsAndConditions .MuiListItemText-root  {
+    margin: 4px 0;
+    line-height: 1.88;
+    font-size: 16px;
+    color: var(--slate-grey);
+    font-family: var(--font-opensans);
+    font-weight: normal;
+}
+.TermsAndConditions .MuiList-padding {
+    padding: 0;
+}
+.TermsAndConditions .MuiListItem-gutters {
+    padding: 0;
+}
+.TermsAndConditions .MuiListItemIcon-root {
+    min-width: initial;
+    margin-right: 4px;
+}
+.TermsAndConditions .relative button {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: rgba(147, 164, 184, 0.06);
+    min-width: initial!important;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

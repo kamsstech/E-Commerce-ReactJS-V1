@@ -1,0 +1,137 @@
+.helpPage {
+    margin: 40px 0;
+}
+
+.helpPage .MuiBox-root {
+    padding: 0;
+}
+
+.helpPage .MuiAppBar-colorPrimary {
+    background-color: var(--white);
+    box-shadow: none;
+    margin-bottom: 22px;
+    border-bottom: 2px dashed rgba(219, 219, 219, 0.5) !important;
+}
+
+.helpPage .MuiTabs-flexContainer button.Mui-selected {
+    color: #002f4f;
+}
+
+.helpPage .MuiTabs-flexContainer button {
+    padding-bottom: 16px !important;
+    margin-right: 64px;
+    color: rgba(0, 47, 79, 0.5);
+    line-height: 0.78;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: initial;
+    text-transform: capitalize;
+    font-family: var(--font-quicksand);
+}
+
+.helpPage .MuiTabs-indicator {
+    height: 4px;
+    background-color: #002f4f;
+    border-radius: 4px;
+}
+
+.helpPage .MuiAccordionSummary-root {
+    padding: 0;
+}
+
+.helpPage .MuiAccordionSummary-content {
+    margin: 32px 0;
+}
+
+.helpPage .MuiAccordion-root.Mui-expanded {
+    margin: 0 !important;
+}
+
+.helpPage .MuiAccordionSummary-content p {
+    font-size: 23px;
+    font-weight: 600 !important;
+    line-height: 1.04 !important;
+    color: #002f4f;
+    flex-basis: initial !important;
+}
+
+.helpPage .MuiAccordion-root.Mui-expanded {
+    margin: 0;
+}
+
+.helpPage .MuiTabs-flexContainer button.MuiTab-root {
+    min-width: initial !important;
+    padding: 0;
+    /*min-height: initial !important;*/
+}
+
+.helpPage .MuiAccordion-root {
+    box-shadow: none;
+    /*border-bottom: 1.5px dashed rgba(219, 219, 219, 0.7) !important;*/
+}
+
+.helpPage .MuiTypography-root .MuiAccordion-root {
+    position: initial !important;
+    border-bottom: 1.5px dashed rgba(219, 219, 219, 0.7) !important;
+}
+
+.helpPage .MuiAccordionDetails-root {
+    display: initial !important;
+    padding: 0 !important;
+}
+
+.helpPage .MuiAccordionDetails-root p {
+    font-size: 19px;
+    color: #93a4b8;
+    line-height: 1.5 !important;
+    padding-right: 54px;
+    margin-bottom: 16px;
+}
+.prepageBanner {
+    background-color: rgba(236, 232, 254, 0.2);
+}
+.preLoginDSg .prepageBanner {
+    margin-top: 96px;
+}
+
+.highlight-purple {
+    color: #674cf3;
+}
+
+.help-container-welcome img {
+    position: absolute;
+    right: 0;
+    top: 16px;
+}
+
+.help-container-welcome h3 {
+    font-style: normal;
+    letter-spacing: normal;
+    color: #2e3e6a;
+    font-size: 33px;
+    line-height: 1.33;
+    margin: 96px 0 0 0;
+}
+.help-container-welcome .help-write-to-us {
+    font-size: 16px;
+    margin: 16px 0 0 0;
+    color: #93a4b8;
+    line-height: 1.5;
+}
+
+.help-container-welcome {
+    position: relative;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    height: 288px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.help-heading {
+    font-weight: 600 !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

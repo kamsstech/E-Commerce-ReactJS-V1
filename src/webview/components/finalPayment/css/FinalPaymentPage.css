@@ -1,0 +1,58 @@
+.finalpaymentflow h1 {
+    margin: 40px 0 16px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--marine-blue);
+    line-height: 1.05;
+}
+.finalpaymentflow .receiverPayer {
+    color: #668295;
+}
+.finalpaymentflow p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.38;
+    color: var(--dark);
+    margin-bottom: 24px;
+}
+.finalpaymentflow tbody tr td:nth-child(3) {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+}
+.finalpaymentflow .blue-divider {
+    margin: 0;
+}
+.paymentTermsConditions h6{
+     font-size: 14px;
+     font-weight: 600;
+     color: var(--dark);
+     margin: 0;
+     padding-bottom: 48px;
+}
+.paymentTermsConditions .link {
+    color: #4c7bff;
+    cursor: pointer;
+}
+.paymentTermsConditions button {
+    width: 124px;
+    height: 48px;
+    background-color: var(--purpleish-blue);
+    border-radius: 8px;
+    line-height: 0.81;
+    padding: 0;
+}
+.paymentTermsConditions .MuiButton-label {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+    box-shadow: none;
+}
+.paymentTermsConditions .MuiButton-contained.Mui-disabled {
+    background-color: var(--purpleish-blue);
+    opacity: 0.3;
+}
+.paymentTermsConditions .MuiButton-contained:hover {
+    background-color: var(--purpleish-blue);
+    box-shadow: none;
+}   

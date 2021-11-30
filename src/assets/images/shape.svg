@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.401" height="15.41" viewBox="0 0 15.401 15.41">
+    <defs>
+        <style>
+            .cls-1{fill:#dbdbdb;stroke:#dbdbdb;stroke-width:.4px}
+        </style>
+    </defs>
+    <g id="shape" transform="translate(.141 .201)">
+        <g id="Group_1737" data-name="Group 1737" transform="translate(.06)">
+            <g id="Group_1736" data-name="Group 1736">
+                <path id="Path_3858" d="M15.06 3.752a1.875 1.875 0 0 0-3.586-.759l-1.6-.268-.157.925 1.609.269a1.875 1.875 0 0 0 1.157 1.567l-.457 3.444a1.871 1.871 0 0 0-1.653 1.853v.007l-5.4 1.425a1.866 1.866 0 0 0-1.386-.937l-.957-7.66a1.88 1.88 0 0 0 1.021-.981l1.449.241.154-.924-1.46-.244a1.87 1.87 0 1 0-2.1 2.016l.958 7.659a1.875 1.875 0 1 0 2.564 1.742v-.007l5.4-1.425a1.87 1.87 0 1 0 2.332-2.646l.457-3.444a1.871 1.871 0 0 0 1.655-1.853zM1.936 2.815a.937.937 0 1 1 .937-.937.937.937 0 0 1-.937.937zm1.406 11.249a.937.937 0 1 1 .937-.937.937.937 0 0 1-.937.937zm9.843-3.281a.937.937 0 1 1-.937-.937.937.937 0 0 1 .937.937zm-.937-7.031a.937.937 0 1 1 .937.937.937.937 0 0 1-.937-.937z" class="cls-1" data-name="Path 3858" transform="translate(-.06)"/>
+                <path id="Rectangle_2322" d="M0 0h.936v.936H0z" class="cls-1" data-name="Rectangle 2322" transform="rotate(9.5 -10.564 49.15)"/>
+                <path id="Rectangle_2323" d="M0 0h.936v.936H0z" class="cls-1" data-name="Rectangle 2323" transform="rotate(9.486 -9.63 37.885)"/>
+            </g>
+        </g>
+    </g>
+</svg>

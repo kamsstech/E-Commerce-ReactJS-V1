@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.401" height="16.411" viewBox="0 0 16.401 16.411">
+    <defs>
+        <style>
+            .cls-1{fill:#5b636a;stroke:#5b636a;stroke-width:.4px}
+        </style>
+    </defs>
+    <g id="shape" transform="translate(.141 .201)">
+        <g id="Group_1737" transform="translate(.06)">
+            <g id="Group_1736">
+                <path id="Path_3858" d="M16.06 4a2 2 0 0 0-3.825-.809l-1.707-.285-.167.986 1.716.286a2 2 0 0 0 1.233 1.674l-.487 3.673a2 2 0 0 0-1.762 1.975v.007L5.3 13.029a1.99 1.99 0 0 0-1.479-1L2.8 3.858a2 2 0 0 0 1.086-1.046l1.545.258.169-.986-1.557-.26A1.995 1.995 0 1 0 1.8 3.974l1.022 8.17A2 2 0 1 0 5.561 14v-.007l5.764-1.52a1.995 1.995 0 1 0 2.488-2.822l.487-3.672A2 2 0 0 0 16.06 4zm-14-1a1 1 0 1 1 1-1 1 1 0 0 1-.999 1zm1.5 12a1 1 0 1 1 1-1 1 1 0 0 1-.999 1zm10.5-3.5a1 1 0 1 1-1-1 1 1 0 0 1 1 1zm-1-7.5a1 1 0 1 1 1 1 1 1 0 0 1-1-1z" class="cls-1" transform="translate(-.06)"/>
+                <path id="Rectangle_2322" d="M0 0H1.003V1.003H0z" class="cls-1" transform="rotate(9.5 -11.263 52.409)"/>
+                <path id="Rectangle_2323" d="M0 0H1.003V1.003H0z" class="cls-1" transform="rotate(9.486 -10.336 40.407)"/>
+            </g>
+        </g>
+    </g>
+</svg>

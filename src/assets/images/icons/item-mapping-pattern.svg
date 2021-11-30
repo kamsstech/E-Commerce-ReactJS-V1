@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="45.45" viewBox="0 0 48 45.45">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Subtraction_16" fill="#c3cde4" d="M48 45.451H0V0h48v45.449z" transform="translate(0)"/>
+        </clipPath>
+        <style>
+            .cls-3,.cls-5{fill:none}.cls-3{stroke:#c3cde4;stroke-width:2px}.cls-4{stroke:none}
+        </style>
+    </defs>
+    <g id="pattern" clip-path="url(#clip-path)" opacity="0.3" transform="translate(48 45.45) rotate(180)">
+        <g id="Group_37888" transform="translate(-21.902 -23.85)">
+            <g id="Ellipse_2163" class="cls-3" transform="translate(7.525 6.75)">
+                <ellipse cx="25.209" cy="25.5" class="cls-4" rx="25.209" ry="25.5"/>
+                <ellipse cx="25.209" cy="25.5" class="cls-5" rx="24.209" ry="24.5"/>
+            </g>
+            <g id="Ellipse_2164" class="cls-3" transform="translate(0 0)">
+                <ellipse cx="32.358" cy="31.875" class="cls-4" rx="32.358" ry="31.875"/>
+                <ellipse cx="32.358" cy="31.875" class="cls-5" rx="31.358" ry="30.875"/>
+            </g>
+            <g id="Ellipse_2165" class="cls-3" transform="translate(13.545 13.5)">
+                <ellipse cx="18.813" cy="18.375" class="cls-4" rx="18.813" ry="18.375"/>
+                <ellipse cx="18.813" cy="18.375" class="cls-5" rx="17.813" ry="17.375"/>
+            </g>
+        </g>
+    </g>
+</svg>

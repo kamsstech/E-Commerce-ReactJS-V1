@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <defs>
+        <style>
+            .cls-1{fill:#6d7179}
+        </style>
+    </defs>
+    <g id="plus_icon" transform="translate(-1141 -211)">
+        <rect id="Rectangle_10986" width="12" height="2" class="cls-1" rx="1" transform="translate(1141 216)"/>
+        <rect id="Rectangle_10987" width="12" height="2" class="cls-1" rx="1" transform="translate(1148 211) rotate(90)"/>
+    </g>
+</svg>

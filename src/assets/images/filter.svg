@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#002f4f}.prefix__cls-2{fill:#fff;stroke:#002f4f;stroke-width:1.5px}.prefix__cls-3{stroke:none}.prefix__cls-4{fill:none}
+        </style>
+    </defs>
+    <g id="prefix__filter" transform="translate(-317 -69)">
+        <rect id="prefix__Rectangle_2511" width="20" height="2" class="prefix__cls-1" data-name="Rectangle 2511" rx="1" transform="translate(317 72)"/>
+        <rect id="prefix__Rectangle_2512" width="20" height="2" class="prefix__cls-1" data-name="Rectangle 2512" rx="1" transform="translate(317 82)"/>
+        <g id="prefix__Ellipse_1326" class="prefix__cls-2" data-name="Ellipse 1326" transform="translate(326 69)">
+            <circle cx="4" cy="4" r="4" class="prefix__cls-3"/>
+            <circle cx="4" cy="4" r="3.25" class="prefix__cls-4"/>
+        </g>
+        <g id="prefix__Ellipse_1327" class="prefix__cls-2" data-name="Ellipse 1327" transform="translate(320 79)">
+            <circle cx="4" cy="4" r="4" class="prefix__cls-3"/>
+            <circle cx="4" cy="4" r="3.25" class="prefix__cls-4"/>
+        </g>
+    </g>
+</svg>

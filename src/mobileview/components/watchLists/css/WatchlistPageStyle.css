@@ -1,0 +1,8 @@
+.watchlist-grid{
+	display: grid;
+}
+
+.watchlist-image{
+    width: 40px;
+    height: 88px;
+}

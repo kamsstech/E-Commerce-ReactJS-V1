@@ -1,0 +1,22 @@
+.paymentWithoutLogo button {
+    width: 80px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0.81;
+    color: var(--white);
+    letter-spacing: normal;
+    text-transform: capitalize;
+    min-width: initial !important;
+}
+.paymentWithoutLogo button:hover {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.paymentWithoutLogo.web-header .header-top-sec {
+    padding: 29px 0 31px 0 !important;
+}

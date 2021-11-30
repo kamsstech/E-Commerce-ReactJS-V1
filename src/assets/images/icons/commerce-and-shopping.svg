@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
+    <defs>
+        <style>
+            .cls-2{fill:#fff;stroke:#fff;stroke-width:.5px}
+        </style>
+    </defs>
+    <g id="commerce-and-shopping" transform="translate(-61.088 0.02)">
+        <path id="Path_10705" fill="#ef2b4a" d="M82.617 0H63.559a2.478 2.478 0 0 0-2.471 2.485v27.58a1.921 1.921 0 0 0 2.973 1.618l9.027-5.931 9.027 5.931a1.921 1.921 0 0 0 2.973-1.618V2.485A2.478 2.478 0 0 0 82.617 0z" transform="translate(0 -0.02)"/>
+        <g id="Group_4761" transform="translate(67.093 6.481)">
+            <g id="Group_4758" transform="translate(3.089 0.541)">
+                <path id="Path_10707" d="M209.673 194.54a.555.555 0 0 1-.511-.77l4.87-11.616a.554.554 0 1 1 1.022.429l-4.87 11.616a.555.555 0 0 1-.511.341z" class="cls-2" transform="translate(-209.119 -181.815)"/>
+            </g>
+            <g id="Group_4759" transform="translate(0)">
+                <path id="Path_10708" d="M170.1 180.61a3.077 3.077 0 1 1 2.706-3.055 2.9 2.9 0 0 1-2.706 3.055zm0-5a1.984 1.984 0 1 0 1.6 1.946 1.8 1.8 0 0 0-1.6-1.947z" class="cls-2" transform="translate(-167.396 -174.5)"/>
+            </g>
+            <g id="Group_4760" transform="translate(6.588 7.946)">
+                <path id="Path_10709" d="M259.085 287.95a3.077 3.077 0 1 1 2.706-3.055 2.9 2.9 0 0 1-2.706 3.055zm0-5a1.984 1.984 0 1 0 1.6 1.946 1.8 1.8 0 0 0-1.6-1.947z" class="cls-2" transform="translate(-256.379 -281.84)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+
+.mob-product-list .MuiGrid-grid-xs-6{
+    max-width: calc(50% - .5em);
+    margin-bottom: 1em;
+}
+.mob-product-list .MuiGrid-grid-xs-6:nth-child(even){
+    margin-left: .5em;
+}
+.mob-product-list .MuiGrid-grid-xs-6:nth-child(odd){
+    margin-right: .5em;
+}
+.drawerRadius .MuiDrawer-paperAnchorBottom{
+    border-radius: 40px 40px 0 0;
+}
+.distributor-sec-height{
+    max-height: 552px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

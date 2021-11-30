@@ -1,0 +1,472 @@
+.mob-product-spacing {
+  padding: 1em 1.33em;
+}
+.mob-top-spacing {
+  margin-top: 4.66em;
+}
+.mob-product-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.58em;
+  flex-wrap: wrap;
+}
+.mob-product-title h4 {
+  font-size: 1.33em;
+  font-family: "Quicksand-Bold";
+  color: #002f4f;
+  margin: 0;
+  text-transform: capitalize;
+}
+.mob-product-subtitle {
+  font-size: 1em;
+  font-family: "OpenSans-Regular";
+  color: #002f4f;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.mob-product-subtitle span {
+  color: #674cf3;
+}
+.product-imgslider {
+  margin-bottom: 0.7em;
+}
+.product-imgslider .product-slider-img {
+  width: 18em;
+  height: 18em;
+  margin: 2em auto;
+  object-fit: contain;
+  object-position: center;
+}
+.product-imgslider .slick-dots li button:before {
+  font-size: 8px;
+}
+.product-imgslider .slick-dots li.slick-active button:before {
+  color: #674cf3;
+  opacity: 1;
+}
+.product-imgslider .slick-dots li {
+  width: 12px;
+  height: 12px;
+}
+.product-imgslider .slick-dots {
+  bottom: 0;
+}
+.mob-product-title h6 {
+  font-size: 0.91em;
+  margin-top: 0.36em;
+  margin-bottom: 0;
+  color: #5b636a;
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+}
+.mob-product-title .product-num {
+  color: #674cf3;
+  font-size: 0.833em;
+}
+.mob-product-title .product-direction-img {
+  height: 1em;
+  width: 1em;
+  margin-left: 1em;
+}
+.product-about-title {
+  color: #002f4f;
+  font-family: "Quicksand-Bold";
+  font-size: 1.16em;
+  margin: 1.14em 0 0.85em 0.35em;
+  position: relative;
+  display: inline-block;
+}
+.product-about-title::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: calc(100% + 10px) !important;
+  top: .85em;
+  left: -5px;
+  background-color: transparent;
+  background-image: linear-gradient(to right, #674cf3, #674cf300);
+  height: 11px;
+  width: 100%;
+  z-index: -1;
+  border-radius: 0 0 0 10px;
+}
+.product-adout-desc {
+  color: #0d1321;
+  font-family: "Quicksand-Medium";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.36em;
+}
+.grey-clr {
+  color: #5b636a;
+}
+.product-desc-list {
+  color: #5b636a;
+  font-family: "Quicksand-Regular";
+  font-size: 0.9166em;
+  margin-top: 0;
+  margin-bottom: 0em;
+  padding-left: 1.33em;
+  line-height: 1.7;
+}
+.quick-link-space {
+  margin-top: 2.54em;
+  margin-bottom: 1em;
+}
+.quick-links.MuiButton-contained {
+  font-size: 0.91em;
+  border: solid 1px #d5dcec;
+  background-color: #d5dcec;
+  padding: 0.75em 1.42em;
+  border-radius: 4px;
+  line-height: 1.7;
+  color: #0d1321;
+  font-family: "Quicksand-Medium";
+  transition: 0.2s all linear;
+  text-transform: capitalize;
+  box-shadow: none;
+  margin-right: 8px;
+}
+.quick-links.MuiButton-contained:hover,
+.quick-links.MuiButton-contained:active,
+.quick-links.MuiButton-contained:focus {
+  border-color: #d5dcec;
+  color: #0d1321;
+  background-color: #d5dcec;
+  opacity: 0.9;
+  box-shadow: none;
+}
+.solid-line {
+  border-top: 1px solid #cccccc80;
+  margin-top: 1.08em;
+}
+.subsec-title {
+  font-size: 1em;
+  font-family: "Quicksand-Medium";
+  color: #0d1321;
+  margin-top: 1.09em;
+  margin-bottom: 0em;
+}
+.subsec-desc {
+  font-size: 0.91em;
+  font-family: "Quicksand-Regular";
+  color: #5b636a;
+  margin-top: 0.369em;
+  margin-bottom: 1.09em;
+}
+.subsec-desc span {
+  font-family: "Quicksand-Medium";
+  color: #0d1321;
+}
+.about-subsec {
+  border-bottom: 1px dashed #cccccc80;
+}
+.alternatives-sec {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.alternatives-sec-title {
+  font-family: "Quicksand-Bold";
+  font-size: 1em;
+  margin: 0;
+  text-transform: capitalize;
+}
+.alernative-prod {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.25em 0;
+  border-bottom: 1px solid #cccccc80;
+}
+.alprod-image {
+  width: 80px;
+}
+.alprod-desc {
+  width: calc(100% - 80px);
+}
+.alprod-desc h5 {
+  color: #0d1321;
+  font-family: "Quicksand-Medium";
+  font-size: 1.08em;
+  margin-top: 0;
+  margin-bottom: 0.33em;
+  text-transform: capitalize;
+}
+.alprod-desc h6 {
+  color: #5b636a;
+  font-family: "Quicksand-Regular";
+  font-size: 0.91em;
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.alprod-desc h6 span {
+  padding-left: 2em;
+  text-transform: capitalize;
+}
+.alprod-desc .marine_blue {
+  color: #002f4f;
+  font-family: "Quicksand-Medium";
+}
+.mob-search-bar .alprod-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  object-position: center;
+}
+.mob-product-packaging {
+  color: #5b636a;
+  letter-spacing: 0.53px;
+  font-family: "OpenSans-Regular";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+.mob-product-selectedsize {
+  color: #5b636a;
+  font-size: 1em;
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.mob-product-selectedsize span {
+  font-size: 1.16em;
+  font-family: "OpenSans-SemiBold";
+  color: #272727;
+}
+.mob-product-select-size.MuiTabs-root {
+  min-height: unset;
+}
+.mob-product-select-size .MuiTab-root {
+  min-height: unset;
+  line-height: 1;
+  font-family: "OpenSans-SemiBold";
+  font-size: 1.06em;
+  padding: 0.69em 0.76em;
+  border: 1px solid #c3cde4;
+  border-radius: 0.31em;
+  margin-right: 0.61em;
+  margin-bottom: 1.23em;
+}
+.mob-product-select-size .MuiTab-textColorPrimary.Mui-selected {
+  color: #2ec4b6;
+  border: 1px solid #2ec4b6;
+  background-color: #2ec4b61a;
+}
+.mob-product-select-size .MuiTabs-indicator {
+  background-color: transparent;
+}
+.drugdetails-banner {
+  height: 13.75em !important;
+  border-radius: 10px;
+  width: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+.mob-profile-sel-title-sec {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mob-profile-sel-title-sec-contains {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.mob-profile-sel-title-sec-contains h6:first-child{
+  width: 5.16em;
+}
+.mob-profile-sel-title-sec-contains h6:nth-child(2){
+  width: calc(100% - 5.16em);
+}
+.mob-profile-sel-title-sec-contains h6:nth-child(2) span{
+  padding: 0 !important;
+}
+.mob-profile-sel-title {
+  font-family: "Quicksand-Bold";
+  color: #0d1321;
+  font-size: 1.16em;
+  margin: 0;
+}
+.mob-profile-sel-count {
+  color: #674cf3;
+  font-family: "Quicksand-Medium";
+  font-size: 0.91em;
+  margin: 0;
+}
+.mob-profile-sponsored {
+  color: #674cf3;
+  font-family: "Quicksand-Medium";
+  font-size: 0.91em;
+  margin: 0.5em 0;
+  letter-spacing: 0.53px;
+}
+.mob-pro-sellers-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1em;
+  border-bottom: 1px dashed #c3cde499;
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+.mob-pro-sellers-list-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width:175px;
+}
+.mob-pro-sellers-list-buttons .fast-moving-addtocart.MuiButton-containedPrimary {
+  margin-left: 45px;
+}
+.mob-pro-sellername {
+  font-family: "OpenSans-Regular";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.416em;
+  color: #5b636a;
+}
+.mob-pro-drugrate {
+  font-family: "OpenSans-Regular";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.416em;
+  color: #0d1321;
+}
+.mob-pro-scheme {
+  font-family: "OpenSans-Regular";
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0em;
+  color: #0d1321;
+}
+.mob-pro-drugcount.MuiFormControl-marginNormal {
+  margin-bottom: 0em;
+  margin-top: 0;
+  margin-right: 0.66em;
+}
+.mob-pro-drugcount .MuiOutlinedInput-notchedOutline {
+  border-color: #c3cde4;
+  border-width: 1px;
+}
+.mob-pro-drugcount
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #674cf3;
+  border-width: 1px;
+}
+.mob-pro-drugcount
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #674cf3;
+  border-width: 1px;
+}
+.mob-pro-drugcount
+  .MuiOutlinedInput-root.Mui-error
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #f44336;
+}
+.mob-pro-drugcount .MuiOutlinedInput-input {
+  font-size: 0.75em;
+  color: #5b636a;
+  font-family: "Quicksand-Medium";
+  padding: 0.66em 2em 0.66em 0.66em;
+  line-height: 1.3;
+  height: 1.35em;
+}
+.mob-pro-drugcount .MuiSelect-iconOutlined {
+  right: 0;
+}
+.mob-pro-drugcount.mob-input
+  .MuiOutlinedInput-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #5b636a !important;
+}
+.mob-pro-drugcount.mob-input .MuiOutlinedInput-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #5b636a !important;
+}
+.mob-pro-drugcount.mob-input .MuiOutlinedInput-input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #5b636a !important;
+}
+.mob-pro-drugcount.mob-input .MuiOutlinedInput-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #5b636a !important;
+}
+.mob-searchlist-header .alternate-item-count {
+  color: #5b636a;
+  font-family: "Quicksand-Medium";
+  font-size: 1em;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.mob-create-new-user{
+  font-size: 1em;
+}
+.mob-addbranch-drawer-title{
+  font-size: 1.33em;
+  font-family: "Quicksand-Bold";
+  color: rgb(0 47 79);
+  margin: 0;
+}
+.mob-addbranch-drawer-subtitle{
+  color: rgb(91 99 106);
+  font-family: "OpenSans-Regular";
+  margin-top: .33em;
+  margin-bottom: 1em;
+}
+.fast-moving-spacing{
+  padding: 1.05em 1.38em !important;
+}
+.product-imgslider {
+  padding: 0 1.33em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.33em;
+}
+.product-imgslider-dots.product-imgslider-dots {
+  position: absolute;
+  bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* left: 1.33em;
+  right: 1.33em; */
+  background: transparent;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.product-imgslider-dots .MuiMobileStepper-dot {
+  margin: 0 4px;
+  background-color: #c3cde4;
+  border-radius: 4px;
+}
+.product-imgslider-dots .MuiMobileStepper-dotActive {
+  width: 16px;
+  background-color: #674cf3;
+}
+.mob-demoform-drawer-title{
+  font-size: 1.33em;
+  font-family: "Quicksand-Bold";
+  color: rgb(0 47 79);
+  /* margin-bottom: 0.5em; */
+  margin-bottom: 1.5em;
+  margin-top: 0.2em;
+}
