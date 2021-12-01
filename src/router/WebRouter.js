@@ -172,7 +172,8 @@ const PublicRoute = (props) => {
 	if (!token){
 		return <Layout path={path} Component={Component}/>
 	} else{
-		return <Redirect to="/home" />
+		return <Layout path={path} Component={Component}/>
+		// return <Redirect to="/home" />
 	}
 
 	
@@ -533,6 +534,13 @@ const WebRouter = () => {
 						Layout={CommonLayout}
 						pageTitle="Home"
 					/>
+					{/*<PublicRoute
+						path="/site-control/"
+						Component={LoginPageContainer}
+						Layout={LoginRegisterLayout}
+						pageTitle="Add Category Control"
+					/>*/}
+
 
 				 <PublicRoute 	path="/login" Layout={LoginRegisterLayout} Component={LoginPageContainer} />
 				 <CommonRoute path="/privacy"  Layout={CommonLayout} Component={PrivacyAndPolicyPageContainer} />		
@@ -804,10 +812,10 @@ const WebRouter = () => {
 						Layout={MainLayout}
 						pageTitle="Add Banner Control"
 					/>
-					<PrivateRoute
+					<PublicRoute
 						path="/site-control/banner"
 						Component={BannerPageContainer}
-						Layout={MainLayout}
+						Layout={HomeLayout}
 						pageTitle="Banner Control"
 					/>
 
@@ -817,7 +825,7 @@ const WebRouter = () => {
 						Layout={MainLayout}
 						pageTitle="Add Brand Control"
 					/>
-					<PrivateRoute
+					<PublicRoute
 						path="/site-control/brand"
 						Component={BrandPageContainer}
 						Layout={MainLayout}
@@ -830,7 +838,7 @@ const WebRouter = () => {
 						Layout={MainLayout}
 						pageTitle="Add Category Control"
 					/>
-					<PrivateRoute
+					<PublicRoute
 						path="/site-control/category"
 						Component={CategoryPageContainer}
 						Layout={MainLayout}
@@ -882,13 +890,13 @@ const WebRouter = () => {
 						pageTitle="Delivered Order Control"
 					/>
 
-					<PrivateRoute
+					<PublicRoute
 						path="/site-control/add-page"
 						Component={AddPageSettingContainer}
 						Layout={MainLayout}
 						pageTitle="Add page Control"
 					/>
-					<PrivateRoute
+					<PublicRoute
 						path="/site-control/page"
 						Component={PageSettingContainer}
 						Layout={MainLayout}
