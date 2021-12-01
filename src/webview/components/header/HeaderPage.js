@@ -293,7 +293,6 @@ export default function HeaderPage(props) {
 	const handleCloseRegModal = () => {
 		setOpenRegModal(false);
 	};
-
 	const handleOpenOnePharmaModal = () => {
 		setOpenOnePharmaModal(true);
 	};
