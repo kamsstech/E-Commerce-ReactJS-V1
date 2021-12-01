@@ -415,7 +415,7 @@ export default function HeaderPage(props) {
 
 	return (
 		<>
-			{showProductDetails == true ? (
+			{/*{showProductDetails == true ? (*/}
 				<>
 					<div className="web-header">
 						<AppBar position="static">
@@ -1376,7 +1376,7 @@ export default function HeaderPage(props) {
 						handleClose={handleCloseComingSoon}
 					/>
 				</>
-			) : null}
+			{/*) : null}*/}
 		</>
 	);
 }

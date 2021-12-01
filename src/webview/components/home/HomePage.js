@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
-// import { FooterPageContainer } from "../index";
-import FooterPage from "../footerSection/Footer";
 import Banner from "./Banner";
 import PreferredSeller from "./PreferredSeller";
 import FastMovingMedicines from "./FastMovingMedicines";
@@ -273,7 +271,6 @@ const HomePage = (props) => {
 					/>
 				</Container>
 				<AboutUs />
-				{<FooterPage />}
 			</div>
 
 			{/*<FooterPageContainer

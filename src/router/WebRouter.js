@@ -285,9 +285,9 @@ const CommonLayout =(props)=>{
 			path={path}
 			render={props => (
 				<>
+					<HeaderPageContainer />
 					<Component {...props}/>
 					<FooterPage/>
-					{/* <ChatBot /> */}
 				</>
 			)}
 		/>
@@ -524,7 +524,16 @@ const WebRouter = () => {
 
 				 <Route path="/dummy" component={DummyPage} />
 
-				 <PublicRoute exact path="/" Layout={LandingLayout} Component={LandingPageContainer1} />
+				 {/*<PublicRoute exact path="/" Layout={LandingLayout} Component={LandingPageContainer1} />*/}
+
+				 <PublicRoute
+				 		exact
+						path="/"
+						Component={HomePageContainer}
+						Layout={CommonLayout}
+						pageTitle="Home"
+					/>
+
 				 <PublicRoute 	path="/login" Layout={LoginRegisterLayout} Component={LoginPageContainer} />
 				 <CommonRoute path="/privacy"  Layout={CommonLayout} Component={PrivacyAndPolicyPageContainer} />		
 
