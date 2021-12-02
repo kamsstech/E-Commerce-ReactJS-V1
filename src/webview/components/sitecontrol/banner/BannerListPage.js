@@ -24,6 +24,11 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import { usePagination } from '@material-ui/lab/Pagination';
 
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
 
 //images
 import ProductImg1 from "../../../../assets/mobImages/item1.png";
@@ -320,7 +325,7 @@ const BannerListPage = (props) => {
 							<hr className="MuiDivider-root blue-divider"></hr>
 						</div>
 						<div className="pd-l-16">
-								<Table className="paymentsellerList">
+								<Table className="paymentsellerList kamss-admin-table">
 									<TableHead>
 										<TableRow className="head noBorder">
 											<TableCell>SNo</TableCell>
@@ -341,8 +346,38 @@ const BannerListPage = (props) => {
 											<TableCell className="tBody">{item1.c_banner_title}</TableCell>
 											<TableCell className="tBody"><img src={'http://35.224.80.84/apiaction/'+item1.c_banner_image} alt="searchimg" /></TableCell>
 											<TableCell className="tBody">{item1.dt_createdate}</TableCell>
-											<TableCell className="tBody">{item1.n_status}</TableCell>
-											<TableCell className="tBody"></TableCell>
+											<TableCell className="tBody">
+											{
+												item1.n_status==1 ?
+												<Button
+													className="active-btn"
+											        variant="contained"
+											        color="primary"
+											        size="small"
+											        startIcon={<VisibilityIcon />}
+											      >
+											        Active
+											      </Button>
+											      :
+												<Button
+													className="inactive-btn"
+											        variant="contained"
+											        color="secondary"
+											        size="small"
+											        startIcon={<VisibilityOffIcon />}
+											      >
+											        Inactive
+											      </Button>
+											}
+											</TableCell>
+											<TableCell className="tBody">
+											    <IconButton size="small">
+										          	<EditIcon fontSize="inherit" />
+										        </IconButton>
+										        <IconButton size="small">
+										          	<DeleteIcon fontSize="inherit" />
+										        </IconButton>
+											</TableCell>
 										</TableRow>
 										))
 									}
