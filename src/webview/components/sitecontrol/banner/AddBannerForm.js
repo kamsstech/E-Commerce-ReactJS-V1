@@ -398,25 +398,22 @@ const AddBannerForm = (props) => {
 	const [bannerResult, setBannerResult] = useState({
 		status_code: "",
 	});
-	useEffect(() => {
-		if (addBannerResult) {
-			setBannerResult({ ...bannerResult, status_code: addBannerResult.statuscode });
-		}
-	}, [addBannerResult]);
-	useEffect(() => {
-		console.log(bannerResult.status_code)
-		if (bannerResult.status_code === 1) {
-				inputs.n_banner_type = "",
-				inputs.c_banner_title = "",
-				inputs.c_banner_image = "",
-				inputs.c_banner_description = "",
-				inputs.c_redirect_url = ""
-				inputs.c_start_date = "",
-				inputs.c_end_date = ""
-		} else if (bannerResult.status_code != 1) {
-			setErrMsg(addBannerResult.error)
-		}
-	})
+    useEffect(() => {
+        if(addBannerResult) {
+            setBannerResult({ ...bannerResult, status_code: addBannerResult.payload.status });
+            if (bannerResult.status_code === 1){
+                inputs.n_banner_type = "",
+                inputs.c_banner_title = "",
+                inputs.c_banner_image = "",
+                inputs.c_banner_description = "",
+                inputs.c_redirect_url = ""
+                inputs.c_start_date = "",
+                inputs.c_end_date = ""
+            }else if (bannerResult.status_code != 1) {
+                setErrMsg(addBannerResult.error)
+            }
+        }
+    }, [addBannerResult]);
 	return (
 		<>
 			<div>

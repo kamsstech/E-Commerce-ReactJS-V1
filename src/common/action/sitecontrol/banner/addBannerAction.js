@@ -37,14 +37,14 @@ export const AddBannerAction = (body) => async (dispatch) => {
   };
   await axios.post(`${ENV.ADMIN_BASE_URL}/api/v1/banner/create`,body,{headers})
         .then(response => {
-          console.log(response)
-      // if(response.data.appStatusCode === 0){
-      // dispatch(addBannerSuccess(response.data.payloadJson,response.data.appStatusCode))
-      // }else{
-      //   dispatch(addBannerFailure(response.data.messages[0],response.data.appStatusCode));
-      // }
+       if(response.data.appStatusCode === 0){
+       dispatch(addBannerSuccess(response.data, response.data.status))
+       }else{
+         dispatch(addBannerFailure(response.data.message, response.data.status));
+       }
    })
   .catch(error => {
     dispatch(addBannerFailure("Something went wrong, Please try again later!"));
   });
 };
+
