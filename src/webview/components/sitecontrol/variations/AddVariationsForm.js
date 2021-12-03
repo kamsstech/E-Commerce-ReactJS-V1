@@ -7,6 +7,7 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Check from "@material-ui/icons/Check";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import Shop from "../../../../assets/images/icons/shop.svg";
 import User from "../../../../assets/images/icons/user.svg";
@@ -216,28 +217,25 @@ ColorlibStepIcon.propTypes = {
 
 const AddVariationsForm = (props) => {
 	const {
-		imageupload
+		addVariationsPageResult,AddVariationsPageAction
 	} = props;
 	const [errMsg, setErrMsg] = useState("");
 
 	const [openModal, setOpenModal] = React.useState(false);
 	const [openModal1, setOpenModal1] = React.useState(false);
-
+	const variation_type = [];
+	const [valueType, setValueType] = React.useState(variation_type);
 	const [inputs, setInputs] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_image: "",
-		c_banner_image_1: "",
-		c_description: "",
+		c_variation_type: "",
+		c_variation_name: "",
+		c_variation_description: "",
 	});
 
 
 	const [errors, setErrors] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_img: "",
-		c_banner_img_1: "",
-		c_description: "",
+		c_variation_type: "",
+		c_variation_name: "",
+		c_variation_description: "",
 	});
 
 	const handleInputChange = (e) => {
@@ -245,13 +243,7 @@ const AddVariationsForm = (props) => {
 	
 		setErrMsg("");
 		setErrors({ ...errors, [name]: false });
-		// if (name === "n_banner_type") {
-		//   if (value.length === "Banner Type *") {
-		// 	setInputs({ ...inputs, [n_banner_type]: 0 });
-		//   } else {
-		// 	setInputs({ ...inputs, [name]: value });
-		//   }
-		// }
+		
 		setInputs({ ...inputs, [name]: value });
 		};
 		const handleFocus = (e) => {
@@ -262,56 +254,63 @@ const AddVariationsForm = (props) => {
 		const handleBlur = (e) => {
 		let { name, value } = e.target;
 	
-		if (name === "n_banner_type") {
-			if (value === "Banner Type *") {
+		if (name === "c_variation_type") {
+			if (value == '') {
 			setErrors({ ...errors, [name]: true });
 			}
-		}else if (name === "c_title") {
+		}else if (name === "c_variation_name") {
 			if (value.length <= 3) {
 				setErrors({ ...errors, [name]: true });
 			}
 		}
 		};
 
-	const [openImgViewD1, setOpenImgViewD1] = useState(false);
-	const [openImgViewD2, setOpenImgViewD2] = useState(false);
+	const handleKeyDown = event => {
+		 setErrors({ ...errors, c_variation_type: false });
+	    switch (event.key) {
+	      case ",":
+	      case " ": {
+	        event.preventDefault();
+	        event.stopPropagation();
+	        if (event.target.value.length > 0) {
+	          setValueType([...valueType, event.target.value]);
+	          
+	        }
+	        break;
+	      }
+	      default:
+	    }
+	};
 
-	const clickHandleCancel = (event) => {
-		if (event === "cancel_upload") {
-			setInputs({ ...inputs, c_banner_image: "" });
-		}else if (event === "cancel_upload_1") {
-			setInputs({ ...inputs, c_banner_image_1: "" });
+	const handleSubmit = (e) => {
+		if (inputs.c_variation_name === "" || errors.c_variation_name === true) {
+			setErrors({ ...errors, c_variation_name: true });
 		}
-		};
+		else if (valueType.length === 0) {
+			setErrors({ ...errors, c_variation_type: true });
+		}
+		const arrayVal=[]
+		if(valueType.length > 0)
+		{
+			for(let i=0;i<valueType.length;i++){
+				let objVal={c_variation_name:inputs.c_variation_name,
+							c_variation_type:valueType[i],
+							c_variation_description:inputs.c_variation_description
+					}
 
-	const [banner, setBaner] = useState(null);
-	const [bannerData, setBannerData] = useState(null);
-	const [banner_1, setBaner_1] = useState(null);
-	const [bannerData_1, setBannerData_1] = useState(null);
-	const handleUpload = (event, url) => {
-	const { name, id } = event.target;
-	let filename = event.target.files[0].name;
-	let idxDot = filename.lastIndexOf(".") + 1;
-	let extFile = filename.substr(idxDot, filename.length).toLowerCase();
-		if (event.target.files[0]) {
-			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
-				
-				if (name === "c_banner_image") {
-					setBaner(event.target.files[0]);
-					setBannerData(URL.createObjectURL(event.target.files[0]));
-					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
-				}else if (name === "c_banner_image_1") {
-					setBaner_1(event.target.files[0]);
-					setBannerData_1(URL.createObjectURL(event.target.files[0]));
-					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
-				} else {
-					setErrMsg("Please Select Valid Images");
-				}
-			} else{
-				setErrMsg("Please Select Valid Images");
+				arrayVal.push(objVal);
 			}
 		}
+		if(arrayVal.length > 0)
+		{
+			const body={c_variation_name:inputs.c_variation_name,
+						j_insertdata:arrayVal}
+			
+		 	AddVariationsPageAction(body);
+		}
+		
 	};
+
 	return (
 		<>
 			<Collapse in={openModal1}>
@@ -370,13 +369,13 @@ const AddVariationsForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="c_title"
-										value={inputs.c_title}
+										name="c_variation_name"
+										value={inputs.c_variation_name}
 										onChange={(e) => handleInputChange(e)}
 										onFocus={(e) => handleFocus(e)}
 										onBlur={(e) => handleBlur(e)}
-										error={errors.c_title}
-										helperText={errors.c_title && "Not a valid title"}
+										error={errors.c_variation_name}
+										helperText={errors.c_variation_name && "Not a valid name"}
 										margin="normal"
 										variant="outlined"
 										placeholder="Variation Name"
@@ -395,7 +394,7 @@ const AddVariationsForm = (props) => {
 							<Grid item xs={12}>
 								<div className="pd-l-16">
 									<TextField
-										name="c_description"
+										name="c_variation_description"
 										multiline
 										rows={1}
 										rowsMax={4}
@@ -403,37 +402,44 @@ const AddVariationsForm = (props) => {
 										variant="outlined"
 										placeholder="Description"
 										className="auth-input kmass_desc"
-									/>
-								</div>
-							</Grid>
-							<Grid item xs={6}>
-								<div className="ml-16">
-									<TextField
-										name="c_title"
-										value={inputs.c_title}
 										onChange={(e) => handleInputChange(e)}
-										onFocus={(e) => handleFocus(e)}
-										onBlur={(e) => handleBlur(e)}
-										error={errors.c_title}
-										helperText={errors.c_title && "Not a valid title"}
-										margin="normal"
-										variant="outlined"
-										placeholder="Variation Type"
-										className="auth-input"
-										autoComplete=""
-										InputProps={{
-											startAdornment: (
-												<InputAdornment position="start">
-													<img src={Shop} alt="user" />
-												</InputAdornment>
-											),
-										}}
 									/>
 								</div>
 							</Grid>
 							<Grid item xs={12}>
 								<div className="pd-l-16">
-									<Button variant="contained" className="yes" color="primary">Submit</Button>
+								      <Autocomplete
+								        multiple
+								        freeSolo
+								        className="autoCompleteTag"
+								        id="tags-outlined"
+								        options={variation_type}
+								        getOptionLabel={option => option.title || option}
+								        value={valueType}
+								        onChange={(event, newValue) => setValueType(newValue)}
+								        filterSelectedOptions
+								        renderInput={params => {
+								          params.inputProps.onKeyDown = handleKeyDown;
+								          return (
+								            <TextField
+								              {...params}
+								              variant="outlined"
+								              placeholder="Variation Type"
+								              margin="normal"
+								              value={valueType}
+								              name="c_variation_type"
+								              error={errors.c_variation_type}
+											  helperText={errors.c_variation_type && "Not a valid Type"}
+								              fullWidth
+								            />
+								          );
+								        }}
+								      />
+								</div>
+							</Grid>
+							<Grid item xs={12}>
+								<div className="pd-l-16">
+									<Button variant="contained" onClick={(e) => handleSubmit(e)} className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>
