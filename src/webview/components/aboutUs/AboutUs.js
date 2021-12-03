@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
-
-import FooterPage from '../footerSection/Footer';
 import AboutUsBanner from './AboutUsBanner';
 import AboutUsContent from './AboutUsContent';
 
@@ -21,7 +19,6 @@ const AboutUs = (props) => {
 	            <AboutUsBanner/>
 	            <AboutUsContent/>
 	        </div>
-	        <FooterPage/>
         </>
 	);
 };

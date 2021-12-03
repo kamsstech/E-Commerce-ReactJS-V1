@@ -5,7 +5,6 @@ import SiteLoader from "./SiteLoader/SiteLoader";
 // import siteLogo from "../../../assets/images/landing_logo.svg";
 // import Button from "@material-ui/core/Button";
 
-import Navbar from "../preLogin/Navbar/Navbar";
 import HeroSection from "./HeroSection/HeroSection";
 import WhyLiveSection from "./WhyLiveSection/WhyLiveSection";
 import NewVideo from "./VideoSection/NewVideo";
@@ -175,7 +174,6 @@ function LandingPage1(props) {
 				{/*showLoader === true && */}
 				{(
 					<>
-						<Navbar OpenDemoForm={OpenDemoForm} />
 						<HeroSection
 						SearchByNAProduct={SearchByNAProduct}
 						searchByNAProductResult={searchByNAProductResult}
