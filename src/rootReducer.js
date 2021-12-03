@@ -156,6 +156,14 @@ import CustomerListPageReducer from "./common/reducer/sitecontrol/customer/custo
 import PageListPageReducer from "./common/reducer/sitecontrol/page/pageListPageReducer";
 import VariationsListPageReducer from "./common/reducer/sitecontrol/variations/variationsListPageReducer";
 
+//Brand
+import AddBrandReducer from "./common/reducer/sitecontrol/brand/addBrandReducer";
+
+//Category
+import AddCategoryReducer from "./common/reducer/sitecontrol/category/addCategoryReducer";
+
+//Page
+import AddPageReducer from "./common/reducer/sitecontrol/setting/addPageReducer";
 
 const RootReducer = combineReducers({
   login: LoginReducer,
@@ -295,6 +303,12 @@ const RootReducer = combineReducers({
   customerListPageResult:CustomerListPageReducer,
   pageListPageResult:PageListPageReducer,
   variationsListPageResult:VariationsListPageReducer,
+//Brand
+  addBrandResult:AddBrandReducer,
+//Category
+  addCategoryResult:AddCategoryReducer,
+//Page
+addPageResult:AddPageReducer,
 });
 
 export default RootReducer;

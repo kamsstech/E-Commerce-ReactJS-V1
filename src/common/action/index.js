@@ -190,9 +190,14 @@ export * from './payment/sellerPayOrderGenarateAction'
 //Banner
 export * from './sitecontrol/banner/addBannerAction'
 export * from './sitecontrol/banner/bannerListPageAction'
-
+//Brand
+export * from './sitecontrol/brand/addBrandAction'
 export * from './sitecontrol/brand/brandListPageAction'
+//Category
+export * from './sitecontrol/category/addCategoryAction'
 export * from './sitecontrol/category/categoryListPageAction'
+//Page
+export * from './sitecontrol/setting/addPageAction'
 export * from './sitecontrol/customer/customerListPageAction'
 export * from './sitecontrol/page/pageListPageAction'
 export * from './sitecontrol/variations/variationsListPageAction'
