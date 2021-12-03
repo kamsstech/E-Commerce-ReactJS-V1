@@ -35,7 +35,6 @@ const LoginForm = (props) => {
 	const handlePassword = () => {
 		setShowPassword(!showPassword);
 	};
-
 	return (
 		<div className="auth-form-space">
 			<div className="auth-form-header">

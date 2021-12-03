@@ -715,6 +715,7 @@ const WebRouter = () => {
 					Layout={MainLayout}
 					pageTitle="My Profile"
 				/>
+				
 				<PrivateRoute
 					exact
 					path="/feedback"
