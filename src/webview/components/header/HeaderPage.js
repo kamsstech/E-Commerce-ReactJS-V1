@@ -420,7 +420,7 @@ export default function HeaderPage(props) {
 						<AppBar position="static">
 							<Container fixed>
 								<Toolbar className="header-top-sec">
-									{location.pathname == "/home" ? (
+									{location.pathname == "/" ? (
 										<img
 											onClick={scrollToTop}
 											src={AppLogo}
@@ -428,7 +428,7 @@ export default function HeaderPage(props) {
 											className="website-logo"
 										/>
 									) : (
-										<Link to="/home">
+										<Link to="/">
 											<img
 												src={AppLogo}
 												alt={AppLogo}

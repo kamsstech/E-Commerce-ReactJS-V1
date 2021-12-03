@@ -4,42 +4,6 @@ import SiteLoader from "../webview/components/SiteLoader/SiteLoader";
 import Container from "@material-ui/core/Container";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {
-	
-	// AddUserPageContainer,
-	// ForgotPassPageContainer,
-	// RegisterPageContainer,
-	// RegisterDetailsPageContainer,
-	// HeaderPageContainer,
-	// HomePageContainer,
-	// NavigationPageContainer,
-	// PDPPageContainer,
-	// PlpPageContainer,
-	// ShortbookPageContainer,
-	// WatchListPageContainer,
-	// CartPageContainer,
-	// OrderDetailsPageContainer,
-	// OrderHistoryPageContainer,
-	// ChooseDeliverySlotsPageContainer,
-	// PaymentPageContainer,
-	// OrderToSellerContainer,
-	// UserPageContainer,
-	// ProfileInfoPageContainer,
-	// AddUserPageContainer,
-	// BranchPageContainer,
-	// ChangePassPageContainer,
-	// NotificationPageContainer,
-	// PrivacyAndPolicyPageContainer,
-    // TermsConditionsPageContainer,
-    // CookiePolicyPageContainer,
-    // HelpPageContainer,
-	// LoginPageContainer,
-	itemMappingContainer,
-	// CombineStoreContainer,
-	// FeedbackPageContainer,
-    // OnePharamaContainer,
-    // PaymentHeaderWithoutLogoPageContainer,
-    // FinalPaymentPageContainer,
-
 	//Admin Route
 	//Banner
 	BannerPageContainer,
@@ -78,30 +42,21 @@ import {
 
 import { getToken } from "../common/components/getToken/getToken";
 // import { PageNotFoundContainer } from "../webview/components/pageNotFound/PageNotFoundContainer";
-import Test from "../webview/components/test/test";
 
 import ChatBot from "../webview/components/chatBot/ChatBot";
 // import { PreferredPaymentPageContainer } from "../webview/components/profile/preferredPaymentPageContainer";
 // import { CardPaymentPageContainer } from "../webview/components/profile/cardPaymentPageContainer";
 // import { OtherWalletPageContainer } from "../webview/components/profile/otherWalletPageContainer";
 // import { LcWalletPageContainer } from "../webview/components/profile/lcWalletPageContainer";
-import { Test1 } from '../webview/components/test/test1';
-import Test2 from '../webview/components/test/test2';
-import Test3 from '../webview/components/test/test3';
-import Test6 from '../webview/components/test/Test6';
 
-import Navbar from '../webview/components/preLogin/Navbar/Navbar'
 import FooterPage from "../webview/components/footerSection/Footer";
 import { createBrowserHistory } from "history";
-import Test7 from '../webview/components/test/Test7';
-import OfflinePage from '../webview/components/test/OfflinePage';
 let history = createBrowserHistory();
 // const LoginPageContainer = lazy(() => import('../webview/components/login/LoginPageContainer'));
 const LoginPageContainer = lazy(() => import('../webview/components/login/LoginPageContainer'));
 const DummyPage = lazy(() => import('../webview/components/dummy/DummyPage'));
 const Main_Logo = lazy(() => import('../assets/mobImages/main_logo.svg'));
 const LandingPageContainer1 = lazy(() => import('../webview/components/landing1/LandingPageContainer1'));
-const VerifyOtpPageContainer = lazy(() => import('../webview/components/verifyOtp/VerifyOtpPageContainer'));
 
 const AddBranchPageContainer = lazy(() => import('../webview/components/profile/AddBranchPageContainer'));
 const AddUserPageContainer = lazy(() => import('../webview/components/profile/AddUserPageContainer'));
@@ -117,7 +72,7 @@ const BranchPageContainer = lazy(() => import('../webview/components/profile/Bra
 const CartPageContainer = lazy(() => import('../webview/components/cart/CartPageContainer'));
 
 const ChooseDeliverySlotsPageContainer = lazy(() => import('../webview/components/chooseDeliverySlots/ChooseDeliverySlotsPageContainer'));
-const CombineStoreContainer = lazy(() => import('../webview/components/combineStore/CombineStoreContainer'));
+
 const CookiePolicyPageContainer = lazy(() => import('../webview/components/cookiePolicy/CookiePolicyPageContainer'));
 const CopyRightsContainer = lazy(() => import('../webview/components/copyRights/CopyRightsContainer'));
 const FeedbackPageContainer = lazy(() => import('../webview/components/feedback/FeedbackPageContainer'));
@@ -128,16 +83,13 @@ const HelpPageContainer = lazy(() => import('../webview/components/help/HelpPage
 const HomePageContainer = lazy(() => import('../webview/components/home/HomePageContainer'));
 
 const NavigationPageContainer = lazy(() => import('../webview/components/navigation/NavigationPageContainer'));
-const OnePharamaContainer = lazy(() => import('../webview/components/onePharama/OnePharamaContainer'));
 const OrderDetailsPageContainer = lazy(() => import('../webview/components/orderDetails/OrderDetailsPageContainer'));
 const OrderHistoryPageContainer = lazy(() => import('../webview/components/orderHistory/OrderHistoryPageContainer'));
-const OrderToSellerContainer = lazy(() => import('../webview/components/orderToSeller/OrderToSellerContainer'));
 const PageNotFoundContainer = lazy(() => import('../webview/components/pageNotFound/PageNotFoundContainer'));
 const PaymentPageContainer = lazy(() => import('../webview/components/payment/PaymentPageContainer'));
 const PaymentHeaderWithoutLogoPageContainer = lazy(() => import('../webview/components/paymentHeaderWithoutLogo/PaymentHeaderWithoutLogoPageContainer'));
 const PDPPageContainer = lazy(() => import('../webview/components/pdp/PDPPageContainer'));
 
-const PDPNAPageContainer = lazy(() => import('../webview/components/pdpNA/PDPNAPageContainer'));
 
 const PlpPageContainer = lazy(() => import('../webview/components/plp/PlpPageContainer'));
 const PrivacyAndPolicyPageContainer = lazy(() => import('../webview/components/privacyAndPolicy/PrivacyAndPolicyPageContainer'));
@@ -147,9 +99,6 @@ const ShortbookPageContainer = lazy(() => import('../webview/components/shortboo
 const TermsConditionsPageContainer = lazy(() => import('../webview/components/termsConditions/TermsConditionsPageContainer'));
 const WatchListPageContainer = lazy(() => import('../webview/components/watchList/WatchListPageContainer'));
 
-const AutoPublishPageContainer = lazy(() => import('../webview/components/touchStore/AutoPublishPageContainer'));
-const AutoCompilePageContainer = lazy(() => import('../webview/components/touchStore/AutoCompilePageContainer'));
-const BarcodeScanner = lazy(() => import('../webview/components/test/Barcode_Scanner'));
 
 const ComingSoonContainer = lazy(() => import('../webview/components/comingSoon/ComingSoonContainer'));
 const AboutUsContainer = lazy(() => import('../webview/components/aboutUs/AboutUsContainer'));
@@ -226,17 +175,31 @@ const CommonRoute = (props) => {
 			render={props => (
 				<>
                     <div className="preLoginDSg">
-    					{ <Navbar /> }
+    					<HeaderPageContainer />
     					<Component {...props}/>
-    					{/* <ChatBot /> */}
+    					<FooterPage/>
                     </div>
 				</>
 			)}
 		/>
 		)
-	}
-	
+	}	
 };
+const CommonLayout =(props)=>{
+	const { Component, path } = props;
+	return(
+		<Route
+			path={path}
+			render={props => (
+				<>
+					<HeaderPageContainer />
+					<Component {...props}/>
+					<FooterPage/>
+				</>
+			)}
+		/>
+	)
+}
 const RegisterDetaislRoute = (props) => {
 	const { Component, path,Layout } = props;
 	var token = getToken();
@@ -279,21 +242,7 @@ const RegisterDetaislRoute = (props) => {
 	
 };
 
-const CommonLayout =(props)=>{
-	const { Component, path } = props;
-	return(
-		<Route
-			path={path}
-			render={props => (
-				<>
-					<HeaderPageContainer />
-					<Component {...props}/>
-					<FooterPage/>
-				</>
-			)}
-		/>
-	)
-}
+
 const LoginRegisterLayout =(props)=>{
 	const { Component, path } = props;
 	return(
@@ -337,9 +286,7 @@ const LandingLayout = (props) => {
 			render={props => (
 				<>
 					
-					{/* <Navbar /> */}
 					<Component {...props}/>
-					{/* <ChatBot /> */}
 				</>
 			)}
 		/>
@@ -514,33 +461,14 @@ const WebRouter = () => {
 		<Router>
 			<Suspense fallback={<PageLoading />}>
 			<Switch>
-			 <Route path="/test" component={Test} />
-			 <Route path="/test1" component={Test1} />
-			 <Route path="/test2" component={Test2} />
-			 <Route path="/test3" component={Test3} />
-			 <Route path="/test6" component={Test6} />
-			 <Route path="/test7" component={Test7} />
-			 <Route path="/offline" component={OfflinePage} />
-			 <Route path="/barcodescanner" component={BarcodeScanner} />
 
-				 <Route path="/dummy" component={DummyPage} />
-
-				 {/*<PublicRoute exact path="/" Layout={LandingLayout} Component={LandingPageContainer1} />*/}
-
-				 <PublicRoute
+				 <CommonRoute
 				 		exact
 						path="/"
 						Component={HomePageContainer}
-						Layout={CommonLayout}
+						Layout={MainLayout}
 						pageTitle="Home"
 					/>
-					{/*<PublicRoute
-						path="/site-control/"
-						Component={LoginPageContainer}
-						Layout={LoginRegisterLayout}
-						pageTitle="Add Category Control"
-					/>*/}
-
 
 				 <PublicRoute 	path="/login" Layout={LoginRegisterLayout} Component={LoginPageContainer} />
 				 <CommonRoute path="/privacy"  Layout={CommonLayout} Component={PrivacyAndPolicyPageContainer} />		
@@ -569,43 +497,13 @@ const WebRouter = () => {
 						Layout={CommonLayout}
 						Component={RegisterDetailsPageContainer}
 					/>
-					<PublicRoute 
-					
-					path="/verify-otp/:type" 
-					Layout={LoginRegisterLayout}
-					Component={VerifyOtpPageContainer} 
-					/>
-	                <PrivateRoute
-	                    path="/one-pharma"
-	                    Component={OnePharamaContainer}
-	                    Layout={MainLayout}
-	                    pageTitle="1 Pharma/Invoice CSV"
-	                />
 
-					<PublicRoute
-						path="/combine-store-name"
-						Layout={CommonLayout}
-						Component={CombineStoreContainer}
-					/>
 					<PrivateRoute
 						path="/home"
 						Component={HomePageContainer}
 						Layout={HomeLayout}
 						pageTitle="Home"
 					/>
-					<PrivateRoute
-						path="/auto-publish"
-						Component={AutoPublishPageContainer}
-						Layout={MainLayout}
-						pageTitle="Auto Publish"
-					/>
-					<PrivateRoute
-						path="/auto-complile"
-						Component={AutoCompilePageContainer}
-						Layout={MainLayout}
-						pageTitle="Auto Compile"
-					/>
-
 
 
 					<PrivateRoute
@@ -703,13 +601,6 @@ const WebRouter = () => {
 						Layout={PlpLayout}
 						pageTitle="" 
 					/>
-					<PublicRoute
-						path="/pdp-na/:itemCode/:itemName"
-						Component={PDPNAPageContainer}
-						Layout={LandingLayout}
-						pageTitle="Generic Medicines"
-					/>
-
 
 					<PrivateRoute
 						path="/pdp/:itemCode/:itemName"
@@ -776,12 +667,6 @@ const WebRouter = () => {
 	                    Layout={HeaderWithoutLogoLayout}
 	                    pageTitle="Payment"
 	                />
-					 <PrivateRoute
-						path="/order-to-seller"
-						Component={OrderToSellerContainer}
-						Layout={MainLayout}
-						pageTitle="Order To Seller"
-					/>
 
 					 <PrivateRoute
 						path="/404"
@@ -791,14 +676,6 @@ const WebRouter = () => {
 					/>
 					 
 					
-
-					<PrivateRoute
-						path="/item-mapping"
-						Component={itemMappingContainer}
-						Layout={MainLayout}
-						pageTitle="Item Master &amp; Sub-Master Mapping"
-					/>
-
 					<PrivateRoute
 						path="/payment-progress"
 						Component={PaymentProgressContainer}
@@ -806,103 +683,103 @@ const WebRouter = () => {
 						pageTitle="Payment Progress"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/add-banner"
 						Component={AddBannerPageContainer}
 						Layout={MainLayout}
 						pageTitle="Add Banner Control"
 					/>
-					<PublicRoute
+					<CommonRoute
 						path="/site-control/banner"
 						Component={BannerPageContainer}
-						Layout={HomeLayout}
+						// Layout={CommonLayout}
 						pageTitle="Banner Control"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/add-brand"
 						Component={AddBrandPageContainer}
 						Layout={MainLayout}
 						pageTitle="Add Brand Control"
 					/>
-					<PublicRoute
+					<CommonRoute
 						path="/site-control/brand"
 						Component={BrandPageContainer}
 						Layout={MainLayout}
 						pageTitle="Brand Control"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/add-category"
 						Component={AddCategoryPageContainer}
 						Layout={MainLayout}
 						pageTitle="Add Category Control"
 					/>
-					<PublicRoute
+					<CommonRoute
 						path="/site-control/category"
 						Component={CategoryPageContainer}
 						Layout={MainLayout}
 						pageTitle="Category Control"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/add-variation"
 						Component={AddVariationsPageContainer}
 						Layout={MainLayout}
 						pageTitle="Add Variation Control"
 					/>
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/variation"
 						Component={VariationsPageContainer}
 						Layout={MainLayout}
 						pageTitle="Variation Control"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/customers"
 						Component={CustomersPageContainer}
 						Layout={MainLayout}
 						pageTitle="Customers Control"
 					/>
 
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/new-orders"
 						Component={NewOrderPageContainer}
 						Layout={MainLayout}
 						pageTitle="New Order Control"
 					/>
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/failure-orders"
 						Component={FailureOrderPageContainer}
 						Layout={MainLayout}
 						pageTitle="Failure Order Control"
 					/>
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/cancel-orders"
 						Component={CancelOrderPageContainer}
 						Layout={MainLayout}
 						pageTitle="Cancel Order Control"
 					/>
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/delivered-orders"
 						Component={DeliveredOrderPageContainer}
 						Layout={MainLayout}
 						pageTitle="Delivered Order Control"
 					/>
 
-					<PublicRoute
+					<CommonRoute
 						path="/site-control/add-page"
 						Component={AddPageSettingContainer}
 						Layout={MainLayout}
 						pageTitle="Add page Control"
 					/>
-					<PublicRoute
+					<CommonRoute
 						path="/site-control/page"
 						Component={PageSettingContainer}
 						Layout={MainLayout}
 						pageTitle="Page Control"
 					/>
-					<PrivateRoute
+					<CommonRoute
 						path="/site-control/change-password"
 						Component={ChangePasswordPageContainer}
 						Layout={MainLayout}

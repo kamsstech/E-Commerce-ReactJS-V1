@@ -13,7 +13,6 @@ import HelpBanner from './HelpBanner';
 import GeneralTab from './GeneralTab';
 import BuyersTab from './BuyersTab';
 import SellersTab from './SellersTab';
-import Navbar from '../preLogin/Navbar/Navbar';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -87,7 +86,6 @@ const HelpPage = () => {
     return ( 
         <>
         <div className="page-container">
-            {/* <Navbar OpenDemoForm={OpenDemoForm} /> */}
             <HelpBanner/>
         </div>
         <div className="MainContainer">

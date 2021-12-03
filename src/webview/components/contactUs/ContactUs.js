@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
-
-import FooterPage from '../footerSection/Footer';
 import ContactUsBanner from './ContactUsBanner';
 import ContactUsContent from './ContactUsContent';
 
@@ -21,7 +19,6 @@ const ContactUs = (props) => {
 	            <ContactUsBanner/>
 	            <ContactUsContent/>
 	        </div>
-	        <FooterPage/>
         </>
 	);
 };

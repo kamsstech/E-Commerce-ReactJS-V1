@@ -270,12 +270,7 @@ const HomePage = (props) => {
 						scheduleDemoEmailResult={scheduleDemoEmailResult}
 					/>
 				</Container>
-				<AboutUs />
 			</div>
-
-			{/*<FooterPageContainer
-				landingPageResult={props.landingPageResult.payload}
-			/>*/}
 		</>
 	);
 };
