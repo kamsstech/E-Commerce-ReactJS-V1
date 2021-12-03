@@ -30,8 +30,7 @@ const Sidebar = (props) => {
     return (
         <div className="mr-16-filter">
 
-            <List
-                component="nav">
+            <List component="nav">
 
                 <div className="filter-side-tab">
                     <ListItem onClick={() => handleMenu(1)} className="filter-list-item-padding">

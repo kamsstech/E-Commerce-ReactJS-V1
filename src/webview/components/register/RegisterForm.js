@@ -110,7 +110,7 @@ const RegisterForm = (props) => {
 					margin="normal"
 					variant="outlined"
 					placeholder="Create Password"
-					helperText="Password should contain 4 - 16 character & should contain alphanumeric and special character"
+					helperText="Password should contain 4 - 16 characters & should contain alphanumeric and special characters"
 					className="auth-input"
 					value={inputs.c_pwd}
 					onChange={e => handleChange(e)}

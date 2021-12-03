@@ -61,7 +61,7 @@ const LoginForm = (props) => {
         />
         <TextField
           error={errors.password}
-          helperText="Password should contain 4 - 16 character & should contain alphanumeric and special character"
+          helperText="Password should contain 4 - 16 characters & should contain alphanumeric and special characters"
           autoComplete="off"
           name="password"
           margin="normal"

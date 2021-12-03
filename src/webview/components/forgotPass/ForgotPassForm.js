@@ -123,7 +123,7 @@ const ForgotPassForm = (props) => {
         <TextField
           error={inputError.c_new_pwd}
           name="c_new_pwd"
-          helperText="Password should contain 4 - 16 character & should contain alphanumeric and special character"
+          helperText="Password should contain 4 - 16 characters & should contain alphanumeric and special characters"
           type={showPassword ? "text" : "password"}
           autoComplete="off"
           margin="normal"
