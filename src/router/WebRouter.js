@@ -34,6 +34,8 @@ import {
 	AddPageSettingContainer,
 	PageSettingContainer,
 	ChangePasswordPageContainer,
+	ItemsPageContainer,
+	AddItemsPageContainer,
 } from "../webview/components";
 
 
@@ -145,9 +147,10 @@ const PrivateRoute = (props) => {
 };
 const CommonRoute = (props) => {
 	const { Component, path,Layout } = props;
-	var token = getToken();	
+	var token = getToken();
 	// if (!token) return <Route path={path} component={Component} />;
 	// return <Redirect to="/home" />;
+
  
 	if (token){
 		return (
@@ -199,10 +202,10 @@ const CommonLayout =(props)=>{
 
 const AdminLayout = (props) => {
 	const { Component, path, pageTitle, pageSubTitle, subPath } = props;
-	var token = getToken();	
+	var token = getToken();
 	// if (!token) return <Route path={path} component={Component} />;
 	// return <Redirect to="/home" />;
- 
+
 	if (token){
 		return (
 			<Route
@@ -247,9 +250,9 @@ const AdminLayout = (props) => {
 			)}
 		/>
 		)
-	}	
+	}
 
-	
+
  // console.log("in main layout ",props)
 	return (
 		<Route
@@ -312,7 +315,7 @@ const RegisterDetaislRoute = (props) => {
 			)}
 		/>
 		)
-	}	
+	}
 };
 const LoginRegisterLayout =(props)=>{
 	const { Component, path } = props;
@@ -536,46 +539,46 @@ const WebRouter = () => {
 					pageTitle="Home"
 				/>
 
-				<CommonLayout 
+				<CommonLayout
 					exact={true}
-					path="/privacy"  
-					Component={PrivacyAndPolicyPageContainer} 
-				/>		
+					path="/privacy"
+					Component={PrivacyAndPolicyPageContainer}
+				/>
 
-             	<CommonLayout 
+             	<CommonLayout
              		exact={true}
-             		path="/terms"  
-             		Component={TermsConditionsPageContainer} 
-             	/>        
+             		path="/terms"
+             		Component={TermsConditionsPageContainer}
+             	/>
 
-             	<CommonLayout 
+             	<CommonLayout
              		exact={true}
-             		path="/cookie"  
-             		Component={CookiePolicyPageContainer} 
-             	/>    
+             		path="/cookie"
+             		Component={CookiePolicyPageContainer}
+             	/>
 
-			 	<CommonLayout 
+			 	<CommonLayout
 			 		exact={true}
-			 		path="/help"  
-			 		Component={HelpPageContainer} 
-			 	/>	
+			 		path="/help"
+			 		Component={HelpPageContainer}
+			 	/>
 
-			 	<CommonLayout 
+			 	<CommonLayout
 			 		exact={true}
-			 		path="/coming-soon"  
-			 		Component={ComingSoonContainer} 
-			 	/>	
+			 		path="/coming-soon"
+			 		Component={ComingSoonContainer}
+			 	/>
 
-			 	<CommonLayout 
+			 	<CommonLayout
 			 		exact={true}
-			 		path="/about-us"   
-			 		Component={AboutUsContainer} 
-			 	/>	
+			 		path="/about-us"
+			 		Component={AboutUsContainer}
+			 	/>
 
-			 	<CommonLayout 
+			 	<CommonLayout
 			 		exact={true}
-			 		path="/contact-us"  
-			 		Component={ContactUsContainer} 
+			 		path="/contact-us"
+			 		Component={ContactUsContainer}
 			 	/>
 
 			 	<RegisterDetaislRoute
@@ -687,8 +690,20 @@ const WebRouter = () => {
 					Component={ChangePasswordPageContainer}
 					pageTitle="Change Password Control"
 				/>
-			 	
-			 
+
+			 <AdminLayout
+                exact={true}
+                path="/site-control/add-item"
+                Component={AddItemsPageContainer}
+                pageTitle="Add New Item"
+            />
+
+            <AdminLayout
+                exact={true}
+                path="/site-control/items"
+                Component={ItemsPageContainer}
+                pageTitle="Item List"
+            />
 
 				<PublicRoute
 					Layout={LoginRegisterLayout}
@@ -715,7 +730,7 @@ const WebRouter = () => {
 					Layout={MainLayout}
 					pageTitle="My Profile"
 				/>
-				
+
 				<PrivateRoute
 					exact
 					path="/feedback"
@@ -771,7 +786,7 @@ const WebRouter = () => {
 					Layout={MainLayout}
 					pageTitle="Preferred Payment"
 				/>
-				
+
 				<PrivateRoute
 					path="/profile/cards"
 					Component={CardPaymentPageContainer}
@@ -784,7 +799,7 @@ const WebRouter = () => {
 					Layout={MainLayout}
 					pageTitle="Other Wallets"
 				/>
-				
+
 				<PrivateRoute
 					path="/profile/lc-wallet"
 					Component={LcWalletPageContainer}
@@ -796,13 +811,13 @@ const WebRouter = () => {
 					exact
 					Component={PlpPageContainer}
 					Layout={MainLayout}
-					pageTitle="Top/Most ordered Products" 
+					pageTitle="Top/Most ordered Products"
 					/>
 				<PrivateRoute
 					path="/plp/:type"
 					Component={PlpPageContainer}
 					Layout={PlpLayout}
-					pageTitle="" 
+					pageTitle=""
 				/>
 
 				<PrivateRoute
@@ -877,8 +892,8 @@ const WebRouter = () => {
 					Layout={PageNotFoundLayout}
 					pageTitle="Page Not Found"
 				/>
-				 
-				
+
+
 				<PrivateRoute
 					path="/payment-progress"
 					Component={PaymentProgressContainer}

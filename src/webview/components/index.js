@@ -31,3 +31,7 @@ export * from "./sitecontrol/setting/PageSettingContainer";
 
 //Change password
 export * from "./sitecontrol/setting/ChangePasswordPageContainer";
+
+//Items
+export * from "./sitecontrol/items/AddItemsPageContainer";
+export * from "./sitecontrol/items/ItemsPageContainer";

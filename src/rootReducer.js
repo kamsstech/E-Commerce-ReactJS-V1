@@ -154,6 +154,7 @@ import BrandListPageReducer from "./common/reducer/sitecontrol/brand/brandListPa
 import CategoryListPageReducer from "./common/reducer/sitecontrol/category/categoryListPageReducer";
 import CustomerListPageReducer from "./common/reducer/sitecontrol/customer/customerListPageReducer";
 import PageListPageReducer from "./common/reducer/sitecontrol/page/pageListPageReducer";
+import AddVariationsPageReducer from "./common/reducer/sitecontrol/variations/addVariationsPageReducer";
 import VariationsListPageReducer from "./common/reducer/sitecontrol/variations/variationsListPageReducer";
 
 //Brand
@@ -302,6 +303,7 @@ const RootReducer = combineReducers({
   categoryListPageResult:CategoryListPageReducer,
   customerListPageResult:CustomerListPageReducer,
   pageListPageResult:PageListPageReducer,
+  addVariationsPageResult:AddVariationsPageReducer,
   variationsListPageResult:VariationsListPageReducer,
 //Brand
   addBrandResult:AddBrandReducer,
