@@ -37,7 +37,7 @@ export const AddBannerAction = (body) => async (dispatch) => {
   };
   await axios.post(`${ENV.ADMIN_BASE_URL}/api/v1/banner/create`,body,{headers})
         .then(response => {
-       if(response.data.appStatusCode === 1){
+       if(response.data.status === 1){
        dispatch(addBannerSuccess(response.data, response.data.status))
        }else{
          dispatch(addBannerFailure(response.data.message, response.data.status));
