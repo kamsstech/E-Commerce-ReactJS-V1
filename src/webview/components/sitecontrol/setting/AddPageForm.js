@@ -217,7 +217,8 @@ ColorlibStepIcon.propTypes = {
 
 const AddPageForm = (props) => {
 	const {
-		imageupload
+		AddPageAction,
+		addPageResult,
 	} = props;
 	const [errMsg, setErrMsg] = useState("");
 
@@ -225,94 +226,112 @@ const AddPageForm = (props) => {
 	const [openModal1, setOpenModal1] = React.useState(false);
 
 	const [inputs, setInputs] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_image: "",
-		c_banner_image_1: "",
-		c_description: "",
+		n_page_type: 0,
+		c_page_title: "",
+		c_page_image: "",
+		c_page_details: "",
 	});
 
 
 	const [errors, setErrors] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_img: "",
-		c_banner_img_1: "",
-		c_description: "",
+		n_page_type: "",
+		c_page_title: "",
+		c_page_img: "",
+		c_page_details: "",
 	});
 
 	const handleInputChange = (e) => {
 		let { name, value } = e.target;
-	
+
 		setErrMsg("");
 		setErrors({ ...errors, [name]: false });
-		// if (name === "n_banner_type") {
-		//   if (value.length === "Banner Type *") {
-		// 	setInputs({ ...inputs, [n_banner_type]: 0 });
-		//   } else {
-		// 	setInputs({ ...inputs, [name]: value });
-		//   }
-		// }
 		setInputs({ ...inputs, [name]: value });
-		};
-		const handleFocus = (e) => {
+	};
+	const handleFocus = (e) => {
 		let { name } = e.target;
 		setErrors({ ...errors, [name]: false });
-		};
-	
-		const handleBlur = (e) => {
+	};
+
+	const handleBlur = (e) => {
 		let { name, value } = e.target;
-	
-		if (name === "n_banner_type") {
+
+		if (name === "n_page_type") {
 			if (value === "Banner Type *") {
-			setErrors({ ...errors, [name]: true });
+				setErrors({ ...errors, [name]: true });
 			}
-		}else if (name === "c_title") {
+		} else if (name === "c_page_title") {
 			if (value.length <= 3) {
 				setErrors({ ...errors, [name]: true });
 			}
 		}
-		};
+	};
 
 	const [openImgViewD1, setOpenImgViewD1] = useState(false);
-	const [openImgViewD2, setOpenImgViewD2] = useState(false);
 
 	const clickHandleCancel = (event) => {
 		if (event === "cancel_upload") {
-			setInputs({ ...inputs, c_banner_image: "" });
-		}else if (event === "cancel_upload_1") {
-			setInputs({ ...inputs, c_banner_image_1: "" });
+			setInputs({ ...inputs, c_page_image: "" });
 		}
-		};
+	};
 
 	const [banner, setBaner] = useState(null);
 	const [bannerData, setBannerData] = useState(null);
-	const [banner_1, setBaner_1] = useState(null);
-	const [bannerData_1, setBannerData_1] = useState(null);
 	const handleUpload = (event, url) => {
-	const { name, id } = event.target;
-	let filename = event.target.files[0].name;
-	let idxDot = filename.lastIndexOf(".") + 1;
-	let extFile = filename.substr(idxDot, filename.length).toLowerCase();
+		const { name, id } = event.target;
+		let filename = event.target.files[0].name;
+		let idxDot = filename.lastIndexOf(".") + 1;
+		let extFile = filename.substr(idxDot, filename.length).toLowerCase();
 		if (event.target.files[0]) {
 			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
-				
-				if (name === "c_banner_image") {
+
+				if (name === "c_page_image") {
 					setBaner(event.target.files[0]);
 					setBannerData(URL.createObjectURL(event.target.files[0]));
-					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
-				}else if (name === "c_banner_image_1") {
-					setBaner_1(event.target.files[0]);
-					setBannerData_1(URL.createObjectURL(event.target.files[0]));
 					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
 				} else {
 					setErrMsg("Please Select Valid Images");
 				}
-			} else{
+			} else {
 				setErrMsg("Please Select Valid Images");
 			}
 		}
 	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("log form page form", inputs);
+		if (inputs.n_page_type === "" || errors.n_page_type === true) {
+			setErrors({ ...errors, n_page_type: true });
+		} else if (inputs.c_page_title === "" || errors.c_page_title === true) {
+			setErrors({ ...errors, c_page_title: true });
+		}else{
+			const form = new FormData();
+			if (inputs.c_page_image != "") {
+				form.append("c_page_image", e.target.c_page_image.files[0])
+			}
+			form.append("n_page_type", inputs.n_page_type)
+			form.append("c_page_title", inputs.c_page_title)
+			form.append("c_page_details", inputs.c_page_details)
+			AddPageAction(form);
+		}
+	};
+	const [pageResult, setPageResult] = useState({
+		status_code: "",
+	});
+
+	useEffect(() => {
+		if (addPageResult) {
+			setPageResult({ ...pageResult, status_code: addPageResult.statuscode });
+			if (pageResult.status_code === 1) {
+				inputs.n_page_type = 0,
+				inputs.c_page_title = "",
+				inputs.c_page_details = "",
+				inputs.c_page_image = ""
+			} else{
+				setErrMsg(addPageResult.error)
+			}
+		}
+	}, [addPageResult]);
 	return (
 		<>
 			<Collapse in={openModal1}>
@@ -339,11 +358,6 @@ const AddPageForm = (props) => {
 					handleClose={() => setOpenImgViewD1(false)}
 					imgUrl={bannerData}
 				/>
-				<ImageView
-					open={openImgViewD2}
-					handleClose={() => setOpenImgViewD2(false)}
-					imgUrl={bannerData_1}
-				/>
 				<div className="">
 					<Collapse in={openModal}>
 						<Alert
@@ -369,9 +383,15 @@ const AddPageForm = (props) => {
 				<div className="profile-title-sec ml-16">
 					<h4 className="profile-title">Add Page</h4>
 				</div>
+				
+				{pageResult.status_code === 1 &&
+					<div className="notFound">
+						<Alert severity="success"> <span className="font-weight-bold">Page added..!!!</span></Alert>
+					</div>
+				}
 
 				<div>
-					<form className="profile-details-sec">
+					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
 						<p className="login-error-msg min-height-none mb-10">
 							{errMsg.toLowerCase()}
 						</p>
@@ -380,14 +400,14 @@ const AddPageForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="n_banner_type"
+										name="n_page_type"
 										autoComplete=""
-										value={inputs.n_banner_type}
+										value={inputs.n_page_type}
 										onChange={(e) => handleInputChange(e)}
 										onFocus={(e) => handleFocus(e)}
 										onBlur={(e) => handleBlur(e)}
-										error={errors.n_banner_type}
-									helperText={errors.n_banner_type && "Select Valid Banner Type"}
+										error={errors.n_page_type}
+										helperText={errors.n_page_type && "Select Valid Banner Type"}
 										className="toCatp auth-input"
 										placeholder="Page Type *"
 										InputProps={{
@@ -400,25 +420,25 @@ const AddPageForm = (props) => {
 										margin="normal"
 										variant="outlined"
 										select
-										// value={"Banner Type"}
+									// value={"Banner Type"}
 									>
-										<MenuItem key={"0"} value={"Banner Type *"}>
-											Page Type
+										<MenuItem key={"0"} value={0}>
+											Page Type *
 										</MenuItem>
-										<MenuItem key={"1"} value={"About Us"}>
+										<MenuItem key={"1"} value={1}>
 											About Us
 										</MenuItem>
-										<MenuItem key={"2"} value={"Privacy Policy"}>
+										<MenuItem key={"2"} value={2}>
 											Privacy Policy
 										</MenuItem>
-										<MenuItem key={"3"} value={"Terms & Condition"}>
-											Terms & Condition 
+										<MenuItem key={"3"} value={3}>
+											Terms & Condition
 										</MenuItem>
-										<MenuItem key={"4"} value={"Shipping Detail"}>
-											Shipping Detail 
+										<MenuItem key={"4"} value={4}>
+											Shipping Detail
 										</MenuItem>
-										<MenuItem key={"5"} value={"Return Policy"}>
-											Return Policy 
+										<MenuItem key={"5"} value={5}>
+											Return Policy
 										</MenuItem>
 									</TextField>
 								</div>
@@ -427,16 +447,16 @@ const AddPageForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="c_title"
-										value={inputs.c_title}
+										name="c_page_title"
+										value={inputs.c_page_title}
 										onChange={(e) => handleInputChange(e)}
-					onFocus={(e) => handleFocus(e)}
-					onBlur={(e) => handleBlur(e)}
-					error={errors.c_title}
-									helperText={errors.c_title && "Not a valid title"}
+										onFocus={(e) => handleFocus(e)}
+										onBlur={(e) => handleBlur(e)}
+										error={errors.c_page_title}
+										helperText={errors.c_page_title && "Not a valid title"}
 										margin="normal"
 										variant="outlined"
-										placeholder="Title"
+										placeholder="Title *"
 										className="auth-input"
 										autoComplete=""
 										InputProps={{
@@ -452,7 +472,11 @@ const AddPageForm = (props) => {
 							<Grid item xs={12}>
 								<div className="pd-l-16">
 									<TextField
-										name="c_description"
+										name="c_page_details"
+										value={inputs.c_page_details}
+										onChange={(e) => handleInputChange(e)}
+										onFocus={(e) => handleFocus(e)}
+										onBlur={(e) => handleBlur(e)}
 										multiline
 										rows={1}
 										rowsMax={4}
@@ -467,12 +491,12 @@ const AddPageForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="c_banner_img"
-										value={inputs.c_banner_image}
+										name="c_page_img"
+										value={inputs.c_page_image}
 										onChange={(e) => handleInputChange(e)}
 										onBlur={(e) => handleBlur(e)}
-										error={errors.c_banner_img}
-										helperText={errors.c_banner_img && "Not a valid image to upload"}
+										error={errors.c_page_img}
+										helperText={errors.c_page_img && "Not a valid image to upload"}
 										autoComplete="new-password"
 										margin="normal"
 										variant="outlined"
@@ -489,8 +513,8 @@ const AddPageForm = (props) => {
 													<img src={Camera} alt="Camera" />
 													<input
 														type="file"
-														name="c_banner_image"
-														id="c_banner_img"
+														name="c_page_image"
+														id="c_page_img"
 														accept="image/jpeg, image/png, image/jpg, image/webp"
 														onChange={(e) => handleUpload(e, "dl1")}
 														multiple={false}
@@ -499,13 +523,13 @@ const AddPageForm = (props) => {
 											),
 										}}
 									/>
-									{inputs.c_banner_image&& (
+									{inputs.c_page_image && (
 										<div className="display-flex">
 											<h4
 												className="profile-upload uploaded-imagename"
 												onClick={() => setOpenImgViewD1(true)}
 											>
-												<span>{inputs.c_banner_image}</span>
+												<span>{inputs.c_page_image}</span>
 											</h4>
 											<h4
 												className="profile-upload uploaded-imagename float-right"
@@ -519,7 +543,7 @@ const AddPageForm = (props) => {
 							</Grid>
 							<Grid item xs={12}>
 								<div className="pd-l-16">
-									<Button variant="contained" className="yes" color="primary">Submit</Button>
+									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>

@@ -218,23 +218,23 @@ ColorlibStepIcon.propTypes = {
 const AddBannerForm = (props) => {
 	const {
 		AddBannerAction,
-		imageupload
+		addBannerResult
 	} = props;
 	const [errMsg, setErrMsg] = useState("");
 
 	const [openModal, setOpenModal] = React.useState(false);
 	const [imgSizeMsg, setimgSizeMsg] = React.useState(true);
 	const [imgSize, setimgSize] = React.useState("Image Size Should Be 1600 X 400");
-	
+
 
 	const [inputs, setInputs] = useState({
-		n_banner_type: "",
+		n_banner_type: "1",
 		c_banner_title: "",
 		c_banner_image: "",
 		c_banner_description: "",
-		c_redirect_url:"",
-		c_start_date:"",
-		c_end_date:""
+		c_redirect_url: "",
+		c_start_date: "",
+		c_end_date: ""
 	});
 
 
@@ -243,9 +243,9 @@ const AddBannerForm = (props) => {
 		c_banner_title: "",
 		c_banner_image: "",
 		c_banner_description: "",
-		c_redirect_url:"",
-		c_start_date:"",
-		c_end_date:""
+		c_redirect_url: "",
+		c_start_date: "",
+		c_end_date: ""
 	});
 	const [roadBlock, setRoadBlock] = React.useState(false);
 	const handleInputChange = (e) => {
@@ -253,49 +253,45 @@ const AddBannerForm = (props) => {
 		setErrMsg("");
 		setErrors({ ...errors, [name]: false });
 		setInputs({ ...inputs, [name]: value });
-		if(value === "1")
-		{
+		if (value === "1") {
 			setimgSizeMsg(true)
 			setRoadBlock(false)
 			setimgSize("Image Size Should Be 1600 X 400")
 		}
-		else if(value === "2")
-		{
+		else if (value === "2") {
 			setimgSizeMsg(true);
 			setRoadBlock(false)
 			setimgSize("Image Size Should Be 1600 X 400")
 		}
-		else if(value === "3")
-		{
+		else if (value === "3") {
 			setimgSizeMsg(true);
 			setRoadBlock(false)
 			setimgSize("Image Size Should Be 1200 X 100")
 		}
-		else if(value === "4")
-		{
+		else if (value === "4") {
 			setimgSizeMsg(true);
 			setRoadBlock(true)
 			setimgSize("Image Size Should Be 1100 X 600")
 		}
-		};
-		const handleFocus = (e) => {
+	};
+	const handleFocus = (e) => {
 		let { name } = e.target;
 		setErrors({ ...errors, [name]: false });
-		};
-	
-		const handleBlur = (e) => {
+	};
+
+	const handleBlur = (e) => {
 		let { name, value } = e.target;
 		if (name === "n_banner_type") {
 			if (value === "1") {
-			setErrors({ ...errors, [name]: true });
-			setimgSizeMsg(false)
+				setErrors({ ...errors, [name]: true });
+				setimgSizeMsg(false)
 			}
-		}else if (name === "c_banner_title") {
+		} else if (name === "c_banner_title") {
 			if (value.length <= 3) {
 				setErrors({ ...errors, [name]: true });
 			}
 		}
-		};
+	};
 
 	const [openImgViewD1, setOpenImgViewD1] = useState(false);
 
@@ -304,19 +300,19 @@ const AddBannerForm = (props) => {
 		if (event === "cancel_upload") {
 			setInputs({ ...inputs, c_banner_image: "" });
 		}
-		};
+	};
 
 	const [banner, setBaner] = useState(null);
 	const [bannerData, setBannerData] = useState(null);
 
 	const handleUpload = (event, url) => {
-	const { name, id } = event.target;
-	let filename = event.target.files[0].name;
-	let idxDot = filename.lastIndexOf(".") + 1;
-	let extFile = filename.substr(idxDot, filename.length).toLowerCase();
+		const { name, id } = event.target;
+		let filename = event.target.files[0].name;
+		let idxDot = filename.lastIndexOf(".") + 1;
+		let extFile = filename.substr(idxDot, filename.length).toLowerCase();
 		if (event.target.files[0]) {
 			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
-				
+
 				if (name === "c_banner_image") {
 					setBaner(event.target.files[0]);
 					setBannerData(URL.createObjectURL(event.target.files[0]));
@@ -326,7 +322,7 @@ const AddBannerForm = (props) => {
 				} else {
 					setErrMsg("Please Select Valid Images");
 				}
-			} else{
+			} else {
 				setErrMsg("Please Select Valid Images");
 			}
 		}
@@ -350,13 +346,6 @@ const AddBannerForm = (props) => {
 					? currentDate.getDate()
 					: "0" + currentDate.getDate();
 			currDate = `${currentDate?.getFullYear()}-${ss_month}-${s_date}`;
-			// console.log("date",currDate,)
-			// if (currDate === selDate) {
-			// 	alert("Please Select Start Date");
-			// 	setStartDate(null);
-			// } else {
-				
-			// }
 			setInputs({ ...inputs, c_start_date: selDate });
 			setStartDate(date);
 		}
@@ -378,7 +367,6 @@ const AddBannerForm = (props) => {
 					? currentDate.getDate()
 					: "0" + currentDate.getDate();
 			currDate = `${currentDate?.getFullYear()}-${ss_month}-${s_date}`;
-			// console.log("date",currDate,)
 			setInputs({ ...inputs, c_end_date: selDate });
 			setEndDate(date);
 		}
@@ -394,21 +382,41 @@ const AddBannerForm = (props) => {
 		}
 		else if (inputs.c_banner_image === "" || errors.c_banner_image === true) {
 			setErrors({ ...errors, c_banner_image: true });
+		} else {
+			const form = new FormData();
+			form.append("n_banner_type", inputs.n_banner_type)
+			form.append("c_banner_title", inputs.c_banner_title)
+			form.append("c_banner_image", e.target.c_banner_image.files[0])
+			form.append("c_banner_description", inputs.c_banner_description)
+			form.append("c_redirect_url", inputs.c_redirect_url)
+			if (inputs.n_banner_type === "4") {
+				form.append("c_start_date", inputs.c_start_date)
+				form.append("c_end_date", inputs.c_end_date)
+			}
+			AddBannerAction(form);
 		}
-		const form = new FormData();
-		  form.append("n_banner_type",inputs.n_banner_type)
-		  form.append("c_banner_title",inputs.c_banner_title)
-		  form.append("c_banner_image",e.target.c_banner_image.files[0])
-		  form.append("c_banner_description",inputs.c_banner_description)
-		  form.append("c_redirect_url",inputs.c_redirect_url)
-		if (inputs.n_banner_type === "4")
-		{
-			form.append("c_start_date",inputs.c_start_date)
-		  	form.append("c_end_date",inputs.c_end_date)	
-		}
-		// console.log(form)
-		AddBannerAction(form);
 	};
+	const [bannerResult, setBannerResult] = useState({
+		status_code: "",
+	});
+	useEffect(() => {
+		if (addBannerResult) {
+			setBannerResult({ ...bannerResult, status_code: addBannerResult.statuscode });
+		}
+	}, [addBannerResult]);
+	useEffect(() => {
+		if (bannerResult.status_code === 1) {
+				inputs.n_banner_type = "",
+				inputs.c_banner_title = "",
+				inputs.c_banner_image = "",
+				inputs.c_banner_description = "",
+				inputs.c_redirect_url = ""
+				inputs.c_start_date = "",
+				inputs.c_end_date = ""
+		} else if (bannerResult.status_code != 1) {
+			setErrMsg(addBannerResult.error)
+		}
+	})
 	return (
 		<>
 			<div>
@@ -434,14 +442,18 @@ const AddBannerForm = (props) => {
 								</IconButton>
 							}
 						>
-							{/*<span className="font-weight-bold">Note: </span>Profile
-							Information Updated !!!*/}
 						</Alert>
 					</Collapse>
 				</div>
 				<div className="profile-title-sec ml-16">
 					<h4 className="profile-title">Add Banner</h4>
 				</div>
+				
+				{bannerResult.status_code === 1 &&
+					<div className="notFound">
+						<Alert severity="success"> <span className="font-weight-bold">Banner added..!!!</span></Alert>
+					</div>
+				}
 
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
@@ -473,10 +485,10 @@ const AddBannerForm = (props) => {
 										margin="normal"
 										variant="outlined"
 										select
-										// value={"Banner Type"}
+									// value={"Banner Type"}
 									>
 										<MenuItem key={"0"} value={"1"}>
-											Banner Type
+											Banner Type *
 										</MenuItem>
 										<MenuItem key={"1"} value={"2"}>
 											Home Banner
@@ -539,7 +551,7 @@ const AddBannerForm = (props) => {
 										onChange={(e) => handleInputChange(e)}
 										onBlur={(e) => handleBlur(e)}
 										error={errors.c_banner_image}
-										helperText={errors.c_banner_image ? "Not a valid image to upload":imgSizeMsg === true ? imgSize:"" }
+										helperText={errors.c_banner_image ? "Not a valid image to upload" : imgSizeMsg === true ? imgSize : ""}
 										autoComplete="new-password"
 										margin="normal"
 										variant="outlined"
@@ -566,7 +578,7 @@ const AddBannerForm = (props) => {
 											),
 										}}
 									/>
-									{inputs.c_banner_image&& (
+									{inputs.c_banner_image && (
 										<div className="display-flex">
 											<h4
 												className="profile-upload uploaded-imagename"
@@ -609,63 +621,63 @@ const AddBannerForm = (props) => {
 									/>
 								</div>
 							</Grid>
-							{ roadBlock ==true ?(
-							<Grid item xs={12}>
-								<Grid item xs={6}>
-									<div className="ml-16">
-										<MuiPickersUtilsProvider utils={DateFnsUtils}>
-											<DatePicker
-												name="c_start_date"
-												value={inputs.c_start_date}
-												onChange={handleStartDate}
-												error={errors.c_start_date}
-												className="auth-input"
-												inputVariant="outlined"
-												margin="normal"
-												format="dd/MM/yyyy"
-												placeholder="Start Date *"
-												minDate={new Date()}
-												InputProps={{
-													startAdornment: (
-														<InputAdornment position="start">
-															<img src={Calendar} alt="user-img" />
-														</InputAdornment>
-													),
-												}}
-											/>
-										</MuiPickersUtilsProvider>
-									</div>
+							{roadBlock == true ? (
+								<Grid item xs={12}>
+									<Grid item xs={6}>
+										<div className="ml-16">
+											<MuiPickersUtilsProvider utils={DateFnsUtils}>
+												<DatePicker
+													name="c_start_date"
+													value={inputs.c_start_date}
+													onChange={handleStartDate}
+													error={errors.c_start_date}
+													className="auth-input"
+													inputVariant="outlined"
+													margin="normal"
+													format="dd/MM/yyyy"
+													placeholder="Start Date *"
+													minDate={new Date()}
+													InputProps={{
+														startAdornment: (
+															<InputAdornment position="start">
+																<img src={Calendar} alt="user-img" />
+															</InputAdornment>
+														),
+													}}
+												/>
+											</MuiPickersUtilsProvider>
+										</div>
+									</Grid>
+									<Grid item xs={6}>
+										<div className="ml-16">
+											<MuiPickersUtilsProvider utils={DateFnsUtils}>
+												<DatePicker
+													name="c_end_date"
+													value={inputs.c_end_date}
+													onChange={handleEndDate}
+													error={errors.c_end_date}
+													className="auth-input"
+													inputVariant="outlined"
+													margin="normal"
+													format="dd/MM/yyyy"
+													placeholder="Start Date *"
+													minDate={new Date()}
+													InputProps={{
+														startAdornment: (
+															<InputAdornment position="start">
+																<img src={Calendar} alt="user-img" />
+															</InputAdornment>
+														),
+													}}
+												/>
+											</MuiPickersUtilsProvider>
+										</div>
+									</Grid>
 								</Grid>
-								<Grid item xs={6}>
-									<div className="ml-16">
-										<MuiPickersUtilsProvider utils={DateFnsUtils}>
-											<DatePicker
-												name="c_end_date"
-												value={inputs.c_end_date}
-												onChange={handleEndDate}
-												error={errors.c_end_date}
-												className="auth-input"
-												inputVariant="outlined"
-												margin="normal"
-												format="dd/MM/yyyy"
-												placeholder="Start Date *"
-												minDate={new Date()}
-												InputProps={{
-													startAdornment: (
-														<InputAdornment position="start">
-															<img src={Calendar} alt="user-img" />
-														</InputAdornment>
-													),
-												}}
-											/>
-										</MuiPickersUtilsProvider>
-									</div>
-								</Grid>
-							</Grid>
-							):""
+							) : ""
 							}
-							
-							
+
+
 							<Grid item xs={12}>
 								<div className="pd-l-16">
 									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>

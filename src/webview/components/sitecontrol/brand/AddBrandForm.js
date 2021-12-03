@@ -217,7 +217,8 @@ ColorlibStepIcon.propTypes = {
 
 const AddBrandForm = (props) => {
 	const {
-		imageupload
+		AddBrandAction,
+		addBrandResult
 	} = props;
 	const [errMsg, setErrMsg] = useState("");
 
@@ -225,20 +226,16 @@ const AddBrandForm = (props) => {
 	const [openModal1, setOpenModal1] = React.useState(false);
 
 	const [inputs, setInputs] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_image: "",
-		c_banner_image_1: "",
-		c_description: "",
+		c_brand_name: "",
+		c_brand_image: "",
+		c_brand_description: "",
 	});
 
 
 	const [errors, setErrors] = useState({
-		n_banner_type: "",
-		c_title: "",
-		c_banner_img: "",
-		c_banner_img_1: "",
-		c_description: "",
+		c_brand_name: "",
+		c_brand_image: "",
+		c_brand_description: "",
 	});
 
 	const handleInputChange = (e) => {
@@ -246,13 +243,6 @@ const AddBrandForm = (props) => {
 	
 		setErrMsg("");
 		setErrors({ ...errors, [name]: false });
-		// if (name === "n_banner_type") {
-		//   if (value.length === "Banner Type *") {
-		// 	setInputs({ ...inputs, [n_banner_type]: 0 });
-		//   } else {
-		// 	setInputs({ ...inputs, [name]: value });
-		//   }
-		// }
 		setInputs({ ...inputs, [name]: value });
 		};
 		const handleFocus = (e) => {
@@ -263,32 +253,27 @@ const AddBrandForm = (props) => {
 		const handleBlur = (e) => {
 		let { name, value } = e.target;
 	
-		if (name === "n_banner_type") {
-			if (value === "Banner Type *") {
-			setErrors({ ...errors, [name]: true });
+			if (name === "c_brand_name") {
+				if (value.length <= 3) {
+					setErrors({ ...errors, [name]: true });
+				}
+			}else if (name === "c_brand_description"){
+				if (value.length <= 15){
+					setErrors({ ...errors, [name]: true });
+				}
 			}
-		}else if (name === "c_title") {
-			if (value.length <= 3) {
-				setErrors({ ...errors, [name]: true });
-			}
-		}
 		};
 
 	const [openImgViewD1, setOpenImgViewD1] = useState(false);
-	const [openImgViewD2, setOpenImgViewD2] = useState(false);
 
 	const clickHandleCancel = (event) => {
 		if (event === "cancel_upload") {
-			setInputs({ ...inputs, c_banner_image: "" });
-		}else if (event === "cancel_upload_1") {
-			setInputs({ ...inputs, c_banner_image_1: "" });
+			setInputs({ ...inputs, c_brand_image: "" });
 		}
 		};
 
-	const [banner, setBaner] = useState(null);
-	const [bannerData, setBannerData] = useState(null);
-	const [banner_1, setBaner_1] = useState(null);
-	const [bannerData_1, setBannerData_1] = useState(null);
+	const [brand, setBrand] = useState(null);
+	const [brandData, setBrandData] = useState(null);
 	const handleUpload = (event, url) => {
 	const { name, id } = event.target;
 	let filename = event.target.files[0].name;
@@ -297,15 +282,12 @@ const AddBrandForm = (props) => {
 		if (event.target.files[0]) {
 			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
 				
-				if (name === "c_banner_image") {
-					setBaner(event.target.files[0]);
-					setBannerData(URL.createObjectURL(event.target.files[0]));
+				if (name === "c_brand_image") {
+					setBrand(event.target.files[0]);
+					setBrandData(URL.createObjectURL(event.target.files[0]));
 					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
-				}else if (name === "c_banner_image_1") {
-					setBaner_1(event.target.files[0]);
-					setBannerData_1(URL.createObjectURL(event.target.files[0]));
-					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
-				} else {
+					setErrors({ ...errors, c_banner_image: false });
+				}else {
 					setErrMsg("Please Select Valid Images");
 				}
 			} else{
@@ -313,6 +295,39 @@ const AddBrandForm = (props) => {
 			}
 		}
 	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (inputs.c_brand_name === "" || errors.c_brand_name === true) {
+			setErrors({ ...errors, c_brand_name: true });
+		}else if (inputs.c_brand_image === "" || errors.c_brand_image === true) {
+			setErrors({ ...errors, c_brand_image: true });
+		}else if (inputs.c_brand_description === "" || errors.c_brand_description === true) {
+			setErrors({ ...errors, c_brand_description: true });
+		}else{
+			const form = new FormData();
+			form.append("c_brand_name",inputs.c_brand_name)
+			form.append("c_brand_image",e.target.c_brand_image.files[0])
+			form.append("c_brand_description",inputs.c_brand_description)
+			AddBrandAction(form);
+		}
+	};
+	const [brandResult, setBrandResult] = useState({
+		status_code : "",
+	});
+	useEffect(() => {
+		if(addBrandResult) {
+			console.log("add user result1", addBrandResult);
+			setBrandResult({ ...brandResult, status_code: addBrandResult.payload.status });
+			if (brandResult.status_code === 1){
+				inputs.c_brand_name = "",
+				inputs.c_brand_image =  "",
+				inputs.c_brand_description = ""		  
+			}else if (brandResult.status_code != 1) {
+				setErrMsg(addBrandResult.error)
+			}
+			console.log("add user result2", addBrandResult.payload.status);
+		}
+	  }, [addBrandResult]);
 	return (
 		<>
 			<Collapse in={openModal1}>
@@ -337,12 +352,7 @@ const AddBrandForm = (props) => {
 				<ImageView
 					open={openImgViewD1}
 					handleClose={() => setOpenImgViewD1(false)}
-					imgUrl={bannerData}
-				/>
-				<ImageView
-					open={openImgViewD2}
-					handleClose={() => setOpenImgViewD2(false)}
-					imgUrl={bannerData_1}
+					imgUrl={brandData}
 				/>
 				<div className="">
 					<Collapse in={openModal}>
@@ -369,9 +379,14 @@ const AddBrandForm = (props) => {
 				<div className="profile-title-sec ml-16">
 					<h4 className="profile-title">Add Brand</h4>
 				</div>
+				{brandResult.status_code === 1 &&
+					<div className="notFound">
+						<Alert severity="success"> <span className="font-weight-bold">Brand Added..!!!</span></Alert>
+					</div>
+				}
 
 				<div>
-					<form className="profile-details-sec">
+					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
 						<p className="login-error-msg min-height-none mb-10">
 							{errMsg.toLowerCase()}
 						</p>
@@ -380,16 +395,16 @@ const AddBrandForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="c_title"
-										value={inputs.c_title}
+										name="c_brand_name"
+										value={inputs.c_brand_name}
 										onChange={(e) => handleInputChange(e)}
-					onFocus={(e) => handleFocus(e)}
-					onBlur={(e) => handleBlur(e)}
-					error={errors.c_title}
-									helperText={errors.c_title && "Not a valid title"}
+										onFocus={(e) => handleFocus(e)}
+										onBlur={(e) => handleBlur(e)}
+										error={errors.c_brand_name}
+										helperText={errors.c_brand_name && "Not a valid title"}
 										margin="normal"
 										variant="outlined"
-										placeholder="Banner Title"
+										placeholder="Brand Title *"
 										className="auth-input"
 										autoComplete=""
 										InputProps={{
@@ -405,16 +420,16 @@ const AddBrandForm = (props) => {
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
-										name="c_banner_img"
-										value={inputs.c_banner_image}
+										name="c_brand_img"
+										value={inputs.c_brand_image}
 										onChange={(e) => handleInputChange(e)}
 										onBlur={(e) => handleBlur(e)}
-										error={errors.c_banner_img}
-										helperText={errors.c_banner_img && "Not a valid image to upload"}
+										error={errors.c_brand_image}
+										helperText={errors.c_brand_image && "Not a valid image to upload"}
 										autoComplete="new-password"
 										margin="normal"
 										variant="outlined"
-										placeholder="Banner image *"
+										placeholder="Brand image *"
 										className="auth-input"
 										InputProps={{
 											startAdornment: (
@@ -427,8 +442,8 @@ const AddBrandForm = (props) => {
 													<img src={Camera} alt="Camera" />
 													<input
 														type="file"
-														name="c_banner_image"
-														id="c_banner_img"
+														name="c_brand_image"
+														id="c_brand_img"
 														accept="image/jpeg, image/png, image/jpg, image/webp"
 														onChange={(e) => handleUpload(e, "dl1")}
 														multiple={false}
@@ -437,13 +452,13 @@ const AddBrandForm = (props) => {
 											),
 										}}
 									/>
-									{inputs.c_banner_image&& (
+									{inputs.c_brand_image&& (
 										<div className="display-flex">
 											<h4
 												className="profile-upload uploaded-imagename"
 												onClick={() => setOpenImgViewD1(true)}
 											>
-												<span>{inputs.c_banner_image}</span>
+												<span>{inputs.c_brand_image}</span>
 											</h4>
 											<h4
 												className="profile-upload uploaded-imagename float-right"
@@ -458,17 +473,22 @@ const AddBrandForm = (props) => {
 							<Grid item xs={12}>
 								<div className="pd-l-16">
 									<TextField
-										name="c_description"
+										name="c_brand_description"
+										value={inputs.c_brand_description}
+										onChange={(e) => handleInputChange(e)}
+										onFocus={(e) => handleFocus(e)}
+										onBlur={(e) => handleBlur(e)}
+										error={errors.c_brand_description}
+										helperText={errors.c_brand_description && "Mandatory field"}
 										multiline
 										rows={1}
 										rowsMax={4}
 										margin="normal"
 										variant="outlined"
-										placeholder="Description"
+										placeholder="Description *"
 										className="auth-input kmass_desc"
 									/>
-									
-									<Button variant="contained" className="yes" color="primary">Submit</Button>
+									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>

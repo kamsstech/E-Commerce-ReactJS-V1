@@ -293,7 +293,6 @@ export default function HeaderPage(props) {
 	const handleCloseRegModal = () => {
 		setOpenRegModal(false);
 	};
-
 	const handleOpenOnePharmaModal = () => {
 		setOpenOnePharmaModal(true);
 	};
@@ -415,7 +414,7 @@ export default function HeaderPage(props) {
 
 	return (
 		<>
-			{showProductDetails == true ? (
+			{/*{showProductDetails == true ? (*/}
 				<>
 					<div className="web-header">
 						<AppBar position="static">
@@ -1376,7 +1375,7 @@ export default function HeaderPage(props) {
 						handleClose={handleCloseComingSoon}
 					/>
 				</>
-			) : null}
+			{/*) : null}*/}
 		</>
 	);
 }

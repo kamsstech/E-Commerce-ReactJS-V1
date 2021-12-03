@@ -9,7 +9,8 @@ import AddBannerForm from "./AddBannerForm";
 
 export const AddBannerPage = (props) => {
 	const {
-		AddBannerAction
+		AddBannerAction,
+		addBannerResult
 	} = props;
 	const [value1, setValue1] = React.useState(0);
 	const [value2, setValue2] = React.useState({
@@ -76,6 +77,7 @@ const handleBack=()=>{
 								isEditPrevent={isEditPrevent}
 								setIsEditPrevent={setIsEditPrevent}
 								AddBannerAction={AddBannerAction}
+								addBannerResult={addBannerResult}
 							/>
 						</div>
 					</Grid>
