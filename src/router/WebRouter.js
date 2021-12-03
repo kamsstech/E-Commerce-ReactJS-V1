@@ -34,6 +34,8 @@ import {
 	AddPageSettingContainer,
 	PageSettingContainer,
 	ChangePasswordPageContainer,
+	ItemsPageContainer,
+	AddItemsPageContainer,
 } from "../webview/components";
 
 
@@ -784,6 +786,18 @@ const WebRouter = () => {
 						Component={ChangePasswordPageContainer}
 						Layout={MainLayout}
 						pageTitle="Change Password Control"
+					/>
+					<PrivateRoute
+						path="/site-control/add-item"
+						Component={AddItemsPageContainer}
+						Layout={MainLayout}
+						pageTitle="Add New Item"
+					/>
+					<PrivateRoute
+						path="/site-control/items"
+						Component={ItemsPageContainer}
+						Layout={MainLayout}
+						pageTitle="Item List"
 					/>
 					{/* <Route
 						render={() => (

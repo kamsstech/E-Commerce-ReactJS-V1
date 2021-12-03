@@ -325,8 +325,8 @@ const VariationsListPage = (props) => {
 									<TableHead>
 										<TableRow className="head noBorder">
 											<TableCell>SNo</TableCell>
-											<TableCell>Variation Type</TableCell>
-											<TableCell>Variation</TableCell>
+											<TableCell>Variation Name</TableCell>
+											<TableCell>Variation Count</TableCell>
 											<TableCell>Date</TableCell>
 											<TableCell>Status</TableCell>
 											<TableCell>Action</TableCell>
@@ -339,8 +339,8 @@ const VariationsListPage = (props) => {
 										arrayJson.map((item1, index1) => (
 										<TableRow>
 											<TableCell className="tBody">{(index1 + 1) + pageOffset > 9 ? (index1 + 1) + pageOffset : "0" + ((index1 + 1) + pageOffset)}</TableCell>
-											<TableCell className="tBody">{item1.c_variation_title}</TableCell>
 											<TableCell className="tBody">{item1.c_variation_name}</TableCell>
+											<TableCell className="tBody">{item1.count}</TableCell>
 											<TableCell className="tBody">{item1.dt_createdate}</TableCell>
 											<TableCell className="tBody">
 											{

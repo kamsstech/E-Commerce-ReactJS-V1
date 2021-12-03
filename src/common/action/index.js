@@ -195,6 +195,7 @@ export * from './sitecontrol/brand/brandListPageAction'
 export * from './sitecontrol/category/categoryListPageAction'
 export * from './sitecontrol/customer/customerListPageAction'
 export * from './sitecontrol/page/pageListPageAction'
+export * from './sitecontrol/variations/addVariationsPageAction'
 export * from './sitecontrol/variations/variationsListPageAction'
 
 
