@@ -373,7 +373,6 @@ const AddBannerForm = (props) => {
 	}
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(e.target)
 		if (inputs.n_banner_type === "1" || errors.n_banner_type === true) {
 			setErrors({ ...errors, n_banner_type: true });
 		}
@@ -405,6 +404,7 @@ const AddBannerForm = (props) => {
 		}
 	}, [addBannerResult]);
 	useEffect(() => {
+		console.log(bannerResult.status_code)
 		if (bannerResult.status_code === 1) {
 				inputs.n_banner_type = "",
 				inputs.c_banner_title = "",

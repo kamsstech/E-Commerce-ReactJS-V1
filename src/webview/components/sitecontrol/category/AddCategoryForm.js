@@ -529,60 +529,6 @@ const AddCategoryForm = (props) => {
 								</div>
 							</Grid>
 
-							{/* <Grid item xs={6}>
-								<div className="ml-16">
-									<TextField
-										name="c_category_bnr"
-										value={inputs.c_category_banner}
-										onChange={(e) => handleInputChange(e)}
-										onBlur={(e) => handleBlur(e)}
-										error={errors.c_category_banner}
-										helperText={errors.c_category_banner && "Not a valid image to upload"}
-										autoComplete="new-password"
-										margin="normal"
-										variant="outlined"
-										placeholder="Category Banner image"
-										className="auth-input"
-										InputProps={{
-											startAdornment: (
-												<InputAdornment position="start">
-													<img src={FirstAidKit} alt="mobile-phone" />
-												</InputAdornment>
-											),
-											endAdornment: (
-												<InputAdornment position="end">
-													<img src={Camera} alt="Camera" />
-													<input
-														type="file"
-														name="c_category_banner"
-														id="c_category_banner"
-														accept="image/jpeg, image/png, image/jpg, image/webp"
-														onChange={(e) => handleUpload(e, "dl1")}
-														multiple={false}
-													/>
-												</InputAdornment>
-											),
-										}}
-									/>
-									{inputs.c_category_banner&& (
-										<div className="display-flex">
-											<h4
-												className="profile-upload uploaded-imagename"
-												onClick={() => setOpenImgViewD2(true)}
-											>
-												<span>{inputs.c_category_banner}</span>
-											</h4>
-											<h4
-												className="profile-upload uploaded-imagename float-right"
-												onClick={() => clickHandleCancel("cancel_upload_1")}
-											>
-												<span>x</span>
-											</h4>
-										</div>
-									)}
-								</div>
-							</Grid> */}
-
 							<Grid item xs={12}>
 								<div className="pd-l-16">
 									<TextField
