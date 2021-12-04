@@ -23,7 +23,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import { usePagination } from '@material-ui/lab/Pagination';
-
+import { Link } from "react-router-dom";
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -269,6 +269,22 @@ const BannerListPage = (props) => {
 	const { items } = usePagination({
 			count: paginationResult,
 	});
+	const toggle = (val, val1 ) => {
+        console.log("clicked", val, val1);
+		if (val != "" && val1 === "2"){
+			const status_body ={
+			    c_unquie_id:val,
+			    n_status:"2",
+			}
+			console.log(status_body, "dis")
+		}else{
+			const status_body ={
+			    c_unquie_id:val,
+			    n_status:"1",
+			}
+			console.log(status_body, "enab")
+		}
+    };
 	return (
 		<>
 			<div>
@@ -354,6 +370,7 @@ const BannerListPage = (props) => {
 											        variant="contained"
 											        color="primary"
 											        size="small"
+													onClick={() => toggle(item1._id, "2")}
 											        startIcon={<VisibilityIcon />}
 											      >
 											        Active
@@ -364,6 +381,7 @@ const BannerListPage = (props) => {
 											        variant="contained"
 											        color="secondary"
 											        size="small"
+													onClick={() => toggle(item1._id, "1")}
 											        startIcon={<VisibilityOffIcon />}
 											      >
 											        Inactive
@@ -371,9 +389,11 @@ const BannerListPage = (props) => {
 											}
 											</TableCell>
 											<TableCell className="tBody">
-											    <IconButton size="small">
-										          	<EditIcon fontSize="inherit" />
-										        </IconButton>
+												<Link to={`/site-control/edit-banner/${item1._id}`}>
+													<IconButton size="small">
+														<EditIcon fontSize="inherit" />
+													</IconButton>
+												</Link>
 										        <IconButton size="small">
 										          	<DeleteIcon fontSize="inherit" />
 										        </IconButton>

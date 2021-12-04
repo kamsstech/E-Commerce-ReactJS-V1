@@ -149,9 +149,9 @@ import SellerPayOrderReducer from "./common/reducer/payment/sellerPayOrderGenara
 //Banner
 import AddBannerReducer from "./common/reducer/sitecontrol/banner/addBannerReducer";
 import BannerListPageReducer from "./common/reducer/sitecontrol/banner/bannerListPageReducer";
-import BrandListPageReducer from "./common/reducer/sitecontrol/brand/brandListPageReducer";
+import GetBannerReducer from "./common/reducer/sitecontrol/banner/getBannerReducer";
+import BannerUpdatePageReducer from "./common/reducer/sitecontrol/banner/bannerUpdatePageReducer";
 
-import CategoryListPageReducer from "./common/reducer/sitecontrol/category/categoryListPageReducer";
 import CustomerListPageReducer from "./common/reducer/sitecontrol/customer/customerListPageReducer";
 import PageListPageReducer from "./common/reducer/sitecontrol/page/pageListPageReducer";
 import AddVariationsPageReducer from "./common/reducer/sitecontrol/variations/addVariationsPageReducer";
@@ -159,9 +159,11 @@ import VariationsListPageReducer from "./common/reducer/sitecontrol/variations/v
 
 //Brand
 import AddBrandReducer from "./common/reducer/sitecontrol/brand/addBrandReducer";
+import BrandListPageReducer from "./common/reducer/sitecontrol/brand/brandListPageReducer";
 
 //Category
 import AddCategoryReducer from "./common/reducer/sitecontrol/category/addCategoryReducer";
+import CategoryListPageReducer from "./common/reducer/sitecontrol/category/categoryListPageReducer";
 
 //Page
 import AddPageReducer from "./common/reducer/sitecontrol/setting/addPageReducer";
@@ -299,6 +301,9 @@ const RootReducer = combineReducers({
 //Banner
   addBannerResult:AddBannerReducer,
   bannerListPageResult:BannerListPageReducer,
+  getBannerResult:GetBannerReducer,
+  bannerUpdateResult:BannerUpdatePageReducer,
+
   brandListPageResult:BrandListPageReducer,
   categoryListPageResult:CategoryListPageReducer,
   customerListPageResult:CustomerListPageReducer,

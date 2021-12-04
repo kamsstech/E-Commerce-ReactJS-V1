@@ -2,6 +2,7 @@
 //Banner
 export * from "./sitecontrol/banner/BannerPageContainer";
 export * from "./sitecontrol/banner/AddBannerPageContainer";
+export * from "./sitecontrol/banner/EditBannerPageContainer";
 
 //Brand
 export * from "./sitecontrol/brand/BrandPageContainer";

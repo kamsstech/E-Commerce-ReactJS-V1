@@ -1,95 +1,94 @@
-import React, {useEffect, useState} from 'react';
-import { Container, Grid } from '@material-ui/core';
-import PriceDetail from './PriceDetail';
-import ProductDetails from './ProductDetails';
+import * as React from "react";
+import { useEffect } from "react";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 
-import './css/PaymentPage.css';
-import PaymentFooterPage from '../paymentFooter/PaymentFooterPage';
+import Sidebar from "../sidebar/Sidebar";
+import EditBannerForm from "./EditBannerForm";
+// import "./css/ProfileStyles.css";
 
-const PaymentPage= (props) => {
-	const [arrayJson, setarrayJson] = useState([]);
-	const [arrayInJson, setarrayInJson] = useState([]);
-  	const [page, setPage] = useState(1);
-  	const [loadStatus, setloadStatus] = useState(false);
-  	const [totalList, setTotalList] = useState(5);
-  	const [totalLimit, setLimitTotal] = useState(10);
-  	const [totalOffset, settotalOffset] = useState(0);
-  	const [notFound, setNotFound] = useState(false);
-  	const [pageLimit, setPageLimit] = useState(5);
-  	const [searchKey, setSearchKey] = useState("");
-  	const [totalPay, settotalPay] = useState(0);
-  	const [totalOutPay, settotalOutPay] = useState(0);
-  	const [isCheck, setIsCheck] = useState([]);
-  	const [isCheckAll, setIsCheckAll] = useState(false);
-  	const [checkCount, setCheckCount] = useState(0);
-  	const [resultofSeller, setresultofSeller] = useState('');
-	const {GetSellerWisePayOut,sellerwisePayoutResult,GetSellerWisePayPagination,sellerwisePayPaginationResult,GetSellerPayDetails,sellerPayDetailsResult} = props;
-	const mobileNo= "9567764045"
-	const sellerCode= "002502"
-	return(
-		<>
-			<div className="website-body">
-				<div className="paymentflowflow">
-					<div className="head">
-						<Container fixed>
-							<h4>Outstanding Details</h4>  
-						</Container>
-					</div>
-					<ProductDetails
-					  mobileNo={mobileNo}
-					  sellerCode={sellerCode}
-					  page={page}
-		              setPage={setPage}
-		              loadStatus={loadStatus}
-		              setloadStatus={setloadStatus}
-		              totalList={totalList}
-		              setTotalList={setTotalList}
-		              totalLimit={totalLimit}
-		              setLimitTotal={setLimitTotal}
-		              totalOffset={totalOffset}
-		              settotalOffset={settotalOffset}
-		              pageLimit={pageLimit}
-		              setPageLimit={setPageLimit}
-		              notFound={notFound}
-		              setNotFound={setNotFound}
-		              arrayJson={arrayJson}
-		              setarrayJson={setarrayJson}
-		              arrayInJson={arrayInJson}
-		              setarrayInJson={setarrayInJson}
-		              searchKey={searchKey}
-		              setSearchKey={setSearchKey}
-		              totalPay={totalPay}
-		              settotalPay={settotalPay}
-		              totalOutPay={totalOutPay}
-		              settotalOutPay={settotalOutPay}
-		              isCheck={isCheck}
-		              setIsCheck={setIsCheck}
-		              isCheckAll={isCheckAll}
-		              setIsCheckAll={setIsCheckAll}
-		              checkCount={checkCount}
-		              setCheckCount={setCheckCount}
-		              resultofSeller={resultofSeller}
-		              setresultofSeller={setresultofSeller}
-					  GetSellerWisePayOut={GetSellerWisePayOut}
-					  sellerwisePayoutResult={sellerwisePayoutResult}
-					  GetSellerWisePayPagination={GetSellerWisePayPagination}
-					  sellerwisePayPaginationResult={sellerwisePayPaginationResult}
-		              GetSellerPayDetails={GetSellerPayDetails}
-		              sellerPayDetailsResult={sellerPayDetailsResult}
-					/>   
-					{/*<div className="info onePharama paymentFlow">
-						<Container fixed>
-						</Container>
-					</div>*/}
-					{/*<PaymentFooterPage footerSubscribe={(email)=>console.log(email)}/>}*/}
-				</div>    
-				<div className="termsAndCondi positioninit">
-					<Container fixed>
-						Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
-					</Container>
-				</div>
-			</div>
-		</>
-	)
+export const EditBannerPage = (props) => {
+	const {
+		BannerGetPageAction,
+		getBannerResult,
+		BannerUpdatePageAction,
+		bannerUpdateResult
+	} = props;
+	const [value1, setValue1] = React.useState(0);
+	const [value2, setValue2] = React.useState({
+		c_area_name:""
+	  });
+
+	const [step, setStep] = React.useState(value1);
+	const [down, setDown] = React.useState(value1);
+	const [isEditPrevent, setIsEditPrevent] = React.useState(false);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
+		
+		
+		let val = value1 + 1;
+		let val1 = value1 - 1;
+		// console.log(value,"value")
+		// console.log(val,"val")
+		if(val > value1){
+			setStep(val);
+		}
+		else if(val1 < value1){
+			setDown(val1);
+		}
+	 
+		
+	}, [value1])
+
+
+
+	const handleNext = () => {
+		
+		setValue1(step);
+	
+	 
+	};
+const handleBack=()=>{
+	setValue1(down);
 }
-export default PaymentPage;
+
+	return (
+		<div className="body-spacing dSprofile ProfileInfo">
+			<Container fixed>
+				<Grid container spacing={0}>
+					<Grid item xs={3}>
+						<Sidebar
+							isEditPrevent={isEditPrevent}
+							setIsEditPrevent={setIsEditPrevent}
+							page="add-banner"
+						/>
+					</Grid>
+					<Grid item xs={9}>
+						<div className="myprofile-box border-botttom-none">
+							<EditBannerForm
+								value1={value1}
+								handleNext={handleNext}
+								handleBack={handleBack}
+								step={step}
+								setValue2={setValue2}
+								value2={value2}
+								isEditPrevent={isEditPrevent}
+								setIsEditPrevent={setIsEditPrevent}
+								BannerGetPageAction={BannerGetPageAction}
+								getBannerResult={getBannerResult}
+								BannerUpdatePageAction={BannerUpdatePageAction}
+								bannerUpdateResult={bannerUpdateResult}
+							/>
+						</div>
+					</Grid>
+				</Grid>
+			</Container>
+		</div>
+	);
+};
+
+export default EditBannerPage;

@@ -190,6 +190,8 @@ export * from './payment/sellerPayOrderGenarateAction'
 //Banner
 export * from './sitecontrol/banner/addBannerAction'
 export * from './sitecontrol/banner/bannerListPageAction'
+export * from './sitecontrol/banner/bannerGetPageAction'
+export * from './sitecontrol/banner/bannerUpdatePageAction'
 //Brand
 export * from './sitecontrol/brand/addBrandAction'
 export * from './sitecontrol/brand/brandListPageAction'

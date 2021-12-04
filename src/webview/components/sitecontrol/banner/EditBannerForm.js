@@ -20,9 +20,13 @@ import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import Collapse from "@material-ui/core/Collapse";
+import { useParams } from 'react-router-dom';
+import { ENV } from "../../../../common/constant/env"
+
 import {
 	MenuItem,
 } from "@material-ui/core";
+import { fromUnixTime } from "date-fns";
 
 const PrettoSlider = withStyles({
 	root: {
@@ -188,16 +192,29 @@ ColorlibStepIcon.propTypes = {
 };
 
 
-const AddBannerForm = (props) => {
+const EditBannerForm = (props) => {
 	const {
-		AddBannerAction,
-		addBannerResult
+		BannerGetPageAction,
+		getBannerResult,
+		BannerUpdatePageAction,
+		bannerUpdateResult,
 	} = props;
-	const [errMsg, setErrMsg] = useState("");
+	const {bannerId} = useParams();
+	const [getBannerinputs, setgetBennerInputs] = useState({
+		c_unquie_id: bannerId,
+		c_process: "1"
+	});
+	useEffect(() => {
+        if(bannerId != "") {
+            BannerGetPageAction(getBannerinputs)
+        }
+    }, [getBannerinputs]);
 
+	const [errMsg, setErrMsg] = useState("");
 	const [openModal, setOpenModal] = React.useState(false);
 	const [imgSizeMsg, setimgSizeMsg] = React.useState(true);
 	const [imgSize, setimgSize] = React.useState("Image Size Should Be 1600 X 400");
+	const [bannerData, setBannerData] = useState(null);
 
 
 	const [inputs, setInputs] = useState({
@@ -210,6 +227,26 @@ const AddBannerForm = (props) => {
 		c_end_date: ""
 	});
 
+	useEffect(() => {
+		if (getBannerResult.statuscode === 1){
+			setErrMsg("");
+			var data = getBannerResult.payload.data[0]
+			console.log("end", data.c_banner_image)
+			var img_end_point = data.c_banner_image.substring(data.c_banner_image.indexOf("api") + 1)
+			console.log(`${ENV.IMAGE_BASE_URL}/${img_end_point}`)
+			inputs.n_banner_type = data.n_banner_type;
+			inputs.c_banner_title = data.c_banner_title;
+			inputs.c_banner_image = `${ENV.IMAGE_BASE_URL}/${img_end_point}`;
+			inputs.c_banner_description = data.c_banner_description;
+			inputs.c_redirect_url = data.c_redirect_url;
+			inputs.c_start_date = data.c_start_date;
+			inputs.c_end_date = data.c_end_date;
+			setBannerData(inputs.c_banner_image);
+		}else{
+			setErrMsg(getBannerResult.msg ? getBannerResult.msg : "NIL");
+		}
+		
+	}, [getBannerResult.loading])
 
 	const [errors, setErrors] = useState({
 		n_banner_type: "",
@@ -275,9 +312,6 @@ const AddBannerForm = (props) => {
 		}
 	};
 
-	const [banner, setBaner] = useState(null);
-	const [bannerData, setBannerData] = useState(null);
-
 	const handleUpload = (event, url) => {
 		const { name, id } = event.target;
 		let filename = event.target.files[0].name;
@@ -287,7 +321,6 @@ const AddBannerForm = (props) => {
 			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
 
 				if (name === "c_banner_image") {
-					setBaner(event.target.files[0]);
 					setBannerData(URL.createObjectURL(event.target.files[0]));
 					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
 					setErrors({ ...errors, c_banner_image: false });
@@ -356,6 +389,7 @@ const AddBannerForm = (props) => {
 			setErrors({ ...errors, c_banner_image: true });
 		} else {
 			const form = new FormData();
+			form.append("c_unquie_id", bannerId)
 			form.append("n_banner_type", inputs.n_banner_type)
 			form.append("c_banner_title", inputs.c_banner_title)
 			form.append("c_banner_image", e.target.c_banner_image.files[0])
@@ -365,15 +399,15 @@ const AddBannerForm = (props) => {
 				form.append("c_start_date", inputs.c_start_date)
 				form.append("c_end_date", inputs.c_end_date)
 			}
-			AddBannerAction(form);
+			BannerUpdatePageAction(form);
 		}
 	};
 	const [bannerResult, setBannerResult] = useState({
 		status_code: "",
 	});
     useEffect(() => {
-        if(addBannerResult) {
-            setBannerResult({ ...bannerResult, status_code: addBannerResult.payload.status });
+        if(bannerUpdateResult) {
+            setBannerResult({ ...bannerResult, status_code: bannerUpdateResult.payload.status });
             if (bannerResult.status_code === 1){
                 inputs.n_banner_type = "",
                 inputs.c_banner_title = "",
@@ -383,10 +417,10 @@ const AddBannerForm = (props) => {
                 inputs.c_start_date = "",
                 inputs.c_end_date = ""
             }else if (bannerResult.status_code != 1) {
-                setErrMsg(addBannerResult.error)
+                setErrMsg(bannerUpdateResult.error)
             }
         }
-    }, [addBannerResult]);
+    }, [bannerUpdateResult]);
 	return (
 		<>
 			<div>
@@ -416,7 +450,7 @@ const AddBannerForm = (props) => {
 					</Collapse>
 				</div>
 				<div className="profile-title-sec ml-16">
-					<h4 className="profile-title">Add Banner</h4>
+					<h4 className="profile-title">Edit Banner</h4>
 				</div>
 				
 				{bannerResult.status_code === 1 &&
@@ -427,9 +461,12 @@ const AddBannerForm = (props) => {
 
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
-						<p className="login-error-msg min-height-none mb-10">
-							{errMsg.toLowerCase()}
-						</p>
+						{
+							errMsg=="NIL" ? "" : <p className="login-error-msg min-height-none mb-10">
+								{errMsg.toLowerCase()}
+							</p>
+						}
+						
 
 						<Grid container spacing={0}>
 							<Grid item xs={6}>
@@ -662,4 +699,4 @@ const AddBannerForm = (props) => {
 	);
 };
 
-export default AddBannerForm;
+export default EditBannerForm;

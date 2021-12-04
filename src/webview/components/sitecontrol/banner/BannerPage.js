@@ -11,6 +11,8 @@ export const BannerPage = (props) => {
 	const {
 		bannerListPageResult,
 		BannerListPageAction,
+		BannerUpdatePageAction,
+		bannerUpdateResult
 	} = props;
 	const [value1, setValue1] = React.useState(0);
 	const [value2, setValue2] = React.useState({
@@ -61,6 +63,8 @@ const handleBack=()=>{
 							<BannerListPage
 								BannerListPageAction={BannerListPageAction}
 								bannerListPageResult={bannerListPageResult}
+								BannerUpdatePageAction={BannerUpdatePageAction}
+								bannerUpdateResult={bannerUpdateResult}
 							/>
 						</div>
 					</Grid>

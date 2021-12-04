@@ -8,6 +8,7 @@ import {
 	//Banner
 	BannerPageContainer,
 	AddBannerPageContainer,
+	EditBannerPageContainer,
 
 	//Brand
 	BrandPageContainer,
@@ -594,6 +595,14 @@ const WebRouter = () => {
 					Component={AddBannerPageContainer}
 					pageTitle="Add Banner Control"
 				/>
+
+				<AdminLayout
+					exact={true}
+					path="/site-control/edit-banner/:bannerId"
+					Component={EditBannerPageContainer}
+					pageTitle="Edit Banner Control"
+				/>
+
 				<AdminLayout
 					exact={true}
 					path="/site-control/banner"
