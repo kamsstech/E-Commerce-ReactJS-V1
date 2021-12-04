@@ -469,7 +469,7 @@ const AddBrandForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 									<TextField
 										name="c_brand_description"
 										value={inputs.c_brand_description}

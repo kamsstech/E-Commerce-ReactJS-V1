@@ -236,6 +236,7 @@ const BrandListPage = (props) => {
 	};
 	useEffect(() => {
 	    setloadStatus(false);
+	    console.log(brandListPageResult)
 	    if (brandListPageResult.statuscode === 1) {
 	      if(brandListPageResult.payload.data.length > 0)
 	      {
@@ -322,7 +323,7 @@ const BrandListPage = (props) => {
 							<hr className="MuiDivider-root blue-divider"></hr>
 						</div>
 						<div className="pd-l-16">
-								<Table className="paymentsellerList">
+								<Table className="paymentsellerList kamss-admin-table">
 									<TableHead>
 										<TableRow className="head noBorder">
 											<TableCell>SNo</TableCell>
@@ -341,7 +342,7 @@ const BrandListPage = (props) => {
 										<TableRow>
 											<TableCell className="tBody">{(index1 + 1) + pageOffset > 9 ? (index1 + 1) + pageOffset : "0" + ((index1 + 1) + pageOffset)}</TableCell>
 											<TableCell className="tBody">{item1.c_brand_name}</TableCell>
-											<TableCell className="tBody">{item1.c_brand_image}</TableCell>
+											<TableCell className="tBody"><img src={'http://35.224.80.84/apiaction/'+item1.c_brand_image} alt="searchimg" /></TableCell>
 											<TableCell className="tBody">{item1.dt_createdate}</TableCell>
 											<TableCell className="tBody">
 											{

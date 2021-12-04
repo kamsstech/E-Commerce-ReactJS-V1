@@ -224,7 +224,15 @@ ColorlibStepIcon.propTypes = {
 	icon: PropTypes.node,
 };
 const AddItemsPage = (props) => {
+	const {
+		categoryListResult,
+		brandListResult,
+		BrandListAction,
+		CategoryListAction
+	} = props;
 	const [activeStep, setActiveStep] = React.useState(0);
+	const [catarrayJson, setcatarrayJson] = React.useState([]);
+	const [brandarrayJson, setbrandarrayJson] = React.useState([]);
 	const handleNext = () => {
 	    setActiveStep((prevActiveStep) => prevActiveStep + 1);
 	  };
@@ -236,7 +244,34 @@ const AddItemsPage = (props) => {
 	  const handleReset = () => {
 	    setActiveStep(0);
 	  };
-
+	  useEffect(() => {
+	    CategoryListAction();
+	    BrandListAction();
+	  }, []);
+	  useEffect(() => {
+	    if (brandListResult.statuscode === 1) {
+	      if(brandListResult.payload.data.length > 0)
+	      {
+	        setbrandarrayJson(brandListResult.payload?.data);
+	      }
+	    }
+	    if(brandListResult.statuscode === 3) {
+	      setbrandarrayJson([])
+	    }
+	    
+	  }, [brandListResult]);
+	  useEffect(() => {
+	    if (categoryListResult.statuscode === 1) {
+	      if(categoryListResult.payload.data.length > 0)
+	      {
+	        setcatarrayJson(categoryListResult.payload?.data);
+	      }
+	    }
+	    if(categoryListResult.statuscode === 3) {
+	      setcatarrayJson([])
+	    }
+	    
+	  }, [categoryListResult]);
 	const [errMsg, setErrMsg] = useState("");
 
 	const [openModal, setOpenModal] = React.useState(false);
@@ -248,8 +283,8 @@ const AddItemsPage = (props) => {
 		c_meta_title: "",
 		c_meta_description: "",
 		c_meta_keyword: "",
-		c_brand_code: "",
-		c_category_code: "",
+		c_brand_code: "0",
+		c_category_code: "0",
 		c_item_description: "",
 		c_item_specification: "",
 		j_variations: [],
@@ -362,6 +397,39 @@ const AddItemsPage = (props) => {
 	const handleRadioChange = (event) => {
 	    setValue(event.target.value);
 	  };
+	const handlePdtDetailNext = () => {
+		if (inputs.c_item_name === "" || errors.c_item_name === true) {
+			setErrors({ ...errors, c_item_name: true });
+		}
+		else if (inputs.c_model_name === "" || errors.c_model_name === true) {
+			setErrors({ ...errors, c_model_name: true });
+		}
+		else if (inputs.c_item_specification === "" || errors.c_item_specification === true) {
+			setErrors({ ...errors, c_item_specification: true });
+		}
+		else if (inputs.c_item_description === "" || errors.c_item_description === true) {
+			setErrors({ ...errors, c_item_description: true });
+		}
+		else
+		{
+			setActiveStep((prevActiveStep) => prevActiveStep + 1);
+		}
+	    
+	  };
+	  const handlePdtCatNext = () => {
+		if (inputs.c_brand_code === "0" || errors.c_brand_code === true) {
+			setErrors({ ...errors, c_brand_code: true });
+		}
+		else if (inputs.c_category_code === "0" || errors.c_category_code === true) {
+			setErrors({ ...errors, c_category_code: true });
+		}
+		else
+		{
+			setActiveStep((prevActiveStep) => prevActiveStep + 1);
+		}
+	    
+	  };
+
 	return (
 		<>
 			<div>
@@ -501,6 +569,7 @@ const AddItemsPage = (props) => {
 															placeholder="Meta Description"
 															className="auth-input kmass_desc"
 															onChange={(e) => handleInputChange(e)}
+															value={inputs.c_meta_description}
 														/>
 													</div>
 												</Grid>
@@ -513,9 +582,12 @@ const AddItemsPage = (props) => {
 															rowsMax={4}
 															margin="normal"
 															variant="outlined"
-															placeholder="Item Specification"
+															placeholder="Item Specification *"
 															className="auth-input kmass_desc"
 															onChange={(e) => handleInputChange(e)}
+															error={errors.c_item_specification}
+															helperText={errors.c_item_specification && "Not a valid Specification"}
+															value={inputs.c_item_specification}
 														/>
 													</div>
 												</Grid>
@@ -528,9 +600,12 @@ const AddItemsPage = (props) => {
 															rowsMax={4}
 															margin="normal"
 															variant="outlined"
-															placeholder="Item Description"
+															placeholder="Item Description *"
 															className="auth-input kmass_desc"
 															onChange={(e) => handleInputChange(e)}
+															error={errors.c_item_description}
+															helperText={errors.c_item_description && "Not a valid Description"}
+															value={inputs.c_item_description}
 														/>
 													</div>
 												</Grid>
@@ -549,7 +624,7 @@ const AddItemsPage = (props) => {
 					                  <Button
 					                    variant="contained"
 					                    color="primary"
-					                    onClick={handleNext}
+					                    onClick={handlePdtDetailNext}
 					                  >
 					                  Next
 					                  </Button>
@@ -586,15 +661,17 @@ const AddItemsPage = (props) => {
 													select
 													// value={"Banner Type"}
 												>
-													<MenuItem key={"0"} value={"Banner Type *"}>
-														Choose Brand
+													<MenuItem key={"0"} value={"0"}>
+														Choose Brand *
 													</MenuItem>
-													<MenuItem key={"1"} value={"Home Banner"}>
-														Home Banner
-													</MenuItem>
-													<MenuItem key={"2"} value={"Product Banner"}>
-														Product Banner
-													</MenuItem>
+													{
+														Array.isArray(brandarrayJson) &&
+														brandarrayJson.length > 0 &&
+														brandarrayJson.map((item0, index0) => (
+														<MenuItem key={item0.c_brand_code} value={item0.c_brand_code}>
+															{item0.c_brand_name}
+														</MenuItem>
+													))}
 												</TextField>
 											</div>
 										</Grid>
@@ -608,7 +685,7 @@ const AddItemsPage = (props) => {
 													onFocus={(e) => handleFocus(e)}
 													onBlur={(e) => handleBlur(e)}
 													error={errors.c_category_code}
-												helperText={errors.c_category_code && "Select Valid Category"}
+													helperText={errors.c_category_code && "Select Valid Category"}
 													className="toCatp auth-input"
 													placeholder="Choose Category *"
 													InputProps={{
@@ -623,15 +700,17 @@ const AddItemsPage = (props) => {
 													select
 													// value={"Banner Type"}
 												>
-													<MenuItem key={"0"} value={"Banner Type *"}>
-														Choose Category
+													<MenuItem key={"0"} value={"0"}>
+														Choose Category *
 													</MenuItem>
-													<MenuItem key={"1"} value={"Home Banner"}>
-														Home Banner
-													</MenuItem>
-													<MenuItem key={"2"} value={"Product Banner"}>
-														Product Banner
-													</MenuItem>
+													{
+														Array.isArray(catarrayJson) &&
+														catarrayJson.length > 0 &&
+														catarrayJson.map((item1, index1) => (
+														<MenuItem key={item1.c_category_code} value={item1.c_category_code}>
+															{item1.c_category_name}
+														</MenuItem>
+													))}
 												</TextField>
 											</div>
 										</Grid>
@@ -646,7 +725,7 @@ const AddItemsPage = (props) => {
 					                  <Button
 					                    variant="contained"
 					                    color="primary"
-					                    onClick={handleNext}
+					                    onClick={handlePdtCatNext}
 					                  >
 					                  Next
 					                  </Button>
@@ -659,9 +738,9 @@ const AddItemsPage = (props) => {
 					            <StepContent>
 					              <FormControl component="fieldset">
 									  <FormLabel component="legend">Variation Type</FormLabel>
-									  <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleRadioChange}>
-									    <FormControlLabel value="female" control={<Radio />} label="Female" />
-									    <FormControlLabel value="male" control={<Radio />} label="Male" />
+									  <RadioGroup aria-label="variation_type" name="c_variation_type" value={value} onChange={handleRadioChange} >
+									    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+									    <FormControlLabel value="no" control={<Radio />} label="No" />
 									  </RadioGroup>
 									</FormControl>
 					              <div>
@@ -860,7 +939,7 @@ const AddItemsPage = (props) => {
 					                    color="primary"
 					                    onClick={handleNext}
 					                  >
-					                  Next
+					                  Submit
 					                  </Button>
 					                </div>
 					              </div>

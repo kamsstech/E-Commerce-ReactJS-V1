@@ -9,8 +9,10 @@ import AddItemsForm from "./AddItemsForm";
 
 export const AddItemsPage = (props) => {
 	const {
-		customerListPageResult,
-		CustomerListPageAction,
+		categoryListResult,
+		brandListResult,
+		BrandListAction,
+		CategoryListAction
 	} = props;
 	const [value1, setValue1] = React.useState(0);
 	const [value2, setValue2] = React.useState({
@@ -59,6 +61,10 @@ const handleBack=()=>{
 					<Grid item xs={9}>
 						<div className="myprofile-box border-botttom-none">
 							<AddItemsForm
+							brandListResult={brandListResult}
+							categoryListResult={categoryListResult}
+							CategoryListAction={CategoryListAction}
+							BrandListAction={BrandListAction}
 							/>
 						</div>
 					</Grid>

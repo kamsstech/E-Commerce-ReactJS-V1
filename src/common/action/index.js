@@ -193,9 +193,11 @@ export * from './sitecontrol/banner/bannerListPageAction'
 //Brand
 export * from './sitecontrol/brand/addBrandAction'
 export * from './sitecontrol/brand/brandListPageAction'
+export * from './sitecontrol/brand/brandListAction'
 //Category
 export * from './sitecontrol/category/addCategoryAction'
 export * from './sitecontrol/category/categoryListPageAction'
+export * from './sitecontrol/category/categoryListAction'
 //Page
 export * from './sitecontrol/setting/addPageAction'
 export * from './sitecontrol/customer/customerListPageAction'
