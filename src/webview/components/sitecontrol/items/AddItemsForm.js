@@ -232,11 +232,14 @@ const AddItemsPage = (props) => {
 		categoryListResult,
 		brandListResult,
 		BrandListAction,
-		CategoryListAction
+		CategoryListAction,
+		VariationsAllListPageAction,
+		variationsAllListResult,
 	} = props;
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [catarrayJson, setcatarrayJson] = React.useState([]);
 	const [brandarrayJson, setbrandarrayJson] = React.useState([]);
+	const [variarrayJson, setvariarrayJson] = React.useState([]);
 
 	const handleNext = () => {
 	    setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -252,6 +255,7 @@ const AddItemsPage = (props) => {
 	  useEffect(() => {
 	    CategoryListAction();
 	    BrandListAction();
+	    VariationsAllListPageAction();
 	  }, []);
 	  useEffect(() => {
 	    if (brandListResult.statuscode === 1) {
@@ -277,6 +281,18 @@ const AddItemsPage = (props) => {
 	    }
 	    
 	  }, [categoryListResult]);
+	  useEffect(() => {
+	    if (variationsAllListResult.statuscode === 1) {
+	      if(variationsAllListResult.payload.data.length > 0)
+	      {
+	        setvariarrayJson(variationsAllListResult.payload?.data);
+	      }
+	    }
+	    if(variationsAllListResult.statuscode === 3) {
+	      setvariarrayJson([])
+	    }
+	    
+	  }, [variationsAllListResult]);
 	const [errMsg, setErrMsg] = useState("");
 
 	const [openModal, setOpenModal] = React.useState(false);
@@ -398,7 +414,7 @@ const AddItemsPage = (props) => {
 		}
 	};
 	
-	const [value, setValue] = React.useState('female');
+	const [value, setValue] = React.useState('no');
 	const handleRadioChange = (event) => {
 	    setValue(event.target.value);
 	  };
@@ -796,14 +812,15 @@ const AddItemsPage = (props) => {
 											</FormControl>
 										</div>
 									</Grid>
+									{value ==='yes' ?
 									<Grid item xs={12}>
 										<div className="ml-16 mr-b-24">
 										        <Autocomplete
 										      multiple
 										      id="checkboxes-tags-demo"
-										      options={top100Films}
+										      options={variarrayJson}
 										      disableCloseOnSelect
-										      getOptionLabel={(option) => option.title}
+										      getOptionLabel={(option) => option.c_variation_name}
 										      renderOption={(option, { selected }) => (
 										        <React.Fragment>
 										          <Checkbox
@@ -812,7 +829,7 @@ const AddItemsPage = (props) => {
 										            style={{ marginRight: 8 }}
 										            checked={selected}
 										          />
-										          {option.title}
+										          {option.c_variation_name}
 										        </React.Fragment>
 										      )}
 										      renderInput={(params) => (
@@ -820,7 +837,111 @@ const AddItemsPage = (props) => {
 										      )}
 										    />
 										</div>
-									</Grid>
+									</Grid>:
+									<Grid container spacing={0}>
+												<Grid item xs={6}>
+													<div className="ml-16">
+														<TextField
+															name="n_item_price"
+															value={inputs.n_item_price}
+															onChange={(e) => handleInputChange(e)}
+															onFocus={(e) => handleFocus(e)}
+															onBlur={(e) => handleBlur(e)}
+															error={errors.n_item_price}
+															helperText={errors.n_item_price && "Not a valid price"}
+															margin="normal"
+															variant="outlined"
+															placeholder="Item Price *"
+															className="auth-input"
+															autoComplete=""
+															InputProps={{
+																startAdornment: (
+																	<InputAdornment position="start">
+																		<img src={Shop} alt="user" />
+																	</InputAdornment>
+																),
+															}}
+														/>
+													</div>
+												</Grid>
+												<Grid item xs={6}>
+													<div className="ml-16">
+														<TextField
+															name="n_item_discount"
+															value={inputs.n_item_discount}
+															onChange={(e) => handleInputChange(e)}
+															onFocus={(e) => handleFocus(e)}
+															onBlur={(e) => handleBlur(e)}
+															error={errors.n_item_discount}
+															helperText={errors.n_item_discount && "Not a valid Discount"}
+															margin="normal"
+															variant="outlined"
+															placeholder="Discount *"
+															className="auth-input"
+															autoComplete=""
+															InputProps={{
+																startAdornment: (
+																	<InputAdornment position="start">
+																		<img src={Shop} alt="user" />
+																	</InputAdornment>
+																),
+															}}
+														/>
+													</div>
+												</Grid>
+												<Grid item xs={6}>
+													<div className="ml-16">
+														<TextField
+															name="n_item_offer_price"
+															value={inputs.n_item_offer_price}
+															onChange={(e) => handleInputChange(e)}
+															onFocus={(e) => handleFocus(e)}
+															onBlur={(e) => handleBlur(e)}
+															error={errors.n_item_offer_price}
+															helperText={errors.n_item_offer_price && "Not a valid offerprice"}
+															margin="normal"
+															variant="outlined"
+															placeholder="Offer Price *"
+															className="auth-input"
+															autoComplete=""
+															disabled="disabled"
+															InputProps={{
+																startAdornment: (
+																	<InputAdornment position="start">
+																		<img src={Shop} alt="user" />
+																	</InputAdornment>
+																),
+															}}
+														/>
+													</div>
+												</Grid>
+												<Grid item xs={6}>
+													<div className="ml-16">
+														<TextField
+															name="n_item_stock"
+															value={inputs.n_item_stock}
+															onChange={(e) => handleInputChange(e)}
+															onFocus={(e) => handleFocus(e)}
+															onBlur={(e) => handleBlur(e)}
+															error={errors.n_item_stock}
+															helperText={errors.n_item_stock && "Not a valid Stock"}
+															margin="normal"
+															variant="outlined"
+															placeholder="Stock *"
+															className="auth-input"
+															autoComplete=""
+															InputProps={{
+																startAdornment: (
+																	<InputAdornment position="start">
+																		<img src={Shop} alt="user" />
+																	</InputAdornment>
+																),
+															}}
+														/>
+													</div>
+												</Grid>
+											</Grid>
+									}
 					              <div>
 					                <div>
 					                  <Button
