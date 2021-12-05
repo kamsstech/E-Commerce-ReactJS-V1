@@ -79,9 +79,6 @@ const HomePage = (props) => {
 	const hideSecTime = () => {
 		localStorage.setItem("POPUP", "true");
 	};
-
-	console.log(branchListResult, "<<< %%% branchListResult");
-	console.log(br_code, "<<< %%% br_code");
 	
 
 	useEffect(() => {
@@ -104,30 +101,15 @@ const HomePage = (props) => {
 
 	useEffect(() => {
 		// RoadBlockModal();
-		PreferedSellerCall();
 		props.BannerAction();
-		getBranchListAction();
 	}, []);
 
-	useEffect(() => {
-		let temp = {};
-		Object.entries(branchListResult.payload).map((entry,index) => {
-			console.log(entry[1].c_default_status, "<<< entry.c_BR_Code")
-			if(entry[1].c_default_status === "Y"){
-				temp = entry[1];
-			}
-			
-			setBr_Code(temp.c_br_code);
-		});
-
-		
-	}, [branchListResult]);
 
 	useEffect(() => {
 		const body={
 			n_branch_id:br_code
 		}
-		console.log(body,"<<<<<<< Cart Count Body")
+		
 		CartCount(body)
 	}, [br_code])
 
@@ -151,54 +133,8 @@ const HomePage = (props) => {
 
 				{/* <BannerX /> */}
 				<Container fixed>
-					{/* <BannerNew /> */}
-					{/* <HomePageBanner 
-				bannerResponse ={bannerResponse}
-				/> */}
-					{/* <Banner1 /> */}
-					{/* <div style={{ display: "flex" }}>
-						{
-							openBlockModal && (
-							 
-								<RoadBlockModalMFC
-									roadBlockModalResult={roadBlockModalResult}
-								/>
-							)
-						 
-						}
-						
-					</div> */}
-			{/* 
-			<RoadBlockModalDIS />
-			<RoadBlockModal />
-			<RoadBlockModalMFC /> 
-			*/}
-					{preferedSellerResult.payload?.j_list &&
-						preferedSellerResult.payload?.j_list.length > 0 && (
-							<PreferredSeller
-								handleOpenOrderNowModal={handleOpenOrderNowModal}
-								preferedSellerResult={preferedSellerResult}
-								PreferedSellerCall={PreferedSellerCall}
-							/>
-						)}
-
-					{/* {Array.isArray(preferedSellerResult.payload?.j_list) && preferedSellerResult.payload?.j_list.length > 0  ?
-						<>
-						<PreferredSeller
-						handleOpenOrderNowModal={handleOpenOrderNowModal}
-						preferedSellerResult={preferedSellerResult}
-						PreferedSellerCall={PreferedSellerCall}
-						/>
-						</> 
-						:
-						<>
-						<PreferredSeller
-						handleOpenOrderNowModal={handleOpenOrderNowModal}
-						preferedSellerResult={preferedSellerResult}
-						PreferedSellerCall={PreferedSellerCall}
-						/>
-						</>
-					}	 */}
+				
+					
 
 					<FastMovingMedicines
 						br_code={br_code}
@@ -261,14 +197,6 @@ const HomePage = (props) => {
 
 					<Offers GetOffers={GetOffers} offersResult={offersResult} />
 
-					<CSquareSolutions
-						CityListAction={CityListAction}
-						cityListResult={cityListResult}
-						submitDemoRequestAction={submitDemoRequestAction}
-						demoRequestResult={demoRequestResult}
-						ScheduleDemoEmailAction={ScheduleDemoEmailAction}
-						scheduleDemoEmailResult={scheduleDemoEmailResult}
-					/>
 				</Container>
 			</div>
 		</>

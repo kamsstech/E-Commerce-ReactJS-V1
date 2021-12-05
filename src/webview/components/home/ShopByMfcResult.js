@@ -38,29 +38,10 @@ const ShopByManufacturer = (props) => {
 		<div>
 			<div className="home-title-section">
 				<div>
-					<h4>Shop By Manufacturer</h4>
-					<h5>Best manufacturer picked for you</h5>
+					<h4>Our Brands</h4>
 				</div>
 				<div>
-					{/* <Button
-						variant="contained"
-						color="primary"
-						className="home-title-sectionbtn-green animate-shimmmer"
-						onClick={handleOpenOrderNowModal}
-					>
-						Order Now
-					</Button> */}
-					{/*<Link to={`/plp/manufature?index=0`}>
-					</Link>*/}
-					{ 
-						// <Button
-						//   variant="contained"
-						//   color="primary"
-						//   className="home-title-sectionbtn"
-						// >
-						//   View All
-						// </Button>
-					 }
+					
 				</div>
 			</div>
 			<div className="fast-moving-sec">
