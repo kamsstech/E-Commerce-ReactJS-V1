@@ -314,8 +314,7 @@ const NewLaunches = (props) => {
     <div>
       <div className="home-title-section">
         <div>
-          <h4>New Launches</h4>
-          <h5>All over India</h5>
+          <h4>New Arrivals</h4>
         </div>
         <div>
           <Link to={`/plp/new?index=0`}>

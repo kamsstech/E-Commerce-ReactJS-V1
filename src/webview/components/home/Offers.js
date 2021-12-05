@@ -34,28 +34,20 @@ const settings = {
  
 	return (
 		<div>
-			{
-				Array.isArray(offersResult.payload?.j_list) && offersResult.payload?.j_list.length > 0 ? 
+			
 				<div>
 					<div className="home-title-section">
 						<div>
-							<h4>Limited Period Offers By Distributors</h4>
-							<h5>Pick best offer &amp; order</h5>
+							<h4>Combo Products & Offers</h4>
 						</div>
 						<div>
-							{/* <Button
-								variant="contained"
-								color="primary"
-								className="home-title-sectionbtn"
-							>
-								View All
-							</Button> */}
+
 						</div>
 					</div>
 
 					<div className="fast-moving-sec">
 						<Slider {...settings} className="preferred-seller-slider">
-							{(offersResult.payload?.j_list).map((item, index) => (
+							{Array.isArray(offersResult.payload?.j_list) && offersResult.payload?.j_list.length > 0 &&(offersResult.payload?.j_list).map((item, index) => (
 								<div key={item.c_offer_code} >
 									<div className="preferred-seller-width" key={item.c_offer_code} >
 										<div className="offer-tile">
@@ -74,8 +66,7 @@ const settings = {
 						</Slider>
 					</div>
 				</div>
-				: ""
-			}
+				
 
 		</div>
 	);

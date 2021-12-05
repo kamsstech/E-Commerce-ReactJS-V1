@@ -203,17 +203,8 @@ export default function HeaderPage(props) {
 			SetshowProductDetails(false);
 		}
 		props.getProfileInfo();
-		props.getBranchListAction();
+	
 
-		// const branchId = localStorage.getItem(Constants.DEFAULT_FIRM_ID);
-		setDefaultBranch(br_code);
-
-		// const curBranchId = localStorage.getItem(Constants.FIRM_ID);
-		setCurBranch(br_code);
-
-		NotificationCount();
-		ShortbookCount();
-		WatchlistCount();
 	}, []);
 
 	// const [notifiCount, setNotifiCount] = React.useState(0);
@@ -341,62 +332,7 @@ export default function HeaderPage(props) {
 			setCartCount(count);
 		}
 	}, [cartCountRes]);
-	// console.log(cartCountRes.payload,"<<< cartCountRes.payload")
 
-	useEffect(() => {
-		if (notificationCountRes.payload != "") {
-			let count =
-				notificationCountRes.payload.data.count > 0
-					? notificationCountRes.payload.data.count
-					: 0;
-			setNotifiCount(count);
-
-			// localStorage.setItem("notifiCount", count);
-		}
-	}, [notificationCountRes]);
-
-	useEffect(() => {
-		if (shortbookCountRes.payload != "") {
-			let count =
-				shortbookCountRes.payload.data.count > 0
-					? shortbookCountRes.payload.data.count
-					: 0;
-			setShortbookCounts(count);
-
-			// window.location.href = window.location.href
-			// localStorage.setItem("shortbookCount", count);
-		}
-	}, [shortbookCountRes]);
-	useEffect(() => {
-		if (watchlistCountRes.payload != "") {
-			let count =
-				watchlistCountRes.payload.data.count > 0
-					? watchlistCountRes.payload.data.count
-					: 0;
-			setWatchlistCount(count);
-			// localStorage.setItem("watchlistCount", count);
-		}
-	}, [watchlistCountRes]);
-	// useEffect(() => {
-	//   profileDetails();
-	//   getBranchListAction();
-	// }, []);
-
-	useEffect(() => {
-		getBranchListAction();
-	}, []);
-
-	useEffect(() => {
-		let temp = {};
-		Object.entries(branchListResult.payload).map((entry) => {
-			if (entry[1].c_default_status === "Y") {
-				temp = entry[1];
-			}
-			setBr_Code(temp.c_br_code);
-		});
-	}, [branchListResult]);
-
-	// console.log(branchListResult,"<<<< branchListResult")
 
 	const scrollToTop = () => {
 		window.scrollTo({
@@ -539,22 +475,7 @@ export default function HeaderPage(props) {
 												</Link>
 											)}
 										</Tooltip>
-										<Tooltip title="Shortbook" TransitionComponent={Zoom}>
-											<Link to="/shortbook">
-												<IconButton
-													className="web-header-icons"
-													color="inherit"
-												>
-													{/*<Badge
-														badgeContent={shortbookCounts}
-														color="secondary"
-														id="shortBookCount"
-													>
-													</Badge>*/}
-													<img src={Shortbook} alt="Shortbook" />
-												</IconButton>
-											</Link>
-										</Tooltip>
+										
 										<Tooltip title="Watchlist" TransitionComponent={Zoom}>
 											<Link to="/watchlist">
 												<IconButton
@@ -571,25 +492,7 @@ export default function HeaderPage(props) {
 												</IconButton>
 											</Link>
 										</Tooltip>
-										{/* <Tooltip title="Live Order Gold" TransitionComponent={Zoom}>
-									<IconButton className="web-header-icons" color="inherit">
-										<img src={LiveOrderGold} alt="Live_order_gold" />
-									</IconButton>
-								</Tooltip>*/}
-
-										{/* <Tooltip title="Smart Order" TransitionComponent={Zoom}>
-											<Link to="/home">
-												<IconButton
-													className="web-header-icons"
-													color="inherit"
-													onClick={handleIndexSmartOrder}
-												>
-													<Badge badgeContent={null} color="secondary">
-														<img src={SmartCart} alt="SmartCart" />
-													</Badge>
-												</IconButton>
-											</Link>
-										</Tooltip> */}
+									
 									</div>
 									<div className="relative">
 										<ListItem
@@ -618,16 +521,7 @@ export default function HeaderPage(props) {
 													alt="pic"
 												/>
 											)}
-											{/* <div className="web-profile-details">
-										<h4 className="web-profile-name">
-											<Tooltip className="toCatp" title={inputs.c_name} TransitionComponent={Zoom}>
-												<><div>{inputs.c_name}</div><img src={DownArrowLine} alt="DownArrowLine" /> </>
-											</Tooltip>
-										</h4>
-										<Tooltip className="toCatp" title={<>{inputs.c_area_name} {inputs.c_landmark !=="" && <>,{inputs.c_landmark}</>}</>} TransitionComponent={Zoom}>
-											<h5 className="web-profile-location">{inputs.c_area_name} {inputs.c_landmark !=="" && <>,{inputs.c_landmark}</>}</h5>
-										</Tooltip>
-									</div> */}
+											
 
 											<div className="web-profile-details">
 												<h4 className="web-profile-name">
@@ -651,15 +545,7 @@ export default function HeaderPage(props) {
 													</Tooltip>
 												</h4>
 
-												{/* <Tooltip
-										className="toCatp" 
-										title={<>{inputs.c_area_name} 
-										{inputs.c_landmark !=="" && <>,{inputs.c_landmark}</>}</>} 
-										TransitionComponent={Zoom}>
-										 
-											<h5 className="web-profile-location">{localStorage.getItem(Constants.CITY)}</h5>
-										 
-										</Tooltip> */}
+												
 
 												<h5 className="web-profile-location">
 													{/* {localStorage.getItem(Constants.CITY)} */}
@@ -700,561 +586,8 @@ export default function HeaderPage(props) {
 																		My Profile
 																	</MenuItem>
 																</Link>
-																<Link
-																	to="/feedback"
-																	onClick={() => setOpen(false)}
-																>
-																	<MenuItem>
-																		<img src={Feedback} alt="Return" />
-																		Feedback
-																	</MenuItem>
-																</Link>
-																<MenuItem
-																	onClick={() =>
-																		handleComingSoonPage("Returns")
-																	}
-																>
-																	<img src={Return} alt="Return" />
-																	Returns
-																</MenuItem>
-																{Array.isArray(
-																	props.branchListResult.payload
-																) &&
-																	props.branchListResult.payload.length > 1 && (
-																		<div
-																			className={toggleBranch ? "light-bg" : ""}
-																		>
-																			<MenuItem onClick={handleToggleBranch}>
-																				<img src={Store} alt="Return" />
-																				Change Branch (
-																				{Array.isArray(
-																					props.branchListResult.payload
-																				) &&
-																					props.branchListResult.payload.length}
-																				)
-																				<img
-																					src={DownArrow}
-																					alt="Store"
-																					className="ml-10"
-																				/>
-																			</MenuItem>
-																			<Collapse in={toggleBranch}>
-																				<div className="change-branch-sec">
-																					{makeDefault ? (
-																						<FormControl
-																							component="fieldset"
-																							className={
-																								"sortby-filter payment login-select-branch"
-																							}
-																						>
-																							<RadioGroup
-																								aria-label="gender"
-																								name="gender1"
-																								value={defaultBranch}
-																								onChange={(e) =>
-																									handleDefaultBranch(
-																										e,
-																										makeDefault
-																									)
-																								}
-																							>
-																								{props.branchListResult.payload.map(
-																									(item, index) => (
-																										<>
-																											{index < 8 && (
-																												<BranchTooltip
-																													title={
-																														item.c_city_name !==
-																														undefined ? (
-																															<>
-																																{item.c_br_name.toString()}
-																																,{" "}
-																																{
-																																	item.c_city_name
-																																}{" "}
-																																{item.c_pincode !==
-																																	undefined && (
-																																	<>
-																																		,{" "}
-																																		{
-																																			item.c_pincode
-																																		}
-																																	</>
-																																)}
-																															</>
-																														) : (
-																															<>
-																																{item.c_br_name.toString()}
-																															</>
-																														)
-																													}
-																													placement="top"
-																													TransitionComponent={
-																														Zoom
-																													}
-																												>
-																													<FormControlLabel
-																														// disabled={!makeDefault}
-																														value={
-																															item.c_br_code
-																														}
-																														control={
-																															<Radio color="primary" />
-																														}
-																														label={
-																															item.c_city_name !==
-																															undefined ? (
-																																<>
-																																	{item.c_br_name.toString()}
-																																	,{" "}
-																																	{
-																																		item.c_city_name
-																																	}
-																																 
-																																</>
-																															) : (
-																																<>
-																																	{/* {item.c_br_name.toString()} */}
-																	<h1>welcome</h1>
-																																</>
-																															)
-																														}
-																														className="p-0"
-																													/>
-																												</BranchTooltip>
-																											)}
-																										</>
-																									)
-																								)}
-																							</RadioGroup>
-																						</FormControl>
-																					) : (
-											//   without make defult
-																						<FormControl
-																							component="fieldset"
-																							className={
-																								"visibility sortby-filter payment login-select-branch"
-																							}
-																						>
-																							<RadioGroup
-																								aria-label="gender"
-																								name="gender1"
-																								value={curBranch}
-																								// onChange={(e) =>
-																								//   handleDefaultBranch(
-																								//     e,
-																								//     makeDefault
-																								//   )
-																								// }
-																							>
-																								{props.branchListResult.payload.map(
-																									(item, index) => (
-																										<>
-																											{index < 8 && (
-																												<BranchTooltip
-																													title={
-																														item.c_city_name !==
-																														undefined ? (
-																															<>
-																																{item.c_br_name.toString()}
-																																,{" "}
-																																{item.c_pincode !==
-																																	undefined && (
-																																	<>
-																																		{
-																																			item.c_city_name
-																																		}
-																																		,{" "}
-																																		{
-																																			item.c_pincode
-																																		}
-																																	</>
-																																)}
-																															</>
-																														) : (
-																															<>
-																																{item.c_br_name.toString()}
-																															</>
-																														)
-																													}
-																													placement="top"
-																													TransitionComponent={
-																														Zoom
-																													}
-																												>
-																													<FormControlLabel
-																														value={
-																															item.c_br_code
-																														}
-																														control={
-																															<Radio color="primary" />
-																														}
-																														label={
-																															item.c_city_name !==
-																															undefined ? (
-																																<>
-																																	{item.c_br_name.toString()}
-																																	{", "}{" "}
-																																	{
-																																		item.c_city_name
-																																	}
-																																</>
-																															) : (
-																																<>
-																																	{item.c_br_name.toString()}
-																																	{","}
-																																	{
-																																		item.c_city_name
-																																	}
-																																</>
-																															)
-																														}
-																														className={
-																															item.c_br_code ===
-																															curBranch
-																																? "highlight-branch p-0"
-																																: "p-0"
-																														}
-																													/>
-																												</BranchTooltip>
-																											)}
-																										</>
-																									)
-																								)}
-																							</RadioGroup>
-																						</FormControl>
-																					)}
-
-																					{Array.isArray(
-																						props.branchListResult.payload
-																					) &&
-																						props.branchListResult.payload
-																							.length >= 8 && (
-																							<Link
-																								to="/profile/branch"
-																								className="view-more-link"
-																							>
-																								View More
-																							</Link>
-																						)}
-																					<div>
-																						<FormControlLabel
-																							className="make-default"
-																							control={
-																								<Checkbox
-																									name="checkedB"
-																									color="primary"
-																									checked={makeDefault}
-																									onChange={(e) =>
-																										handleMakeDefault(e)
-																									}
-																								/>
-																							}
-																							label="Make Default"
-																						/>
-																					</div>
-																				</div>
-																			</Collapse>
-																		</div>
-																	)}
-
-																{/* {Array.isArray(
-																	props.branchListResult.payload
-																) &&
-																	props.branchListResult.payload.length > 1 && (
-																		<div
-																			className={toggleBranch ? "light-bg" : ""}
-																		>
-																			<MenuItem onClick={handleToggleBranch}>
-																				<img src={Store} alt="Return" />
-																				Change Branch (
-																				{Array.isArray(
-																					props.branchListResult.payload
-																				) &&
-																					props.branchListResult.payload.length}
-																				)
-																				<img
-																					src={DownArrow}
-																					alt="Store"
-																					className="ml-10"
-																				/>
-																			</MenuItem>
-																			<Collapse in={toggleBranch}>
-																				<div className="change-branch-sec">
-																					{makeDefault ? (
-																						<FormControl
-																							component="fieldset"
-																							className={
-																								"sortby-filter payment login-select-branch"
-																							}
-																						>
-																							<RadioGroup
-																								aria-label="gender"
-																								name="gender1"
-																								value={defaultBranch}
-																								onChange={(e) =>
-																									handleDefaultBranch(
-																										e,
-																										makeDefault
-																									)
-																								}
-																							>
-																								{props.branchListResult.payload.map(
-																									(item, index) => (
-																										<>
-																											{index < 8 && (
-																												<BranchTooltip
-																													title={
-																														item.c_city_name !==
-																														undefined ? (
-																															<>
-																																{
-																																	item.c_city_name
-																																}{" "}
-																																{item.c_pincode !==
-																																	undefined && (
-																																	<>
-																																		,{" "}
-																																		{
-																																			item.c_pincode
-																																		}
-																																	</>
-																																)}
-																															</>
-																														) : (
-																															<>
-
-																															{item.c_br_name.toString()}
-
-																															</>
-																														)
-																													}
-																													placement="top"
-																													TransitionComponent={
-																														Zoom
-																													}
-																												>
-																													<FormControlLabel
-																														// disabled={!makeDefault}
-																														value={item.c_br_code}
-																														control={
-																															<Radio color="primary" />
-																														}
-																														label={
-																															item.c_city_name !==
-																															undefined ? (
-																																<>
-																																	{
-																																		item.c_city_name
-																																	}{" "}
-																																	{item.c_pincode !==
-																																		undefined && (
-																																		<>
-																																			,{" "}
-																																			{
-																																				item.c_pincode
-																																			}
-																																		</>
-																																	)}
-																																</>
-																															) : (
-																																<>
-																																	{item.c_br_name}
-																																</>
-																															)
-																														}
-																														className="p-0"
-																													/>
-																												</BranchTooltip>
-																											)}
-																										</>
-																									)
-																								)}
-																							</RadioGroup>
-																						</FormControl>
-																					) : (
-																						<FormControl
-																							component="fieldset"
-																							className={
-																								"visibility-hidden sortby-filter payment login-select-branch"
-																							}
-																						>
-																							<RadioGroup
-																								aria-label="gender"
-																								name="gender1"
-																								value={curBranch}
-																								onChange={(e) =>
-																									handleDefaultBranch(
-																										e,
-																										makeDefault
-																									)
-																								}
-																							>
-																								{props.branchListResult.payload.map(
-																									(item, index) => (
-																										<>
-																											{index < 8 && (
-																												<BranchTooltip
-																													title={
-																														item.c_city_name !==
-																														undefined ? (
-																															<>
-																																{
-																																	item.c_city_name
-																																}{" "}
-																																{item.c_pincode !==
-																																	undefined && (
-																																	<>
-																																		{
-																																		item.c_br_name.toString()
-																																	},{" "}
-																																		{
-																																			item.c_pincode
-																																		}
-																																	</>
-																																)}
-																															</>
-																														) : (
-																															<>{item.c_br_name.toString()}</>
-																														)
-																													}
-																													placement="top"
-																													TransitionComponent={
-																														Zoom
-																													}
-																												>
-																													<FormControlLabel
-
-																														value={item.c_br_code}
-																														control={
-																															<Radio color="primary" />
-																														}
-																														label={
-																															item.c_city_name !==
-																															undefined ? (
-																																<>
-																																{
-																																		item.c_br_name.toString()
-																																	}{" "}
-																																	{
-																																		item.c_city_name
-																																	}{" "}
-																																	{item.c_pincode !==
-																																		undefined && (
-																																		<>
-																																			{
-																																		item.c_br_name.toString()
-																																	},{" "}
-																																			{
-																																				item.c_pincode
-																																			}
-																																		</>
-																																	)}
-																																</>
-																															) : (
-																																<>
-																																	{item.c_br_name}
-																																</>
-																															)
-																														}
-																														className={
-																															item.c_br_code.toString() ===
-																															curBranch
-																																? "highlight-branch p-0"
-																																: "p-0"
-																														}
-																													/>
-																												</BranchTooltip>
-																											)}
-																										</>
-																									)
-																								)}
-																							</RadioGroup>
-																						</FormControl>
-																					)}
-																					{Array.isArray(
-																						props.branchListResult.payload
-																					) &&
-																						props.branchListResult.payload
-																							.length >= 8 && (
-																							<Link
-																								to="/profile/branch"
-																								className="view-more-link"
-																							>
-																								View More
-																							</Link>
-																						)}
-																					<div>
-																						<FormControlLabel
-																							className="make-default"
-																							control={
-																								<Checkbox
-																									name="checkedB"
-																									color="primary"
-																									checked={makeDefault}
-																									onChange={(e) =>
-																										handleMakeDefault(e)
-																									}
-																								/>
-																							}
-																							label="Make Default"
-																						/>
-																					</div>
-																				</div>
-																			</Collapse>
-																		</div>
-																	)} */}
-
-																{/* <div className={toggleRole ? "light-bg" : ""}>
-															<MenuItem onClick={handleToggleRole}>
-																<img src={Role} alt="Return" />
-																Change Role (4)
-																<img src={DownArrow} alt="Store" className="ml-10" />
-															</MenuItem>
-															<Collapse in={toggleRole}>
-																<div className="change-branch-sec">
-																	<FormControl component="fieldset" className="visibility-hidden sortby-filter payment login-select-branch">    
-																		<RadioGroup aria-label="gender" name="gender1" value={roleName} onChange={e=>handleRoleChange(e)}>
-
-																			<BranchTooltip title="Want to Buy" placement="top" TransitionComponent={Zoom}>
-																				<FormControlLabel
-																					value="buyer"
-																					control={<Radio color="primary" />}
-																					label="Want to Buy"
-																					className="highlight-branch p-0"
-																				/>
-																			</BranchTooltip>
-																			
-																			<BranchTooltip title="Want to Sell" placement="top" TransitionComponent={Zoom}>
-																				<FormControlLabel
-																					value="seller"
-																					control={<Radio color="primary" />}
-																					label="Want to Sell"
-																					className="p-0"
-																				/>
-																			</BranchTooltip>
-																			<BranchTooltip title="P.O.B" placement="top" TransitionComponent={Zoom}>
-																				<FormControlLabel
-																					value="pob"
-																					control={<Radio color="primary" />}
-																					label="P.O.B"
-																					className="p-0"
-																				/>
-																			</BranchTooltip>
-																			<BranchTooltip title="Route Order" placement="top" TransitionComponent={Zoom}>
-																				<FormControlLabel
-																					value="ro"
-																					control={<Radio color="primary" />}
-																					label="Route Order"
-																					className="p-0"
-																				/>
-																			</BranchTooltip>
-																		</RadioGroup>
-																	</FormControl>                               
-																</div>
-															</Collapse>
-														</div>  */}
-
+																
+																
 																<MenuItem onClick={signout}>
 																	<img src={Signout} alt="signout" />
 																	Sign Out
@@ -1283,60 +616,35 @@ export default function HeaderPage(props) {
 													className="header-quick-link mr-r-32"
 													onClick={() => handleComingSoonPage("Dashboard")}
 												>
-													Dashboard
+													Home
 												</Button>
 												<Button
 													variant="contained"
 													color="primary"
 													className="header-quick-link mr-r-32"
-													onClick={() =>
-														handleComingSoonPage("Offers & Promotion")
-													}
+													onClick={() => handleComingSoonPage("Dashboard")}
 												>
-													Offers &amp; Promotion
+													About Us
 												</Button>
 												<Button
 													variant="contained"
 													color="primary"
-													className="header-quick-link"
-													onClick={() =>
-														handleComingSoonPage("LC Wallet & Payments")
-													}
+													className="header-quick-link mr-r-32"
+													onClick={() => handleComingSoonPage("Dashboard")}
 												>
-													LC Wallet &amp; Payments
+													Shop
 												</Button>
-
-												{/*<Link to="/home" className="header-bottom-sec-links">
-													Dashboard
-												</Link>
-												<Link to="/home" className="header-bottom-sec-links">
-													Offers & Promotion
-												</Link>
-												<Link to="/home" className="header-bottom-sec-links">
-													LC Wallet & Payments
-												</Link>*/}
+												<Button
+													variant="contained"
+													color="primary"
+													className="header-quick-link mr-r-32"
+													onClick={() => handleComingSoonPage("Dashboard")}
+												>
+													Contact Us
+												</Button>
 											</div>
 											<div>
-												{/*{<Link to="/one-pharma">}*/}
-												{/* <Link to="/auto-publish">
-													<Button
-														color="primary"
-														className="onepharma-btn mr-r-24"
-													>Touch store
-												</Button>
-													</Link> */}
-
-												<Button
-													color="primary"
-													className="onepharma-btn mr-r-24"
-													onClick={() => handleComingSoonPage("1 Pharma")}
-													// onClick={()=>setOpenComingSoon(true)}
-													// onClick={handleOpenOnePharmaModal}
-												>
-													1Pharma
-												</Button>
-
-												{/*{</Link>}*/}
+												
 												<Link to="/order-to-seller">
 													<Button
 														variant="contained"
@@ -1344,7 +652,7 @@ export default function HeaderPage(props) {
 														className="stockist animate"
 													>
 														{/*<img src={Package} alt="Package" />*/}
-														Order To Seller
+														Deal Of Day
 													</Button>
 												</Link>
 											</div>

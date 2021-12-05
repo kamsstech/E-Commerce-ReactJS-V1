@@ -332,13 +332,8 @@ const FastMovingMedicines = (props) => {
 			<div>
 				<div className="home-title-section">
 					<div>
-						<h4>Top Most Ordered Products</h4>
-						<h5>
-							{" "}
-							{getProfileInfoResult.payload.c_city_name
-								? "In " + getProfileInfoResult.payload.c_city_name
-								: "All over India"}
-						</h5>
+						<h4>Best Selling Products</h4>
+						
 					</div>
 					<div>
 						<Link to={`/plp/top-most?index=0`}>

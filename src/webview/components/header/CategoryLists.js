@@ -106,9 +106,9 @@ const CategoryMenuLists = (props) => {
             <ClickAwayListener onClickAway={handleCatClose} >
               <MenuList>
                 {Array.isArray(CategoryListsResult.payload.data) && CategoryListsResult.payload.data.length > 0 && (CategoryListsResult.payload.data).map((item, index) => (
-                  <Link to={`/plp/category?index=0&q=${item.c_code}&n=${item.c_name}`}>
+                  <Link to={`/plp/category?index=0&q=${item.c_category_code}&n=${item.c_category_name}`}>
                     <MenuItem onClick={handleCloseMenu}>
-                      <span>{item.c_name}</span>
+                      <span>{item.c_category_name}</span>
                     </MenuItem>
                   </Link>
                 ))}

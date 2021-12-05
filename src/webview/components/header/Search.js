@@ -310,9 +310,6 @@ const toggleScanClick=()=>{
 									}}
 								>
 									<MenuItem value="products">Products</MenuItem>
-									<MenuItem value="seller">Seller</MenuItem>
-									<MenuItem value="molecules">Molecules/Generic</MenuItem>
-									<MenuItem value="manufacturer">Manufacturer</MenuItem>
 								</Select>
 							</FormControl>
 							<Button
