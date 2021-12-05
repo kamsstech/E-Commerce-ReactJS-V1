@@ -316,7 +316,6 @@ const AddBrandForm = (props) => {
 	});
 	useEffect(() => {
 		if(addBrandResult) {
-			console.log("add user result1", addBrandResult);
 			setBrandResult({ ...brandResult, status_code: addBrandResult.payload.status });
 			if (brandResult.status_code === 1){
 				inputs.c_brand_name = "",
@@ -325,7 +324,6 @@ const AddBrandForm = (props) => {
 			}else if (brandResult.status_code != 1) {
 				setErrMsg(addBrandResult.error)
 			}
-			console.log("add user result2", addBrandResult.payload.status);
 		}
 	  }, [addBrandResult]);
 	return (
@@ -471,7 +469,7 @@ const AddBrandForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 									<TextField
 										name="c_brand_description"
 										value={inputs.c_brand_description}

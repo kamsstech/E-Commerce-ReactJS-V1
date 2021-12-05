@@ -150,8 +150,10 @@ import SellerPayOrderReducer from "./common/reducer/payment/sellerPayOrderGenara
 import AddBannerReducer from "./common/reducer/sitecontrol/banner/addBannerReducer";
 import BannerListPageReducer from "./common/reducer/sitecontrol/banner/bannerListPageReducer";
 import BrandListPageReducer from "./common/reducer/sitecontrol/brand/brandListPageReducer";
+import BrandListReducer from "./common/reducer/sitecontrol/brand/brandListReducer";
 
 import CategoryListPageReducer from "./common/reducer/sitecontrol/category/categoryListPageReducer";
+import CategoryListReducer from "./common/reducer/sitecontrol/category/categoryListReducer";
 import CustomerListPageReducer from "./common/reducer/sitecontrol/customer/customerListPageReducer";
 import PageListPageReducer from "./common/reducer/sitecontrol/page/pageListPageReducer";
 import AddVariationsPageReducer from "./common/reducer/sitecontrol/variations/addVariationsPageReducer";
@@ -300,7 +302,9 @@ const RootReducer = combineReducers({
   addBannerResult:AddBannerReducer,
   bannerListPageResult:BannerListPageReducer,
   brandListPageResult:BrandListPageReducer,
+  brandListResult:BrandListReducer,
   categoryListPageResult:CategoryListPageReducer,
+  categoryListResult:CategoryListReducer,
   customerListPageResult:CustomerListPageReducer,
   pageListPageResult:PageListPageReducer,
   addVariationsPageResult:AddVariationsPageReducer,

@@ -37,9 +37,9 @@ export const BrandListPageAction = (body) => async (dispatch) => {
   // };
   await axios.post(`${ENV.ADMIN_BASE_URL}/api/v1/brand/paginate`,body)
         .then(response => {
-          // console.log(response)
+          console.log(response.data.status)
       if(response.data.status === 1){
-      dispatch(brandListPageSuccess(response.data,response.data.status))
+        dispatch(brandListPageSuccess(response.data,response.data.status))
       }else{
         dispatch(brandListPageFailure(response.data.message,response.data.status));
       }
