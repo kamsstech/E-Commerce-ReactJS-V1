@@ -11345,3 +11345,24 @@ max-width: 100% !important;
     width: 100px;
     height: 50px;
 }
+
+.kamss-item .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+    /*padding-right: 48px !important;
+    height: 32px !important;*/
+    width: 100% !important;
+    /*padding-left: 12px;*/
+    height: initial !important;
+    padding: 0 !important;
+}
+.kamss-item .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input {
+    padding: 14px 14px 14px 12px !important;
+    font-family: var(--font-quicksand);
+    font-size: 13px;
+    color: #5b636a;
+    font-weight: 500;
+    line-height: 16px;
+    height: 16px;
+}
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: 1px solid var(--light-blue-grey) !important;
+}

@@ -50,7 +50,7 @@ const handleBack=()=>{
 }
 
 	return (
-		<div className="body-spacing dSprofile ProfileInfo">
+		<div className="body-spacing dSprofile ProfileInfo kamss-item">
 			<Container fixed>
 				<Grid container spacing={0}>
 					<Grid item xs={3}>

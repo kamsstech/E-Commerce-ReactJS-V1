@@ -14,6 +14,9 @@ import PropTypes from "prop-types";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 import Shop from "../../../../assets/images/icons/shop.svg";
 import User from "../../../../assets/images/icons/user.svg";
@@ -45,8 +48,6 @@ import Gst from "../../../../assets/images/gst.svg";
 import Tax from "../../../../assets/images/tax.svg";
 import Drug from "../../../../assets/images/drug.svg";
 import PlusPurple from "../../../../assets/images/plus-purple.svg";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import Slider from "@material-ui/core/Slider";
 import Alert from "@material-ui/lab/Alert";
 import CloseIcon from "@material-ui/icons/Close";
@@ -61,6 +62,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const PrettoSlider = withStyles({
 	root: {
@@ -781,42 +784,41 @@ const AddItemsPage = (props) => {
 					          <Step key="2">
 					            <StepLabel>Product Variant</StepLabel>
 					            <StepContent>
-					              <FormControl component="fieldset">
-									  <FormLabel component="legend">Variation Type</FormLabel>
-									  <RadioGroup aria-label="variation_type" name="c_variation_type" value={value} onChange={handleRadioChange} >
-									    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-									    <FormControlLabel value="no" control={<Radio />} label="No" />
-									  </RadioGroup>
-									</FormControl>
+
+					            	<Grid item xs={12}>
+										<div className="ml-16 mr-b-24">
+					              			<FormControl component="fieldset">
+									  			<FormLabel component="legend">Variation Type</FormLabel>
+												<RadioGroup aria-label="variation_type" name="c_variation_type" value={value} onChange={handleRadioChange} >
+												    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+												    <FormControlLabel value="no" control={<Radio />} label="No" />
+											  	</RadioGroup>
+											</FormControl>
+										</div>
+									</Grid>
 									<Grid item xs={12}>
-										<div className="ml-16">
-										       <Autocomplete
-											      multiple
-											      id="fixed-tags-demo"
-											      value={value1}
-											      onChange={(event, newValue) => {
-											        setValue1([
-											          ...fixedOptions,
-											          ...newValue.filter((option) => fixedOptions.indexOf(option) === -1),
-											        ]);
-											      }}
-											      options={top100Films}
-											      getOptionLabel={(option) => option.title}
-											      renderTags={(tagValue, getTagProps) =>
-											        tagValue.map((option, index) => (
-											          <Chip
-											            label={option.title}
-											            {...getTagProps({ index })}
-											            disabled={fixedOptions.indexOf(option) !== -1}
-											          />
-											        ))
-											      }
-											      style={{ width: 500 }}
-											      renderInput={(params) => (
-											        <TextField {...params} label="Fixed tag" variant="outlined" placeholder="Favorites" />
-											      )}
-											    />
-  											);
+										<div className="ml-16 mr-b-24">
+										        <Autocomplete
+										      multiple
+										      id="checkboxes-tags-demo"
+										      options={top100Films}
+										      disableCloseOnSelect
+										      getOptionLabel={(option) => option.title}
+										      renderOption={(option, { selected }) => (
+										        <React.Fragment>
+										          <Checkbox
+										            icon={icon}
+										            checkedIcon={checkedIcon}
+										            style={{ marginRight: 8 }}
+										            checked={selected}
+										          />
+										          {option.title}
+										        </React.Fragment>
+										      )}
+										      renderInput={(params) => (
+										        <TextField {...params} variant="outlined" placeholder="Favorites" />
+										      )}
+										    />
 										</div>
 									</Grid>
 					              <div>
