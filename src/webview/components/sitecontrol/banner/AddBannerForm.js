@@ -404,7 +404,7 @@ const AddBannerForm = (props) => {
 		}
 	}, [addBannerResult]);
 	useEffect(() => {
-		console.log(bannerResult.status_code)
+		console.log("ssssssss",bannerResult.status_code)
 		if (bannerResult.status_code === 1) {
 				inputs.n_banner_type = "",
 				inputs.c_banner_title = "",
