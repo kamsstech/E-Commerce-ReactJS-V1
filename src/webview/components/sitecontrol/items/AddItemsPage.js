@@ -15,6 +15,7 @@ export const AddItemsPage = (props) => {
 		CategoryListAction,
 		VariationsAllListPageAction,
 		variationsAllListResult,
+		itemVariationPageResult,ItemVariationPageAction
 	} = props;
 	const [value1, setValue1] = React.useState(0);
 	const [value2, setValue2] = React.useState({
@@ -69,6 +70,8 @@ const handleBack=()=>{
 							BrandListAction={BrandListAction}
 							variationsAllListResult={variationsAllListResult}
 							VariationsAllListPageAction={VariationsAllListPageAction}
+							ItemVariationPageAction={ItemVariationPageAction}
+							itemVariationPageResult={itemVariationPageResult}
 							/>
 						</div>
 					</Grid>

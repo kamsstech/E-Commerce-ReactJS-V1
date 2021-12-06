@@ -7,6 +7,7 @@ export const ENV = {
     DEV_URL: "https://dev-lc.livc.in",
     QA_ECO_URL: "https://qa-eg-eco.livc.in",
     ADMIN_BASE_URL: "http://35.224.80.84:5000",
+    ADMIN_BASE_URL1: "http://35.224.80.84",
 }
 
 export let REACT_APP_BASE_URL = "";

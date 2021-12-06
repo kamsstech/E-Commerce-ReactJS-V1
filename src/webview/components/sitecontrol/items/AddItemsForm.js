@@ -235,11 +235,13 @@ const AddItemsPage = (props) => {
 		CategoryListAction,
 		VariationsAllListPageAction,
 		variationsAllListResult,
+		itemVariationPageResult,ItemVariationPageAction
 	} = props;
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [catarrayJson, setcatarrayJson] = React.useState([]);
 	const [brandarrayJson, setbrandarrayJson] = React.useState([]);
 	const [variarrayJson, setvariarrayJson] = React.useState([]);
+	const [itemVarrayJson, setItemVarrayJson] = React.useState([]);
 
 	const handleNext = () => {
 	    setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -256,6 +258,7 @@ const AddItemsPage = (props) => {
 	    CategoryListAction();
 	    BrandListAction();
 	    VariationsAllListPageAction();
+	    
 	  }, []);
 	  useEffect(() => {
 	    if (brandListResult.statuscode === 1) {
@@ -293,6 +296,19 @@ const AddItemsPage = (props) => {
 	    }
 	    
 	  }, [variationsAllListResult]);
+	  useEffect(() => {
+	    if (itemVariationPageResult.statuscode === 1) {
+	      if(itemVariationPageResult.payload.data.length > 0)
+	      {
+	  		// console.log(itemVariationPageResult.payload.data)
+	        setItemVarrayJson(itemVariationPageResult.payload.data);
+	      }
+	    }
+	    if(itemVariationPageResult.statuscode === 3) {
+	      setItemVarrayJson([])
+	    }
+	    
+	  }, [itemVariationPageResult]);
 	const [errMsg, setErrMsg] = useState("");
 
 	const [openModal, setOpenModal] = React.useState(false);
@@ -466,34 +482,22 @@ const AddItemsPage = (props) => {
 	      default:
 	    }
 	};
-	const top100Films = [
-  { title: 'The Shawshank Redemption', year: 1994 },
-  { title: 'The Godfather', year: 1972 },
-  { title: 'The Godfather: Part II', year: 1974 },
-  { title: 'The Dark Knight', year: 2008 },
-  { title: '12 Angry Men', year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-  { title: 'Pulp Fiction', year: 1994 },
-  { title: 'The Lord of the Rings: The Return of the King', year: 2003 },
-  { title: 'The Good, the Bad and the Ugly', year: 1966 },
-  { title: 'Fight Club', year: 1999 },
-  { title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001 },
-  { title: 'Star Wars: Episode V - The Empire Strikes Back', year: 1980 },
-  { title: 'Forrest Gump', year: 1994 },
-  { title: 'Inception', year: 2010 },
-  { title: 'The Lord of the Rings: The Two Towers', year: 2002 },
-  { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-  { title: 'Goodfellas', year: 1990 },
-  { title: 'The Matrix', year: 1999 },
-  { title: 'Seven Samurai', year: 1954 },
-  { title: 'Star Wars: Episode IV - A New Hope', year: 1977 },
-  { title: 'City of God', year: 2002 },
-  { title: 'Se7en', year: 1995 },
-  { title: 'The Silence of the Lambs', year: 1991 },
-  { title: "It's a Wonderful Life", year: 1946 },
-  { title: 'Life Is Beautiful', year: 1997 }];
-	const fixedOptions = [top100Films[6]];
-  const [value1, setValue1] = React.useState([...fixedOptions, top100Films[13]]);
+	const handleGenerate = (e) =>{
+		ItemVariationPageAction();
+	}
+	useEffect(() => {
+	if (itemVariationPageResult.statuscode === 1) {
+	      if(itemVariationPageResult.payload.data.length > 0)
+	      {
+	        setItemVarrayJson(itemVariationPageResult.payload.data);
+	      }
+	    }
+	    if(itemVariationPageResult.statuscode === 3) {
+	      setItemVarrayJson([])
+	    }
+	    
+	}, [itemVariationPageResult]);
+
 	return (
 		<>
 			<div>
@@ -813,7 +817,8 @@ const AddItemsPage = (props) => {
 										</div>
 									</Grid>
 									{value ==='yes' ?
-									<Grid item xs={12}>
+									<Grid container spacing={0}>
+									<Grid item xs={6}>
 										<div className="ml-16 mr-b-24">
 										        <Autocomplete
 										      multiple
@@ -837,6 +842,163 @@ const AddItemsPage = (props) => {
 										      )}
 										    />
 										</div>
+									</Grid>
+									<Grid item xs={6}>
+										<div className="ml-16 mr-b-24">
+										      <Button
+							                    variant="contained"
+							                    color="primary"
+							                    onClick={(e) => handleGenerate(e)}
+							                  >
+							                  Generate
+							                  </Button>
+										</div>
+									</Grid>
+									
+									{
+										Array.isArray(itemVarrayJson) &&
+										itemVarrayJson.length > 0 &&
+										itemVarrayJson.map((item0, index0) => (
+										<Grid container spacing={0}>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_size"
+														value={item0.Size}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Size"
+														className="auth-input"
+														autoComplete=""
+														disabled="disabled"
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_color"
+														value={item0.Color}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Color"
+														className="auth-input"
+														autoComplete=""
+														disabled="disabled"
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_item_price[]"
+														value=""
+														onChange={(e) => handleInputChange(e)}
+														onFocus={(e) => handleFocus(e)}
+														onBlur={(e) => handleBlur(e)}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Price"
+														className="auth-input"
+														autoComplete=""
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_item_discount[]"
+														value=""
+														onChange={(e) => handleInputChange(e)}
+														onFocus={(e) => handleFocus(e)}
+														onBlur={(e) => handleBlur(e)}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Discount"
+														className="auth-input"
+														autoComplete=""
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_item_offer_price[]"
+														value=""
+														onChange={(e) => handleInputChange(e)}
+														onFocus={(e) => handleFocus(e)}
+														onBlur={(e) => handleBlur(e)}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Offer Price"
+														className="auth-input"
+														autoComplete=""
+														disabled="disabled"
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+											<Grid item xs={3}>
+												<div className="ml-16">
+													<TextField
+														name="n_item_stock[]"
+														value=""
+														onChange={(e) => handleInputChange(e)}
+														onFocus={(e) => handleFocus(e)}
+														onBlur={(e) => handleBlur(e)}
+														margin="normal"
+														variant="outlined"
+														placeholder="Item Stock"
+														className="auth-input"
+														autoComplete=""
+														InputProps={{
+															startAdornment: (
+																<InputAdornment position="start">
+																	<img src={Shop} alt="user" />
+																</InputAdornment>
+															),
+														}}
+													/>
+												</div>
+											</Grid>
+										</Grid>
+									))}
+									
+
 									</Grid>:
 									<Grid container spacing={0}>
 												<Grid item xs={6}>
@@ -968,7 +1130,7 @@ const AddItemsPage = (props) => {
 												<div className="ml-16">
 													<TextField
 														name="c_item_img1"
-														value={inputs.c_banner_image}
+														value={inputs.c_item_img1}
 														onChange={(e) => handleInputChange(e)}
 														onBlur={(e) => handleBlur(e)}
 														error={errors.c_item_img1}
@@ -989,7 +1151,7 @@ const AddItemsPage = (props) => {
 																	<img src={Camera} alt="Camera" />
 																	<input
 																		type="file"
-																		name="c_banner_image"
+																		name="c_item_img1"
 																		id="c_item_img1"
 																		accept="image/jpeg, image/png, image/jpg, image/webp"
 																		onChange={(e) => handleUpload(e, "dl1")}
