@@ -29,26 +29,26 @@ const ContactUsContent = () => {
 						// data-aos="fade-up"
 						// data-aos-delay="2000"
 					>
-						C-Square Info-Solutions Private Limited
+						Jersey
 					</p>
 					<p
 						className="terms-content-paragraph"
 						// data-aos="fade-up"
 						// data-aos-delay="2000"
 					>
-						69, 2nd Floor, Al-Ameen Towers,<br/>
-						Hosur Main Road, Near Lal Bagh Main Rd, Sudhama Nagar,<br/>
-						Bengaluru, Karnataka – 560027 <br/>
+						2/409, P.N Road, New Bustand Knit City, 
+						Tirupur -641603
+						Landmark : New Bustand <br/>
 					</p>
 
 					<div className="contact-mobile mr-t-12">
 						<p className="terms-content-paragraph d-flex">
-							<img className="mr-r-8" src={Phone} alt="mobile-phone" /> 08067657007, 8095170000, 7406830000
+							<img className="mr-r-8" src={Phone} alt="mobile-phone" /> 9629884897
 						</p>
 					</div>
 					<div className="contact-email mr-t-12">
 						<p className="terms-content-paragraph d-flex">
-							<img className="mr-r-8" src={Email} alt="Email" /> liveorder@c2info.com
+							<img className="mr-r-8" src={Email} alt="Email" /> info@jersey.com
 						</p>
 					</div>
 				</div>

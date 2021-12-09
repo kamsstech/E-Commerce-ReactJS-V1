@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ENV } from "../../constant/env";
+
 import { Types } from "../../constant/action";
 import { REACT_APP_BASE_URL } from "../../constant/env";
 import { Constants } from "../../constant/localstorage";
@@ -6,46 +8,45 @@ import { Constants } from "../../constant/localstorage";
 
 export const BannerActionLoading = () => ({
   type: Types.SHOW_BANNER_LOADING,
-  loading: true,
   payload: [],
-  error: ""
+  statuscode:"",
+  loading: true,
+  error: "",
+  msg: ""
 });
 
 export const BannerActionSuccess = (
-  payload
+  payload,code
 ) => ({
   type: Types.SHOW_BANNER_SUCCESS,
-  loading: false,
   payload: payload,
-  error: ""
+  statuscode:code,
+  loading: false,
+  error: "",
+  msg: ""
 });
 
-export const BannerActionFailure = (errMsg) => ({
+export const BannerActionFailure = (errMsg,code) => ({
   type: Types.SHOW_BANNER_FAILURE,
-  loading: false,
   payload: [],
-  error: errMsg
+  statuscode:code,
+  loading: false,
+  error: errMsg,
+  msg: ""
 });
 
 export const BannerAction = () => async(dispatch ) => {
   dispatch(BannerActionLoading());
-  // const headers = {
-  //   "Content-Type": "application/json"
-  // };
-  const headers = {
-    "Content-Type":"application/json",
-    "X-csquare-api-token":localStorage.getItem(Constants.TOKEN),
-    "X-csquare-api-key":localStorage.getItem(Constants.KEY),
-  };
+ 
   await axios
-    .get(`${REACT_APP_BASE_URL}/c2/lc/ms/mst/g/banner`,{ headers })
+    .get(`${ENV.ADMIN_BASE_URL}/api/v1/banner/getall`)
     
     .then(response => {
       
-      if(response.data.appStatusCode === 0){
-        dispatch(BannerActionSuccess(response.data.payloadJson.data))
+      if(response.data.status === 1){
+        dispatch(BannerActionSuccess(response.data,response.data.status))
       } else {
-        dispatch(BannerActionFailure(response.data.messages[0]))
+        dispatch(BannerActionFailure(response.data.message,response.data.status))
       }
     })
     .catch(error => {

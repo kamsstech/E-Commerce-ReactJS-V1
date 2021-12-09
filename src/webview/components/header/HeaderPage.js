@@ -103,7 +103,23 @@ export default function HeaderPage(props) {
 
 	const handleComingSoonPage = (e) => {
 		localStorage.setItem(Constants.COMING_SOON_ACTIVE_PAGE, e ? e : "Page");
-		history.push("/coming-soon");
+		if(e == "Home")
+		{
+			history.push("/");
+		}
+		else if(e == "About")
+		{
+			history.push("/about-us");
+		}
+		else if(e == "Contact")
+		{
+			history.push("/contact-us");
+		}
+		else
+		{
+			history.push("/coming-soon");
+		}
+		
 	};
 
 	const {
@@ -614,15 +630,16 @@ export default function HeaderPage(props) {
 													variant="contained"
 													color="primary"
 													className="header-quick-link mr-r-32"
-													onClick={() => handleComingSoonPage("Dashboard")}
+													onClick={() => handleComingSoonPage("Home")}
 												>
 													Home
 												</Button>
+
 												<Button
 													variant="contained"
 													color="primary"
 													className="header-quick-link mr-r-32"
-													onClick={() => handleComingSoonPage("Dashboard")}
+													onClick={() => handleComingSoonPage("About")}
 												>
 													About Us
 												</Button>
@@ -638,7 +655,7 @@ export default function HeaderPage(props) {
 													variant="contained"
 													color="primary"
 													className="header-quick-link mr-r-32"
-													onClick={() => handleComingSoonPage("Dashboard")}
+													onClick={() => handleComingSoonPage("Contact")}
 												>
 													Contact Us
 												</Button>

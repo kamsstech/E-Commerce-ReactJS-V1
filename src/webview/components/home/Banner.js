@@ -24,8 +24,9 @@ const Banner = (props) => {
   useEffect(() => {
      if(bannerResponse.payload)
      {
-         setArrayRes(bannerResponse.payload.j_list)
+         setArrayRes(bannerResponse.payload.data)
      }
+     console.log(bannerResponse)
   }, [bannerResponse])
 
   return (
@@ -34,7 +35,7 @@ const Banner = (props) => {
         {
           Array.isArray(arrayRes) && arrayRes.length > 0 && arrayRes.map((item, index) => (
           <div className="single-img">
-            <img src={item.c_banner_image_url} alt="banner" />
+            <img src={'http://35.224.80.84/apiaction/'+item.c_banner_image} alt="banner" />
           </div>
         ))
        }

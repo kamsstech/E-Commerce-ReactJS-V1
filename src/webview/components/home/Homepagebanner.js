@@ -218,12 +218,12 @@ useEffect(() => {
 	
 	useEffect(() => {
 	
-		if(Array.isArray(bannerResponse.payload?.j_list) &&  bannerResponse.payload?.j_list.length > 0 ){
-			console.log(bannerResponse.payload?.j_list)
-		setArrayRes(bannerResponse.payload?.j_list)
+		if(Array.isArray(bannerResponse.payload.data) &&  bannerResponse.payload.data.length > 0 ){
+			console.log(bannerResponse.payload.data)
+		setArrayRes(bannerResponse.payload.data)
 		}
 	
- }, [bannerResponse.payload?.j_list])
+ }, [bannerResponse.payload.data])
 
 useEffect(() => {
 if(playing === true){
@@ -239,7 +239,7 @@ if(playing === true){
 			Array.isArray(arrayRes) && arrayRes.length > 0 && arrayRes.map((item, index) => (
 			<div className="single-img" key={index}>
 			<img 
-			src={item.c_banner_image_url} 
+			src={'http://35.224.80.84/apiaction/'+item.c_banner_image} 
 			onError={(e) => {
 				e.target.src = BannerImg1
 				}} 

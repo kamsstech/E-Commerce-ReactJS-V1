@@ -71,7 +71,7 @@ const mapDispatchToProps = (dispatch) => ({
 		CityListAction: (stateCode) => dispatch(CityListAction(stateCode)),
 		submitDemoRequestAction: (body) => dispatch(submitDemoRequestAction(body)),
 		PreferedSellerCall: () => dispatch(PreferedSellerCall()),
-		BannerAction: () => dispatch(BannerAction()),
+		BannerAction: (body) => dispatch(BannerAction()),
 		GetOffers: () => dispatch(GetOffers()),
 		GetPdpPageItems: (body) => dispatch(GetPdpPageItems(body)),
 		GetPdpPageSellerDetails: (body) => dispatch(GetPdpPageSellerDetails(body)),

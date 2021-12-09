@@ -26,7 +26,7 @@ const ContactUsBanner = () => {
 								data-aos="fade-up"
 								data-aos-delay="250"
 					  		>
-								Bangalore, Karnataka
+								Tirupur,TamilNadu
 					  		</p>
 						    <p
 								className="h3 terms-subheading"

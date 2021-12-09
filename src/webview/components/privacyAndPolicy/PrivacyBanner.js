@@ -33,7 +33,7 @@ const PrivacyBanner = () => {
 								data-aos="fade-up"
 								data-aos-delay="400"
 						    >
-								Version: 22.02.2021
+								
 						    </p>
 						</div>
 				  	</div>

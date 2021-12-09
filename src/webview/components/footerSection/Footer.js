@@ -195,10 +195,7 @@ function FooterPage(props) {
 							<h3 className="pre-footer-title"> Our Services</h3>
 							<ul className="pre-footer-list">
 								<li>
-									<a onClick={()=>handleComingSoonPage('Sell on Live Order')}>Sell on Live Order</a>
-								</li>
-								<li>
-									<Link to="/help">Help</Link>
+									<Link to="">Help</Link>
 								</li>
 							</ul>
 						</Grid>
@@ -206,13 +203,12 @@ function FooterPage(props) {
 							<h3 className="pre-footer-title">Need Help</h3>
 							<ul className="pre-footer-list">
 								<li>
-									<Mailto email="liveorder@c2info.com" subject="Hello &amp; Welcome" body="Hello!">
-									liveorder@c2info.com
+									<Mailto email="info@jersey.com" subject="Hello &amp; Welcome" body="Hello!">
+									info@jersey.com
 										</Mailto>
 								</li>
 								<li>
-									<span>080-67657007{" "}/</span>
-									<span>+91 809 517 0000</span>
+									<span>9629884897/</span>
 								</li>
 							</ul>
 						</Grid>
@@ -220,65 +216,11 @@ function FooterPage(props) {
 					<Grid container className="footerPart">
 						{<div className="pre-footer-dashed-line"></div>}
 
-						<div className="footer-about-us mrinit">
-							<div className="footer-about-us-sec">
-								<div>
-									<div className="footer-about-us-eachsec">
-										<div className="footer-about-us-eachsec-left">
-											<img src={FooterImg1} alt="FooterImg1" />
-										</div>
-										<div className="footer-about-us-eachsec-right">
-											<h3>Values-Driven</h3>
-											<h4>
-												Stronger and more concentrated buyers, intense competition
-												and genericization of products.
-											</h4>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div className="footer-about-us-eachsec">
-										<div className="footer-about-us-eachsec-left">
-											<img src={FooterImg2} alt="FooterImg2" />
-										</div>
-										<div className="footer-about-us-eachsec-right">
-											<h3>Cost-effective</h3>
-											<h4>
-												Stronger and more concentrated buyers, intense competition
-												and genericization of products.
-											</h4>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div className="footer-about-us-eachsec">
-										<div className="footer-about-us-eachsec-left">
-											<img src={FooterImg3} alt="FooterImg3" />
-										</div>
-										<div className="footer-about-us-eachsec-right">
-											<h3>Secure-Payments</h3>
-											{/*<h4  className="visibility-hidden">
-												Coming Soon...
-
-											</h4>*/}
-											<h4>
-												More Secure Payments with{" "}
-												<span className="font-weight-bold text-white">
-													PayTM Payment Gateway.
-												</span>
-												<span className="visibility-hidden">
-													{" "} and our pay later options you can shop carefree.
-												</span>
-											</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 
 						<div className="footer-copyright">
 							<p className="pre-terms-text">
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021. Ltd. All rights reserved.
 							</p>
 						</div>
 					</Grid>

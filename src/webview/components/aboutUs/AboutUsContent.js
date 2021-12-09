@@ -21,54 +21,22 @@ const AboutUsContent = () => {
 				data-aos-delay="1500"
 			>
 				<div className="terms-content-container">
-					<p
-						className="terms-content-point"
-						// data-aos="fade-up"
-						// data-aos-delay="2000"
-					>
-						1. INCEPTION
-					</p>
+					
 					<p
 						className="terms-content-paragraph"
 						// data-aos="fade-up"
 						// data-aos-delay="2000"
 					>
-						Early 2000s witnessed the existence of two strong competitors, Covenant PharmAssist Inc. &amp; Cybix Info Systems, offering a complete range of solutions to the pharmaceutical industry across all segments. Covenant PharmAssist Inc. founded by Sripal Bachawat, was the pioneer in providing solutions on Windows platform, whereas Cybix Info Systems founded by Sajith T, was one of the first software solution providers for Pharmaceutical Industry. Going by the adage that the best way to beat the competition is to collaborate, the two organizations realised the synergistic effects of unison and joined hands in 2002 to create C-Square &amp; positioned themselves as leaders in the industry. This combination now provides a one stop solution to Indian Pharmaceutical companies for their automation needs. C-Square with its ability to create advance technology solutions, which bridge the requirement gaps, has emerged as the leading solution provider of enterprise-resource-planning (ERP) software &amp; business intelligence (BI) tool for the pharmaceutical industry in India.
+						ABOUT USWelcome to JERSEYE – the web's one-stop shop for apparel of all kinds.
+						We offer a wide selection of blank apparel styles, brands, and sizes for crafting, DIY projects, and just wearing every day.
+						Our goal is to satisfy the apparel needs of online shoppers with plenty of options, a user-friendly site and affordable prices. From cozy fleeces, to casual t-shirts and sweat-wicking athletic wear, Clothing Shop Online has it all.
+						Online Shopping site for Women & Men in India. Buy Shoes, Clothing, Jewellery and Accessories for Women & Men JERSEYE.com
+						SHOP ON JERSEYE FOR ALL THINGS NICE!
+						We all love shopping online and if you often find yourself casually browsing online clothing stores on your smartphone or laptop then you’re certainly not alone. The benefits of shopping online are second to none, no hassles of store hopping, no issues with lost receipts and returns, we could go on and on. The online boom has helped boost benefits for both brands and customers by bringing both closer than before. 
+						Enter JERSEYE, India’s hottest place for fashion and lifestyle, shop the widest range of apparels from the latest trends to the most retro classics. We are the one-stop-shop for both genders and all ages. Redefine yourself and refresh your wardrobe with up-to-date fashion, buy clothes online and find compliments coming your way lauding your impeccable taste in fashion.
+						Explore clothing options for every member of the family at JERSEYE
 					</p>
-					<p
-						className="terms-content-point"
-						// data-aos="fade-up"
-						// data-aos-delay="2000"
-					>
-						2. OUR VISSION
-					</p>
-					<p
-						className="terms-content-paragraph"
-						// data-aos="fade-up"
-						// data-aos-delay="2000"
-					>
-						To be recognised as a leading CTO (Chief Transformation Organisation) providing value based, innovative &amp; sustainable services to its clients.
-					</p>
-					<p className="terms-content-point">
-						3. OUR MISSION
-					</p>
-					<p className="terms-content-paragraph">
-						To streamline, automate &amp; optimize workflow of our clients, primarily in the pharmaceutical &amp; healthcare sectors, by using proactive &amp; collaborative approach.
-					</p>
-					<p className="terms-content-point">
-						4. CLAIRVOYANCE &amp; COMPETENCY VALUE PROPOSITION
-					</p>
-
-					<p className="terms-content-paragraph">
-						Clairvoyance is the ability to understand clearly the customers’ vision &amp; their requirements, their problems to which the solution can lead to an extraordinary growth. Covenant PharmAssist Inc., brought this strength to the collaboration owing to its rich experience in running pharmaceutical distribution business. Cybix Info Systems with its penchant for developing innovative software solutions added competency, which is the ability to convert the solution into a value based offering, to the pool of organisations strengths.
-					</p>
-
-					<p className="terms-content-point">
-						5. AT YOUR FINGERTIPS  ERP &amp; BI TRAINING
-					</p>
-					<p className="terms-content-paragraph">
-						As our prime focus is to help pharmaceutical companies manage the logistics of their distribution &amp; retail operations. This includes tracking the entire sales life cycle of pharmaceutical products – beginning from the manufacturer through the distributor and retailer &amp; finally ending with the customer. We developed &amp; deployed enterprise-process software for automation of routine transactions. We also provide managers &amp; decision makers to visualise &amp; analyse the performance of entire businesses in real time. As a result, 100% of our customers has seen business growth, as they could analyze historical data to draw meaningful inferences, improve workflow &amp; drive innovation. With its customer centric approach, we have been growing leaps &amp; bounds. We are successful in retaining our old customers &amp; attracting new ones. We also provides related consultancy, education &amp; support services for the same across the country.
-					</p>
+					
 				</div>
 			</Container>
 		)
