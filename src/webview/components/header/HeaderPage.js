@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Container from "@material-ui/core/Container";
 // import AppLogo from "../../../assets/images/site-logo-white.svg";
 // import AppLogo from "../../../assets/images/logo.svg";
-import AppLogo from "../../../assets/images/LOGO_W_1.svg";
+import AppLogo from "../../../assets/images/logo.jpg";
 
 import ListItem from "@material-ui/core/ListItem";
 import Button from "@material-ui/core/Button";

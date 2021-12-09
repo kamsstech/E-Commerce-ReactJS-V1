@@ -7,7 +7,7 @@ import Container from "@material-ui/core/Container";
 import FooterImg1 from "../../../assets/images/Value_driven.svg";
 import FooterImg2 from "../../../assets/images/Cost-effective.svg";
 import FooterImg3 from "../../../assets/images/Secure-Payments.svg";
-import AppLogo from "../../../assets/images/LOGO_W_1.svg";
+import AppLogo from "../../../assets/images/logo.jpg";
 
 import { Constants } from "../../../common/constant/localstorage";
 // import siteLogoWhite from "../../../assets/images/LOGO_W_1.svg";
@@ -208,7 +208,7 @@ function FooterPage(props) {
 										</Mailto>
 								</li>
 								<li>
-									<span>9629884897/</span>
+									<span>9629884897</span>
 								</li>
 							</ul>
 						</Grid>
