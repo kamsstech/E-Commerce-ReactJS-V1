@@ -132,8 +132,8 @@ const ListView = (props) => {
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
-			setPageNav("New Launches");
-			setTitle("New Launches");
+			setPageNav("New Arrivals");
+			setTitle("New Arrivals");
 			urlPath = "/api/v1/items/newitems";
 			indexValue = url.searchParams.get("index");
 		}
@@ -191,8 +191,8 @@ const ListView = (props) => {
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
-			setPageNav("New Launches");
-			setTitle("New Launches");
+			setPageNav("New Arrivals");
+			setTitle("New Arrivals");
 			urlPath = "/api/v1/items/newitems";
 			indexValue = url.searchParams.get("index");
 		}

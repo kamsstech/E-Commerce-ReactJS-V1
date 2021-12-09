@@ -14,7 +14,7 @@ import wishlist_colorIcon from "../../../assets/images/wishlist_colorIcon.svg";
 
 import oral_sus from "../../../assets/images/oral_sus.svg";
 import capsules from "../../../assets/images/capsules.svg";
-import injectable from "../../../assets/images/injectable.svg";
+import dressicon from "../../../assets/images/dressicon.png";
 import tablet from "../../../assets/images/tablet.svg";
 import drops from "../../../assets/images/drops.svg";
 import { getToken } from "../../../common/components/getToken/getToken";
@@ -126,7 +126,7 @@ export default class AsNavFor extends Component {
 		const thumbNailsUrls = this.props.thumbNailsUrls;
 		const payload = this.props.payload;
 
-		console.log(imageUrls, "imageUrls")
+		console.log(thumbNailsUrls, "thumbNailsUrls")
 
 
 		let image =
@@ -141,7 +141,14 @@ export default class AsNavFor extends Component {
 					return (
 						<div key={index}>
 							<div className="image-single">
-								<img src={injectable} alt="injectable" className="singleImg" />
+								{
+									item.product1.length ?
+									(item.product1) && item.product1.map((item1, index1) =>(
+										<img src={'http://35.224.80.84/apiaction/'+item1.c_item_image} alt="item" className="img-item" />
+									)) :
+									<img src={dressicon} alt="injectable" className="singleImg"/>
+								}
+								
 								{this.props.showProductDetails == true ?
 
 									<div className="shortbook_icon-sec" onClick={(prevState) => {
@@ -202,33 +209,6 @@ export default class AsNavFor extends Component {
 											}
 									</div>
 									: null}
-
-								{/* {
-										(this.props.payload) && this.props.payload.map((item1, index1) =>(
-											item1.j_item_images.map((item2, index2)=>(
-												<img src={item2.ac_item_image} alt="item" className="img-item" />
-											))
-											
-										))
-									} */}
-
-								{/* {
-									(this.props.payload) && this.props.payload.map((item1, index1) => (
-
-										<img src={item1.j_item_images[0].ac_item_image} alt="item" className="img-item" />
-
-									))
-								} */}
-
-								{/* {
-									((this.props.payload) && this.props.payload.c_item_name.toLowerCase().includes("cap")) ? <img src={capsules} alt="homeSliderImg-1" className="img-item" /> :
-										(this.props.payload.c_item_name.toLowerCase().includes("oral_sus") ? <img src={oral_sus} alt="homeSliderImg-1" className="img-item" /> :
-											(this.props.payload.c_item_name.toLowerCase().includes("injectable") ? <img src={injectable} alt="homeSliderImg-1" className="img-item" /> :
-												(this.props.payload.c_item_name.toLowerCase().includes("tab") ? <img src={tablet} alt="homeSliderImg-1" className="img-item" /> :
-													(this.props.payload.c_item_name.toLowerCase().includes("drops") ? <img src={drops} alt="homeSliderImg-1" className="img-item" /> : <img src={tablet} alt="homeSliderImg-1" className="img-item" />
-													))
-											))
-								} */}
 							</div>
 						</div>
 					)
@@ -256,35 +236,14 @@ export default class AsNavFor extends Component {
 							<div className="image-thumb">
 
 								{
-										item.j_item_thumbnail_images[0].length ?
-										(this.props.payload) && this.props.payload.map((item1, index1) =>(
-											item1.j_item_thumbnail_images.map((item2, index2)=>(
-												<img src={item2.ac_thumbnail_image} alt="item" className="img-item" />
-											))
-										)) :
-										<img src={injectable} alt="injectable"  />
-									}
+									item.product1.length ?
+									(item.product1) && item.product1.map((item1, index1) =>(
+										<img src={'http://35.224.80.84/apiaction/'+item1.c_item_image} alt="item" className="img-item" />
+									)) :
+									<img src={dressicon} alt="injectable"  />
+								}
 
-								{/* {
-									(this.props.payload) && this.props.payload.map((item1, index1) => (
-
-										<img src={item1.j_item_thumbnail_images[0].ac_thumbnail_image} alt="item" className="img-item" />
-
-									))
-								} */}
-
-
-								{/* <img src={capsules} alt="item" /> */}
-								{/*<img src={injectable} alt="injectable"  />*/}
-								{/* {
-									((this.props.payload) && this.props.payload.c_item_name.toLowerCase().includes("cap")) ? <img src={capsules} alt="homeSliderImg-1" /> :
-										(this.props.payload.c_item_name.toLowerCase().includes("oral_sus") ? <img src={oral_sus} alt="homeSliderImg-1" /> :
-											(this.props.payload.c_item_name.toLowerCase().includes("injectable") ? <img src={injectable} alt="homeSliderImg-1" /> :
-												(this.props.payload.c_item_name.toLowerCase().includes("tab") ? <img src={tablet} alt="homeSliderImg-1" /> :
-													(this.props.payload.c_item_name.toLowerCase().includes("drops") ? <img src={drops} alt="homeSliderImg-1" /> : <img src={tablet} alt="homeSliderImg-1" />
-													))
-											))
-								} */}
+								
 							</div>
 						</div>
 					)

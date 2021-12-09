@@ -240,8 +240,8 @@
     margin: 20px 9px;
 }
 .image-single .img-item, .image-thumb img{
-    height: 50%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
     /* max-width: 60%;
     max-height: 70%; */
 }

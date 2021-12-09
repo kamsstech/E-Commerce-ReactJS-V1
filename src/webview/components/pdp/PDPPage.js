@@ -45,9 +45,9 @@ const PDPPage = (props) => {
 	const [errorMsgItemDetails, SeterrorMsgItemDetails] = useState("");
 	const [showProductDetails, SetshowProductDetails] = useState(false);
 	const [br_code, setBr_Code] = useState("");
-	console.log(showProductDetails,"<<<< showProductDetails")
+	// console.log(showProductDetails,"<<<< showProductDetails")
 
-	console.log(pdpPageItemsResult.payload, "DS React");
+	// console.log(pdpPageItemsResult.payload.data, "DS React");
 	// console.log(pdpPageSellerDetailsResult, "pdpPageSellerDetailsResult");
 
 	useEffect(() => {
@@ -69,26 +69,16 @@ const PDPPage = (props) => {
 		// console.log(match.params.itemCode);
 		console.log(match.params.itemCode, "match parms item code");
 		GetPdpPageItems(match.params.itemCode);
-		GetPdpPageSellerDetails(match.params.itemCode);
+		// GetPdpPageSellerDetails(match.params.itemCode);
 	}, [match.params.itemCode]);
 
 	useEffect(() => {
-		if (!pdpPageItemsResult.payload) {
+		if (!pdpPageItemsResult.payload.data) {
 			SeterrorMsgItemDetails(pdpPageItemsResult.error);
 		}
 		// console.log("inside useeffect", pdpPageItemsResult);
 	}, [!pdpPageItemsResult.loading]);
 
-	useEffect(() => {
-		let temp = {};
-		Object.entries(branchListResult.payload).map((entry) => {
-		  temp = entry[1];
-		});
-		setBr_Code(temp.n_branch_id);
-	  }, [branchListResult]);
-
-	// console.log(pdpPageItemsResult,"<<<<<<<<<<<<<<<<<<<<<<<pdpPageItemsResult.payload")
-	// console.log(pdpPageSellerDetailsResult,"<<<<<<<<<<<<<<<<<<<<<<<pdpPageSellerDetailsResult")
 
 	return (
 		<div className="body-spacing">
@@ -104,9 +94,9 @@ const PDPPage = (props) => {
 				<div className="pdp-flex-container">
 					<div className="preview-sec">
 						<ImageSlider
-							payload={pdpPageItemsResult.payload}
-							imageUrls={pdpPageItemsResult.payload}
-							thumbNailsUrls={pdpPageItemsResult.payload}
+							payload={pdpPageItemsResult.payload.data}
+							imageUrls={pdpPageItemsResult.payload.data}
+							thumbNailsUrls={pdpPageItemsResult.payload.data}
 							showProductDetails={showProductDetails}
 							AddShortbookItems={AddShortbookItems}
 							addShortbookResult={addShortbookResult}
@@ -137,7 +127,7 @@ const PDPPage = (props) => {
 							null 
 							
 						 } */}
-							{showProductDetails == true ? (
+							{/*{showProductDetails == true ? (
 								<SellerDetails
 									match={match}
 									br_code={br_code}
@@ -148,7 +138,7 @@ const PDPPage = (props) => {
 									addToCartResult={addToCartResult}
 									CartCount={CartCount}
 								/>
-							) : null}
+							) : null}*/}
 
 							<ItemDesc pdpPageItemsResult={pdpPageItemsResult} />
 						</div>
