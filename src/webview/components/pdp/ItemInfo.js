@@ -165,14 +165,21 @@ const ItemInfo = (props) => {
 					{/* <p className="pdp-item-mfc">Mfg by<Link to={`/plp/mfac/${item.c_item_code}/page/1/limit/10`}> {data.j_sub_detail.c_mfac_name.toLowerCase()}</Link></p> */}
 					{/* <p className="pdp-item-mfc">Mfg by<Link to={`/plp/mfac/${item.c_item_code}/page/1/limit/10`}>{item.c_mfg_name}</Link></p>
 					<p className="pdp-item-mfc">Contains<Link to="/"> {item.c_content_name}</Link></p> */}
-					<p className="pdp-item-mfc">Mfg by <span>{item.c_mfg_name}</span> </p>
+					{/*Commented by dhana*/}
+					{/*<p className="pdp-item-mfc">Mfg by <span>{item.c_mfg_name}</span> </p>
 					<p className="pdp-item-mfc">Contains <span>{item.c_contains}</span></p>
 					<p className="pdp-item-mfc">HSN Code <span>{item.c_hsn_code}</span></p>
 								 
 					<h4 className="pdp-mrp">MRP &#8377; {(item.n_max_mrp )}</h4>
 					<p className="pdp-item-mfc mr-b-6">GST Rate: {item.c_gst}%</p>
-					<p className="ppd-packaging">Packaging: {item.c_pack_name}</p>
-					
+					<p className="ppd-packaging">Packaging: {item.c_pack_name}</p>*/}
+					<p className="pdp-item-mfc">Mfg by <span>GRANDIX PHARMACEUTICALS</span> </p>
+					<p className="pdp-item-mfc">Contains <span>GLIMEPIRIDE+METFORMIN+PIOGLITAZONE</span></p>
+					<p className="pdp-item-mfc">HSN Code <span>30049089</span></p>
+								 
+					<h4 className="pdp-mrp">MRP &#8377; 324</h4>
+					<p className="pdp-item-mfc mr-b-6">GST Rate: 12.00%</p>
+					<p className="ppd-packaging">Packaging: 10`S</p>
 						{/* <p className="ppd-packaging">Selected Size: <span>{
 						value == 0 ? item.j_related_items[0].c_pack_name : item.j_related_items[1].c_pack_name}</span></p> */}
 					
