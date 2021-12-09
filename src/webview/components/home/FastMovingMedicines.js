@@ -23,7 +23,7 @@ import dolo from "../../../assets/images/dolo.jpg";
 import shortbook_icon from "../../../assets/images/shortbook_pdpIcon.svg";
 import shortbook_colorIcon from "../../../assets/images/shortbook_colorIcon.svg";
 import oral_sus from "../../../assets/images/oral_sus.svg";
-import capsules from "../../../assets/images/capsules.svg";
+import dressicon from "../../../assets/images/dressicon.png";
 import Injectable from "../../../assets/images/injectable.svg";
 import tablet from "../../../assets/images/tablet.svg";
 import drops from "../../../assets/images/drops.svg";
@@ -409,21 +409,21 @@ const FastMovingMedicines = (props) => {
 														)}`}
 														key={item.c_item_code}
 													>
-														{   item.images[0].c_item_image ?    (
+														{   item.images.length > 0 ?    (
 															
 															item.images[0].c_item_image === "" ? (
-																<img src={capsules} alt="ProductImg" />
+																<img src={dressicon} alt="ProductImg" />
 															) : (
 																<img
 																	src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
 																	alt={item.c_item_name}
 																	onError={(e) => {
-																		e.target.src = capsules;
+																		e.target.src = dressicon;
 																	}}
 																/>
 															)
 														):(
-															<img src={capsules} alt="ProductImg" />
+															<img src={dressicon} alt="ProductImg" />
 														)
 
 														

@@ -382,7 +382,11 @@ const AddBrandForm = (props) => {
 						<Alert severity="success"> <span className="font-weight-bold">Brand Added..!!!</span></Alert>
 					</div>
 				}
-
+				{brandResult.status_code === 2 &&
+					<div className="notFound">
+						<Alert severity="error"> <span className="font-weight-bold">Brand Already Exist..!!!</span></Alert>
+					</div>
+				}
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
 						<p className="login-error-msg min-height-none mb-10">

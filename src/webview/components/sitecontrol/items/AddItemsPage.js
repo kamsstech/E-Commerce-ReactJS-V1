@@ -9,6 +9,8 @@ import AddItemsForm from "./AddItemsForm";
 
 export const AddItemsPage = (props) => {
 	const {
+		ItemAddPageAction,
+		itemAddPageResult,
 		categoryListResult,
 		brandListResult,
 		BrandListAction,
@@ -64,6 +66,8 @@ const handleBack=()=>{
 					<Grid item xs={9}>
 						<div className="myprofile-box border-botttom-none">
 							<AddItemsForm
+							ItemAddPageAction={ItemAddPageAction}
+							itemAddPageResult={itemAddPageResult}
 							brandListResult={brandListResult}
 							categoryListResult={categoryListResult}
 							CategoryListAction={CategoryListAction}

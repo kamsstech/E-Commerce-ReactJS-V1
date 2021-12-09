@@ -30,12 +30,12 @@ export const itemVariationPageFailure = (errMsg,code) => ({
   msg: ""
 });
 
-export const ItemVariationPageAction = () => async (dispatch) => {
+export const ItemVariationPageAction = (body) => async (dispatch) => {
   dispatch(itemVariationPageLoading())
   // const headers = {
   //   "Content-Type": "application/json",
   // };
-  await axios.get(`${ENV.ADMIN_BASE_URL1}/apiaction/curl.php`)
+  await axios.post(`${ENV.ADMIN_BASE_URL1}/apiaction/curl.php`,body)
         .then(response => {
           // console.log(response)
       dispatch(itemVariationPageSuccess(response,1))
