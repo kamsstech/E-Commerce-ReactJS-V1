@@ -257,10 +257,6 @@ const AddBrandForm = (props) => {
 				if (value.length <= 3) {
 					setErrors({ ...errors, [name]: true });
 				}
-			}else if (name === "c_brand_description"){
-				if (value.length <= 15){
-					setErrors({ ...errors, [name]: true });
-				}
 			}
 		};
 
@@ -295,8 +291,11 @@ const AddBrandForm = (props) => {
 			}
 		}
 	};
+	const [resStatus, setresStatus] = useState(0);
+	const [subBtn, setsubBtn] = useState(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		
 		if (inputs.c_brand_name === "" || errors.c_brand_name === true) {
 			setErrors({ ...errors, c_brand_name: true });
 		}else if (inputs.c_brand_image === "" || errors.c_brand_image === true) {
@@ -304,6 +303,7 @@ const AddBrandForm = (props) => {
 		}else if (inputs.c_brand_description === "" || errors.c_brand_description === true) {
 			setErrors({ ...errors, c_brand_description: true });
 		}else{
+			setsubBtn(true);
 			const form = new FormData();
 			form.append("c_brand_name",inputs.c_brand_name)
 			form.append("c_brand_image",e.target.c_brand_image.files[0])
@@ -315,6 +315,24 @@ const AddBrandForm = (props) => {
 		status_code : "",
 	});
 	useEffect(() => {
+		if(addBrandResult.statuscode ==1)
+        {
+        	setsubBtn(false)
+            setresStatus(addBrandResult.statuscode);
+            setErrMsg("")
+			 setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        else
+        {
+        	setsubBtn(false)
+            setresStatus(addBrandResult.statuscode);
+            setErrMsg(addBrandResult.error)
+            setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
 		if(addBrandResult) {
 			setBrandResult({ ...brandResult, status_code: addBrandResult.payload.status });
 			if (brandResult.status_code === 1){
@@ -377,21 +395,21 @@ const AddBrandForm = (props) => {
 				<div className="profile-title-sec ml-16">
 					<h4 className="profile-title">Add Brand</h4>
 				</div>
-				{brandResult.status_code === 1 &&
+				{resStatus === 1 &&
 					<div className="notFound">
-						<Alert severity="success"> <span className="font-weight-bold">Brand Added..!!!</span></Alert>
+						<Alert severity="success"> <span className="font-weight-bold">Brand added..!!!</span></Alert>
 					</div>
 				}
-				{brandResult.status_code === 2 &&
+				{resStatus != 1 && resStatus != 0 &&
 					<div className="notFound">
-						<Alert severity="error"> <span className="font-weight-bold">Brand Already Exist..!!!</span></Alert>
+						<Alert severity="error"> <span className="font-weight-bold">Opps! {errMsg}..!!!</span></Alert>
 					</div>
 				}
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
-						<p className="login-error-msg min-height-none mb-10">
+						{/*<p className="login-error-msg min-height-none mb-10">
 							{errMsg.toLowerCase()}
-						</p>
+						</p>*/}
 
 						<Grid container spacing={0}>
 							<Grid item xs={6}>
@@ -490,7 +508,7 @@ const AddBrandForm = (props) => {
 										placeholder="Description *"
 										className="auth-input kmass_desc"
 									/>
-									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
+									<Button variant="contained" disabled={subBtn === false ? "" : "disabled"} type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>

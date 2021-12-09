@@ -281,7 +281,8 @@ const AddVariationsForm = (props) => {
 	      default:
 	    }
 	};
-
+	const [resStatus, setresStatus] = useState(0);
+	const [subBtn, setsubBtn] = useState(false);
 	const handleSubmit = (e) => {
 		if (inputs.c_variation_name === "" || errors.c_variation_name === true) {
 			setErrors({ ...errors, c_variation_name: true });
@@ -303,6 +304,7 @@ const AddVariationsForm = (props) => {
 		}
 		if(arrayVal.length > 0)
 		{
+			setsubBtn(true);
 			const body={c_variation_name:inputs.c_variation_name,
 						j_insertdata:arrayVal}
 			
@@ -310,6 +312,27 @@ const AddVariationsForm = (props) => {
 		}
 		
 	};
+	useEffect(() => {
+		if(addVariationsPageResult.statuscode ==1)
+        {
+        	setsubBtn(false)
+            setresStatus(addVariationsPageResult.statuscode);
+            setErrMsg("")
+			 setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        else
+        {
+        	setsubBtn(false)
+            setresStatus(addVariationsPageResult.statuscode);
+            setErrMsg(addVariationsPageResult.error)
+            setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+		
+	}, [addVariationsPageResult])
 
 	return (
 		<>
@@ -358,13 +381,18 @@ const AddVariationsForm = (props) => {
 				<div className="profile-title-sec ml-16">
 					<h4 className="profile-title">Add Variations</h4>
 				</div>
-
+				{resStatus === 1 &&
+					<div className="notFound">
+						<Alert severity="success"> <span className="font-weight-bold">Variation added..!!!</span></Alert>
+					</div>
+				}
+				{resStatus != 1 && resStatus != 0 &&
+					<div className="notFound">
+						<Alert severity="error"> <span className="font-weight-bold">Opps! {errMsg}..!!!</span></Alert>
+					</div>
+				}
 				<div>
 					<form className="profile-details-sec">
-						<p className="login-error-msg min-height-none mb-10">
-							{errMsg.toLowerCase()}
-						</p>
-
 						<Grid container spacing={0}>
 							<Grid item xs={6}>
 								<div className="ml-16">
@@ -392,7 +420,7 @@ const AddVariationsForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 									<TextField
 										name="c_variation_description"
 										multiline
@@ -407,7 +435,7 @@ const AddVariationsForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 								      <Autocomplete
 								        multiple
 								        freeSolo
@@ -438,8 +466,8 @@ const AddVariationsForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
-									<Button variant="contained" onClick={(e) => handleSubmit(e)} className="yes" color="primary">Submit</Button>
+								<div className="ml-16">
+									<Button variant="contained" disabled={subBtn === false ? "" : "disabled"} onClick={(e) => handleSubmit(e)} className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>

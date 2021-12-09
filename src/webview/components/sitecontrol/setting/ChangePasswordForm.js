@@ -386,7 +386,7 @@ const ChangePasswordForm = (props) => {
 									onFocus={(e) => handleFocus(e)}
 									onBlur={(e) => handleBlur(e)}
 									error={errors.c_title}
-									helperText={errors.c_title && "Not a valid title"}
+									helperText={errors.c_title && "Not a valid Password"}
 										margin="normal"
 										variant="outlined"
 										placeholder="Current Password *"
@@ -411,7 +411,7 @@ const ChangePasswordForm = (props) => {
 									onFocus={(e) => handleFocus(e)}
 									onBlur={(e) => handleBlur(e)}
 									error={errors.c_title}
-									helperText={errors.c_title && "Not a valid title"}
+									helperText={errors.c_title && "Not a valid Password"}
 										margin="normal"
 										variant="outlined"
 										placeholder="New Password *"
@@ -436,7 +436,7 @@ const ChangePasswordForm = (props) => {
 									onFocus={(e) => handleFocus(e)}
 									onBlur={(e) => handleBlur(e)}
 									error={errors.c_title}
-									helperText={errors.c_title && "Not a valid title"}
+									helperText={errors.c_title && "Not a valid Password"}
 										margin="normal"
 										variant="outlined"
 										placeholder="Confirm Password *"

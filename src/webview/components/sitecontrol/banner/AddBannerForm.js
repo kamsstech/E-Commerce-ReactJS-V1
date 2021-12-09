@@ -371,8 +371,11 @@ const AddBannerForm = (props) => {
 			setEndDate(date);
 		}
 	}
+	const [resStatus, setresStatus] = useState(0);
+	const [subBtn, setsubBtn] = useState(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		
 		if (inputs.n_banner_type === "1" || errors.n_banner_type === true) {
 			setErrors({ ...errors, n_banner_type: true });
 		}
@@ -382,6 +385,7 @@ const AddBannerForm = (props) => {
 		else if (inputs.c_banner_image === "" || errors.c_banner_image === true) {
 			setErrors({ ...errors, c_banner_image: true });
 		} else {
+			setsubBtn(true);
 			const form = new FormData();
 			form.append("n_banner_type", inputs.n_banner_type)
 			form.append("c_banner_title", inputs.c_banner_title)
@@ -399,19 +403,24 @@ const AddBannerForm = (props) => {
 		status_code: "",
 	});
     useEffect(() => {
-        if(addBannerResult) {
-            setBannerResult({ ...bannerResult, status_code: addBannerResult.payload.status });
-            if (bannerResult.status_code === 1){
-                inputs.n_banner_type = "",
-                inputs.c_banner_title = "",
-                inputs.c_banner_image = "",
-                inputs.c_banner_description = "",
-                inputs.c_redirect_url = ""
-                inputs.c_start_date = "",
-                inputs.c_end_date = ""
-            }else if (bannerResult.status_code != 1) {
-                setErrMsg(addBannerResult.error)
-            }
+        
+        if(addBannerResult.statuscode ==1)
+        {
+        	setsubBtn(false)
+            setresStatus(addBannerResult.statuscode);
+            setErrMsg("")
+			 setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        else
+        {
+        	setsubBtn(false)
+            setresStatus(addBannerResult.statuscode);
+            setErrMsg(addBannerResult.error)
+            setTimeout(function(){
+                    setresStatus(0)
+                },5000);
         }
     }, [addBannerResult]);
 	return (
@@ -446,17 +455,21 @@ const AddBannerForm = (props) => {
 					<h4 className="profile-title">Add Banner</h4>
 				</div>
 				
-				{bannerResult.status_code === 1 &&
+				{resStatus === 1 &&
 					<div className="notFound">
 						<Alert severity="success"> <span className="font-weight-bold">Banner added..!!!</span></Alert>
 					</div>
 				}
-
+				{resStatus != 1 && resStatus != 0 &&
+					<div className="notFound">
+						<Alert severity="error"> <span className="font-weight-bold">Opps! {errMsg}..!!!</span></Alert>
+					</div>
+				}
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
-						<p className="login-error-msg min-height-none mb-10">
+						{/*<p className="login-error-msg min-height-none mb-10">
 							{errMsg.toLowerCase()}
-						</p>
+						</p>*/}
 
 						<Grid container spacing={0}>
 							<Grid item xs={6}>
@@ -493,9 +506,9 @@ const AddBannerForm = (props) => {
 										<MenuItem key={"2"} value={"3"}>
 											Product Banner
 										</MenuItem>
-										<MenuItem key={"3"} value={"4"}>
+										{/*<MenuItem key={"3"} value={"4"}>
 											Road Block Banner
-										</MenuItem>
+										</MenuItem>*/}
 									</TextField>
 								</div>
 							</Grid>
@@ -526,7 +539,7 @@ const AddBannerForm = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 									<TextField
 										name="c_banner_description"
 										multiline
@@ -677,7 +690,7 @@ const AddBannerForm = (props) => {
 
 							<Grid item xs={12}>
 								<div className="pd-l-16">
-									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
+									<Button disabled={subBtn === false ? "" : "disabled"} variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>

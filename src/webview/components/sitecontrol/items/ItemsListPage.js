@@ -347,7 +347,7 @@ const ItemsListPage = (props) => {
 											<TableCell className="tBody"><img src={item1.images.length > 0 ?'http://35.224.80.84/apiaction/'+item1.images[0]?.c_item_image:dressicon} alt="searchimg" /></TableCell>
 											<TableCell className="tBody">{item1.c_item_name}</TableCell>
 											<TableCell className="tBody">{item1.category[0]?.c_category_name}</TableCell>
-											<TableCell className="tBody">{item1.brand[0]?.c_barnd_name}</TableCell>
+											<TableCell className="tBody">{item1.brand[0]?.c_brand_name}</TableCell>
 											<TableCell className="tBody">{item1.variations[0]?.n_item_offer_price}</TableCell>
 											<TableCell className="tBody">{item1.dt_createdate}</TableCell>
 											<TableCell className="tBody">

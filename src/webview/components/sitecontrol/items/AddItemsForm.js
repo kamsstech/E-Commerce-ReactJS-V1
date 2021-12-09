@@ -552,9 +552,11 @@ const AddItemsPage = (props) => {
 	    }
 	    
 	}, [itemVariationPageResult]);
-
+	const [resStatus, setresStatus] = useState(0);
+	const [subBtn, setsubBtn] = useState(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		
 		const form = new FormData();
 
 		form.append("c_item_name",inputs.c_item_name);
@@ -568,7 +570,7 @@ const AddItemsPage = (props) => {
 		form.append("c_item_specification",inputs.c_item_specification);
 		form.append("c_variation_type",value);
 		
-		form.append("c_item_image", img1Data);
+		form.append("c_item_image", e.target.c_item_image.files[0]);
 		const arrayVal=[]
 		if(value =='yes')
 		{
@@ -614,13 +616,31 @@ const AddItemsPage = (props) => {
 		// console.log(arrayVal)
 		if(arrayVal.length > 0)
 		{
+			setsubBtn(true);
 			form.append("j_insertvariationdata",JSON.stringify(arrayVal));
 			ItemAddPageAction(form)
 		}
 		
 	}
 	useEffect(() => {
-		
+		if(itemAddPageResult.statuscode ==1)
+        {
+        	setsubBtn(false)
+            setresStatus(itemAddPageResult.statuscode);
+            setErrMsg("")
+			 setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        else
+        {
+        	setsubBtn(false)
+            setresStatus(itemAddPageResult.statuscode);
+            setErrMsg(itemAddPageResult.error)
+            setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
 	  }, [itemAddPageResult]);
 	return (
 		<>
@@ -642,17 +662,17 @@ const AddItemsPage = (props) => {
 				/>
 				<Container fixed>
 					<div>
-						{itemAddPageResult.status_code === 1 &&
+						{resStatus === 1 &&
 							<div className="notFound">
-								<Alert severity="success"> <span className="font-weight-bold">Brand Added..!!!</span></Alert>
+								<Alert severity="success"> <span className="font-weight-bold">Item added..!!!</span></Alert>
 							</div>
 						}
-						{itemAddPageResult.status_code === 2 &&
+						{resStatus != 1 && resStatus != 0 &&
 							<div className="notFound">
-								<Alert severity="error"> <span className="font-weight-bold">Brand Already Exist..!!!</span></Alert>
+								<Alert severity="error"> <span className="font-weight-bold">Opps! {errMsg}..!!!</span></Alert>
 							</div>
 						}
-						<form className="profile-details-sec" encType="multipart/form-data">
+						<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
 						<Stepper activeStep={activeStep} orientation="vertical">
 					          <Step key="0">
 					            <StepLabel>Product Basic Details</StepLabel>
@@ -1269,7 +1289,7 @@ const AddItemsPage = (props) => {
 							              <Grid item xs={6}>
 												<div className="ml-16">
 													<TextField
-														name="c_item_image"
+														name="c_item_img"
 														value={inputs.c_item_image}
 														onChange={(e) => handleInputChange(e)}
 														onBlur={(e) => handleBlur(e)}
@@ -1438,8 +1458,8 @@ const AddItemsPage = (props) => {
 					                  <Button
 					                    variant="contained"
 					                    color="primary"
-					                    // type="submit"
-					                    onClick={(e) => handleSubmit(e)}
+					                    type="submit"
+					                    disabled={subBtn === false ? "" : "disabled"}
 					                  >
 					                  Submit
 					                  </Button>

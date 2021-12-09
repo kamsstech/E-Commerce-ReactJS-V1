@@ -308,6 +308,8 @@ const AddCategoryForm = (props) => {
 			}
 		}
 	};
+	const [resStatus, setresStatus] = useState(0);
+	const [subBtn, setsubBtn] = useState(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (inputs.c_category_name === "" || errors.c_category_name === true) {
@@ -317,6 +319,7 @@ const AddCategoryForm = (props) => {
 		} else if (inputs.c_category_description === "" || errors.c_category_description === true) {
 			setErrors({ ...errors, c_category_description: true });
 		}else{
+			setsubBtn(true);
 			const form = new FormData();
 			form.append("c_category_type", inputs.c_category_type)
 			form.append("c_category_name", inputs.c_category_name)
@@ -329,11 +332,27 @@ const AddCategoryForm = (props) => {
 		status_code: "",
 	});
 	useEffect(() => {
-		if (addCategoryResult) {
+		if(addCategoryResult.statuscode ==1)
+        {
+        	setsubBtn(false)
+            setresStatus(addCategoryResult.statuscode);
+            setErrMsg("")
+			 setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        else
+        {
+        	setsubBtn(false)
+            setresStatus(addCategoryResult.statuscode);
+            setErrMsg(addCategoryResult.error)
+            setTimeout(function(){
+                    setresStatus(0)
+                },5000);
+        }
+        if (addCategoryResult) {
 			setCategoryResult({ ...categoryResult, status_code: addCategoryResult.statuscode });
 		}
-	}, [addCategoryResult]);
-	useEffect(() => {
 		if (categoryResult.status_code === 1) {
 			inputs.c_category_type = "",
 				inputs.c_category_name = "",
@@ -342,7 +361,7 @@ const AddCategoryForm = (props) => {
 		} else if (categoryResult.status_code != 1) {
 			setErrMsg(addCategoryResult.error)
 		}
-	})
+	}, [addCategoryResult])
 	return (
 		<>
 			<Collapse in={openModal1}>
@@ -400,17 +419,22 @@ const AddCategoryForm = (props) => {
 					<h4 className="profile-title">Add Category</h4>
 				</div>
 
-				{categoryResult.status_code === 1 &&
+				{resStatus === 1 &&
 					<div className="notFound">
 						<Alert severity="success"> <span className="font-weight-bold">Category added..!!!</span></Alert>
+					</div>
+				}
+				{resStatus != 1 && resStatus != 0 &&
+					<div className="notFound">
+						<Alert severity="error"> <span className="font-weight-bold">Opps! {errMsg}..!!!</span></Alert>
 					</div>
 				}
 
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
-						<p className="login-error-msg min-height-none mb-10">
+						{/*<p className="login-error-msg min-height-none mb-10">
 							{errMsg.toLowerCase()}
-						</p>
+						</p>*/}
 
 						<Grid container spacing={0}>
 							<Grid item xs={6}>
@@ -475,6 +499,26 @@ const AddCategoryForm = (props) => {
 									</TextField>
 								</div>
 							</Grid>
+							<Grid item xs={12}>
+								<div className="ml-16">
+									<TextField
+										name="c_category_description"
+										value={inputs.c_category_description}
+										onChange={(e) => handleInputChange(e)}
+										onFocus={(e) => handleFocus(e)}
+										onBlur={(e) => handleBlur(e)}
+										multiline
+										rows={1}
+										rowsMax={4}
+										margin="normal"
+										variant="outlined"
+										placeholder="Description"
+										className="auth-input kmass_desc"
+									/>
+									
+								</div>
+
+							</Grid>
 							<Grid item xs={6}>
 								<div className="ml-16">
 									<TextField
@@ -528,27 +572,13 @@ const AddCategoryForm = (props) => {
 									)}
 								</div>
 							</Grid>
-
 							<Grid item xs={12}>
-								<div className="pd-l-16">
-									<TextField
-										name="c_category_description"
-										value={inputs.c_category_description}
-										onChange={(e) => handleInputChange(e)}
-										onFocus={(e) => handleFocus(e)}
-										onBlur={(e) => handleBlur(e)}
-										multiline
-										rows={1}
-										rowsMax={4}
-										margin="normal"
-										variant="outlined"
-										placeholder="Description"
-										className="auth-input kmass_desc"
-									/>
-									<Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
+								<div className="ml-16">
+									<Button variant="contained" disabled={subBtn === false ? "" : "disabled"} type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 
 							</Grid>
+							
 						</Grid>
 					</form>
 				</div>
