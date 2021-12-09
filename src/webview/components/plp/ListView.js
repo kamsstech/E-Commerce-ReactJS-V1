@@ -26,6 +26,7 @@ import shortbook_colorIcon from "../../../assets/images/shortbook_colorIcon.svg"
 import oral_sus from "../../../assets/images/oral_sus.svg";
 import capsules from "../../../assets/images/capsules.svg";
 import injectable from "../../../assets/images/injectable.svg";
+import dressicon from "../../../assets/images/dressicon.png";
 import tablet from "../../../assets/images/tablet.svg";
 import drops from "../../../assets/images/drops.svg";
 import { convertToSlug } from '../../../util/Helper';
@@ -124,51 +125,24 @@ const ListView = (props) => {
 		let url_string = window.location;
 		let url = new URL(url_string);
 
-		if (match.params.type == "top-most") {
-			setPageNav("Top Most ordered");
-			setTitle("Top/Most ordered");
-			urlPath = "/c2/lc/ms/mst/item/top";
-			indexValue = url.searchParams.get("index");
-		}
-
-		else if (match.params.type == "preferred") {
-			setPageNav("preferred");
-			setTitle("preferred");
-			urlPath = "/c2/lc/ms/mst/seller/preferred";
+		if (match.params.type == "best-selling") {
+			setPageNav("Best Selling");
+			setTitle("Best Selling");
+			urlPath = "/api/v1/items/bestsellingitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
 			setPageNav("New Launches");
-			setTitle("NewLaunches");
-			urlPath = "/c2/lc/ms/mst/item/new";
+			setTitle("New Launches");
+			urlPath = "/api/v1/items/newitems";
 			indexValue = url.searchParams.get("index");
 		}
-		else if (match.params.type == "manufature") {
-			setPageNav("Manufature");
-			setTitle("Manufature");
-			urlPath = "/c2/lc/ms/mst/head/mfg";
+		else if (match.params.type == "all") {
+			setPageNav("All");
+			setTitle("All");
+			urlPath = "/api/v1/items/allitems";
 			indexValue = url.searchParams.get("index");
 		}
-
-		else if (match.params.type == "seller") {
-			setPageNav("Seller");
-			///web/rawSellerWiseProductList
-			urlPath = "/c2/lc/ms/mst/search/l/itemsBySellerCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let sellerName = url.searchParams.get("n");
-			setTitle(sellerName);
-		}
-
-		else if (match.params.type == "mfg") {
-			setPageNav("Manufacture");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMfcCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let mfgName = url.searchParams.get("n");
-			setTitle(mfgName);
-		}
-
 		else if (match.params.type == "search") {
 			setPageNav("Search With List");
 			urlPath = "/c2/lc/ms/mst/search/l/prd";
@@ -185,10 +159,9 @@ const ListView = (props) => {
 			setsearchKeyArr(searchKeyValue.split(","));
 			setSearchResultvalue(codeValue);
 		}
-
 		else if (match.params.type == "category") {
 			setPageNav("Category");
-			urlPath = "/c2/lc/ms/mst/search/l/categoryItem";
+			urlPath = "/api/v1/items/categoryitems";
 			indexValue = url.searchParams.get("index");
 			codeValue = url.searchParams.get("q");
 			let categoryName = url.searchParams.get("n");
@@ -198,71 +171,36 @@ const ListView = (props) => {
 			page_path: urlPath,
 			index_value: indexValue,
 			key_value: keyValue,
-			n_page: 0,
+			n_offset: 0,
 			n_limit: limit,
 			c_code: codeValue,
 			type: match.params.type,
+			c_process:"1"
 		};
-
-		if(page === 0)
-		{
-			GetPlpPageActions(body);
-		}
+		GetPlpPageActions(body);
+		
 	}, [match]);
 
 	const handleLoadMore = (e,nextPage) => { 
 		let url_string = window.location;
 		let url = new URL(url_string);
-		if (match.params.type == "top-most") {
-			setPageNav("Top Most ordered");
-			setTitle("Top/Most ordered");
-			urlPath = "/c2/lc/ms/mst/item/top";
-			indexValue = url.searchParams.get("index");
-		}
-		else if (match.params.type == "preferred") {
-			setPageNav("preferred");
-			setTitle("preferred");
-			urlPath = "/c2/lc/ms/mst/seller/preferred";
+		if (match.params.type == "best-selling") {
+			setPageNav("Best Selling");
+			setTitle("Best Selling");
+			urlPath = "/api/v1/items/bestsellingitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
 			setPageNav("New Launches");
-			setTitle("NewLaunches");
-			urlPath = "/c2/lc/ms/mst/item/new";
+			setTitle("New Launches");
+			urlPath = "/api/v1/items/newitems";
 			indexValue = url.searchParams.get("index");
 		}
-		else if (match.params.type == "manufature") {
-			setPageNav("Manufature");
-			setTitle("Manufature");
-			urlPath = "/c2/lc/ms/mst/head/mfg";
+		else if (match.params.type == "all") {
+			setPageNav("All");
+			setTitle("All");
+			urlPath = "/api/v1/items/allitems";
 			indexValue = url.searchParams.get("index");
-		}
-
-		else if (match.params.type == "seller") {
-			setPageNav("Seller");
-			///web/rawSellerWiseProductList
-			urlPath = "/c2/lc/ms/mst/search/l/itemsBySellerCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let sellerName = url.searchParams.get("n");
-			setTitle(sellerName);
-		}
-
-		else if (match.params.type == "mfg") {
-			setPageNav("Manufacture");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMfcCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let mfgName = url.searchParams.get("n");
-			setTitle(mfgName);
-		}
-		else if (match.params.type == "mol") {
-			setPageNav("Molecules");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMoleculeCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let molName = url.searchParams.get("n");
-			setTitle(molName);
 		}
 		else if (match.params.type == "search") {
 			setPageNav("Search With List");
@@ -282,7 +220,7 @@ const ListView = (props) => {
 		}
 		else if (match.params.type == "category") {
 			setPageNav("Category");
-			urlPath = "/c2/lc/ms/mst/search/l/categoryItem";
+			urlPath = "/api/v1/items/categoryitems";
 			indexValue = url.searchParams.get("index");
 			codeValue = url.searchParams.get("q");
 			let categoryName = url.searchParams.get("n");
@@ -292,7 +230,7 @@ const ListView = (props) => {
 			page_path: urlPath,
 			index_value: indexValue,
 			key_value: keyValue,
-			n_page: nextPage,
+			n_offset: nextPage,
 			n_limit: limit,
 			c_code: codeValue,
 			type: match.params.type,
@@ -302,16 +240,16 @@ const ListView = (props) => {
 
 	useEffect(() => {
 		setloadStatus(false);
-		// console.log(plpPageAtionsResult,"dfdfdfdf")
-		if(page === 0)
-		{
-				setArrayRes([]);
-		}
-		if (plpPageAtionsResult.statuscode === 0) {
-			setArrayRes([...arrayRes, ...plpPageAtionsResult.payload?.j_list]);
-			setTotalList(plpPageAtionsResult.payload.n_total);
-			setPage(plpPageAtionsResult.payload.n_next_page);
-			setresultCount(plpPageAtionsResult.payload.j_list.length)
+		if (plpPageAtionsResult.statuscode === 1) {
+			if(page === 0)
+			{
+				setArrayRes([])
+			}
+			
+			setArrayRes([...arrayRes, ...plpPageAtionsResult.payload.data]);
+			setTotalList(plpPageAtionsResult.payload.total);
+			setPage(plpPageAtionsResult.payload.offset);
+			setresultCount(plpPageAtionsResult.payload.data.length)
 			setloadStatus(true);
 			setNotFound(false);
 		}
@@ -322,6 +260,7 @@ const ListView = (props) => {
 			{
 				setTotalList(0);
 			}
+			
 		}
 		else if(plpPageAtionsResult.statuscode === 100)
 		{
@@ -332,7 +271,6 @@ const ListView = (props) => {
 				setTotalList(0);
 			}
 		}
-
 	}, [plpPageAtionsResult]);
 	// if(plpPageAtionsResult.payload.n_total)
 	// {
@@ -539,43 +477,29 @@ const ListView = (props) => {
 							<div className="list-view-tile-1">
 								<div className="list-view-tile-imgsec-1">
 									<Link to={`/pdp/${item.c_item_code}/${convertToSlug(item.c_item_name)}`}>
-										{item.c_item_name ? (
-											<img
-												src={capsules}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={oral_sus}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={injectable}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={tablet}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={drops}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : (
-											<img
-												src={tablet}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										)}
+										{   item.images.length>0 ?    (
+													
+													item.images[0].c_item_image === "" ? (
+														<img width="150px" height="100px" src={dressicon} alt="ProductImg" />
+													) : (
+														<img
+															src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
+															// src={tablet}	
+															width="150px"
+															height="100px"
+															alt={item.c_item_name}
+															onError={(e) => {
+																e.target.src = dressicon;
+															}}
+														/>
+													)
+												):(
+													<img width="150px" height="100px" src={dressicon} alt="ProductImg" />
+												)
+
+												
+												
+												}
 									</Link>
 								</div>
 								<div className="list-view-tile-details-1">
@@ -593,13 +517,13 @@ const ListView = (props) => {
 
 											<h4 className="medicine-title-1">{item.c_item_name}</h4>
 											<h5 className="medicine-packsize-1">
-												Pack Size: {item.c_item_pack_size}
+												Brand: {item.brand[0].c_brand_name}
 											</h5>
 											<h5 className="medicine-mrp-1">
-												MRP &#8377; {item.n_max_mrp}
+												MRP &#8377; {item.variations[0].n_item_offer_price}
 											</h5>
 											<h5 className="medicine-contains-1">
-												Contains <span>{item.c_contains}</span>
+												Category <span> {item.category[0].c_category_name}</span>
 											</h5>
 										</Link>
 									</div>
@@ -619,22 +543,22 @@ const ListView = (props) => {
 														src={shortbook_colorIcon}
 														alt="addtoshortbook-icon-1"
 														className="addtoshortbook-icon"
-														onClick={handleClickShortBookRemoved(
-															item.c_item_name,
-															item.c_item_code,
-															index
-														)}
+														// onClick={handleClickShortBookRemoved(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
 													/>
 												) : (
 													<img
 														src={shortbook_icon}
 														alt="addtoshortbook-icon-1"
 														className="addtoshortbook-icon"
-														onClick={handleClickShortBookAdded(
-															item.c_item_name,
-															item.c_item_code,
-															index
-														)}
+														// onClick={handleClickShortBookAdded(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
 													/>
 												)}
 											</Button>
@@ -654,22 +578,22 @@ const ListView = (props) => {
 														src={wishlist_colorIcon}
 														alt="wishListImg-1"
 														className="wishList-icon"
-														onClick={handleClickWatchListRemoved(
-															item.c_item_name,
-															item.c_item_code,
-															index
-														)}
+														// onClick={handleClickWatchListRemoved(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
 													/>
 												) : (
 													<img
 														src={wishlist}
 														alt="wishListImg-1"
 														className="wishList-icon"
-														onClick={handleClickWatchListAdded(
-															item.c_item_name,
-															item.c_item_code,
-															index
-														)}
+														// onClick={handleClickWatchListAdded(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
 													/>
 												)}
 											</Button>
@@ -688,11 +612,7 @@ const ListView = (props) => {
 						</div>
 					))
 					:
-					<Grid item xs={12}>
-						<div className="notFound">
-							<Alert severity="error"> <span className="font-weight-bold">Oops..!!!</span> Products not found.</Alert>
-						</div>
-					</Grid>
+					""
 				}
 			</div>
 			{

@@ -128,20 +128,26 @@ const BoxView = (props) => {
 		setPage(0)
 		setArrayRes([])
 		setTotalList(0);
-		plpPageAtionsResult.payload.j_list=[]
+		plpPageAtionsResult.payload.data=[]
 		let url_string = window.location;
 		let url = new URL(url_string);
 
 		if (match.params.type == "best-selling") {
-			setPageNav("Top Most Ordered Products");
-			setTitle("Top Most Ordered Products");
-			urlPath = "/c2/lc/ms/mst/item/top";
+			setPageNav("Best Selling");
+			setTitle("Best Selling");
+			urlPath = "/api/v1/items/bestsellingitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
 			setPageNav("New Launches");
-			setTitle("NewLaunches");
-			urlPath = "/c2/lc/ms/mst/item/new";
+			setTitle("New Launches");
+			urlPath = "/api/v1/items/newitems";
+			indexValue = url.searchParams.get("index");
+		}
+		else if (match.params.type == "all") {
+			setPageNav("All");
+			setTitle("All");
+			urlPath = "/api/v1/items/allitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "search") {
@@ -186,15 +192,21 @@ const BoxView = (props) => {
 		let url_string = window.location;
 		let url = new URL(url_string);
 		if (match.params.type == "best-selling") {
-			setPageNav("Top Most Ordered Products");
-			setTitle("Top Most Ordered Products");
-			urlPath = "/c2/lc/ms/mst/item/top";
+			setPageNav("Best Selling");
+			setTitle("Best Selling");
+			urlPath = "/api/v1/items/bestsellingitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
 			setPageNav("New Launches");
-			setTitle("NewLaunches");
-			urlPath = "/c2/lc/ms/mst/item/new";
+			setTitle("New Launches");
+			urlPath = "/api/v1/items/newitems";
+			indexValue = url.searchParams.get("index");
+		}
+		else if (match.params.type == "all") {
+			setPageNav("All");
+			setTitle("All");
+			urlPath = "/api/v1/items/allitems";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "search") {
@@ -242,8 +254,8 @@ const BoxView = (props) => {
 			}
 			
 			setArrayRes([...arrayRes, ...plpPageAtionsResult.payload.data]);
-			setTotalList(plpPageAtionsResult.payload.n_total);
-			setPage(plpPageAtionsResult.payload.n_next_page);
+			setTotalList(plpPageAtionsResult.payload.total);
+			setPage(plpPageAtionsResult.payload.offset);
 			setresultCount(plpPageAtionsResult.payload.data.length)
 			setloadStatus(true);
 			setNotFound(false);
@@ -522,19 +534,19 @@ const BoxView = (props) => {
 												{   item.images.length>0 ?    (
 													
 													item.images[0].c_item_image === "" ? (
-														<img src={tablet} alt="ProductImg" />
+														<img src={dressicon} alt="ProductImg" />
 													) : (
 														<img
-															// src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
-															src={tablet}	
+															src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
+															// src={tablet}	
 															alt={item.c_item_name}
 															onError={(e) => {
-																e.target.src = tablet;
+																e.target.src = dressicon;
 															}}
 														/>
 													)
 												):(
-													<img src={tablet} alt="ProductImg" />
+													<img src={dressicon} alt="ProductImg" />
 												)
 
 												

@@ -42,11 +42,11 @@ export const GetPlpPageActions = (inputs) => async (dispatch) => {
       }
         if(inputs.type == 'best-selling')
         {
-            body['c_pincode']=localStorage.getItem(Constants.PIN_CODE);
+            body['c_process']=inputs.c_process;
         }
         else if(inputs.type == 'new')
         {
-            body['c_pincode']=localStorage.getItem(Constants.PIN_CODE);
+            body['c_process']=inputs.c_process;
         }
         else if(inputs.type == 'search')
         {
@@ -55,6 +55,10 @@ export const GetPlpPageActions = (inputs) => async (dispatch) => {
         else if(inputs.type == 'category')
         {
             body['c_category_code']=inputs.c_code;
+            body['c_process']=inputs.c_process;
+        }
+        else if(inputs.type == 'all')
+        {
             body['c_process']=inputs.c_process;
         }
        await axios.post(`${ENV.ADMIN_BASE_URL}${inputs.page_path}`,body)

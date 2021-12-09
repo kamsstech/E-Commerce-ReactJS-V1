@@ -112,7 +112,7 @@ const PlpPage = (props) => {
 	const handleViewToggle = () => {
 		setViewToggle(!viewToggle);
 		setPage(0)
-		plpPageAtionsResult.payload.j_list=[]
+		plpPageAtionsResult.payload.data=[]
 		setArrayRes([])
 	};
 	const [open, setOpen] = useState(false);

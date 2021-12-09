@@ -114,7 +114,7 @@ const CategoryMenuLists = (props) => {
                 ))}
                 
                 {/* <Link to="/home"> */}
-                <Link to={`/plp/category?index=&q=&n=`}>
+                <Link to={`/plp/all?index=0`}>
                   <MenuItem  onClick={handleCloseMenu}>
                     <span>All Products</span>
                   </MenuItem>

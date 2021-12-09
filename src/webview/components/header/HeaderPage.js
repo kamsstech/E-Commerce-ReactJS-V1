@@ -111,6 +111,10 @@ export default function HeaderPage(props) {
 		{
 			history.push("/about-us");
 		}
+		else if(e == "Shop")
+		{
+			history.push("/plp/all?index=0");
+		}
 		else if(e == "Contact")
 		{
 			history.push("/contact-us");
@@ -647,7 +651,7 @@ export default function HeaderPage(props) {
 													variant="contained"
 													color="primary"
 													className="header-quick-link mr-r-32"
-													onClick={() => handleComingSoonPage("Dashboard")}
+													onClick={() => handleComingSoonPage("Shop")}
 												>
 													Shop
 												</Button>
@@ -662,11 +666,12 @@ export default function HeaderPage(props) {
 											</div>
 											<div>
 												
-												<Link to="/order-to-seller">
+												<Link to="">
 													<Button
 														variant="contained"
 														color="primary"
 														className="stockist animate"
+														onClick={() => handleComingSoonPage("Deal Of Day")}
 													>
 														{/*<img src={Package} alt="Package" />*/}
 														Deal Of Day
