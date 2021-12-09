@@ -70,7 +70,7 @@ const FilterMedicine = () => {
 
                 <div className="filter-side-tab">
                     <ListItem onClick={handleClickManufactures} className="filter-list-item-padding">
-                        <ListItemText primary="MANUFACTURERS" className="filter-side-tab-item" />
+                        <ListItemText primary="Category" className="filter-side-tab-item" />
                         {openManufacturers ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> :  <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
                     </ListItem>
                     <Collapse in={openManufacturers} timeout="auto" unmountOnExit>
@@ -203,76 +203,6 @@ const FilterMedicine = () => {
                                             className="adduser-checkbox-icon checkbox-listItem"
                                         />
                                         <ListItemText primary="Medomol" className="filter-manufacturers-search-input" />
-                                    </div>
-                                </div>
-                            </ListItem>
-                        </List>
-                    </Collapse>
-                </div>
-
-                <div className="filter-side-tab">
-                    <ListItem onClick={handleClickSellers} className="filter-list-item-padding" >
-                        <ListItemText primary="SELLERS" className="filter-side-tab-item" />
-                        {openSellers ? <img src={downArrow} alt="fliter-mfac" className="downarrow-icon" /> : <img src={BackArrow} alt="fliter-mfac" className="backarrow-icon" />}
-                    </ListItem>
-                    <Collapse in={openSellers} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <TextField
-                                error={false}
-                                // value="Search products here"
-                                // onChange={e => handleSearch(e)}
-                                id="search"
-                                name="search"
-                                // margin="normal"
-                                variant="outlined"
-                                placeholder=" Search for Sellers Here"
-                                className="auth-input filter-manufacturers-search-input"
-                            />
-                            <ListItem className={classes.nested} >
-                            <div className="checkbox-textField-main">
-                                    <div className=" checkbox-textField">
-                                        <Checkbox
-                                            icon={<CheckBoxOutlineBlankIcon  />}
-                                            checkedIcon={<CheckBoxIcon  />}
-                                            // checked={rights.n_view_transaction === "1" ? true : false}
-                                            // onChange={handleCheckbox("n_view_transaction", index)}
-                                            color="primary"
-                                            className="adduser-checkbox-icon checkbox-listItem"
-                                        />
-                                        <ListItemText primary="Ganesh Pharma" className="filter-manufacturers-search-input" />
-                                    </div>
-                                    <div className=" checkbox-textField">
-                                        <Checkbox
-                                            icon={<CheckBoxOutlineBlankIcon  />}
-                                            checkedIcon={<CheckBoxIcon  />}
-                                            // checked={rights.n_view_transaction === "1" ? true : false}
-                                            // onChange={handleCheckbox("n_view_transaction", index)}
-                                            color="primary"
-                                            className="adduser-checkbox-icon checkbox-listItem"
-                                        />
-                                        <ListItemText primary="Karnataka pharma distr..." className="filter-manufacturers-search-input" />
-                                    </div>
-                                    <div className=" checkbox-textField">
-                                        <Checkbox
-                                            icon={<CheckBoxOutlineBlankIcon  />}
-                                            checkedIcon={<CheckBoxIcon  />}
-                                            // checked={rights.n_view_transaction === "1" ? true : false}
-                                            // onChange={handleCheckbox("n_view_transaction", index)}
-                                            color="primary"
-                                            className="adduser-checkbox-icon checkbox-listItem"
-                                        />
-                                        <ListItemText primary="Vardhman Pharma Distr..." className="filter-manufacturers-search-input" />
-                                    </div>
-                                    <div className=" checkbox-textField">
-                                        <Checkbox
-                                            icon={<CheckBoxOutlineBlankIcon  />}
-                                            checkedIcon={<CheckBoxIcon  />}
-                                            // checked={rights.n_view_transaction === "1" ? true : false}
-                                            // onChange={handleCheckbox("n_view_transaction", index)}
-                                            color="primary"
-                                            className="adduser-checkbox-icon checkbox-listItem"
-                                        />
-                                        <ListItemText primary="Gurukrupa Pharma Distr..." className="filter-manufacturers-search-input" />
                                     </div>
                                 </div>
                             </ListItem>
