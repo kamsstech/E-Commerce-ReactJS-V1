@@ -106,7 +106,7 @@ export default function GeneralTab() {
 					<Typography className={classes.heading}>Can I see full details and Description of the product?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography><b>Yes</b>, the product details such as Product name, Product Image, MRP, PTR, Schemes, GST detail, HSN code, Molecules and Packaging details are displayed in the Live Order.</Typography>
+					<Typography><b>Yes</b>, the product details such as Product name, Product Image, MRP, PTR, Schemes, GST detail, HSN code, Molecules and Packaging details are displayed in the KAMSS Tech Admin.</Typography>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
@@ -118,7 +118,7 @@ export default function GeneralTab() {
 					<Typography className={classes.heading}>What products can I sell on LiveOrder?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography>The product category such as Generic medicines, Ayurvedic medicines, FMCG and OTC products can be sold in Live Order.</Typography>
+					<Typography>The product category such as Generic medicines, Ayurvedic medicines, FMCG and OTC products can be sold in KAMSS Tech Admin.</Typography>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
@@ -127,10 +127,10 @@ export default function GeneralTab() {
 					aria-controls="panel8bh-content"
 					id="panel8bh-header"
 				>
-					<Typography className={classes.heading}>I don't have a website, can I still sell on Live Order?</Typography>
+					<Typography className={classes.heading}>I don't have a website, can I still sell on KAMSS Tech Admin?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography><b>Yes</b>, the seller can register on the platform and can sell the products in Live Order.</Typography>
+					<Typography><b>Yes</b>, the seller can register on the platform and can sell the products in KAMSS Tech Admin.</Typography>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion expanded={expanded === 'panel9'} onChange={handleChange('panel9')}>
@@ -139,10 +139,10 @@ export default function GeneralTab() {
 					aria-controls="panel9bh-content"
 					id="panel9bh-header"
 				>
-					<Typography className={classes.heading}>How do I list my products on Live Order?</Typography>
+					<Typography className={classes.heading}>How do I list my products on KAMSS Tech Admin?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography>The Seller can create the Items in the Seller software and the same shall be updated in the Live Order.</Typography>
+					<Typography>The Seller can create the Items in the Seller software and the same shall be updated in the KAMSS Tech Admin.</Typography>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion expanded={expanded === 'panel10'} onChange={handleChange('panel10')}>
@@ -163,7 +163,7 @@ export default function GeneralTab() {
 					aria-controls="panel11bh-content"
 					id="panel11bh-header"
 				>
-					<Typography className={classes.heading}>How can i grow my Business in Live Order?</Typography>
+					<Typography className={classes.heading}>How can i grow my Business in KAMSS Tech Admin?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>Seller can opt this platform for an hassle-free interaction with the Buyers in delivering their orders by reducing the call center time. This application is user friendly with multiple features, enables the buyers to use in a much faster and reliable way. Due to which the sellers get many orders and hence the Business grows eventually.</Typography>

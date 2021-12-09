@@ -221,7 +221,7 @@ const ProfilePage = (props) => {
               <ListItemText primary={
                   <div>Payments
                       <ul className="mob-profile-links">
-                          <li><Link to="/profile-info">Live Order Wallet</Link></li>
+                          <li><Link to="/profile-info">KAMSS Tech Admin Wallet</Link></li>
                       </ul>
                   </div>
               } />

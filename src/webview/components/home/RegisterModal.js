@@ -49,7 +49,7 @@ const RegisterModal = (props) => {
                 </div>
                 <div className="wantToSellModalSec-right">
                     <div className="want-to-sell-form">
-                        <h3 className="auth-title">Register With 'Live Order'</h3>
+                        <h3 className="auth-title">Register With 'KAMSS Tech Admin'</h3>
                         <h5 className="modal-auth-subtitle">Dear Distributor Please Enter your Firm Name below.</h5>
                         {/* <p className="login-error-msg">svf</p> */}
                         <form>

@@ -38,16 +38,16 @@ const ContactUsContent = () => {
 					>
 						2/409, P.N Road, New Bustand Knit City, 
 						Tirupur -641603
-						Landmark : New Bustand <br/>
+						<br/>Landmark : New Bustand <br/>
 					</p>
 
 					<div className="contact-mobile mr-t-12">
-						<p className="terms-content-paragraph d-flex">
-							<img className="mr-r-8" src={Phone} alt="mobile-phone" /> 9629884897
+						<p className="terms-content-paragraph">
+							<img className="mr-r-8" src={Phone} alt="mobile-phone" /> +91 9629884897
 						</p>
 					</div>
 					<div className="contact-email mr-t-12">
-						<p className="terms-content-paragraph d-flex">
+						<p className="terms-content-paragraph">
 							<img className="mr-r-8" src={Email} alt="Email" /> info@jersey.com
 						</p>
 					</div>

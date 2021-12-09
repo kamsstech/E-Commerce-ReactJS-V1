@@ -131,7 +131,7 @@ const HeroSection = (props) => {
             data-aos-once="true"
             data-aos-delay="1750"
           >
-            “Live Order” Pharma Eco-System Makes{" "}
+            “KAMSS Tech Admin” Pharma Eco-System Makes{" "}
             <br className="d-none d-md-block" />
             your Business Future-Ready
           </h5>

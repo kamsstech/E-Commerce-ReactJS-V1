@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import smartphone from "../../../assets/images/smartphone.svg";
+import React, { useState, useEffect } from "react";
+import Email from "../../../assets/images/email.svg";
 import password from "../../../assets/images/password.svg";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -22,6 +22,8 @@ const LoginForm = (props) => {
 		errors,
 		errorMsg,
 		loading,
+		loginResult,
+		profileDetailsResult
 	} = props;
 	const [values, setValues] = React.useState({
 		showPassword: false,
@@ -35,44 +37,50 @@ const LoginForm = (props) => {
 	const handlePassword = () => {
 		setShowPassword(!showPassword);
 	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
+	// useEffect(() => {
+	// 	console.log(profileDetailsResult)
+    // }, [profileDetailsResult]);
 	return (
 		<div className="auth-form-space">
 			<div className="auth-form-header">
-				<h3 className="auth-title">Welcome To 'Live Order'</h3>
+				<h3 className="auth-title">Welcome To 'KAMSS Tech Admin'</h3>
 				<h5 className="auth-subtitle">
-					India's Fastest Growing B2B Pharma 'Eco System'
+					{/*India's Fastest Growing B2B Pharma 'Eco System'*/}
 				</h5>
 			</div>
 			<p className="login-error-msg">{errorMsg}</p>
 			<form onSubmit={(e) => login(e)}>
+				{/* <form onSubmit={(e) => login(e)}> */}
 				<TextField
-					// autoFocus={false}
-					error={errors.username}
-					autoComplete="off"
-					name="username"
-					// autoFocus="off"
-
-					margin="normal"
-					variant="outlined"
-					placeholder="Mobile Number"
-					className="auth-input"
-					value={inputs.username}
+					name="c_email"
+					value={inputs.c_email}
 					onChange={(e) => handleChange(e)}
 					onFocus={(e) => handleFocus(e)}
 					onBlur={(e) => handleBlur(e)}
-					helperText={errors.username && "Not a valid number"}
-					type="number"
+					error={errors.c_email}
+					onBlur={e => handleBlur(e)}
+					helperText={errors.c_email && "Not a valid E-mail"}
+					autoComplete="new-password"
+					margin="normal"
+					variant="outlined"
+					placeholder="E-mail *"
+					className="auth-input mob-input"
 					InputProps={{
 						startAdornment: (
 							<InputAdornment position="start">
-								<img src={smartphone} alt="smartphone" />
+								<img src={Email} alt="Email" />
 							</InputAdornment>
-						),
+						)
 					}}
 				/>
 				<TextField
 					error={errors.password}
-					helperText="Password should contain 4 - 16 characters & should contain alphanumeric and special characters"
+					// helperText="Password should contain 4 - 16 characters & should contain alphanumeric and special characters"
+					helperText="Please enter valid username and password"
 					autoComplete="off"
 					name="password"
 					margin="normal"

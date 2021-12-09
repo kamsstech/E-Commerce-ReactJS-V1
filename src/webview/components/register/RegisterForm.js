@@ -28,7 +28,7 @@ const RegisterForm = (props) => {
 	return (
 		<div className="auth-form-space">
 			<div className="auth-form-header">
-			<h3 className="auth-title">Register With 'Live Order'</h3>
+			<h3 className="auth-title">Register With 'KAMSS Tech Admin'</h3>
 		<h5 className="auth-subtitle">{inputs.c_buyer === "Y" ? "Dear Buyer Please Enter your details below." : "Dear Seller Please Enter your details below."}</h5>
 			
 			</div>

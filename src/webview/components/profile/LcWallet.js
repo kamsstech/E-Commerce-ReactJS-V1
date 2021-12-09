@@ -19,7 +19,7 @@ const LcWallet = () => {
 									<img src={PhonePe} alt="phonepe" />
 
 									<div className="payment-desc">
-										<span className="name">Live Order Credit</span>
+										<span className="name">KAMSS Tech Admin Credit</span>
 										<span className="subtitle">Pay with your own wallet</span>
 										<span className="payment-sec-btn lc-wallet">
 											Balance ₹ 900.00
@@ -32,7 +32,7 @@ const LcWallet = () => {
 									<img src={GooglePay} alt="phonepe" />
 
 									<div className="payment-desc">
-										<span className="name">Live Order Credit</span>
+										<span className="name">KAMSS Tech Admin Credit</span>
 										<span className="subtitle">Pay with your own wallet</span>
 										<span className="payment-sec-btn lc-wallet">
 											Balance ₹ 500.00

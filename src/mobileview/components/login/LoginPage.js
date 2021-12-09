@@ -276,7 +276,7 @@ const LoginPage = (props) => {
       {/* {toHome ? <Redirect to="/home" /> : null} */}
       <div className="mob-auth-container">
         <h2 className="mob-title">Log in</h2>
-        <h3 className="mob-auth-title">Welcome To 'Live Order'</h3>
+        <h3 className="mob-auth-title">Welcome To 'KAMSS Tech Admin'</h3>
         <h5 className="mob-auth-subtitle">
           India's Fastest B2B Pharma 'Eco System'
         </h5>

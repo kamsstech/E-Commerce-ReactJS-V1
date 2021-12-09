@@ -220,7 +220,7 @@ function FooterPage(props) {
 
 						<div className="footer-copyright">
 							<p className="pre-terms-text">
-								Copyright ©️ 2021. Ltd. All rights reserved.
+								Copyright ©️ 2021. Jerseye. All rights reserved.
 							</p>
 						</div>
 					</Grid>

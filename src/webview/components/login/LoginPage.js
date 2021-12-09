@@ -30,12 +30,12 @@ const LoginPage = (props) => {
 	}, [history.location.pathname]);
 
 	const [inputs, setInputs] = useState({
-		username: "",
+		c_email: "",
 		password: "",
 	});
 
 	const [errors, setErrors] = useState({
-		username: false,
+		c_email: false,
 		password: false,
 	});
 
@@ -60,27 +60,16 @@ const LoginPage = (props) => {
 
 		setErrorMsg("");
 		setErrors({ ...errors, [name]: false });
-
-		if (name === "username") {
-			if (value.length > 10) {
-				value = value.slice(0, 10);
-			} else {
-			 
-				if(value.length === 10){
-					const body={
-						c_mobile_no: value
-					}
-					validateREGISTER(body)
-				}
-				setInputs({ ...inputs, [name]: value });
-			}
-		} else {
+		if (name === "password") {
 			if (value.length > 16) {
 				value = value.slice(0, 16);
 			} else {
 				setInputs({ ...inputs, [name]: value });
 			}
+		}else{
+			setInputs({ ...inputs, [name]: value });
 		}
+
 	};
 
 	const handleFocus = (e) => {
@@ -90,24 +79,26 @@ const LoginPage = (props) => {
 	const handleBlur = (e) => {
 		let { name, value } = e.target;
 
-		if (name === "username") {
-			if (value.length <= 10) {
-				if (!/^[6-9]\d{9}$/.test(value)) {
-					setErrors({ ...errors, [name]: true });
-				}
-				// setErrors({ ...errors, [name]: true });
+		if(name === "c_email"){
+			if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))){
+			  setErrors({ ...errors, [name]: true });
 			}
-		} else if (name === "password") {
-			if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{4,16}$/.test(value)) {
+		}else if (name === "password"){
+			if (value.length === 0){
 				setErrors({ ...errors, [name]: true });
 			}
 		}
+		// else if (name === "password") {
+		// 	if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{4,16}$/.test(value)) {
+		// 		setErrors({ ...errors, [name]: true });
+		// 	}
+		// }
 	};
 
 	const login = (event) => {
 		event.preventDefault();
-		if (inputs.username === "" || errors.username === true) {
-			setErrors({ ...errors, username: true });
+		if (inputs.c_email === "" || errors.c_email === true) {
+			setErrors({ ...errors, c_email: true });
 		} else if (inputs.password === "" || errors.password === true) {
 			setErrors({ ...errors, password: true });
 		} else {
@@ -120,12 +111,12 @@ const LoginPage = (props) => {
 		setAction(event)
 		setErrors({ ...errors, password: false });
 		setInputs({ ...inputs, password: "" });
-		if (inputs.username === "") {
-			setErrors({ ...errors, username: true });
+		if (inputs.c_email === "") {
+			setErrors({ ...errors, c_email: true });
 		} else {
-			let user_name = inputs.username;
+			let user_name = inputs.c_email;
 			const body = {
-				c_username: user_name,
+				c_email: user_name,
 				page: "login",
 			};
 
@@ -134,7 +125,7 @@ const LoginPage = (props) => {
 					setErrors({ ...errors, username: true });
 				} else {
 					const body = {
-						c_mobile_no: inputs.username,
+						c_mobile_no: inputs.c_email,
 					};
 					validateREGISTER(body);
 					// props.SendOTP(body);
@@ -177,14 +168,14 @@ const LoginPage = (props) => {
 	useEffect(() => {
 	    if (validateREGISTERResult.statuscode === 2) {
 	        const body = {
-	            c_username: inputs.username,
+	            c_email: inputs.c_email,
 	            page: "login",
 	        };
 	        props.SendOTP(body);
-	        if (inputs.username !== "") {
+	        if (inputs.c_email !== "") {
 	            if (validateREGISTERResult.message === "Already registered!") {
 	                if (action === true) {
-	                    history.push(`/forgot-password/${inputs.username}`);
+	                    history.push(`/forgot-password/${inputs.c_email}`);
 	                }
 	            } else if (validateREGISTERResult.message === "Mobile Number exist in LC1") {
 
@@ -206,84 +197,18 @@ const LoginPage = (props) => {
 	}, [validateREGISTERResult]);
 
 	useEffect(() => {
-	    if (inputs.username !== "") {
-	        // console.log(loginResult.message,"loginResult Message")
-
+	    if (inputs.c_email !== "") {
 	        if (props.loginResult.error !== "") {
 	            setErrorMsg(props.loginResult.error);
-	            setOpen(true);
+	            // setOpen(true);
 	            setStatus(loginResult.statuscode);
 	            setErrorMsgPop(loginResult.error);
 	        }
-
-
-
-	        // else if (
-	        //   loginResult.message === "Logged Successfully!" &&
-	        //   loginResult.message !== undefined
-	        // ) {
-	        //   history.push("/home");
-	        // }
-
-
-
-
-	        // active status
-	        else if (
-	            loginResult.payload !== undefined &&
-	            loginResult.payload.c_lc_user_active_status === "A"
-	        ) {
-
-
-	            if (loginResult.payload.c_lc_user_status === "0") {
-	                if (loginResult.payload.c_update_status === "0") {
-	                    if (loginResult.payload.cType === "B") {
-	                        history.push("/register-details/buyer");
-	                    } else if (loginResult.payload.cType === "S") {
-	                        history.push("/register-details/seller");
-	                    }
-	                } else if (loginResult.payload.c_update_status === "1") {
-	                    history.push("/home");
-	                }
-
-	            } else if (loginResult.payload.c_lc_user_status === "1") {
-	                if (loginResult.payload.c_update_status === "0") {
-	                    // history.push("/combine-store-name");  
-	                    if (loginResult.payload.cType === "B") {
-	                        history.push("/register-details/buyer");
-	                    } else if (loginResult.payload.cType === "S") {
-	                        history.push("/register-details/seller");
-	                    }
-	                } else if (loginResult.payload.c_update_status === "1") {
-	                    // history.push("/home");
-	                    history.push("/combine-store-name");
-	                }
-	            }
-	        }
-
-
-
-
-
-	        //  Blocked Status
-	        else if (
-	            loginResult.payload !== undefined &&
-	            loginResult.payload.c_lc_user_active_status === "P"
-	        ) {
-	            if (loginResult.payload.c_lc_user_status === "0") {
-	                if (loginResult.payload.c_update_status === "0") {} else if (loginResult.payload.c_update_status === "1") {}
-	            } else if (loginResult.payload.c_lc_user_status === "1") {
-	                if (loginResult.payload.c_update_status === "0") {
-	                    if (loginResult.payload.cType === "B") {
-	                        history.push("/register-details/buyer");
-	                    } else if (loginResult.payload.cType === "S") {
-	                        history.push("/register-details/seller");
-	                    }
-	                } else if (loginResult.payload.c_update_status === "1") {
-	                    history.push("/home");
-	                }
-	            }
-	        }
+			else if(loginResult.loading != true){
+				if (loginResult.payload.status === 1){
+					history.push("/site-control/new-orders");
+				}
+			}
 	    }
 	}, [loginResult]);
 
@@ -329,6 +254,8 @@ const LoginPage = (props) => {
 							errors={errors}
 							errorMsg={errorMsg}
 							loading={props.loginResult.loading}
+							loginResult={loginResult}
+							profileDetailsResult={profileDetailsResult}
 						/>
 					</div>
 				</div>

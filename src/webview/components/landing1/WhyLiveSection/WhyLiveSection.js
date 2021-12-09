@@ -58,7 +58,7 @@ class WhyLiveSection extends Component {
 			<div className="WhyLiveSection MainContainer" id="whyLive">
 
 				 {/*<h2 className="h2 mb-4" data-aos-once="true" data-aos="fade-up">
-					Why Live Order ?
+					Why KAMSS Tech Admin ?
 				</h2>
 				<h4
 					className="h4 grey-subtitle"
@@ -79,7 +79,7 @@ class WhyLiveSection extends Component {
 								data-aos-delay="250"
 								className="mr-t-0 h3 mb-3"
 							>
-								Why Live Order ?
+								Why KAMSS Tech Admin ?
 							</h3>
 							<p
 								data-aos="fade-up"

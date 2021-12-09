@@ -10,7 +10,7 @@
 
 .web-header .MuiAppBar-colorPrimary {
     box-shadow: none;
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #ee3c6e 0%, #f1648c 100%);
 }
 
 .website-logo {
@@ -388,7 +388,7 @@
 
 .web-header-allcat .MuiListItem-button:hover {
     border-radius: 0;
-    color: #674cf3;
+    color: #f0537f;
     background-color: #fff !important;
 }
 .pd-tb-12 {

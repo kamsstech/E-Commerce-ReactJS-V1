@@ -27,5 +27,8 @@ export const Constants = {
     BILL_SELLER:"BILL_SELLER",
     BILL_SELLER_NAME:"BILL_SELLER_NAME",
     CHECK_STATUS:"CHECK_STATUS",
+
+    //site controle
+    USER_ID:"USER_ID",
 };
   

@@ -209,7 +209,7 @@ export default function HeaderPage(props) {
 
 	const signout = () => {
 		localStorage.clear();
-		history.push("/login");
+		history.push("/site-control/");
 		localStorage.setItem("SECOND_TIME", true);
 		// window.location.reload(false)
 		// window.location.href = window.location.href
@@ -515,6 +515,10 @@ export default function HeaderPage(props) {
 									
 									</div>
 									<div className="relative">
+
+									{
+												localStorage.getItem("USER_ID")===null ? 
+												"" :
 										<ListItem
 											// button
 											className="web-header-profile"
@@ -542,40 +546,41 @@ export default function HeaderPage(props) {
 												/>
 											)}
 											
-
-											<div className="web-profile-details">
-												<h4 className="web-profile-name">
-													<Tooltip
-														className="toCatp"
-														title={inputs.c_name}
-														TransitionComponent={Zoom}
-													>
-														<>
-															<div>
-																{/* {inputs.c_name} */}
-																<div className="header_profile">
-																	{/* {localStorage.getItem(Constants.NAME)} */}
-
-																	{getProfileInfoResult.payload.c_name}
-									
+												<div className="web-profile-details">
+													<h4 className="web-profile-name">
+														<Tooltip
+															className="toCatp"
+															title={inputs.c_name}
+															TransitionComponent={Zoom}
+														>
+															<>
+																<div>
+																	{/* {inputs.c_name} */}
+																	<div className="header_profile">
+																		{/* {localStorage.getItem(Constants.NAME)} */}
+																		KAMSS 
+																		{/*{getProfileInfoResult.payload.c_name}*/}
+										
+																	</div>
 																</div>
-															</div>
-															<img src={DownArrowLine} alt="DownArrowLine" />{" "}
-														</>
-													</Tooltip>
-												</h4>
+																<img src={DownArrowLine} alt="DownArrowLine" />{" "}
+															</>
+														</Tooltip>
+													</h4>
 
-												
+													
 
-												<h5 className="web-profile-location">
-													{/* {localStorage.getItem(Constants.CITY)} */}
-													<div>
-														{getProfileInfoResult.payload.c_city_name} (
-														{getProfileInfoResult.payload.c_area_name})
-													</div>
-												</h5>
-											</div>
+													<h5 className="web-profile-location">
+														{/* {localStorage.getItem(Constants.CITY)} */}
+														<div>
+															{/*KAMSS Admin*/}
+															{/*{getProfileInfoResult.payload.c_city_name} (
+															{getProfileInfoResult.payload.c_area_name})*/}
+														</div>
+													</h5>
+												</div>
 										</ListItem>
+									}
 										<Popper
 											open={open}
 											anchorEl={anchorRef.current}

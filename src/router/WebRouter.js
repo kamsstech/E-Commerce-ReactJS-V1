@@ -220,7 +220,7 @@ const AdminLayout = (props) => {
 							<Container fixed>
 								{/* Copyright ©️ 2018 C-Square Info Solutions Pvt. Ltd.. All rights
 								reserved. */}
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>
@@ -242,7 +242,7 @@ const AdminLayout = (props) => {
 							<Container fixed>
 								{/* Copyright ©️ 2018 C-Square Info Solutions Pvt. Ltd.. All rights
 								reserved. */}
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>
@@ -267,7 +267,7 @@ const AdminLayout = (props) => {
 							<Container fixed>
 								{/* Copyright ©️ 2018 C-Square Info Solutions Pvt. Ltd.. All rights
 								reserved. */}
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>
@@ -432,7 +432,7 @@ const MainLayout = (props) => {
 							<Container fixed>
 								{/* Copyright ©️ 2018 C-Square Info Solutions Pvt. Ltd.. All rights
 								reserved. */}
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>
@@ -458,7 +458,7 @@ const PlpLayout = (props) => {
 							<Container fixed>
 								{/* Copyright ©️ 2018 C-Square Info Solutions Pvt. Ltd.. All rights
 								reserved. */}
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>
@@ -482,7 +482,7 @@ const PageNotFoundLayout = (props) => {
 						<div className="web-bottom-height"></div>
 						<div className="termsAndCondi">
 							<Container fixed>
-								Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+								Copyright ©️ 2021 KAMSS Tech All rights reserved.
 							</Container>
 						</div>
 					</div>

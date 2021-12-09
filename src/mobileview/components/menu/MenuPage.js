@@ -70,7 +70,7 @@ const MenuPage = () => {
         <ListItemIcon>
           <img src={LiveorderGoldIcon} alt="LiveorderGoldIcon" />
         </ListItemIcon>
-        <ListItemText primary="Live Order Gold" />
+        <ListItemText primary="KAMSS Tech Admin Gold" />
       </ListItem>
       <div className="menu-divider-line"></div>
       <ListItem button>

@@ -85,7 +85,7 @@ const PaymentPage= (props) => {
 				</div>    
 				<div className="termsAndCondi positioninit">
 					<Container fixed>
-						Copyright ©️ 2021 C-Square Info Solutions Pvt. Ltd. All rights reserved.
+						Copyright ©️ 2021 KAMSS Tech All rights reserved.
 					</Container>
 				</div>
 			</div>

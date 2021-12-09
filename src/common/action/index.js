@@ -1,6 +1,3 @@
-//Login
-export * from "./login/loginAction";
-
 //Forgot password
 export * from "./forgotPass/sendOTPAction";
 export * from "./forgotPass/validateOTPAction";
@@ -185,6 +182,8 @@ export * from './payment/sellerWisePayPaginationAction'
 export * from './payment/sellerPayDetailsAction'
 export * from './payment/sellerPayOrderGenarateAction'
 
+//Login
+export * from "./login/loginAction";
 
 //Site Control
 //Banner

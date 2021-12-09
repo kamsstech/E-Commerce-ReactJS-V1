@@ -566,7 +566,7 @@ const ScheduleDemoForm = (props) => {
 						<h1 class="text-center">Successful!</h1>
 
 						<div className="demoresultpopup-titlesec text-center">
-							<p className="width-100">Thank you for expressing your interest in <strong>LIVE ORDER</strong><br/>Team C-Square will get in touch with you Shortly.</p>
+							<p className="width-100">Thank you for expressing your interest in <strong>KAMSS Tech Admin</strong><br/>Team C-Square will get in touch with you Shortly.</p>
 							{/*{
 								successMsg !== "" ? (
 									<p className="successMessage">{successMsg}</p>

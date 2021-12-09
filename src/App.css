@@ -1,8 +1,8 @@
 :root {
-    --purpleish-blue: #674cf3;
+    --purpleish-blue: #f0537f;
     --purple-blue: #6c19d8;
     --burple-two: #8039db;
-    --aquamarine: #00d3b4;
+    --aquamarine: #000;
     --marine-blue: #002f4f;
     --dark: #0d1321;
     --light-blue-grey: #c3cde4;
@@ -139,7 +139,7 @@ html, body {
     color: #343a40;
 }
 .alternate-filter-tab-list .MuiCheckbox-colorPrimary.Mui-checked{
-    color: #674cf3 ; 
+    color: #f0537f ; 
 }
 .width-100{
     width: 100% !important;
@@ -153,7 +153,7 @@ html, body {
     box-shadow: 0 2px 8px #29000016;
 }
 .MuiPaper-root.registrationSteps {
-    background-image: linear-gradient(to bottom, #674cf3, #8039db);
+    background-image: linear-gradient(to bottom, #f0537f, #8039db);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 3px;
 }
@@ -212,7 +212,7 @@ html, body {
     font-size: 1.16em;
     font-family: var(--font-quicksand);
     margin: 0 0 1em 0;
-    color: #674cf3;
+    color: #f0537f;
 }
 .registration-bothgt {
     height: 4em;
@@ -246,7 +246,7 @@ html, body {
     opacity: 0;
 }
 .registration-donebtn.MuiButton-contained {
-    background-image: linear-gradient(to bottom, #674cf3, #8039db);
+    background-image: linear-gradient(to bottom, #f0537f, #8039db);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     width: 100%;
@@ -439,7 +439,7 @@ html, body {
     font-weight: 600;
 }
 .coupon-show-text{
-    color: #674cf3;
+    color: #f0537f;
     font-family: var(--font-quicksand);
     font-size: 1em;
 }
@@ -590,7 +590,7 @@ html, body {
     border-bottom: 1px solid rgb(195 205 228);
 }
 .coupon-textfield .MuiInput-underline:after{
-    border-bottom: 1px solid #674cf3;
+    border-bottom: 1px solid #f0537f;
 }
 .coupon-textfield .MuiInputBase-input{
     font-size: 14px;
@@ -663,7 +663,7 @@ html, body {
 .mob-changePass-btn.MuiButton-outlined {
     font-size: 1.16em;
     border: 0;
-    background-color: #674cf3;
+    background-color: #f0537f;
     padding: 1em 2.5em;
     border-radius: 8px;
     line-height: 1.4;
@@ -677,7 +677,7 @@ html, body {
 .mob-changePass-btn.MuiButton-outlined:active,
 .mob-changePass-btn.MuiButton-outlined:focus {
     color: var(--white);
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .mb-12{
     margin-bottom: 12px;
@@ -726,7 +726,7 @@ html, body {
 }
 .MuiBottomNavigation-root.mob-footer-sec
     .MuiBottomNavigationAction-root.Mui-selected {
-    background-color: #674cf31a;
+    background-color: #f0537f1a;
 }
 .MuiBottomNavigation-root.mob-footer-sec .MuiBottomNavigationAction-wrapper {
     flex-direction: row;
@@ -734,7 +734,7 @@ html, body {
 .MuiBottomNavigation-root.mob-footer-sec .MuiBottomNavigationAction-label {
     font-size: 1.33em;
     font-family: "OpenSans-Bold";
-    color: #674cf3;
+    color: #f0537f;
 }
 .MuiBottomNavigation-root.mob-footer-sec
     .MuiBottomNavigationAction-label.MuiBottomNavigationAction-iconOnly {
@@ -758,7 +758,7 @@ html, body {
     background-color: transparent;
 }
 .mob-appbar {
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #6c19d8 100%);
     height: 7.91em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
@@ -820,7 +820,7 @@ html, body {
 }
 .mob-common-header {
     top: 0;
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #6c19d8 100%);
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     position: sticky !important;
@@ -865,7 +865,7 @@ html, body {
 }
 .mob-list-header-sec {
     top: 0;
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #6c19d8 100%);
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     position: sticky !important;
@@ -1285,8 +1285,8 @@ html, body {
     font-weight: lighter;
 }
 .mob-viewall-button.MuiFab-extended.MuiFab-sizeSmall {
-    border: 1px solid #674cf3;
-    color: #674cf3;
+    border: 1px solid #f0537f;
+    color: #f0537f;
     background-color: transparent;
     box-shadow: none;
     font-size: 10px;
@@ -1466,22 +1466,22 @@ html, body {
     transition: 0.3s all linear;
 }
 .MuiButton-root.bottom-mobile-btn.purple {
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .MuiButton-root.bottom-mobile-btn.green {
-    background-color: #00d3b4;
+    background-color: #000;
 }
 .MuiButton-root.bottom-mobile-btn.purple:hover,
 .MuiButton-root.bottom-mobile-btn.purple:focus,
 .MuiButton-root.bottom-mobile-btn.purple:active {
     opacity: 0.8;
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .MuiButton-root.bottom-mobile-btn.green:hover,
 .MuiButton-root.bottom-mobile-btn.green:focus,
 .MuiButton-root.bottom-mobile-btn.green:active {
     opacity: 0.8;
-    background-color: #00d3b4;
+    background-color: #000;
 }
 .mob-bottom-height {
     height: 2.66em;
@@ -1524,7 +1524,7 @@ html, body {
 .mob-home-sposore {
     font-size: 0.833em;
     font-family: var(--font-quicksand);
-    color: #674cf3;
+    color: #f0537f;
     margin-top: 0.4em;
     margin-bottom: 0;
 }
@@ -1554,7 +1554,7 @@ html, body {
 .mob-auth-subtitle {
     font-size: 14px;
     
-    color: #00d3b4;
+    color: #000;
     margin-top: 0;
     margin-bottom: 3.6em;
 }
@@ -1578,10 +1578,10 @@ html, body {
     font-size: 12px;
      color: var(--marine-blue);
     cursor: pointer;
-    color: #674cf3;
+    color: #f0537f;
 }
 .mob-theme-btn.MuiButton-containedPrimary {
-    background-image: linear-gradient(to bottom, #674cf3, #8039db);
+    background-image: linear-gradient(to bottom, #f0537f, #8039db);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     font-family: var(--font-quicksand);
@@ -1614,16 +1614,16 @@ html, body {
     padding: 0.75em 2.5em;
     border-radius: 20px;
     line-height: 1.4;
-    color: #00d3b4;
+    color: #000;
     font-family: var(--font-quicksand);
     transition: 0.2s all linear;
 }
 .mob-default-btn.MuiButton-outlined:hover,
 .mob-default-btn.MuiButton-outlined:active,
 .mob-default-btn.MuiButton-outlined:focus {
-    border-color: #674cf3;
+    border-color: #f0537f;
     color: var(--white);
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .orange-link {
     color: #ff7b20;
@@ -1759,7 +1759,7 @@ html, body {
     opacity: 1;
 }
 .on-boarding .slick-dots li.slick-active button:before {
-    color: #674cf3;
+    color: #f0537f;
     opacity: 1;
 }
 .on-boarding .slick-dots {
@@ -1807,7 +1807,7 @@ html, body {
     color: #d4d4d4;
 }
 .onboarding-steps .onboarding-bottombar-next {
-    color: #674cf3;
+    color: #f0537f;
 }
 .onboarding-steps .MuiMobileStepper-dot {
     background-color: #d4d4d4;
@@ -1815,7 +1815,7 @@ html, body {
     border-radius: 4px;
 }
 .onboarding-steps .MuiMobileStepper-dotActive {
-    background-color: #674cf3;
+    background-color: #f0537f;
     width: 16px;
 }
 .onboarding-sec {
@@ -1987,7 +1987,7 @@ html, body {
     text-transform: capitalize;
 }
 .mob-product-subtitle span {
-    color: #674cf3;
+    color: #f0537f;
 }
 .product-imgslider {
     margin-bottom: 0.7em;
@@ -2003,7 +2003,7 @@ html, body {
     font-size: 8px;
 }
 .product-imgslider .slick-dots li.slick-active button:before {
-    color: #674cf3;
+    color: #f0537f;
     opacity: 1;
 }
 .product-imgslider .slick-dots li {
@@ -2022,7 +2022,7 @@ html, body {
     font-weight: normal;
 }
 .mob-product-title .product-num {
-    color: #674cf3;
+    color: #f0537f;
     font-size: 0.833em;
 }
 .mob-product-title .product-direction-img {
@@ -2046,7 +2046,7 @@ html, body {
     top: .85em;
     left: -5px;
     background-color: transparent;
-    background-image: linear-gradient(to right, #674cf3, #674cf300);
+    background-image: linear-gradient(to right, #f0537f, #f0537f00);
     height: 11px;
     width: 100%;
     z-index: -1;
@@ -2255,13 +2255,13 @@ html, body {
     margin: 0;
 }
 .mob-profile-sel-count {
-    color: #674cf3;
+    color: #f0537f;
     font-family: var(--font-quicksand);
     font-size: 0.91em;
     margin: 0;
 }
 .mob-profile-sponsored {
-    color: #674cf3;
+    color: #f0537f;
     font-family: var(--font-quicksand);
     font-size: 0.91em;
     margin: 0.5em 0;
@@ -2412,7 +2412,7 @@ html, body {
 }
 .product-imgslider-dots .MuiMobileStepper-dotActive {
     width: 16px;
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .mob-demoform-drawer-title{
     font-size: 1.33em;
@@ -2462,7 +2462,7 @@ html, body {
     color: rgb(91 99 106); 
 }
 .mob-profile-info{
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #6c19d8 100%);
     padding: 3.58em 1em 1em 1em;
     display: flex;
     flex-direction: column;
@@ -2597,7 +2597,7 @@ html, body {
     width: 3.5em;
     /* height: 4em;
     width: 4em; */
-    border: solid 1px #674cf3;
+    border: solid 1px #f0537f;
     background-color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -2791,7 +2791,7 @@ html, body {
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
-    color: #674cf3;
+    color: #f0537f;
     font-size: 0.875em;
     font-family: "OpenSans-Semibold";
     letter-spacing: 0.55px;
@@ -2799,7 +2799,7 @@ html, body {
 
 /* registerdetails style */
 .registrationStepsBtn {
-    background-image: linear-gradient(to bottom, #674cf3, #8039db);
+    background-image: linear-gradient(to bottom, #f0537f, #8039db);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     font-family: var(--font-quicksand);
@@ -2825,7 +2825,7 @@ html, body {
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
-    color: #674cf3;
+    color: #f0537f;
     font-size: 0.875em;
     font-family: "OpenSans-Semibold";
     letter-spacing: 0.55px;
@@ -3214,7 +3214,7 @@ text-align: center;
 .try-popup-btn.MuiButton-containedPrimary{
     opacity: 0.95;
     border-radius: 5px;
-    background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%) !important;
+    background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%) !important;
     width: 192px !important;
     margin-top: 40px;
     margin-bottom: 15px;
@@ -3359,7 +3359,7 @@ text-transform: capitalize;
     height: 40px;
     opacity: 0.95;
     border-radius: 5px;
-    background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%);
     margin-top: 2em;
 }
 .pay-popup-btn.MuiButton-containedPrimary .MuiButton-label, .brchangeyes.MuiButton-containedPrimary .MuiButton-label, .partial-pay-popup-btn.MuiButton-containedPrimary .MuiButton-label{
@@ -3407,7 +3407,7 @@ margin-top:27px;
     margin-bottom: 16px;
 }
 .cart-purle-color{
-    color:#674cf3;
+    color:#f0537f;
 }
 .cart-black-color{
     color: var(--dark);
@@ -3462,7 +3462,7 @@ margin-top:27px;
     color: #ffbe0b;
 }
 .MuiButton-containedPrimary{
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .deliver-to-add-wrapper{
     padding: 26px 20px;
@@ -3802,7 +3802,7 @@ margin-right: 12px;
 }
 .deliverySlots-count{
 margin-left: 0.5em;
-color: #674cf3;
+color: #f0537f;
 font-family: var(--font-quicksand);
 }
 .choose-delivery-options{
@@ -3922,13 +3922,13 @@ font-size: 1em;
     width: 60% !important;
     padding-left: 10px;
     margin-left: 1em;
-    color: #674cf3;
+    color: #f0537f;
     background-color: white;
-    border: solid 1px #674cf3;
+    border: solid 1px #f0537f;
     font-size: 1em;
 }
 .payLater-modal-btn.MuiButton-containedPrimary {
-    /* background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%); */
+    /* background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%); */
     font-size: 1em;
     font-family: var(--font-quicksand);
     text-transform: capitalize;
@@ -3940,18 +3940,18 @@ font-size: 1em;
 .payLater-modal-btn.MuiButton-containedPrimary:hover,
 .payLater-modal-btn.MuiButton-containedPrimary:focus,
 .payLater-modal-btn.MuiButton-containedPrimary:active {
-    /* background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%); */
+    /* background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%); */
     /* background-image: linear-gradient(to right, #ec826d 0%, #f03919 100%) !important; */
     opacity: 0.8;
     box-shadow: none;
     background-color: rgba(103, 76, 243, 0.1);
 }
 .chooseDelivery-coupon .MuiInputBase-input{
-    color: #00d3b4;
+    color: #000;
 }
 
 .coupons-status{
-    color: #00d3b4;
+    color: #000;
     font-size: 12px;
 }
 .chooseDelivery-coupon .delivery-charge-text{
@@ -4086,7 +4086,7 @@ font-size: 1em;
     cursor: pointer;
 }
 .uploaded-imagename {
-    color: #674cf3;
+    color: #f0537f;
     font-size: 11px;
     font-family: var(--font-opensans);
     letter-spacing: 0.55px;
@@ -4104,7 +4104,7 @@ font-size: 1em;
 
 /* footer style for web */
 .footer {
-    background-color: #002f4f;
+    background-color: #000000ba;
 }
 
 .footer-list li a,
@@ -4119,7 +4119,7 @@ font-size: 1em;
     height: auto;
 }
 .footer-above-sec {
-    background-color: #00d3b4;
+    background-color: #000;
     padding: 3.25em 0;
 }
 .footer-above-sec-container {
@@ -4139,7 +4139,7 @@ font-size: 1em;
     text-transform: capitalize;
     padding: 0.4em 1em;
     border-radius: 29px;
-    color: #00d3b4;
+    color: #000;
     font-family: var(--font-quicksand);
     background-color: #fff;
     box-shadow: none;
@@ -4276,7 +4276,7 @@ border-color:var(--light-blue-grey);
 cursor: not-allowed;
 }
 .success-color{
-color: #00d3b4 !important; 
+color: #000 !important; 
 }
 .cha-pass-succ{
 margin-top: -10px;
@@ -4298,7 +4298,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 }
 .web-header .MuiAppBar-colorPrimary {
     box-shadow: none;
-    background-image: linear-gradient(to right, #674cf3 0%, #6c19d8 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #6c19d8 100%);
 }
 .web-header-icons.MuiIconButton-root {
     font-size: 1em;
@@ -4393,7 +4393,7 @@ color: rgba(0, 0, 0, 0.54) !important;
     text-transform: capitalize;
     padding: 8px 10px 8px 20px;
     border-radius: 29px;
-    background-color: #00d3b4;
+    background-color: #000;
     box-shadow: none;
     transition: 0.5s all linear;
     margin-left: 8px;
@@ -4412,7 +4412,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 .web-header-searchbtn.MuiButton-root:hover,
 .web-header-searchbtn.MuiButton-root:focus,
 .web-header-searchbtn.MuiButton-root:active {
-    background-color: #00d3b4;
+    background-color: #000;
     box-shadow: none;
     opacity: 0.8;
 }
@@ -4471,7 +4471,7 @@ color: rgba(0, 0, 0, 0.54) !important;
     transition: 0.2s all linear;
     border-radius: 8px;
     animation: shimmer 2s infinite linear;
-    background: linear-gradient(to right, #00d3b4 4%, #dbdbdb 25%, #00d3b4 36%);
+    background: linear-gradient(to right, #000 4%, #dbdbdb 25%, #000 36%);
     background-size: 1000px 100%;
 }
 @keyframes shimmer {
@@ -4485,7 +4485,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 .stockist.MuiButton-containedPrimary:hover,
 .stockist.MuiButton-containedPrimary:focus,
 .stockist.MuiButton-containedPrimary:active {
-    background-color: #00d3b4;
+    background-color: #000;
     opacity: 0.9;
     box-shadow: none;
 }
@@ -4570,7 +4570,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 .MuiListItem-root.Mui-selected:hover,
 .MuiListItem-button:hover {
     background-color: #c3cde41a !important;
-    color: #674cf3;
+    color: #f0537f;
     border-radius: 4px;
 }
 .web-header-allcat {
@@ -4645,7 +4645,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 }
 .web-header-allcat .MuiListItem-button:hover {
     border-radius: 0;
-    color: #674cf3;
+    color: #f0537f;
     background-color: #fff !important;
 }
 .relative {
@@ -4811,11 +4811,11 @@ color: rgba(0, 0, 0, 0.54) !important;
     height: .75em;
 }
 .MuiRadio-colorPrimary.Mui-checked{
-    color: #674cf3 !important;
+    color: #f0537f !important;
     opacity: 1 !important;
 }
 .MuiCheckbox-colorPrimary.Mui-checked{
-    color: #674cf3 !important;
+    color: #f0537f !important;
 }
 .change-branch-sec .sortby-filter.payment .MuiFormControlLabel-label{
     padding: 0;
@@ -4828,14 +4828,14 @@ color: rgba(0, 0, 0, 0.54) !important;
     text-transform: capitalize;
 }
 .change-branch-sec .sortby-filter.payment .highlight-branch .MuiFormControlLabel-label{
-    color: #674cf3;
+    color: #f0537f;
 }
 .change-branch-sec .MuiIconButton-root{
     padding: 7px;
 }
 .view-more-link{
     font-size: 12px;
-    color: #674cf3 !important;
+    color: #f0537f !important;
     font-family: var(--font-quicksand);
     padding-left: 2em;
 }
@@ -5256,7 +5256,7 @@ color: rgba(0, 0, 0, 0.54) !important;
     font-weight: 500;
 }
 .home-title-sectionbtn.MuiButton-containedPrimary {
-    background-color: #674cf3;
+    background-color: #f0537f;
     font-size: 0.8125em;
     font-family: var(--font-quicksand);
     text-transform: capitalize;
@@ -5267,7 +5267,7 @@ color: rgba(0, 0, 0, 0.54) !important;
 .home-title-sectionbtn.MuiButton-containedPrimary:hover,
 .home-title-sectionbtn.MuiButton-containedPrimary:focus,
 .home-title-sectionbtn.MuiButton-containedPrimary:active {
-    background-color: #674cf3;
+    background-color: #f0537f;
     opacity: 0.8;
     box-shadow: none;
 }
@@ -5650,7 +5650,7 @@ cursor: pointer;
     font-family: var(--font-quicksand);
 }
 .ordernow-modal-btn.MuiButton-containedPrimary {
-    background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%);
     font-size: 0.8125em;
     font-family: var(--font-quicksand);
     text-transform: capitalize;
@@ -5662,7 +5662,7 @@ cursor: pointer;
 .ordernow-modal-btn.MuiButton-containedPrimary:hover,
 .ordernow-modal-btn.MuiButton-containedPrimary:focus,
 .ordernow-modal-btn.MuiButton-containedPrimary:active {
-    background-image: linear-gradient(to right, #674cf3 0%, #8039db 100%);
+    background-image: linear-gradient(to right, #f0537f 0%, #8039db 100%);
     opacity: 0.8;
     box-shadow: none;
 }
@@ -5932,7 +5932,7 @@ cursor: pointer;
 .animate-shimmmer{
     transition: 0.2s all linear;
     animation: shimmer 2s infinite linear;
-    background: linear-gradient(to right, #00d3b4 4%, #dbdbdb 25%, #00d3b4 36%);
+    background: linear-gradient(to right, #000 4%, #dbdbdb 25%, #000 36%);
     background-size: 1000px 100%;
 }
 @keyframes shimmer {
@@ -5960,7 +5960,7 @@ cursor: pointer;
     justify-content: center;
     width: 410px;
     height: 600px;
-    background-image: linear-gradient(to bottom, #674cf3, #00d3b4);
+    background-image: linear-gradient(to bottom, #f0537f, #000);
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;  
 }
@@ -5994,7 +5994,7 @@ cursor: pointer;
 .modal-auth-subtitle{
 
     font-size: 0.8125em;
-    color: #00d3b4;
+    color: #000;
     font-family: var(--font-quicksand);
     margin: 0.615em 1px 41.2px 0;
 }
@@ -6225,7 +6225,7 @@ cursor: pointer;
 }
 .mainslider-sec .slick-dots li.slick-active button:before {
     opacity: 1;
-    color: #674cf3;
+    color: #f0537f;
 }
 .mainslider-sec .slick-dots {
     bottom: -50px;
@@ -6242,13 +6242,13 @@ cursor: pointer;
 .mainslider-text h2 {
     font-family: "Quicksand-Medium" !important;
     margin-top: 0;
-    color: #674cf3;
+    color: #f0537f;
 }
 .mainslider-text p {
     color: #414141;
 }
 .download-sec {
-    background-color: #674cf3;
+    background-color: #f0537f;
     padding: 0 2.5em;
     min-height: 45em;
 }
@@ -6263,7 +6263,7 @@ cursor: pointer;
     align-items: flex-start;
 }
 .download-title {
-    color: #00d3b4;
+    color: #000;
     margin: 0 0 1.25em 0;
 }
 .download-text {
@@ -6287,7 +6287,7 @@ cursor: pointer;
     justify-content: center;
 }
 .about-title {
-    color: #00d3b4;
+    color: #000;
     margin: 0 0 40px 0;
 }
 .about-text {
@@ -6335,7 +6335,7 @@ cursor: pointer;
     width: 100%;
 }
 .auth-left-container {
-    background-image: linear-gradient(to bottom, #674cf3, #00d3b4);
+    background-image: linear-gradient(to bottom, #f0537f, #000);
     opacity: 0.93;
     width: 40%;
     min-height: 100vh;
@@ -6402,14 +6402,14 @@ cursor: pointer;
     box-shadow: 0 0 3px 1px rgba(30,143,255,.5)!important;
 }
 .auth-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    /* border-color: #674cf3; */
+    /* border-color: #f0537f; */
     border-color: #c3cde4;
     border-width: 1px;
 }
 .auth-input
     .MuiOutlinedInput-root.Mui-focused
     .MuiOutlinedInput-notchedOutline {
-    /* border-color: #674cf3; */
+    /* border-color: #f0537f; */
     border-color: #c3cde4;
     border-width: 1px;
 }
@@ -6482,7 +6482,7 @@ select:-webkit-autofill:focus {
     transition: .2s all linear;
 }
 .static-links a:hover, .static-links a:active, .static-links a:focus{
-    color: #674cf3;
+    color: #f0537f;
 }
 .spining-icon.MuiCircularProgress-colorPrimary {
     color: #fff;
@@ -6499,7 +6499,7 @@ select:-webkit-autofill:focus {
     font-size: 0.8125em;
     opacity: 1;
     white-space: nowrap;
-    color: #674cf3;
+    color: #f0537f;
     font-size: 13px;
     opacity: 1;
     white-space: nowrap;
@@ -6507,7 +6507,7 @@ select:-webkit-autofill:focus {
 }
 .web-forgot-link p{
     font-family: var(--font-quicksand);
-    color: #674cf3;
+    color: #f0537f;
     font-size: 13px;
     opacity: 1;
     white-space: nowrap;
@@ -6673,7 +6673,7 @@ select:-webkit-autofill:focus {
 .navigation-list .MuiBreadcrumbs-li a:hover,
 .navigation-list .MuiBreadcrumbs-li a:active,
 .navigation-list .MuiBreadcrumbs-li a:focus {
-        color: #674cf3;
+        color: #f0537f;
 } 
 .navigation-list .MuiBreadcrumbs-li a.active-link {
     font-family: var(--font-quicksand);
@@ -7034,7 +7034,7 @@ opacity: 1;
     background-color: var(--white);
 }
 .step.activated .f1-step .f1-step-icon .small-circle{
-    border: 2px solid #00d3b4;
+    border: 2px solid #000;
 }
 .order-history-widard-sec{
     display: flex;
@@ -7130,7 +7130,7 @@ opacity: 1;
 .apply-status{
     font-family: var(--font-quicksand);
     height: 56px;
-    background-image: linear-gradient(to right, #674cf3, #8039db);
+    background-image: linear-gradient(to right, #f0537f, #8039db);
     width: 100%;
     border: 0;
     color: var(--white);
@@ -7514,14 +7514,14 @@ del{
 .react-calendar__tile--now,
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus{
-    background-color: #674cf380;
+    background-color: #f0537f80;
 }
 .react-calendar__tile--hasActive:enabled:hover, .react-calendar__tile--hasActive:enabled:focus{
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .react-calendar__tile--active,
 .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus{
-    background-color: #674cf3;
+    background-color: #f0537f;
 }
 .order-daterange-picker{
     position: absolute;
@@ -7871,7 +7871,7 @@ font-family: Quicksand-Medium;
     margin-bottom: 12px;
 }
 .order-details span{
-    color: #674cf3;
+    color: #f0537f;
 }
 
 .page-title{
@@ -7898,7 +7898,7 @@ font-family: Quicksand-Medium;
     width: 144px;
     height: 48px;
     border-radius: 6px;
-    background-color: #674cf3;
+    background-color: #f0537f;
     color: var(--white);
     position: absolute;
     right: 20px;
@@ -7929,7 +7929,7 @@ font-family: Quicksand-Medium;
     cursor: pointer;
 }
 .delivery-charge{
-    color: #674cf3 !important;
+    color: #f0537f !important;
 }
 .dashed-divider-table{
     border-bottom: 2px dashed #f6f8fd;
@@ -8011,7 +8011,7 @@ font-family: Quicksand-Medium;
     text-transform: capitalize;
     padding: 0.4em 1em;
     border-radius: 29px;
-    color: #00d3b4;
+    color: #000;
     font-family: var(--font-quicksand);
     background-color: #fff;
     box-shadow: none;
@@ -8208,7 +8208,7 @@ font-family: Quicksand-Medium;
 }
 
 .shortBook_color{
-    background-color: #674cf3;
+    background-color: #f0537f;
     border-color: none;
 }
 
@@ -8305,7 +8305,7 @@ left: 105px;
 
 
 .msg-checkbox.MuiCheckbox-root{
-    color: #00d3b4;
+    color: #000;
     padding-left: 4px;
     padding-right: 12px;
     /* margin-right: 7px; */
@@ -8779,8 +8779,8 @@ text-transform: capitalize;
 text-transform: capitalize;
 }
 .fast-moving-addtocart-1.MuiButton-containedPrimary {
-background-color: #00d3b4;
-border: 1px solid #00d3b4;
+background-color: #000;
+border: 1px solid #000;
 font-size: 0.8125em;
 padding: .6em 1.38em;
 line-height: 1;
@@ -8792,7 +8792,7 @@ transition: 0.2s all linear;
 .fast-moving-addtocart-1.MuiButton-containedPrimary:hover,
 .fast-moving-addtocart-1.MuiButton-containedPrimary:focus,
 .fast-moving-addtocart-1.MuiButton-containedPrimary:active {
-background-color: #00d3b4;
+background-color: #000;
 opacity: 0.8;
 box-shadow: none;
 }
@@ -8998,8 +8998,8 @@ color: var(--marine-blue);
 text-transform: capitalize;
 }
 .box-view-addtocart-1.MuiButton-containedPrimary {
-background-color: #00d3b4;
-border: 1px solid #00d3b4;
+background-color: #000;
+border: 1px solid #000;
 font-size: 0.8125em;
 padding: .6em 1.38em;
 line-height: 1;
@@ -9011,7 +9011,7 @@ transition: 0.2s all linear;
 .box-view-addtocart-1.MuiButton-containedPrimary:hover,
 .box-view-addtocart-1.MuiButton-containedPrimary:focus,
 .box-view-addtocart-1.MuiButton-containedPrimary:active {
-background-color: #00d3b4;
+background-color: #000;
 opacity: 0.8;
 box-shadow: none;
 }
@@ -9188,8 +9188,8 @@ right: 0;
 bottom: 0;
 }
 .list-view-addtocart-1.MuiButton-containedPrimary {
-background-color: #00d3b4;
-border: 1px solid #00d3b4;
+background-color: #000;
+border: 1px solid #000;
 font-size: 0.8125em;
 padding: .6em 1.38em;
 line-height: 1;
@@ -9202,7 +9202,7 @@ top: 68px;
 .list-view-addtocart-1.MuiButton-containedPrimary:hover,
 .list-view-addtocart-1.MuiButton-containedPrimary:focus,
 .list-view-addtocart-1.MuiButton-containedPrimary:active {
-background-color: #00d3b4;
+background-color: #000;
 opacity: 0.8;
 box-shadow: none;
 }
@@ -9421,7 +9421,7 @@ font-size: 14px;
 .profile-detailsec .profile-img-links a:hover,
 .profile-detailsec .profile-img-links a:active,
 .profile-detailsec .profile-img-links a:focus {
-    color: #674cf3;
+    color: #f0537f;
 }
 .profile-detailsec .profile-img-links a:first-child {
     margin-right: 2em;
@@ -9471,7 +9471,7 @@ font-size: 14px;
 .profile-tab-options .MuiTab-textColorInherit:hover {
     background-color: #c3cde41a;
     border-radius: 4px;
-    color: #674cf3;
+    color: #f0537f;
 }
 .profile-tab-options .MuiTabs-indicator {
     width: 0 !important;
@@ -9507,7 +9507,7 @@ font-size: 14px;
     margin-left: 8px;
 }
 .wal-balance {
-    color: #00d3b4;
+    color: #000;
     line-height: 0;
     width: 100%;
     text-align: right;
@@ -9557,7 +9557,7 @@ font-size: 14px;
     color: #c3cde4;
 }
 .adduser-checkbox-icon.MuiCheckbox-colorPrimary.Mui-checked {
-    color: #674cf3;
+    color: #f0537f;
 }
 .adduser-checkbox .MuiFormControlLabel-label {
     font-size: 0.8125em;
@@ -9576,7 +9576,7 @@ font-size: 14px;
 }
 .addbranch-btn.MuiButton-containedPrimary {
     background-color: #c3cde466;
-    color: #674cf3;
+    color: #f0537f;
     font-size: 0.8125em;
     font-family: var(--font-quicksand);
     text-transform: capitalize;
@@ -9613,7 +9613,7 @@ font-size: 14px;
     margin: 0 0 10px 3px;
     padding: 0px;
     border-radius: 12px;
-    color: #674cf3;
+    color: #f0537f;
     position: relative;
 }
 .value-slider-sec .MuiSlider-track {
@@ -9677,13 +9677,13 @@ font-size: 14px;
     border-width: 1px;
 }
 .value-range .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: #674cf3;
+    border-color: #f0537f;
     border-width: 1px;
 }
 .value-range
     .MuiOutlinedInput-root.Mui-focused
     .MuiOutlinedInput-notchedOutline {
-    border-color: #674cf3;
+    border-color: #f0537f;
     border-width: 1px;
 }
 .value-range .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
@@ -9742,7 +9742,7 @@ font-size: 14px;
 .adduser-profileimg {
     height: 3.5em;
     width: 3.5em;
-    border: solid 1px #674cf3;
+    border: solid 1px #f0537f;
     background-color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -9961,7 +9961,7 @@ font-size: 14px;
     line-height: 1.14;
     letter-spacing: 2.8px;
     text-align: left;
-    color: #674cf3;
+    color: #f0537f;
     text-transform: uppercase;
         margin-right: 16px;
 }
@@ -9976,7 +9976,7 @@ font-size: 14px;
     text-transform: capitalize;
     letter-spacing: 0.28px;
     font-size: 14px;
-    color: #674cf3;
+    color: #f0537f;
 }
 .cards-action .MuiButton-root{
     min-width: 96px;
@@ -10041,11 +10041,11 @@ font-size: 14px;
 }
 
 .notification-switch .MuiSwitch-colorSecondary.Mui-checked {
-    color: #674cf3  !important;
+    color: #f0537f  !important;
 }
 
 .notification-switch .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
-    background-color: #674cf3 !important;
+    background-color: #f0537f !important;
     opacity: 0.2;
 }
 
@@ -10055,7 +10055,7 @@ margin-left: 0.3px;
 }
 
 /* .notify-div-switch{
-    background-color: #674cf3;
+    background-color: #f0537f;
     opacity: 0.05;
 } */
 /* register style for web */
@@ -10173,7 +10173,7 @@ margin-left: 0.3px;
     text-transform: capitalize;
 }
 .mark-all-read{
-    color: #674cf3;
+    color: #f0537f;
     font-family: var(--font-quicksand);
     font-size: 13px;
     margin-top: 0px;
@@ -10224,7 +10224,7 @@ padding-bottom: 15px;
     font-weight: bold;
 }
 .c-green{
-    color: #00d3b4;
+    color: #000;
 }
 .w-paragraph{
 width: 93%;
@@ -10277,7 +10277,7 @@ width: 93%;
 .box-view-sec-25-1.shortbook:hover,
 .box-view-sec-25-1.shortbook:focus,
 .box-view-sec-25-1.shortbook:active {
-border-color: #674cf3;
+border-color: #f0537f;
 }
 
 /*Added New*/
@@ -10400,7 +10400,7 @@ max-width: 100% !important;
     cursor: pointer;
 }
 .stay-updated {
-    background-color: #00d3b4;
+    background-color: #000;
 }
 .mr-b-6 {
     margin-bottom: 6px !important;
@@ -10527,7 +10527,7 @@ max-width: 100% !important;
         margin-right: 12px;
 }
 .fullList .oddList:hover, .fullList .evenList:hover {
-        border-color: #674cf3;
+        border-color: #f0537f;
 }
 .freq-top-sec .rightside_topHeading .MuiInputBase-adornedStart input {
     padding-left: 0 !important;
@@ -10769,8 +10769,8 @@ max-width: 100% !important;
     font-family: var(--font-opensans);
 }
 .aquamarine-btn.MuiButton-containedPrimary, .aquamarine-btn.MuiButton-containedPrimary:hover {
-    background-color: #00d3b4;
-    border: 1px solid #00d3b4;
+    background-color: #000;
+    border: 1px solid #000;
     background-image:  initial;
 }
 .previous-btn.MuiButton-containedPrimary, .previous-btn.MuiButton-containedPrimary:hover {
@@ -10928,7 +10928,7 @@ max-width: 100% !important;
 }
 .auth-subtitle {
     font-size: 13px;
-    color: #00d3b4;
+    color: #000;
     font-weight: 600;
     margin: 8px 0 8px 0;
     line-height: 20px;
@@ -11052,7 +11052,7 @@ max-width: 100% !important;
     background: #eee;
 }
 .msg-checkbox.checkbox-listItem.Mui-disabled {
-    color: #00d3b4;
+    color: #000;
     background-color: initial;
 }
 .MuiSnackbar-root .MuiPaper-root {

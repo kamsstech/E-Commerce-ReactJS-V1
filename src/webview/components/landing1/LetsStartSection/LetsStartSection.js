@@ -60,7 +60,7 @@ class LetsStartSection extends Component {
 						data-aos-delay="100"
 						data-aos-once="true"
 					>
-						Live Order & you, the dynamic duo.
+						KAMSS Tech Admin & you, the dynamic duo.
 					</p>
 					<button
 						type="submit"

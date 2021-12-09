@@ -689,7 +689,7 @@ const AddBannerForm = (props) => {
 
 
 							<Grid item xs={12}>
-								<div className="pd-l-16">
+								<div className="ml-16">
 									<Button disabled={subBtn === false ? "" : "disabled"} variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 								</div>
 

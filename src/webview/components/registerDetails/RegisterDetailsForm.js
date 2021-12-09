@@ -125,7 +125,7 @@ const RegisterDetailsForm = (props) => {
 		<div className="auth-form-space1">
 			<div className="registration-details">
 				<div>
-					<h3 className="auth-title">Register With 'Live Order'</h3>
+					<h3 className="auth-title">Register With 'KAMSS Tech Admin'</h3>
 					<h5 className="auth-subtitle">
 						Please fill Business Information for next step.
 					</h5>

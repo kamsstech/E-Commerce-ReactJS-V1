@@ -105,7 +105,7 @@ export default function BuyersTab() {
 					<Typography className={classes.heading}>Can I see full details and Description of the product?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography>Yes, the product details such as Product name, Product Image, MRP, PTR, Schemes, GST detail, HSN code, Molecules and Packaging details are displayed in the Live Order.</Typography>
+					<Typography>Yes, the product details such as Product name, Product Image, MRP, PTR, Schemes, GST detail, HSN code, Molecules and Packaging details are displayed in the KAMSS Tech Admin.</Typography>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
