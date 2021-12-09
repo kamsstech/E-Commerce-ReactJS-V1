@@ -25,7 +25,7 @@ import shortbook_icon from "../../../assets/images/shortbook_pdpIcon.svg";
 import shortbook_colorIcon from "../../../assets/images/shortbook_colorIcon.svg";
 
 import oral_sus from "../../../assets/images/oral_sus.svg";
-import capsules from "../../../assets/images/capsules.svg";
+import dressicon from "../../../assets/images/dressicon.png";
 import injectable from "../../../assets/images/injectable.svg";
 import tablet from "../../../assets/images/tablet.svg";
 import drops from "../../../assets/images/drops.svg";
@@ -462,13 +462,15 @@ const BoxView = (props) => {
 
 	return (
 		<div>
-			<div className="fast-moving-sec preferred-seller-slider">
+		{/*fast-moving-sec preferred-seller-slider*/}
+			{/*<Grid container>*/}
+			<Grid container className="fast-moving-sec">
 				{Array.isArray(arrayRes) &&
 					arrayRes.length > 0 &&
 					(arrayRes).map(
 						(item, index) => (
-							<div key={item.c_item_code}>
-								<div className="fast-moving-sec-25" key={item.c_item_code}>
+							<Grid item xs={4} key={item.c_item_code}>
+								<div className="fast-moving-sec-25 mr-b-12" key={item.c_item_code}>
 									<div className="fast-moving-tile-offer">
 										{
 										item.c_discount_status && item.c_discount_status === 'Y' ? 
@@ -517,21 +519,22 @@ const BoxView = (props) => {
 												)}`}
 												key={item.c_item_code}
 											>
-												{   item.images[0].c_item_image ?    (
+												{   item.images.length>0 ?    (
 													
 													item.images[0].c_item_image === "" ? (
-														<img src={capsules} alt="ProductImg" />
+														<img src={tablet} alt="ProductImg" />
 													) : (
 														<img
-															src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
+															// src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
+															src={tablet}	
 															alt={item.c_item_name}
 															onError={(e) => {
-																e.target.src = capsules;
+																e.target.src = tablet;
 															}}
 														/>
 													)
 												):(
-													<img src={capsules} alt="ProductImg" />
+													<img src={tablet} alt="ProductImg" />
 												)
 
 												
@@ -619,10 +622,10 @@ const BoxView = (props) => {
 										</div>
 									</div>
 								</div>
-							</div>
+							</Grid>
 						)
 					)}
-			</div>
+			</Grid>
 			{
 				Array.isArray(arrayRes) && arrayRes.length > 0 ?
 					<div className="loading" xs={12}>

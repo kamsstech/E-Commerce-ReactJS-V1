@@ -11366,3 +11366,6 @@ max-width: 100% !important;
 .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     border-color: 1px solid var(--light-blue-grey) !important;
 }
+.mr-b-12 {
+    margin-bottom: 12px !important;
+}
