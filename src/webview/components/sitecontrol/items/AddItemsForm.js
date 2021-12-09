@@ -228,6 +228,37 @@ ColorlibStepIcon.propTypes = {
 	icon: PropTypes.node,
 };
 const AddItemsPage = (props) => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const form = new FormData();
+		console.log(itemVarrayJson)
+	}
+	const handleVInputChange= (e, index, type) => {
+		console.log(type);
+		for (var i = 0; i < itemVarrayJson.length; i++) 
+		{
+			if(i==index)
+			{
+				if(type==='price')
+				{
+					itemVarrayJson[i]['n_item_price']=e.target.value;
+				}
+				else if(type==='offer_price')
+				{
+					itemVarrayJson[i]['n_item_offer_price']=e.target.value;
+				}
+				else if(type==='discount')
+				{
+					itemVarrayJson[i]['n_item_discount']=e.target.value;
+				}
+				else if(type==='item_stock')
+				{
+					itemVarrayJson[i]['n_item_stock']=e.target.value;
+				}
+			}
+		}
+		console.log(itemVarrayJson);
+	}
 	const {
 		categoryListResult,
 		brandListResult,
@@ -237,7 +268,7 @@ const AddItemsPage = (props) => {
 		variationsAllListResult,
 		itemVariationPageResult,ItemVariationPageAction
 	} = props;
-	const [activeStep, setActiveStep] = React.useState(0);
+	const [activeStep, setActiveStep] = React.useState(2);
 	const [catarrayJson, setcatarrayJson] = React.useState([]);
 	const [brandarrayJson, setbrandarrayJson] = React.useState([]);
 	const [variarrayJson, setvariarrayJson] = React.useState([]);
@@ -518,7 +549,7 @@ const AddItemsPage = (props) => {
 				/>
 				<Container fixed>
 					<div>
-						<form className="profile-details-sec">
+						<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
 						<Stepper activeStep={activeStep} orientation="vertical">
 					          <Step key="0">
 					            <StepLabel>Product Basic Details</StepLabel>
@@ -906,8 +937,8 @@ const AddItemsPage = (props) => {
 												<div className="ml-16">
 													<TextField
 														name="n_item_price[]"
-														value=""
-														onChange={(e) => handleInputChange(e)}
+														defaultValue=""
+														onChange={(e) => handleVInputChange(e, index0, 'price')}
 														onFocus={(e) => handleFocus(e)}
 														onBlur={(e) => handleBlur(e)}
 														margin="normal"
@@ -928,9 +959,9 @@ const AddItemsPage = (props) => {
 											<Grid item xs={3}>
 												<div className="ml-16">
 													<TextField
-														name="n_item_discount[]"
-														value=""
-														onChange={(e) => handleInputChange(e)}
+														name="n_item_discount"
+														defaultValue=""
+														onChange={(e) => handleVInputChange(e, index0, 'discount')}
 														onFocus={(e) => handleFocus(e)}
 														onBlur={(e) => handleBlur(e)}
 														margin="normal"
@@ -952,8 +983,8 @@ const AddItemsPage = (props) => {
 												<div className="ml-16">
 													<TextField
 														name="n_item_offer_price[]"
-														value=""
-														onChange={(e) => handleInputChange(e)}
+														defaultValue=""
+														onChange={(e) => handleVInputChange(e, index0, 'offer_price')}
 														onFocus={(e) => handleFocus(e)}
 														onBlur={(e) => handleBlur(e)}
 														margin="normal"
@@ -976,8 +1007,8 @@ const AddItemsPage = (props) => {
 												<div className="ml-16">
 													<TextField
 														name="n_item_stock[]"
-														value=""
-														onChange={(e) => handleInputChange(e)}
+														defaultValue=""
+														onChange={(e) => handleVInputChange(e, index0, 'item_stock')}
 														onFocus={(e) => handleFocus(e)}
 														onBlur={(e) => handleBlur(e)}
 														margin="normal"
@@ -1106,6 +1137,7 @@ const AddItemsPage = (props) => {
 									}
 					              <div>
 					                <div>
+					                <Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 					                  <Button
 					                    onClick={handleBack}
 					                  >
