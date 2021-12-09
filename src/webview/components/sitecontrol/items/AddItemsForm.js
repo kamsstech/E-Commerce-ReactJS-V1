@@ -228,11 +228,7 @@ ColorlibStepIcon.propTypes = {
 	icon: PropTypes.node,
 };
 const AddItemsPage = (props) => {
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const form = new FormData();
-		console.log(itemVarrayJson)
-	}
+	
 	const handleVInputChange= (e, index, type) => {
 		console.log(type);
 		for (var i = 0; i < itemVarrayJson.length; i++) 
@@ -260,6 +256,8 @@ const AddItemsPage = (props) => {
 		console.log(itemVarrayJson);
 	}
 	const {
+		ItemAddPageAction,
+		itemAddPageResult,
 		categoryListResult,
 		brandListResult,
 		BrandListAction,
@@ -268,7 +266,7 @@ const AddItemsPage = (props) => {
 		variationsAllListResult,
 		itemVariationPageResult,ItemVariationPageAction
 	} = props;
-	const [activeStep, setActiveStep] = React.useState(2);
+	const [activeStep, setActiveStep] = React.useState(0);
 	const [catarrayJson, setcatarrayJson] = React.useState([]);
 	const [brandarrayJson, setbrandarrayJson] = React.useState([]);
 	const [variarrayJson, setvariarrayJson] = React.useState([]);
@@ -356,7 +354,7 @@ const AddItemsPage = (props) => {
 		c_item_description: "",
 		c_item_specification: "",
 		j_variations: [],
-		c_item_img1: "",
+		c_item_image: "",
 		c_item_img2: "",
 		c_item_img3: "",
 	});
@@ -373,7 +371,7 @@ const AddItemsPage = (props) => {
 		c_item_description: "",
 		c_item_specification: "",
 		j_variations: [],
-		c_item_img1: "",
+		c_item_image: "",
 		c_item_img2: "",
 		c_item_img3: "",
 	});
@@ -417,7 +415,7 @@ const AddItemsPage = (props) => {
 
 	const clickHandleCancel = (event) => {
 		if (event === "cancel_upload1") {
-			setInputs({ ...inputs, c_item_img1: "" });
+			setInputs({ ...inputs, c_item_image: "" });
 		}else if (event === "cancel_upload2") {
 			setInputs({ ...inputs, c_item_img2: "" });
 		}else if (event === "cancel_upload3") {
@@ -440,7 +438,7 @@ const AddItemsPage = (props) => {
 		if (event.target.files[0]) {
 			if (extFile == "jpg" || extFile == "jpeg" || extFile == "png" || extFile == "svg" || extFile == "gif") {
 				
-				if (name === "c_item_img1") {
+				if (name === "c_item_image") {
 					setImg1(event.target.files[0]);
 					setImg1Data(URL.createObjectURL(event.target.files[0]));
 					setInputs({ ...inputs, [`${name}_name`]: filename, [name]: filename });
@@ -513,11 +511,37 @@ const AddItemsPage = (props) => {
 	      default:
 	    }
 	};
-	const handleGenerate = (e) =>{
-		ItemVariationPageAction();
+	
+	const [isCheck, setIsCheck] = useState([]);
+
+	const handleSelect =(e,code,selected) =>{
+		
+		if(selected == false)
+		{
+			setIsCheck([...isCheck, code]);
+		}
+		if(selected == true)
+		{
+			setIsCheck(isCheck.filter((item) => item !== code));
+		}
 	}
+	// console.log(isCheck)
+	const handleGenerate = (e,checkval) =>{
+		if(checkval.length > 0)
+		{
+			let arrayjoin=checkval.join(',')
+			const form = new FormData();
+			form.append("selectval", arrayjoin)
+			
+			ItemVariationPageAction(form);
+		}
+		
+	}
+
 	useEffect(() => {
+
 	if (itemVariationPageResult.statuscode === 1) {
+		setItemVarrayJson([])
 	      if(itemVariationPageResult.payload.data.length > 0)
 	      {
 	        setItemVarrayJson(itemVariationPageResult.payload.data);
@@ -529,6 +553,75 @@ const AddItemsPage = (props) => {
 	    
 	}, [itemVariationPageResult]);
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const form = new FormData();
+
+		form.append("c_item_name",inputs.c_item_name);
+		form.append("c_model_name",inputs.c_model_name);
+		form.append("c_meta_title",inputs.c_meta_title);
+		form.append("c_meta_description",inputs.c_meta_description);
+		form.append("c_meta_keyword",inputs.c_meta_keyword);
+		form.append("c_brand_code",inputs.c_brand_code);
+		form.append("c_category_code",inputs.c_category_code);
+		form.append("c_item_description",inputs.c_item_description);
+		form.append("c_item_specification",inputs.c_item_specification);
+		form.append("c_variation_type",value);
+		
+		form.append("c_item_image", img1Data);
+		const arrayVal=[]
+		if(value =='yes')
+		{
+			// console.log(itemVarrayJson,"sssss")
+			if(itemVarrayJson.length > 0)
+			{
+				for(let i=0;i<itemVarrayJson.length;i++){
+					let size =itemVarrayJson[i].Size?itemVarrayJson[i].Size:"0"
+					let color =itemVarrayJson[i].Color?itemVarrayJson[i].Color:"0"
+					if(itemVarrayJson[i].n_item_offer_price !='0' && itemVarrayJson[i].n_item_offer_price !='')
+					{
+						let objVal={
+									c_variation_code1:size,
+									c_variation_id1:"0",
+									c_variation_code2:color,
+									c_variation_id2:"0",
+									n_item_stock:itemVarrayJson[i].n_item_stock,
+									n_item_price:itemVarrayJson[i].n_item_price,
+									n_item_discount:0,
+									n_item_offer_price:itemVarrayJson[i].n_item_offer_price
+								}
+
+						arrayVal.push(objVal);
+					}
+					
+				}
+			}
+		}
+		else
+		{
+			let objVal={
+							c_variation_code1:"0",
+							c_variation_id1:"0",
+							c_variation_code2:"0",
+							c_variation_id2:"0",
+							n_item_stock:inputs.n_item_stock,
+							n_item_price:inputs.n_item_price,
+							n_item_discount:0,
+							n_item_offer_price:inputs.n_item_offer_price
+						}
+			arrayVal.push(objVal);
+		}
+		// console.log(arrayVal)
+		if(arrayVal.length > 0)
+		{
+			form.append("j_insertvariationdata",JSON.stringify(arrayVal));
+			ItemAddPageAction(form)
+		}
+		
+	}
+	useEffect(() => {
+		
+	  }, [itemAddPageResult]);
 	return (
 		<>
 			<div>
@@ -549,7 +642,17 @@ const AddItemsPage = (props) => {
 				/>
 				<Container fixed>
 					<div>
-						<form onSubmit={(e) => handleSubmit(e)} className="profile-details-sec" encType="multipart/form-data">
+						{itemAddPageResult.status_code === 1 &&
+							<div className="notFound">
+								<Alert severity="success"> <span className="font-weight-bold">Brand Added..!!!</span></Alert>
+							</div>
+						}
+						{itemAddPageResult.status_code === 2 &&
+							<div className="notFound">
+								<Alert severity="error"> <span className="font-weight-bold">Brand Already Exist..!!!</span></Alert>
+							</div>
+						}
+						<form className="profile-details-sec" encType="multipart/form-data">
 						<Stepper activeStep={activeStep} orientation="vertical">
 					          <Step key="0">
 					            <StepLabel>Product Basic Details</StepLabel>
@@ -856,10 +959,12 @@ const AddItemsPage = (props) => {
 										      id="checkboxes-tags-demo"
 										      options={variarrayJson}
 										      disableCloseOnSelect
-										      getOptionLabel={(option) => option.c_variation_name}
+
+										      getOptionLabel={(option) => option.c_variation_code}
 										      renderOption={(option, { selected }) => (
 										        <React.Fragment>
 										          <Checkbox
+										          	onChange={(e) => handleSelect(e,option.c_variation_code,selected)}
 										            icon={icon}
 										            checkedIcon={checkedIcon}
 										            style={{ marginRight: 8 }}
@@ -879,7 +984,7 @@ const AddItemsPage = (props) => {
 										      <Button
 							                    variant="contained"
 							                    color="primary"
-							                    onClick={(e) => handleGenerate(e)}
+							                    onClick={(e) => handleGenerate(e,isCheck)}
 							                  >
 							                  Generate
 							                  </Button>
@@ -891,6 +996,7 @@ const AddItemsPage = (props) => {
 										itemVarrayJson.length > 0 &&
 										itemVarrayJson.map((item0, index0) => (
 										<Grid container spacing={0}>
+										{item0.Size ?(
 											<Grid item xs={3}>
 												<div className="ml-16">
 													<TextField
@@ -912,27 +1018,31 @@ const AddItemsPage = (props) => {
 													/>
 												</div>
 											</Grid>
-											<Grid item xs={3}>
-												<div className="ml-16">
-													<TextField
-														name="n_color"
-														value={item0.Color}
-														margin="normal"
-														variant="outlined"
-														placeholder="Item Color"
-														className="auth-input"
-														autoComplete=""
-														disabled="disabled"
-														InputProps={{
-															startAdornment: (
-																<InputAdornment position="start">
-																	<img src={Shop} alt="user" />
-																</InputAdornment>
-															),
-														}}
-													/>
-												</div>
-											</Grid>
+											):""}
+											{item0.Color ?(
+													<Grid item xs={3}>
+													<div className="ml-16">
+														<TextField
+															name="n_color"
+															value={item0.Color}
+															margin="normal"
+															variant="outlined"
+															placeholder="Item Color"
+															className="auth-input"
+															autoComplete=""
+															disabled="disabled"
+															InputProps={{
+																startAdornment: (
+																	<InputAdornment position="start">
+																		<img src={Shop} alt="user" />
+																	</InputAdornment>
+																),
+															}}
+														/>
+													</div>
+												</Grid>
+												):""}
+											
 											<Grid item xs={3}>
 												<div className="ml-16">
 													<TextField
@@ -956,7 +1066,7 @@ const AddItemsPage = (props) => {
 													/>
 												</div>
 											</Grid>
-											<Grid item xs={3}>
+											{/*<Grid item xs={3}>
 												<div className="ml-16">
 													<TextField
 														name="n_item_discount"
@@ -978,7 +1088,7 @@ const AddItemsPage = (props) => {
 														}}
 													/>
 												</div>
-											</Grid>
+											</Grid>*/}
 											<Grid item xs={3}>
 												<div className="ml-16">
 													<TextField
@@ -992,7 +1102,6 @@ const AddItemsPage = (props) => {
 														placeholder="Item Offer Price"
 														className="auth-input"
 														autoComplete=""
-														disabled="disabled"
 														InputProps={{
 															startAdornment: (
 																<InputAdornment position="start">
@@ -1057,7 +1166,7 @@ const AddItemsPage = (props) => {
 														/>
 													</div>
 												</Grid>
-												<Grid item xs={6}>
+												{/*<Grid item xs={6}>
 													<div className="ml-16">
 														<TextField
 															name="n_item_discount"
@@ -1081,7 +1190,7 @@ const AddItemsPage = (props) => {
 															}}
 														/>
 													</div>
-												</Grid>
+												</Grid>*/}
 												<Grid item xs={6}>
 													<div className="ml-16">
 														<TextField
@@ -1097,7 +1206,7 @@ const AddItemsPage = (props) => {
 															placeholder="Offer Price *"
 															className="auth-input"
 															autoComplete=""
-															disabled="disabled"
+															// disabled="disabled"
 															InputProps={{
 																startAdornment: (
 																	<InputAdornment position="start">
@@ -1137,7 +1246,6 @@ const AddItemsPage = (props) => {
 									}
 					              <div>
 					                <div>
-					                <Button variant="contained" type="submit" className="yes" color="primary">Submit</Button>
 					                  <Button
 					                    onClick={handleBack}
 					                  >
@@ -1161,12 +1269,12 @@ const AddItemsPage = (props) => {
 							              <Grid item xs={6}>
 												<div className="ml-16">
 													<TextField
-														name="c_item_img1"
-														value={inputs.c_item_img1}
+														name="c_item_image"
+														value={inputs.c_item_image}
 														onChange={(e) => handleInputChange(e)}
 														onBlur={(e) => handleBlur(e)}
-														error={errors.c_item_img1}
-														helperText={errors.c_item_img1 && "Not a valid image to upload"}
+														error={errors.c_item_image}
+														helperText={errors.c_item_image && "Not a valid image to upload"}
 														autoComplete="new-password"
 														margin="normal"
 														variant="outlined"
@@ -1183,8 +1291,8 @@ const AddItemsPage = (props) => {
 																	<img src={Camera} alt="Camera" />
 																	<input
 																		type="file"
-																		name="c_item_img1"
-																		id="c_item_img1"
+																		name="c_item_image"
+																		id="c_item_image"
 																		accept="image/jpeg, image/png, image/jpg, image/webp"
 																		onChange={(e) => handleUpload(e, "dl1")}
 																		multiple={false}
@@ -1193,13 +1301,13 @@ const AddItemsPage = (props) => {
 															),
 														}}
 													/>
-													{inputs.c_item_img1&& (
+													{inputs.c_item_image&& (
 														<div className="display-flex">
 															<h4
 																className="profile-upload uploaded-imagename"
 																onClick={() => setOpenImgViewD1(true)}
 															>
-																<span>{inputs.c_item_img1}</span>
+																<span>{inputs.c_item_image}</span>
 															</h4>
 															<h4
 																className="profile-upload uploaded-imagename float-right"
@@ -1330,7 +1438,8 @@ const AddItemsPage = (props) => {
 					                  <Button
 					                    variant="contained"
 					                    color="primary"
-					                    onClick={handleNext}
+					                    // type="submit"
+					                    onClick={(e) => handleSubmit(e)}
 					                  >
 					                  Submit
 					                  </Button>

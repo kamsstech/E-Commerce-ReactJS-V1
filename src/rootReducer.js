@@ -170,6 +170,8 @@ import AddCategoryReducer from "./common/reducer/sitecontrol/category/addCategor
 import AddPageReducer from "./common/reducer/sitecontrol/setting/addPageReducer";
 
 import ItemVariationPageReducer from "./common/reducer/sitecontrol/items/itemVariationPageReducer";
+import ItemAddPageReducer from "./common/reducer/sitecontrol/items/itemAddPageReducer";
+import ItemListPageReducer from "./common/reducer/sitecontrol/items/itemListPageReducer";
 
 const RootReducer = combineReducers({
   login: LoginReducer,
@@ -320,6 +322,8 @@ const RootReducer = combineReducers({
 //Page
 addPageResult:AddPageReducer,
 itemVariationPageResult:ItemVariationPageReducer,
+itemAddPageResult:ItemAddPageReducer,
+itemListPageResult:ItemListPageReducer,
 });
 
 export default RootReducer;

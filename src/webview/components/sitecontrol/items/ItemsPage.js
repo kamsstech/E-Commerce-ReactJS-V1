@@ -9,8 +9,8 @@ import ItemsListPage from "./ItemsListPage";
 
 export const ItemsPage = (props) => {
 	const {
-		customerListPageResult,
-		CustomerListPageAction,
+		itemListPageResult,
+		ItemListPageAction,
 	} = props;
 	const [value1, setValue1] = React.useState(0);
 	const [value2, setValue2] = React.useState({
@@ -53,12 +53,14 @@ const handleBack=()=>{
 				<Grid container spacing={0}>
 					<Grid item xs={3}>
 						<Sidebar
-							page="customers"
+							page="category"
 						/>
 					</Grid>
 					<Grid item xs={9}>
 						<div className="myprofile-box border-botttom-none">
 							<ItemsListPage
+								ItemListPageAction={ItemListPageAction}
+								itemListPageResult={itemListPageResult}
 							/>
 						</div>
 					</Grid>

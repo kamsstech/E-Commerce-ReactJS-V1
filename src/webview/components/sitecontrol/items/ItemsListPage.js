@@ -1,175 +1,449 @@
 import React, {useEffect, useState} from 'react';
 import Fade from '@material-ui/core/Fade';
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-
 import { withStyles } from '@material-ui/core/styles';
+import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
+import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import dressicon from "../../../../assets/images/dressicon.png";
+import Container from "@material-ui/core/Container";
+import Box from '@material-ui/core/Box';
 
-
-import Shop from "../../../../assets/images/icons/shop.svg";
-import User from "../../../../assets/images/icons/user.svg";
-import Phone from "../../../../assets/images/icons/smartphone.svg";
-import Email from "../../../../assets/images/email.svg";
-import TAN_PAN from "../../../../assets/images/icons/pan-tan.svg";
-import Narcotic from "../../../../assets/images/icons/narcotic-number.svg";
-import RentAgreement from "../../../../assets/images/icons/rent-agreement.svg";
-import PartnershipDeed from "../../../../assets/images/icons/partnership-deed.svg";
-import AuthorityLetter from "../../../../assets/images/icons/authority-letter.svg";
-import Zipcode from "../../../../assets/images/icons/zip-code.svg";
-import State from "../../../../assets/images/icons/state.svg";
-import City from "../../../../assets/images/icons/city.svg";
-import Area from "../../../../assets/images/icons/area.svg";
-import Landmark from "../../../../assets/images/landmark.svg";
-import Address from "../../../../assets/images/address.svg";
-
-
-import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
-import StepConnector from "@material-ui/core/StepConnector";
-import {InputAdornment, TextField } from "@material-ui/core";
-import FirstAidKit from "../../../../assets/images/first-aid-kit.svg";
-import Camera from "../../../../assets/images/camera.svg";
-import ImageView from "./ImageView";
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
-import Calendar from "../../../../assets/images/calendar.svg";
-import Gst from "../../../../assets/images/gst.svg";
-import Tax from "../../../../assets/images/tax.svg";
-import Drug from "../../../../assets/images/drug.svg";
-import PlusPurple from "../../../../assets/images/plus-purple.svg";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import Snackbar from '@material-ui/core/Snackbar';
+import TextField from '@material-ui/core/TextField';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
+import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
-import Slider from "@material-ui/core/Slider";
-import Alert from "@material-ui/lab/Alert";
-import CloseIcon from "@material-ui/icons/Close";
-import IconButton from "@material-ui/core/IconButton";
-import Collapse from "@material-ui/core/Collapse";
+import Grow from "@material-ui/core/Grow";
+import Grid from "@material-ui/core/Grid";
+import { Table, TableRow, TableCell, Divider, Button, TableBody, TableHead } from '@material-ui/core';
+import InputAdornment from "@material-ui/core/InputAdornment";
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Select from '@material-ui/core/Select';
+import { usePagination } from '@material-ui/lab/Pagination';
+
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+
+//images
+import ProductImg1 from "../../../../assets/mobImages/item1.png";
+import ProductImg2 from "../../../../assets/mobImages/item2.png";
+import ProductImg3 from "../../../../assets/mobImages/item3.png";
+import ProductImg4 from "../../../../assets/mobImages/item4.png";
+import ProductImg5 from "../../../../assets/mobImages/item5.png";
+import DeleteImg from "../../../../assets/images/delete_color.svg";
+import arrow from "../../../../assets/images/Priorityarrow.svg";
+import searchimg from "../../../../assets/images/search.svg";
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+import { useHistory } from "react-router-dom";
+import { Constants } from "../../../../common/constant/localstorage";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+	return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const ExpansionPanel = withStyles({
+	root: {
+		border: '1px solid rgba(0, 0, 0, .125)',
+		boxShadow: 'none',
+		'&:not(:last-child)': {
+			borderBottom: 0,
+		},
+		'&:before': {
+			display: 'none',
+		},
+		'&$expanded': {
+			margin: 'auto',
+		},
+	},
+	expanded: {},
+})(MuiExpansionPanel);
+
+const ExpansionPanelSummary = withStyles({
+	root: {
+		backgroundColor: 'rgba(0, 0, 0, .03)',
+		borderBottom: '1px solid rgba(0, 0, 0, .125)',
+		marginBottom: -1,
+		minHeight: 56,
+		'&$expanded': {
+			minHeight: 56,
+		},
+	},
+	content: {
+		'&$expanded': {
+			margin: '12px 0',
+		},
+	},
+	expanded: {},
+})(MuiExpansionPanelSummary);
+
+const ExpansionPanelDetails = withStyles((theme) => ({
+	root: {
+		padding: theme.spacing(2),
+	},
+}))(MuiExpansionPanelDetails);
+function GrowTransition(props) {
+	return <Grow {...props} />;
+}
 
 const ItemsListPage = (props) => {
-	const [activeStep, setActiveStep] = React.useState(0);
-	const handleNext = () => {
-	    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-	  };
+	const {
+		itemListPageResult,
+		ItemListPageAction,
+	} = props;
+	const [filterBy, setFilterBy] = React.useState(10);
+	const [searchKey, setSearchKey] = React.useState("");
+	const [paginationResult, setPaginationResult] = React.useState(10);
+	const {openDeleteModal,index,backgroundRed,handleDeleteItem } = props;
+	const [arrayJson, setarrayJson] = useState([]);
+	const [page, setPage] = useState(1);
+  	const [loadStatus, setloadStatus] = useState(false);
+  	const [totalList, setTotalList] = useState(10);
+  	const [totalLimit, setLimitTotal] = useState(10);
+  	const [totalOffset, settotalOffset] = useState(0);
+  	const [notFound, setNotFound] = useState(false);
+  	const [pageLimit, setPageLimit] = useState(5);
+  	const [pageOffset, setpageOffset] = useState(0);
+	useEffect(() => {
+		  const body = {
+		  	c_process:"1",
+		  	n_offset:0,
+		  	n_limit:filterBy
+		  }
+	    ItemListPageAction(body);
+	}, []);
+	
+	const handleChangenew = (event,total_count) => {
+		setPage(1)
+        setFilterBy(event.target.value);
+        setPageLimit(event.target.value);
+        var totalcount=total_count / event.target.value
+        if (Number.isInteger(totalcount)) {
+			var totalc=totalcount
+		}
+		else
+		{
+			var roundOffVal=Math.floor(totalcount) + 1
+			var totalc=roundOffVal
+		}
+		setPaginationResult(totalc)
+		setpageOffset(0)
+		const body = {
+		  	c_process:"2",
+		  	n_offset:0,
+		  	n_limit:event.target.value,
+		  	n_status:1,
+		  	c_searchval:searchKey
+		  }
+		ItemListPageAction(body)
+	};
 
-	  const handleBack = () => {
-	    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-	  };
+	const [open, setOpen] = React.useState(false);
 
-	  const handleReset = () => {
-	    setActiveStep(0);
-	  };
+	const handleClickOpen = (e,seller_code) => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+			setOpen(false);
+	};
+
+	const [optValue, setOptValue] = React.useState("one");
+	const [gstAmt, setGstAmt] = React.useState(0);
+	const [totalAmt, setTotalAmt] = React.useState(0);
+	
+
+	const [state, setState] = useState({
+		open: false,
+		Transition: Fade,
+		message: "",
+	});
+
+	const handleClickButton = (event,Transition, name, index)  => {
+		event.stopPropagation()
+		setState({
+			open: true,
+			Transition,
+			message: `${name} deleted from cart`,
+		});
+		handleDeleteItem(name,index);
+		return false;
+	};
+
+	const handleClickShortButton = (e, Transition, name) => {
+		e.stopPropagation();
+		setState({
+			open: true,
+			Transition,
+			message: `${name} Moved to Shortbook`,
+		});
+	};
+	const handleCloseButton = () => {
+		setState({
+			...state,
+			open: false,
+		});
+	};
+
+	const handleSelect = (event) => {
+		setOptValue(event.target.value);
+	};
+
+	
+	const handleDelete = (e) => {
+		e.stopPropagation();
+		openDeleteModal();
+	}
+	const handlePagination =(e,page_Number) => {
+    	e.stopPropagation();
+    	var pageN=page_Number - 1
+    	var pageIn=pageN * filterBy
+    	setpageOffset(pageIn)
+    	setPage(pageIn + 1)
+    	const body = {
+		  	c_process:"2",
+		  	n_offset:pageIn,
+		  	n_limit:filterBy,
+		  	n_status:1,
+		  	c_searchval:searchKey
+		  }
+    	ItemListPageAction(body)
+    }
+    const handleSearchnew = (event) => {
+     	setPage(1)
+     	setpageOffset(0)
+	    let target = event.target.value;
+	    setSearchKey(target);
+	  	const body ={
+			    c_process:"2",
+			    n_offset:0,
+			    n_status:1,
+			    n_limit:filterBy,
+			    c_searchval:target
+			}
+        ItemListPageAction(body)
+	};
+	useEffect(() => {
+		console.log(itemListPageResult)
+	    setloadStatus(false);
+	    if (itemListPageResult.statuscode === 1) {
+	      if(itemListPageResult.payload.data.length > 0)
+	      {
+	        setarrayJson(itemListPageResult.payload?.data);
+	        setTotalList(pageOffset + itemListPageResult.payload.data.length)
+	        setLimitTotal(itemListPageResult.payload?.total)
+	        var totalcount=itemListPageResult.payload?.total / filterBy
+	        if (Number.isInteger(totalcount)) {
+				var totalc=totalcount
+			}
+			else
+			{
+				var roundOffVal=Math.floor(totalcount) + 1
+				var totalc=roundOffVal
+			}
+	        setPaginationResult(totalc)
+	        setloadStatus(true);
+	        setNotFound(false);
+	      }
+	    }
+	    if(itemListPageResult.statuscode === 3) {
+	      setarrayJson([])
+	      setloadStatus(false);
+	      setNotFound(true);
+	    }
+	    
+	  }, [itemListPageResult]);
+	const { items } = usePagination({
+			count: paginationResult,
+	});
 	return (
 		<>
 			<div>
-				<Container fixed>
-					<Stepper activeStep={activeStep} orientation="vertical">
-				          <Step key="0">
-				            <StepLabel>Product Basic Details</StepLabel>
-				            <StepContent>
-				              <Typography>Title 1</Typography>
-				              <div>
-				                <div>
-				                {
-				                	activeStep!=0 ? <Button
-				                    onClick={handleBack}
-				                  >
-				                    Back
-				                  </Button> : ""
-				                }
-				                  
-				                  <Button
-				                    variant="contained"
-				                    color="primary"
-				                    onClick={handleNext}
-				                  >
-				                  Next
-				                  </Button>
-				                </div>
-				              </div>
-				            </StepContent>
-				          </Step>
-				          <Step key="1">
-				            <StepLabel>Product Categories</StepLabel>
-				            <StepContent>
-				              <Typography>Title 2</Typography>
-				              <div>
-				                <div>
-				                  <Button
-				                    onClick={handleBack}
-				                  >
-				                    Back
-				                  </Button>
-				                  <Button
-				                    variant="contained"
-				                    color="primary"
-				                    onClick={handleNext}
-				                  >
-				                  Next
-				                  </Button>
-				                </div>
-				              </div>
-				            </StepContent>
-				          </Step>
-				          <Step key="2">
-				            <StepLabel>Product Variant</StepLabel>
-				            <StepContent>
-				              <Typography>Title 2</Typography>
-				              <div>
-				                <div>
-				                  <Button
-				                    onClick={handleBack}
-				                  >
-				                    Back
-				                  </Button>
-				                  <Button
-				                    variant="contained"
-				                    color="primary"
-				                    onClick={handleNext}
-				                  >
-				                  Next
-				                  </Button>
-				                </div>
-				              </div>
-				            </StepContent>
-				          </Step>
-				          <Step key="3">
-				            <StepLabel>Product Images</StepLabel>
-				            <StepContent>
-				              <Typography>Title 2</Typography>
-				              <div>
-				                <div>
-				                  <Button
-				                    onClick={handleBack}
-				                  >
-				                    Back
-				                  </Button>
-				                  <Button
-				                    variant="contained"
-				                    color="primary"
-				                    onClick={handleNext}
-				                  >
-				                  Next
-				                  </Button>
-				                </div>
-				              </div>
-				            </StepContent>
-				          </Step>
-				      </Stepper>
-				     {/* {activeStep === steps.length && (
-				        <Paper square elevation={0} className={classes.resetContainer}>
-				          <Typography>All steps completed - you&apos;re finished</Typography>
-				          <Button onClick={handleReset} className={classes.button}>
-				            Reset
-				          </Button>
-				        </Paper>
-				      )}*/}
-				</Container>
+				<div className="profile-title-sec ml-16">
+					<h4 className="profile-title">Category List</h4>
+				</div>
+				<div>
+				<div className={(backgroundRed) ?"mob-cartitems-sec bg-red":"mob-cartitems-sec"}>
+						<Container fixed>
+							<div className="allorders-top-sec d-flex kamss-show mr-t-12 pd-l-16">
+								<Box className="flexRow" display="flex" flexDirection="row">
+									<Box>
+										<Button disabled className="mr-r-8" color="primary">Show</Button>
+										<Select
+												menuPlacement="auto"
+												menuPosition="fixed"
+												className="width72 filterBy"
+												labelId="demo-multiple-checkbox-label"
+												id="demo-multiple-checkbox"
+												value={filterBy}
+												variant="outlined"
+												onChange={(e) => handleChangenew(e,totalLimit)}
+												>
+												<MenuItem value="10">10</MenuItem>				
+												<MenuItem value="25">25</MenuItem>
+												<MenuItem value="50">50</MenuItem>
+												<MenuItem value="100">100</MenuItem>
+										</Select>
+										<Button disabled className="mr-l-8" color="primary">entries</Button>
+									</Box>
+								</Box>
+								<div className="relative">
+									<TextField
+										margin="normal"
+										variant="outlined"
+										placeholder="Search Here"
+										value={searchKey}
+										onChange={(e) => handleSearchnew(e)}
+										className="serachSellerInput mr-t-0 width256 searchbox"
+										InputProps={
+											{
+												startAdornment: (
+														<InputAdornment position="start">
+															<img src={searchimg} alt="searchimg" />
+														</InputAdornment>
+												),
+											}
+										}
+									/>
+								</div>
+							</div>
+						</Container>
+						<div className="pd-l-16">
+							<hr className="MuiDivider-root blue-divider"></hr>
+						</div>
+						<div className="pd-l-16">
+								<Table className="paymentsellerList kamss-admin-table">
+									<TableHead>
+										<TableRow className="head noBorder">
+											<TableCell>SNo</TableCell>
+											<TableCell>Image</TableCell>
+											<TableCell>Item Name</TableCell>
+											<TableCell>Category</TableCell>
+											<TableCell>Brand</TableCell>
+											<TableCell>Price</TableCell>
+											<TableCell>Date</TableCell>
+											<TableCell>Status</TableCell>
+											<TableCell>Action</TableCell>
+										</TableRow>
+									</TableHead>
+									<TableBody>
+									{
+										Array.isArray(arrayJson) &&
+										arrayJson.length > 0 &&
+										arrayJson.map((item1, index1) => (
+										<TableRow>
+											<TableCell className="tBody">{(index1 + 1) + pageOffset > 9 ? (index1 + 1) + pageOffset : "0" + ((index1 + 1) + pageOffset)}</TableCell>
+											<TableCell className="tBody"><img src={item1.images.length > 0 ?'http://35.224.80.84/apiaction/'+item1.images[0]?.c_item_image:dressicon} alt="searchimg" /></TableCell>
+											<TableCell className="tBody">{item1.c_item_name}</TableCell>
+											<TableCell className="tBody">{item1.category[0]?.c_category_name}</TableCell>
+											<TableCell className="tBody">{item1.brand[0]?.c_barnd_name}</TableCell>
+											<TableCell className="tBody">{item1.variations[0]?.n_item_offer_price}</TableCell>
+											<TableCell className="tBody">{item1.dt_createdate}</TableCell>
+											<TableCell className="tBody">
+											{
+												item1.n_status==1 ?
+												<Button
+													className="active-btn"
+											        variant="contained"
+											        color="primary"
+											        size="small"
+											        startIcon={<VisibilityIcon />}
+											      >
+											        Active
+											      </Button>
+											      :
+												<Button
+													className="inactive-btn"
+											        variant="contained"
+											        color="secondary"
+											        size="small"
+											        startIcon={<VisibilityOffIcon />}
+											      >
+											        Inactive
+											      </Button>
+											}
+											</TableCell>
+											<TableCell className="tBody">
+											    <IconButton size="small">
+										          	<EditIcon fontSize="inherit" />
+										        </IconButton>
+										        <IconButton size="small">
+										          	<DeleteIcon fontSize="inherit" />
+										        </IconButton>
+											</TableCell>
+										</TableRow>
+										))
+									}
+									{
+										arrayJson.length == 0 ? "Record Not Found!":""
+									}
+									</TableBody>
+								</Table>
+						</div>
+						<div className="pd-b-32">
+							<Container fixed className="paginate">
+								{
+									notFound == false?(
+										<Grid container className="mr-t-12 pd-l-16">
+											<Grid item xs={7}>
+												<p>Showing {page} to {totalList} of {totalLimit ===0 ? 0 : totalLimit} entries</p>
+											</Grid>
+											{paginationResult > 1 ?(
+												<Grid item xs={5}>
+													<nav className="text-right">
+														<ul className="pagination">
+														{
+														items.map(({ page, type, selected, ...item }, index) => {
+																let children = null;
+																if (type === 'start-ellipsis' || type === 'end-ellipsis') 
+																{
+																		children = '…';
+																} 
+																else if (type === 'page') 
+																{
+																 children = (
+																	 <button type="button"
+																		className={`${selected ? 'current' : ''}`}  {...item}>
+																				{page}
+																				
+																		</button>
+																	);
+																} 
+																else 
+																{
+																	children = (
+																		<button type="button" {...item}>
+																				{type}
+																		</button>
+																	);
+																}
+																return <li onClick={(e) => handlePagination(e,page)} key={index}>{children}</li>;
+														})
+														}
+														</ul>
+													</nav>
+												</Grid>
+												):""
+											}
+								</Grid>
+								):""
+								}
+							</Container>
+						</div>
+												
+						</div>
+				</div>
 			</div>
 		</>
 	);
