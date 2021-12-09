@@ -111,7 +111,12 @@ const FastMovingMedicines = (props) => {
 	const [itemCode, setItemCode] = useState("");
 
 	useEffect(() => {
-		GetFastMovingItems();
+		const body={
+			c_process:'1',
+			n_offset:0,
+			n_limit:8
+		}
+		GetFastMovingItems(body);
 	}, []);
 	const [watchListIndex, setWatchListIndex] = useState(0);
 	const [watchListItemName, setWatchListItemName] = useState("");
@@ -130,8 +135,8 @@ const FastMovingMedicines = (props) => {
 
 	let tempArray = [];
 	let payloadLength =
-		Array.isArray(fastMovingItemsResult.payload.data?.j_list) &&
-		fastMovingItemsResult.payload.data?.j_list.length;
+		Array.isArray(fastMovingItemsResult.payload.data) &&
+		fastMovingItemsResult.payload.data.length;
 	for (let i = 0; i <= payloadLength; i++) {
 		tempArray.push(false);
 	}
@@ -336,7 +341,7 @@ const FastMovingMedicines = (props) => {
 						
 					</div>
 					<div>
-						<Link to={`/plp/top-most?index=0`}>
+						<Link to={`/plp/best-selling?index=0`}>
 							<Button
 								variant="contained"
 								color="primary"
@@ -350,9 +355,9 @@ const FastMovingMedicines = (props) => {
 
 				<div className="fast-moving-sec">
 					<Slider {...settings} className="preferred-seller-slider">
-						{Array.isArray(fastMovingItemsResult.payload.data?.j_list) &&
-							fastMovingItemsResult.payload.data?.j_list.length > 0 &&
-							(fastMovingItemsResult.payload.data?.j_list).map(
+						{Array.isArray(fastMovingItemsResult.payload.data) &&
+							fastMovingItemsResult.payload.data.length > 0 &&
+							(fastMovingItemsResult.payload.data).map(
 								(item, index) => (
 									<div key={item.c_item_code}>
 										<div className="fast-moving-sec-25" key={item.c_item_code}>
@@ -375,21 +380,21 @@ const FastMovingMedicines = (props) => {
 															<img
 																src={wishlist_colorIcon}
 																alt="wishListImg-1"
-																onClick={handleClickWatchListRemoved(
-																	item.c_item_name,
-																	item.c_item_code,
-																	index
-																)}
+																// onClick={handleClickWatchListRemoved(
+																// 	item.c_item_name,
+																// 	item.c_item_code,
+																// 	index
+																// )}
 															/>
 														) : (
 															<img
 																src={wishlist}
 																alt="wishListImg-1"
-																onClick={handleClickWatchListAdded(
-																	item.c_item_name,
-																	item.c_item_code,
-																	index
-																)}
+																// onClick={handleClickWatchListAdded(
+																// 	item.c_item_name,
+																// 	item.c_item_code,
+																// 	index
+																// )}
 															/>
 														)}
 													</Tooltip>
@@ -404,13 +409,13 @@ const FastMovingMedicines = (props) => {
 														)}`}
 														key={item.c_item_code}
 													>
-														{   item.ac_thumbnail_images ?    (
+														{   item.images[0].c_item_image ?    (
 															
-															item.ac_thumbnail_images === "" ? (
+															item.images[0].c_item_image === "" ? (
 																<img src={capsules} alt="ProductImg" />
 															) : (
 																<img
-																	src={item.ac_thumbnail_images}
+																	src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
 																	alt={item.c_item_name}
 																	onError={(e) => {
 																		e.target.src = capsules;
@@ -443,14 +448,14 @@ const FastMovingMedicines = (props) => {
 																</h4>
 															</Tooltip>
 															<h5 className="medicine-packsize">
-																Pack Size: {item.c_pack_name}
+																Brand: {item.brand[0].c_brand_name}
 															</h5>
 															<h5 className="medicine-mrp">
-																MRP &#8377; {item.n_mrp}
+																MRP &#8377; {item.variations[0].n_item_offer_price}
 															</h5>
 															<h5 className="medicine-contains">
-																Contains
-																<span> {item.c_contains}</span>
+																Category
+																<span> {item.category[0].c_category_name}</span>
 															</h5>
 														</Link>
 													</div>
@@ -459,7 +464,7 @@ const FastMovingMedicines = (props) => {
 															variant="contained"
 															color="primary"
 															className="fast-moving-addtocart"
-															onClick={() => handleOpen(item.c_item_code)}
+															// onClick={() => handleOpen(item.c_item_code)}
 															// onClick={()=>handleOpen()}
 														>
 															Add To Cart
@@ -481,22 +486,22 @@ const FastMovingMedicines = (props) => {
 																			src={shortbook_colorIcon}
 																			alt="addtoshortbook-icon-1"
 																			className="addtoshortbook-icon"
-																			onClick={handleClickShortBookRemoved(
-																				item.c_item_name,
-																				item.c_item_code,
-																				index
-																			)}
+																			// onClick={handleClickShortBookRemoved(
+																			// 	item.c_item_name,
+																			// 	item.c_item_code,
+																			// 	index
+																			// )}
 																		/>
 																	) : (
 																		<img
 																			src={shortbook_icon}
 																			alt="addtoshortbook-icon-1"
 																			className="addtoshortbook-icon"
-																			onClick={handleClickShortBookAdded(
-																				item.c_item_name,
-																				item.c_item_code,
-																				index
-																			)}
+																			// onClick={handleClickShortBookAdded(
+																			// 	item.c_item_name,
+																			// 	item.c_item_code,
+																			// 	index
+																			// )}
 																		/>
 																	)}
 																</div>

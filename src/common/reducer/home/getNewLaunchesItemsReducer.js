@@ -1,22 +1,31 @@
 import { Types } from "../../constant/action";
 import { NewLaunchesItemsEntity, NewLaunchesItemsActionEntity } from "../../model";
 
-const initialState: NewLaunchesItemsEntity  = {
+const initialState = {
+    loading: true,
+    statuscode:"",
     payload: [],
-    error: ""
+    error: "",
+    msg:""
 }
 
-const GetNewLaunchesItemsReducer = (state: NewLaunchesItemsEntity = initialState, action: NewLaunchesItemsActionEntity): NewLaunchesItemsEntity => {
+const GetNewLaunchesItemsReducer = (state = initialState, action) => {
     switch (action.type) {
         case Types.NEWLAUNCHES_ITEMS_SUCCESS: 
             return {
-                payload: action.payload,
-                error: action.error
+                 loading: action.loading,
+              payload: action.payload,
+              statuscode:action.statuscode,
+              error: action.error,
+              msg: action.msg
             };
         case Types.NEWLAUNCHES_ITEMS_FAILURE: 
             return {
-                payload: action.payload,
-                error: action.error
+                  loading: action.loading,
+              payload: action.payload,
+              statuscode:action.statuscode,
+              error: action.error,
+              msg: action.msg
             };
         default:
             return state;

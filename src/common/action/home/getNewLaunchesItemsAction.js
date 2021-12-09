@@ -1,4 +1,5 @@
 import { Types } from "../../constant/action";
+import { ENV } from "../../constant/env";
 import { REACT_APP_BASE_URL } from "../../constant/env";
 import { Constants } from "../../constant/localstorage";
 import axios from "axios";
@@ -8,47 +9,37 @@ import {
 } from "../../model";
 
 export const getNewLaunchesItemsSuccess = (
-  result
+  result,code
 ) => ({
   type: Types.NEWLAUNCHES_ITEMS_SUCCESS,
   payload: result,
-  error: ""
+  statuscode:code,
+  loading: false,
+  error: "",
+  msg: ""
 });
 
-export const getNewLaunchesItemsFailure = (errMsg) => ({
+export const getNewLaunchesItemsFailure = (errMsg,code) => ({
   type: Types.NEWLAUNCHES_ITEMS_FAILURE,
   payload: [],
-  error: errMsg
+  statuscode:code,
+  loading: false,
+  error: errMsg,
+  msg: ""
 });
 
-export const GetNewLaunchesItems = () => async (dispatch) => {
- 
+export const GetNewLaunchesItems = (body) => async (dispatch) => {
 
-  const headers = {
-    "Content-Type": "application/json",
-    "X-csquare-api-token":localStorage.getItem(Constants.TOKEN),
-    "X-csquare-api-key":localStorage.getItem(Constants.KEY),
-  };
-
-
-  const body={
-    "n_page":0,
-    "n_limit":15
-  }
-
-    axios.post(`${REACT_APP_BASE_URL}/c2/lc/ms/mst/item/new`,body, {headers})
+    axios.post(`${ENV.ADMIN_BASE_URL}/api/v1/items/newitems`,body)
         .then(response => {
-          // console.log(response);
-          if(response.data.appStatusCode === 0){
-            if(response.data.payloadJson !== null){
-              dispatch(getNewLaunchesItemsSuccess(response.data.payloadJson))
-            } 
+          if(response.data.status === 1){
+              dispatch(getNewLaunchesItemsSuccess(response.data,response.data.status))
           }else{
-            dispatch(getNewLaunchesItemsFailure(response.data.messages[0]));
+            dispatch(getNewLaunchesItemsFailure(response.data.message,response.data.status));
           }
         })
-          .catch(error => {
-            dispatch(getNewLaunchesItemsFailure("Something went wrong, Please try again later!"));
-          });
+    .catch(error => {
+      dispatch(getNewLaunchesItemsFailure("Something went wrong, Please try again later!"));
+    });
 
 };

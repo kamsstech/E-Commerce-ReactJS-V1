@@ -806,21 +806,21 @@ const WebRouter = () => {
 					Layout={MainLayout}
 					pageTitle="LC Wallet"
 				/>
-				 <PrivateRoute
+				 <CommonLayout
 					path="/plp"
 					exact
 					Component={PlpPageContainer}
 					Layout={MainLayout}
-					pageTitle="Top/Most ordered Products"
+					pageTitle="Best Selling Products"
 					/>
-				<PrivateRoute
+				<CommonLayout
 					path="/plp/:type"
 					Component={PlpPageContainer}
 					Layout={PlpLayout}
 					pageTitle=""
 				/>
 
-				<PrivateRoute
+				<CommonLayout
 					path="/pdp/:itemCode/:itemName"
 					Component={PDPPageContainer}
 					Layout={MainLayout}

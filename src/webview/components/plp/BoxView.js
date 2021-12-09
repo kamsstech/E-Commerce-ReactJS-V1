@@ -3,7 +3,7 @@ import { useState, useEffect,useRef } from "react";
 import { REACT_APP_BASE_URL } from "../../../common/constant/env";
 import { Link } from "react-router-dom";
 import CircularProgress from "@material-ui/core/CircularProgress";
-
+import Slider from "react-slick";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
@@ -38,6 +38,7 @@ import { Constants } from "../../../common/constant/localstorage";
 //   console.log("props in box", props);
 //   return <Grow {...props} />;
 // }
+
 const BoxView = (props) => {
 	const {
 		match,
@@ -131,17 +132,10 @@ const BoxView = (props) => {
 		let url_string = window.location;
 		let url = new URL(url_string);
 
-		if (match.params.type == "top-most") {
+		if (match.params.type == "best-selling") {
 			setPageNav("Top Most Ordered Products");
 			setTitle("Top Most Ordered Products");
 			urlPath = "/c2/lc/ms/mst/item/top";
-			indexValue = url.searchParams.get("index");
-		}
-
-		else if (match.params.type == "preferred") {
-			setPageNav("preferred");
-			setTitle("preferred");
-			urlPath = "/c2/lc/ms/mst/seller/preferred";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
@@ -150,40 +144,6 @@ const BoxView = (props) => {
 			urlPath = "/c2/lc/ms/mst/item/new";
 			indexValue = url.searchParams.get("index");
 		}
-		else if (match.params.type == "manufature") {
-			setPageNav("Manufature");
-			setTitle("Manufature");
-			urlPath = "/c2/lc/ms/mst/head/mfg";
-			indexValue = url.searchParams.get("index");
-		}
-
-		else if (match.params.type == "seller") {
-			setPageNav("Seller");
-			///web/rawSellerWiseProductList
-			urlPath = "/c2/lc/ms/mst/search/l/itemsBySellerCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let sellerName = url.searchParams.get("n");
-			setTitle(sellerName);
-		}
-
-		else if (match.params.type == "mfg") {
-			setPageNav("Manufacture");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMfcCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let mfgName = url.searchParams.get("n");
-			setTitle(mfgName);
-		}
-		else if (match.params.type == "mol") {
-			setPageNav("Molecules");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMoleculeCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let molName = url.searchParams.get("n");
-			setTitle(molName);
-		}
-
 		else if (match.params.type == "search") {
 			setPageNav("Search With List");
 			urlPath = "/c2/lc/ms/mst/search/l/prd";
@@ -200,10 +160,9 @@ const BoxView = (props) => {
 			setsearchKeyArr(searchKeyValue.split(","));
 			setSearchResultvalue(codeValue);
 		}
-
 		else if (match.params.type == "category") {
 			setPageNav("Category");
-			urlPath = "/c2/lc/ms/mst/search/l/categoryItem";
+			urlPath = "/api/v1/items/categoryitems";
 			indexValue = url.searchParams.get("index");
 			codeValue = url.searchParams.get("q");
 			let categoryName = url.searchParams.get("n");
@@ -213,10 +172,11 @@ const BoxView = (props) => {
 			page_path: urlPath,
 			index_value: indexValue,
 			key_value: keyValue,
-			n_page: 0,
+			n_offset: 0,
 			n_limit: limit,
 			c_code: codeValue,
 			type: match.params.type,
+			c_process:"1"
 		};
 		GetPlpPageActions(body);
 		
@@ -225,16 +185,10 @@ const BoxView = (props) => {
 	 const handleLoadMore = (e,nextPage) => { 
 		let url_string = window.location;
 		let url = new URL(url_string);
-		if (match.params.type == "top-most") {
-			setPageNav("Top Most ordered");
-			setTitle("Top/Most ordered");
+		if (match.params.type == "best-selling") {
+			setPageNav("Top Most Ordered Products");
+			setTitle("Top Most Ordered Products");
 			urlPath = "/c2/lc/ms/mst/item/top";
-			indexValue = url.searchParams.get("index");
-		}
-		else if (match.params.type == "preferred") {
-			setPageNav("preferred");
-			setTitle("preferred");
-			urlPath = "/c2/lc/ms/mst/seller/preferred";
 			indexValue = url.searchParams.get("index");
 		}
 		else if (match.params.type == "new") {
@@ -242,39 +196,6 @@ const BoxView = (props) => {
 			setTitle("NewLaunches");
 			urlPath = "/c2/lc/ms/mst/item/new";
 			indexValue = url.searchParams.get("index");
-		}
-		else if (match.params.type == "manufature") {
-			setPageNav("Manufature");
-			setTitle("Manufature");
-			urlPath = "/c2/lc/ms/mst/head/mfg";
-			indexValue = url.searchParams.get("index");
-		}
-
-		else if (match.params.type == "seller") {
-			setPageNav("Seller");
-			///web/rawSellerWiseProductList
-			urlPath = "/c2/lc/ms/mst/search/l/itemsBySellerCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let sellerName = url.searchParams.get("n");
-			setTitle(sellerName);
-		}
-
-		else if (match.params.type == "mfg") {
-			setPageNav("Manufacture");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMfcCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let mfgName = url.searchParams.get("n");
-			setTitle(mfgName);
-		}
-		else if (match.params.type == "mol") {
-			setPageNav("Molecules");
-			urlPath = "/c2/lc/ms/mst/search/l/itemsByMoleculeCode";
-			indexValue = url.searchParams.get("index");
-			codeValue = url.searchParams.get("q");
-			let molName = url.searchParams.get("n");
-			setTitle(molName);
 		}
 		else if (match.params.type == "search") {
 			setPageNav("Search With List");
@@ -294,7 +215,7 @@ const BoxView = (props) => {
 		}
 		else if (match.params.type == "category") {
 			setPageNav("Category");
-			urlPath = "/c2/lc/ms/mst/search/l/categoryItem";
+			urlPath = "/api/v1/items/categoryitems";
 			indexValue = url.searchParams.get("index");
 			codeValue = url.searchParams.get("q");
 			let categoryName = url.searchParams.get("n");
@@ -304,7 +225,7 @@ const BoxView = (props) => {
 			page_path: urlPath,
 			index_value: indexValue,
 			key_value: keyValue,
-			n_page: nextPage,
+			n_offset: nextPage,
 			n_limit: limit,
 			c_code: codeValue,
 			type: match.params.type,
@@ -314,15 +235,16 @@ const BoxView = (props) => {
 
 	useEffect(() => {
 		setloadStatus(false);
-		if (plpPageAtionsResult.statuscode === 0) {
+		if (plpPageAtionsResult.statuscode === 1) {
 			if(page === 0)
 			{
 				setArrayRes([])
 			}
-			setArrayRes([...arrayRes, ...plpPageAtionsResult.payload?.j_list]);
+			
+			setArrayRes([...arrayRes, ...plpPageAtionsResult.payload.data]);
 			setTotalList(plpPageAtionsResult.payload.n_total);
 			setPage(plpPageAtionsResult.payload.n_next_page);
-			setresultCount(plpPageAtionsResult.payload.j_list.length)
+			setresultCount(plpPageAtionsResult.payload.data.length)
 			setloadStatus(true);
 			setNotFound(false);
 		}
@@ -540,186 +462,166 @@ const BoxView = (props) => {
 
 	return (
 		<div>
-			<div className="box-view-sec-1">
+			<div className="fast-moving-sec preferred-seller-slider">
+				{Array.isArray(arrayRes) &&
+					arrayRes.length > 0 &&
+					(arrayRes).map(
+						(item, index) => (
+							<div key={item.c_item_code}>
+								<div className="fast-moving-sec-25" key={item.c_item_code}>
+									<div className="fast-moving-tile-offer">
+										{
+										item.c_discount_status && item.c_discount_status === 'Y' ? 
+											<img src={commerce_offer} alt="wishListImg-1" /> 
+											:
+											null
+										}
+										{/* <img src={commerce_offer} alt="wishListImg-1" /> */}
+									</div>
 
-				{
-					Array.isArray(arrayRes) && arrayRes.length > 0 ?
-					arrayRes.map((item, index) => (
-						<div className="box-view-sec-25-1" key={item.c_item_code}>
-							<div className="box-view-tile-1">
-								
-								<div className="box-view-tile-imgsec-1">
-									<Link to={`/pdp/${item.c_item_code}/${convertToSlug(item.c_item_name)}`}>
-										{item.c_item_name ? (
-											<img
-												src={capsules}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={oral_sus}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={injectable}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={tablet}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										) : item.c_item_name ? (
-											<img
-												src={drops}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
+									<div className="watchlist-wdt">
+										{watchListLoading[index] === true ? (
+											<CircularProgress size={32} thickness={8} />
 										) : (
-											<img
-												src={tablet}
-												alt="homeSliderImg-1"
-												className="imgsec"
-											/>
-										)}
-									</Link>
-								</div>
-								<div className="box-view-tile-details-1">
-									<div>
-										<Link to={`/pdp/${item.c_item_code}/${convertToSlug(item.c_item_name)}`}>
-											{item.c_scheme_status === "Y" ? (
-												<img
-													src={commerce_offer}
-													alt="wishListImg-1"
-													className="box-view-tile-fav-1"
-												/>
-											) : (
-												""
-											)}
-
-											<h4 className="medicine-title-1">{item.c_item_name}</h4>
-											<h5 className="medicine-packsize-1">
-												Pack Size: {item.c_pack_name}
-											</h5>
-											<h5 className="medicine-mrp-1">
-												MRP &#8377; {item.n_max_mrp}
-											</h5>
-											<h5 className="medicine-contains-1">
-												Contains <span>{item.c_contains}</span>
-											</h5>
-										</Link>
-										<div className="plp-icons">
-											<Tooltip title="Shortbook" TransitionComponent={Zoom}>
-												<Button
-													variant="contained"
-													color="primary"
-													className="shortbook"
-												>
-													{shortLoading[index] === true ? (
-														<CircularProgress
-															size={32}
-															thickness={8}/>
-													) : item.c_short_book_status === "Y" ? (
-														<img
-															src={shortbook_colorIcon}
-															alt="addtoshortbook-icon-1"
-															className="addtoshortbook-icon"
-															onClick={handleClickShortBookRemoved(
-																item.c_item_name,
-																item.c_item_code,
-																index
-															)}
-														/>
-													) : (
-														<img
-															src={shortbook_icon}
-															alt="addtoshortbook-icon-1"
-															className="addtoshortbook-icon"
-															onClick={handleClickShortBookAdded(
-																item.c_item_name,
-																item.c_item_code,
-																index
-															)}
-														/>
-													)}
-												</Button>
-											</Tooltip>
-
-
 											<Tooltip title="Watchlist" TransitionComponent={Zoom}>
-												<Button
-													variant="contained"
-													color="primary"
-													className="watchlist"
-												>
-													{watchListLoading[index] === true ? (
-														<CircularProgress
-															size={32}
-															thickness={8}/>
-													) : item.c_watchlist_status === "Y" ? (
-														<img
-															src={wishlist_colorIcon}
-															alt="wishListImg-1"
-															className="wishList-icon"
-															onClick={handleClickWatchListRemoved(
-																item.c_item_name,
-																item.c_item_code,
-																index
-															)}
-														/>
+												{item.c_watchlist_status === "Y" ? (
+													<img
+														src={wishlist_colorIcon}
+														alt="wishListImg-1"
+														// onClick={handleClickWatchListRemoved(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
+													/>
+												) : (
+													<img
+														src={wishlist}
+														alt="wishListImg-1"
+														// onClick={handleClickWatchListAdded(
+														// 	item.c_item_name,
+														// 	item.c_item_code,
+														// 	index
+														// )}
+													/>
+												)}
+											</Tooltip>
+										)}
+									</div>
+
+									<div className="fast-moving-tile">
+										<div className="fast-moving-tile-imgsec">
+											<Link
+												to={`pdp/${item.c_item_code}/${convertToSlug(
+													item.c_item_name
+												)}`}
+												key={item.c_item_code}
+											>
+												{   item.images[0].c_item_image ?    (
+													
+													item.images[0].c_item_image === "" ? (
+														<img src={capsules} alt="ProductImg" />
 													) : (
 														<img
-															src={wishlist}
-															alt="wishListImg-1"
-															className="wishList-icon"
-															onClick={handleClickWatchListAdded(
-																item.c_item_name,
-																item.c_item_code,
-																index
-															)}
+															src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
+															alt={item.c_item_name}
+															onError={(e) => {
+																e.target.src = capsules;
+															}}
 														/>
-													)}
-												</Button>
-											</Tooltip>
+													)
+												):(
+													<img src={capsules} alt="ProductImg" />
+												)
 
-											<div className="button">
+												
+												
+												}
+											</Link>
+										</div>
+										<div className="fast-moving-tile-details">
+											<div>
+												<Link
+													to={`pdp/${item.c_item_code}/${convertToSlug(
+														item.c_item_name
+													)}`}
+													key={item.c_item_code}
+												>
+													<Tooltip
+														title={item.c_item_name}
+														TransitionComponent={Zoom}
+													>
+														<h4 className="medicine-title">
+															{item.c_item_name}
+														</h4>
+													</Tooltip>
+													<h5 className="medicine-packsize">
+														Brand: {item.brand[0].c_brand_name}
+													</h5>
+													<h5 className="medicine-mrp">
+														MRP &#8377; {item.variations[0].n_item_offer_price}
+													</h5>
+													<h5 className="medicine-contains">
+														Category
+														<span> {item.category[0].c_category_name}</span>
+													</h5>
+												</Link>
+											</div>
+											<div className="fast-moving-buttons-sec">
 												<Button
 													variant="contained"
 													color="primary"
-													className="addtocart"
-													onClick={()=>handleOpen(item.c_item_code)}
+													className="fast-moving-addtocart"
+													// onClick={() => handleOpen(item.c_item_code)}
+													// onClick={()=>handleOpen()}
 												>
 													Add To Cart
 												</Button>
+												{shortLoading[index] === true ? (
+													<CircularProgress
+														className="mr-l-12"
+														size={32}
+														thickness={8}
+													/>
+												) : (
+													<Tooltip
+														title="Shortbook"
+														TransitionComponent={Zoom}
+													>
+														<div className="addtoshortbook-icon-sec">
+															{item.c_short_book_status === "Y" ? (
+																<img
+																	src={shortbook_colorIcon}
+																	alt="addtoshortbook-icon-1"
+																	className="addtoshortbook-icon"
+																	// onClick={handleClickShortBookRemoved(
+																	// 	item.c_item_name,
+																	// 	item.c_item_code,
+																	// 	index
+																	// )}
+																/>
+															) : (
+																<img
+																	src={shortbook_icon}
+																	alt="addtoshortbook-icon-1"
+																	className="addtoshortbook-icon"
+																	// onClick={handleClickShortBookAdded(
+																	// 	item.c_item_name,
+																	// 	item.c_item_code,
+																	// 	index
+																	// )}
+																/>
+															)}
+														</div>
+													</Tooltip>
+												)}
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					)) :
-					<Grid item xs={12}>
-						<div className="notFound">
-							<Alert severity="error"> <span className="font-weight-bold">Opps..!!!</span> Products not found.</Alert>
-						</div>
-					</Grid>
-				}
-
-			 {/*<div className="plp-icons">
-				 <Button
-						variant="contained"
-						color="primary"
-						className="addtocart"
-						onClick={()=>handleLoadmore(plpPageAtionsResult.payload.n_next_page)}
-					>
-						Load More
-					</Button>
-				</div>*/}
+						)
+					)}
 			</div>
 			{
 				Array.isArray(arrayRes) && arrayRes.length > 0 ?

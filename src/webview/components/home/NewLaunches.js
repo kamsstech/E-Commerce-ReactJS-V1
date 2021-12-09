@@ -130,7 +130,12 @@ const NewLaunches = (props) => {
   };
 
   useEffect(() => {
-    GetNewLaunchesItems();
+    const body={
+      c_process:'1',
+      n_offset:0,
+      n_limit:8
+    }
+    GetNewLaunchesItems(body);
   }, []);
   const [watchListIndex, setWatchListIndex] = useState(0);
   const [shortbookIndex, setShortbookIndex] = useState(0);
@@ -330,145 +335,168 @@ const NewLaunches = (props) => {
       </div>
 
       <div className="fast-moving-sec">
-        <Slider {...settings} className="preferred-seller-slider">
-          {Array.isArray(newLaunchesItemsResult.payload.data?.j_list) &&
-            newLaunchesItemsResult.payload.data?.j_list.length > 0 &&
-            (newLaunchesItemsResult.payload.data?.j_list).map((item, index) => (
-              <div key={item.c_item_code}>
-                <div className="fast-moving-sec-25" key={item.c_item_code}>
-                  <div className="fast-moving-tile-offer">
-                    {/* <img src={commerce_offer} alt="wishListImg-1" /> */}
-                    {
-												item.c_discount_status && item.c_discount_status === 'Y' ? 
-													<img src={commerce_offer} alt="wishListImg-1" /> 
-													:
-													null
-												}
-                  </div>
-                  <div className="watchlist-wdt">
-                    {watchListLoading[index] === true ? (
-                      <CircularProgress size={32} thickness={8} />
-                    ) : (
-                      <Tooltip title="Watchlist" TransitionComponent={Zoom}>
-                        {item.c_watchlist_status === "Y" ? (
-                          <img
-                            src={wishlist_colorIcon}
-                            alt="wishListImg-1"
-                            onClick={handleClickWatchListRemoved(
-                              item.c_item_name,
-                              item.c_item_code,
-                              index
-                            )}
-                          />
-                        ) : (
-                          <img
-                            src={wishlist}
-                            alt="wishListImg-1"
-                            onClick={handleClickWatchListAdded(
-                              item.c_item_name,
-                              item.c_item_code,
-                              index
-                            )}
-                          />
-                        )}
-                      </Tooltip>
-                    )}
-                  </div>
-                  <div className="fast-moving-tile">
-                    <div className="fast-moving-tile-imgsec">
-                      <Link
-                        to={`/pdp/${item.c_item_code}/${convertToSlug(item.c_item_name)}`}
-                        key={item.c_item_code}
-                      >
-                        {item.ac_thumbnail_images === "" ? (
-                          <img src={injectable} alt="homeSliderImg" />
-                        ) : (
+          <Slider {...settings} className="preferred-seller-slider">
+            {Array.isArray(newLaunchesItemsResult.payload.data) &&
+              newLaunchesItemsResult.payload.data.length > 0 &&
+              (newLaunchesItemsResult.payload.data).map(
+                (item, index) => (
+                  <div key={item.c_item_code}>
+                    <div className="fast-moving-sec-25" key={item.c_item_code}>
+                      <div className="fast-moving-tile-offer">
+                        {
+                        item.c_discount_status && item.c_discount_status === 'Y' ? 
+                          <img src={commerce_offer} alt="wishListImg-1" /> 
+                          :
+                          null
+                        }
+                        {/* <img src={commerce_offer} alt="wishListImg-1" /> */}
+                      </div>
 
-                            <img
-                                  src={item.ac_thumbnail_images}
+                      <div className="watchlist-wdt">
+                        {watchListLoading[index] === true ? (
+                          <CircularProgress size={32} thickness={8} />
+                        ) : (
+                          <Tooltip title="Watchlist" TransitionComponent={Zoom}>
+                            {item.c_watchlist_status === "Y" ? (
+                              <img
+                                src={wishlist_colorIcon}
+                                alt="wishListImg-1"
+                                // onClick={handleClickWatchListRemoved(
+                                //   item.c_item_name,
+                                //   item.c_item_code,
+                                //   index
+                                // )}
+                              />
+                            ) : (
+                              <img
+                                src={wishlist}
+                                alt="wishListImg-1"
+                                // onClick={handleClickWatchListAdded(
+                                //   item.c_item_name,
+                                //   item.c_item_code,
+                                //   index
+                                // )}
+                              />
+                            )}
+                          </Tooltip>
+                        )}
+                      </div>
+
+                      <div className="fast-moving-tile">
+                        <div className="fast-moving-tile-imgsec">
+                          <Link
+                            to={`pdp/${item.c_item_code}/${convertToSlug(
+                              item.c_item_name
+                            )}`}
+                            key={item.c_item_code}
+                          >
+                            {   item.images[0].c_item_image ?    (
+                              
+                              item.images[0].c_item_image === "" ? (
+                                <img src={capsules} alt="ProductImg" />
+                              ) : (
+                                <img
+                                  src={'http://35.224.80.84/apiaction/'+item.images[0].c_item_image}
                                   alt={item.c_item_name}
                                   onError={(e) => {
-                                     e.target.src = capsules
+                                    e.target.src = capsules;
                                   }}
                                 />
+                              )
+                            ):(
+                              <img src={capsules} alt="ProductImg" />
+                            )
 
-                        )}
-                      </Link>
-                    </div>
-                    <div className="fast-moving-tile-details">
-                      <div>
-                        <Link
-                          to={`/pdp/${item.c_item_code}/${convertToSlug(item.c_item_name)}`}
-                          key={item.c_item_code}
-                        >
-                          <Tooltip
-                            title={item.c_item_name}
-                            TransitionComponent={Zoom}
-                          >
-                            <h4 className="medicine-title">
-                              {item.c_item_name}
-                            </h4>
-                          </Tooltip>
-                          <h5 className="medicine-packsize">
-                            Pack Size: {item.c_pack_name}
-                          </h5>
-
-                          <h5 className="medicine-mrp">
-                            MRP &#8377; {item.n_max_mrp}
-                          </h5>
-                          <h5 className="medicine-contains">
-                            Contains<span> {item.c_contains}</span>
-                          </h5>
-                        </Link>
-                      </div>
-                      <div className="fast-moving-buttons-sec">
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          className="fast-moving-addtocart"
-                          onClick={() => handleOpen(item.c_item_code)}
-                        >
-                          Add To Cart
-                        </Button>
-
-                          {shortLoading[index] === true ? ( <CircularProgress className="mr-l-12" size={32} thickness={8} />) : (
-                            <Tooltip title="Shortbook" TransitionComponent={Zoom}>
+                            
+                            
+                            }
+                          </Link>
+                        </div>
+                        <div className="fast-moving-tile-details">
+                          <div>
+                            <Link
+                              to={`pdp/${item.c_item_code}/${convertToSlug(
+                                item.c_item_name
+                              )}`}
+                              key={item.c_item_code}
+                            >
+                              <Tooltip
+                                title={item.c_item_name}
+                                TransitionComponent={Zoom}
+                              >
+                                <h4 className="medicine-title">
+                                  {item.c_item_name}
+                                </h4>
+                              </Tooltip>
+                              <h5 className="medicine-packsize">
+                                Brand: {item.brand[0].c_brand_name}
+                              </h5>
+                              <h5 className="medicine-mrp">
+                                MRP &#8377; {item.variations[0].n_item_offer_price}
+                              </h5>
+                              <h5 className="medicine-contains">
+                                Category
+                                <span> {item.category[0].c_category_name}</span>
+                              </h5>
+                            </Link>
+                          </div>
+                          <div className="fast-moving-buttons-sec">
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              className="fast-moving-addtocart"
+                              // onClick={() => handleOpen(item.c_item_code)}
+                              // onClick={()=>handleOpen()}
+                            >
+                              Add To Cart
+                            </Button>
+                            {shortLoading[index] === true ? (
+                              <CircularProgress
+                                className="mr-l-12"
+                                size={32}
+                                thickness={8}
+                              />
+                            ) : (
+                              <Tooltip
+                                title="Shortbook"
+                                TransitionComponent={Zoom}
+                              >
                                 <div className="addtoshortbook-icon-sec">
                                   {item.c_short_book_status === "Y" ? (
                                     <img
                                       src={shortbook_colorIcon}
                                       alt="addtoshortbook-icon-1"
                                       className="addtoshortbook-icon"
-                                      onClick={handleClickShortBookRemoved(
-                                        item.c_item_name,
-                                        item.c_item_code,
-                                        index
-                                      )}
+                                      // onClick={handleClickShortBookRemoved(
+                                      //   item.c_item_name,
+                                      //   item.c_item_code,
+                                      //   index
+                                      // )}
                                     />
                                   ) : (
                                     <img
                                       src={shortbook_icon}
                                       alt="addtoshortbook-icon-1"
                                       className="addtoshortbook-icon"
-                                      onClick={handleClickShortBookAdded(
-                                        item.c_item_name,
-                                        item.c_item_code,
-                                        index
-                                      )}
+                                      // onClick={handleClickShortBookAdded(
+                                      //   item.c_item_name,
+                                      //   item.c_item_code,
+                                      //   index
+                                      // )}
                                     />
                                   )}
                                 </div>
-                            </Tooltip>
-                          )}
+                              </Tooltip>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              // </Link>
-            ))}
-        </Slider>
-      </div>
+                )
+              )}
+          </Slider>
+        </div>
       <SellerDropDown
         isOpen={open}
         setIsOpen={setOpen}
