@@ -15,17 +15,17 @@ var currentSlide = 0;
 
 
 const Homepagebanner = (props) => {
-  const [updateSwiper,setUpdateSwiper] = useState(null);
-  const [playing, setPlaying] =  useState(false);
-  const [progress, setProgress] =  useState(0);
-  const [seconds, setSeconds] =  useState(50);
-  const [barVisible, setBarVisible] =  useState(false);
+	const [updateSwiper,setUpdateSwiper] = useState(null);
+	const [playing, setPlaying] =  useState(true);
+	const [progress, setProgress] =  useState(0);
+	const [seconds, setSeconds] =  useState(50);
+	const [barVisible, setBarVisible] =  useState(false);
 const {bannerResponse}=props;
 // console.log(bannerResponse, "<< bannerResponse");
 const [arrayRes,setArrayRes] = useState([]);
  const [autoPlay, setAutoPlay] = useState({
-  delay: 1500,
-  disableOnInteraction: false
+	delay: 1500,
+	disableOnInteraction: false
 });
 
 const [play, setPlay] = useState(true);
@@ -39,19 +39,20 @@ const [play, setPlay] = useState(true);
 //   setProgress(newProgress);
 // },[progress])
  const [activeSlideKey, setActiveSlideKey] = useState('0');
+ const [pausedImg,setPausedImg] = useState()
 
-  // for determinate progress bar
+	// for determinate progress bar
 	// const [seconds, setSeconds] = useState(0);
 	// const [isActive, setIsActive] = useState(true);
-  
+	
 // console.log(arrayRes,"<<< arrayRes")
 
-  const handlePause = () => {
-  //  console.log('pause',swiper)
+	const handlePause = () => {
+	//  console.log('pause',swiper)
 	// localStorage.setItem('currentSlide',currentSlide)
 
 	setAutoPlay(false)
-	setPlay(false);
+	setPlaying(false);
 	localStorage.setItem('currentSlide',currentSlide)
 	// console.log('in pause cslide',currentSlide)
 
@@ -59,10 +60,10 @@ const [play, setPlay] = useState(true);
 	// setSeconds(0);
 	// seconds = 0;
 	// setIsActive(false);
-  };
 
-
-  
+let array = arrayRes[localStorage.getItem("slideInd")]
+setPausedImg(array)
+	};
 //   const handlePause = () => {
 //     setProgress(0);
 //     setPlaying(false);
@@ -70,84 +71,87 @@ const [play, setPlay] = useState(true);
 // };
 
 const handlePlay = () => {
-	setPlaying(false);
+	setPlaying(true);
 	setProgress(0);
 	setSeconds(50);
 	setAutoPlay({
-	  delay: 1500,
-	  disableOnInteraction: false
+		delay: 1500,
+		disableOnInteraction: false
 	});
 
 	currentSlide = parseInt(localStorage.getItem('currentSlide'));
 	if(currentSlide){
-	  currentSlide -=1;
+		currentSlide -=1;
 	}
 }
 
 useEffect(() => {
+	localStorage.setItem("slideInd","0")
+}, [])
 
-   
 
-	if (playing) {
+useEffect(() => {
+
+	 
+
+	// if (playing) {
 		
-		const timer = setTimeout(() => {
-			if (progress === 0) {
-				setBarVisible(true)
-			}
-			if (progress >= 100) {
-			   
-				// if (swiper.realIndex === 2) {
-				//     swiper.realIndex = 1;
-				// }
-				// newProgress = 0;
-				// updateSwiper(1)
-			   
-				setProgress(-18);
-				// console.log(swiper.realIndex,"swiper.realIndex")
-				setBarVisible(true)
-				setUpdateSwiper(Swiper.slideNext())
-			//    Swiper.slideNext();
-				// swiper.slideNext();
-			} else {
-				// console.log(progress,"<<progress")
-				setProgress(prevProgress => prevProgress + 1);
-			}
+	// 	const timer = setTimeout(() => {
+	// 		if (progress === 0) {
+	// 			setBarVisible(true)
+	// 		}
+	// 		if (progress >= 100) {
+				 
+	// 			// if (swiper.realIndex === 2) {
+	// 			//     swiper.realIndex = 1;
+	// 			// }
+	// 			// newProgress = 0;
+	// 			// updateSwiper(1)
+				 
+	// 			setProgress(-18);
+	// 			// console.log(swiper.realIndex,"swiper.realIndex")
+	// 			setBarVisible(true)
+	// 			setUpdateSwiper(Swiper.slideNext())
+	// 		//    Swiper.slideNext();
+	// 			// swiper.slideNext();
+	// 		} else {
+	// 			// console.log(progress,"<<progress")
+	// 			setProgress(prevProgress => prevProgress + 1);
+	// 		}
 
-			setSeconds(0);
+	// 		setSeconds(0);
 
-		}, seconds);
+	// 	}, seconds);
 
-		return () => {
-			clearInterval(timer);
-			setSeconds(50);
-		};
-	}
+	// 	return () => {
+	// 		clearInterval(timer);
+	// 		setSeconds(50);
+	// 	};
+	// }
 }, [seconds, playing]);
 
 
 
-
-
-  const handlePlay1 = () => {
+	const handlePlay1 = () => {
 	setPlay(true);
 	
 	setAutoPlay({
-	  delay: 1500,
-	  disableOnInteraction: false
+		delay: 1500,
+		disableOnInteraction: false
 	});
 
 	currentSlide = parseInt(localStorage.getItem('currentSlide'));
 	if(currentSlide){
-	  currentSlide -=1;
+		currentSlide -=1;
 	}
 	// console.log('in play',currentSlide)
 
 	// setIsActive(!isActive);
 	// return false;
-  }
+	}
 
 
-  // For determinate progress bar 
+	// For determinate progress bar 
 	// useEffect(() => {
 	//   let interval = null;
 	//   if (isActive) {
@@ -163,32 +167,35 @@ useEffect(() => {
 	//   }
 	//   return () => clearInterval(interval);
 	// }, [isActive, seconds]);
-  
+	
 
-  const params = {
+	const params = {
 	direction: 'vertical',
 	autoplay: autoPlay,
 	speed : 2000,
 	loop:true,
 	// loopedSlides:4,
 	pagination: {
-	  el: '.swiper-pagination',
-	  clickable: true
+		el: '.swiper-pagination',
+		clickable: true
 	},
-	renderNextButton: () => <CircularProgressBar  thickness={2.5} disableShrink={false}  size={48} play={play} handlePause={handlePause} handlePlay={handlePlay}/>,
-	navigation: {
-	  nextEl: '.swiper-button-next',
-	},
+	// renderNextButton: () => <CircularProgressBar className="progressSlider"  thickness={2.5} disableShrink={false}  size={48} play={play} handlePause={handlePause} handlePlay={handlePlay}/>,
+	// navigation: {
+	//   nextEl: '.swiper-button-next',
+	// },
 	rebuildOnUpdate: true,
 	on: {
-	  realIndexChange:()=>{
-		if(currentSlide == 3){
-		  currentSlide = 0;
+		realIndexChange:()=>{
+		if(currentSlide == arrayRes.length - 1){
+			currentSlide = 0;
+			localStorage.setItem("slideInd",currentSlide)
 		}else{
-		  currentSlide += 1;
+			currentSlide += 1;
+			localStorage.setItem("slideInd",currentSlide)
 		}
-		// setProgress(0);
-	  }
+		
+		
+		}
 	},
 	// effect:"cube",
 	// fadeEffect: {
@@ -205,50 +212,56 @@ useEffect(() => {
 	// cubeEffect: {
 	//   slideShadows: false,
 	// },
-  }
+	}
 
 
 	
-  useEffect(() => {
+	useEffect(() => {
 	
-	  if(Array.isArray(bannerResponse.payload?.j_list) &&  bannerResponse.payload?.j_list.length > 0 ){
+		if(Array.isArray(bannerResponse.payload?.j_list) &&  bannerResponse.payload?.j_list.length > 0 ){
+			console.log(bannerResponse.payload?.j_list)
 		setArrayRes(bannerResponse.payload?.j_list)
-	  }
-		
+		}
 	
  }, [bannerResponse.payload?.j_list])
 
-
-  
-  return(
+useEffect(() => {
+if(playing === true){
+	let temp = localStorage.getItem("slideInd")
+	setActiveSlideKey(temp)
+}
+}, [playing])
+	
+	return(
 	<div className="home-banner-sec">
-	  <Swiper {...params} activeSlideKey={activeSlideKey}>
-	  {
-		  Array.isArray(arrayRes) && arrayRes.length > 0 && arrayRes.map((item, index) => (
-		  <div className="single-img" key={index}>
+		<Swiper {...params} activeSlideKey={activeSlideKey} noSwiping={!playing}>
+		{
+			Array.isArray(arrayRes) && arrayRes.length > 0 && arrayRes.map((item, index) => (
+			<div className="single-img" key={index}>
 			<img 
 			src={item.c_banner_image_url} 
 			onError={(e) => {
-			  e.target.src = BannerImg1
-			  }} 
-			  className="main-slider-img" 
-			  alt="site_img" />
-			  {/* <img src={DemmoBanner} alt="demo banner" /> */}
-		  </div>
+				e.target.src = BannerImg1
+				}} 
+				className="main-slider-img" 
+				alt="site_img" />
+			</div>
 		))
-	   }
-	  </Swiper>
-	  <CircularProgressBar 
-	  	thickness={2.5} 
-	  	size={48} 
-	  	play={playing} 
-	  	handlePause={handlePause} 
-	  	handlePlay={handlePlay} 
-	  	progressb={progress} 
-	  	isBarVisible={barVisible} 
-	   />
+		 }
+		</Swiper>
+		
+		<CircularProgressBar
+			className="progressSlider" 
+			thickness={2.5} 
+			size={48} 
+			play={playing} 
+			handlePause={handlePause} 
+			handlePlay={handlePlay} 
+			progressb={progress} 
+			isBarVisible={barVisible} 
+		 />
 	</div>
-  )
+	)
 }
  
 export default Homepagebanner;
