@@ -526,7 +526,7 @@ const BoxView = (props) => {
 									<div className="fast-moving-tile">
 										<div className="fast-moving-tile-imgsec">
 											<Link
-												to={`pdp/${item.c_item_code}/${convertToSlug(
+												to={`/pdp/${item.c_item_code}/${convertToSlug(
 													item.c_item_name
 												)}`}
 												key={item.c_item_code}
@@ -557,7 +557,7 @@ const BoxView = (props) => {
 										<div className="fast-moving-tile-details">
 											<div>
 												<Link
-													to={`pdp/${item.c_item_code}/${convertToSlug(
+													to={`/pdp/${item.c_item_code}/${convertToSlug(
 														item.c_item_name
 													)}`}
 													key={item.c_item_code}
